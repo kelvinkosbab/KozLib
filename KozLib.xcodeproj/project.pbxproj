@@ -7,23 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B64414F81F78556200C9781B /* UIApplication+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64414F71F78556200C9781B /* UIApplication+Util.swift */; };
+		B64414FC1F78569600C9781B /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64414FB1F78569600C9781B /* Device.swift */; };
+		B64414FE1F7856A900C9781B /* UIDevice+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64414FD1F7856A900C9781B /* UIDevice+Util.swift */; };
+		B64415001F7856EA00C9781B /* Date+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64414FF1F7856EA00C9781B /* Date+Util.swift */; };
+		B64415021F78572400C9781B /* UITabBarController+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64415011F78572400C9781B /* UITabBarController+Util.swift */; };
+		B64415041F78573E00C9781B /* UICollectionView+Reordering.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64415031F78573E00C9781B /* UICollectionView+Reordering.swift */; };
+		B64415061F7857D800C9781B /* String+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64415051F7857D800C9781B /* String+Util.swift */; };
+		B644150A1F78585600C9781B /* UIColor+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64415091F78585600C9781B /* UIColor+Util.swift */; };
+		B644150C1F78588100C9781B /* UIViewController+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B644150B1F78588100C9781B /* UIViewController+Util.swift */; };
+		B644150E1F7858ED00C9781B /* UIView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B644150D1F7858ED00C9781B /* UIView+Util.swift */; };
+		B64415101F78597400C9781B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B644150F1F78597400C9781B /* HomeViewController.swift */; };
+		B64415121F7859AE00C9781B /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64415111F7859AE00C9781B /* RootViewController.swift */; };
+		B64415141F785B0D00C9781B /* UIApplication+SSID.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64415131F785B0D00C9781B /* UIApplication+SSID.swift */; };
 		B68B2E571F76BCEC000B7A3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B2E561F76BCEC000B7A3F /* AppDelegate.swift */; };
-		B68B2E591F76BCEC000B7A3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B2E581F76BCEC000B7A3F /* ViewController.swift */; };
 		B68B2E5C1F76BCEC000B7A3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68B2E5A1F76BCEC000B7A3F /* Main.storyboard */; };
 		B68B2E5F1F76BCEC000B7A3F /* KozLib.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B68B2E5D1F76BCEC000B7A3F /* KozLib.xcdatamodeld */; };
 		B68B2E611F76BCEC000B7A3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B68B2E601F76BCEC000B7A3F /* Assets.xcassets */; };
 		B68B2E641F76BCEC000B7A3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68B2E621F76BCEC000B7A3F /* LaunchScreen.storyboard */; };
+		B68B2E6D1F76BE7E000B7A3F /* MyManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B2E6C1F76BE7E000B7A3F /* MyManagedObject.swift */; };
+		B68B2E6F1F76BED7000B7A3F /* MyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B2E6E1F76BED7000B7A3F /* MyDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B64414F71F78556200C9781B /* UIApplication+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Util.swift"; sourceTree = "<group>"; };
+		B64414FB1F78569600C9781B /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		B64414FD1F7856A900C9781B /* UIDevice+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Util.swift"; sourceTree = "<group>"; };
+		B64414FF1F7856EA00C9781B /* Date+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Util.swift"; sourceTree = "<group>"; };
+		B64415011F78572400C9781B /* UITabBarController+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController+Util.swift"; sourceTree = "<group>"; };
+		B64415031F78573E00C9781B /* UICollectionView+Reordering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Reordering.swift"; sourceTree = "<group>"; };
+		B64415051F7857D800C9781B /* String+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Util.swift"; sourceTree = "<group>"; };
+		B64415091F78585600C9781B /* UIColor+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Util.swift"; sourceTree = "<group>"; };
+		B644150B1F78588100C9781B /* UIViewController+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Util.swift"; sourceTree = "<group>"; };
+		B644150D1F7858ED00C9781B /* UIView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Util.swift"; sourceTree = "<group>"; };
+		B644150F1F78597400C9781B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B64415111F7859AE00C9781B /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		B64415131F785B0D00C9781B /* UIApplication+SSID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+SSID.swift"; sourceTree = "<group>"; };
 		B68B2E531F76BCEC000B7A3F /* KozLib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KozLib.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B68B2E561F76BCEC000B7A3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B68B2E581F76BCEC000B7A3F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B68B2E5B1F76BCEC000B7A3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B68B2E5E1F76BCEC000B7A3F /* KozLib.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KozLib.xcdatamodel; sourceTree = "<group>"; };
 		B68B2E601F76BCEC000B7A3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B68B2E631F76BCEC000B7A3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B68B2E651F76BCEC000B7A3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B68B2E6C1F76BE7E000B7A3F /* MyManagedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyManagedObject.swift; sourceTree = "<group>"; };
+		B68B2E6E1F76BED7000B7A3F /* MyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +65,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B64414F41F7854E100C9781B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B64414F71F78556200C9781B /* UIApplication+Util.swift */,
+				B64415131F785B0D00C9781B /* UIApplication+SSID.swift */,
+				B64414FD1F7856A900C9781B /* UIDevice+Util.swift */,
+				B644150B1F78588100C9781B /* UIViewController+Util.swift */,
+				B64415011F78572400C9781B /* UITabBarController+Util.swift */,
+				B64415031F78573E00C9781B /* UICollectionView+Reordering.swift */,
+				B644150D1F7858ED00C9781B /* UIView+Util.swift */,
+				B64415091F78585600C9781B /* UIColor+Util.swift */,
+				B64415051F7857D800C9781B /* String+Util.swift */,
+				B64414FF1F7856EA00C9781B /* Date+Util.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B64414F51F7854FF00C9781B /* Supporting FIles */ = {
+			isa = PBXGroup;
+			children = (
+				B68B2E601F76BCEC000B7A3F /* Assets.xcassets */,
+				B68B2E621F76BCEC000B7A3F /* LaunchScreen.storyboard */,
+				B68B2E651F76BCEC000B7A3F /* Info.plist */,
+			);
+			path = "Supporting FIles";
+			sourceTree = "<group>";
+		};
+		B64414F61F78551800C9781B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B68B2E5A1F76BCEC000B7A3F /* Main.storyboard */,
+				B644150F1F78597400C9781B /* HomeViewController.swift */,
+				B64415111F7859AE00C9781B /* RootViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		B64414F91F78561A00C9781B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B64414FA1F78568000C9781B /* Useful 3rd Party Libraries */,
+				B64414F41F7854E100C9781B /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		B64414FA1F78568000C9781B /* Useful 3rd Party Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				B64414FB1F78569600C9781B /* Device.swift */,
+			);
+			path = "Useful 3rd Party Libraries";
+			sourceTree = "<group>";
+		};
 		B68B2E4A1F76BCEC000B7A3F = {
 			isa = PBXGroup;
 			children = (
@@ -57,14 +139,22 @@
 			isa = PBXGroup;
 			children = (
 				B68B2E561F76BCEC000B7A3F /* AppDelegate.swift */,
-				B68B2E581F76BCEC000B7A3F /* ViewController.swift */,
-				B68B2E5A1F76BCEC000B7A3F /* Main.storyboard */,
-				B68B2E601F76BCEC000B7A3F /* Assets.xcassets */,
-				B68B2E621F76BCEC000B7A3F /* LaunchScreen.storyboard */,
-				B68B2E651F76BCEC000B7A3F /* Info.plist */,
-				B68B2E5D1F76BCEC000B7A3F /* KozLib.xcdatamodeld */,
+				B64414F91F78561A00C9781B /* Common */,
+				B68B2E6B1F76BDE5000B7A3F /* Model */,
+				B64414F61F78551800C9781B /* Main */,
+				B64414F51F7854FF00C9781B /* Supporting FIles */,
 			);
 			path = KozLib;
+			sourceTree = "<group>";
+		};
+		B68B2E6B1F76BDE5000B7A3F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B68B2E5D1F76BCEC000B7A3F /* KozLib.xcdatamodeld */,
+				B68B2E6E1F76BED7000B7A3F /* MyDataManager.swift */,
+				B68B2E6C1F76BE7E000B7A3F /* MyManagedObject.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,9 +229,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B68B2E591F76BCEC000B7A3F /* ViewController.swift in Sources */,
+				B644150C1F78588100C9781B /* UIViewController+Util.swift in Sources */,
+				B644150E1F7858ED00C9781B /* UIView+Util.swift in Sources */,
+				B64415061F7857D800C9781B /* String+Util.swift in Sources */,
+				B64414F81F78556200C9781B /* UIApplication+Util.swift in Sources */,
+				B644150A1F78585600C9781B /* UIColor+Util.swift in Sources */,
+				B64415101F78597400C9781B /* HomeViewController.swift in Sources */,
+				B64415121F7859AE00C9781B /* RootViewController.swift in Sources */,
+				B64415041F78573E00C9781B /* UICollectionView+Reordering.swift in Sources */,
 				B68B2E5F1F76BCEC000B7A3F /* KozLib.xcdatamodeld in Sources */,
+				B68B2E6D1F76BE7E000B7A3F /* MyManagedObject.swift in Sources */,
+				B68B2E6F1F76BED7000B7A3F /* MyDataManager.swift in Sources */,
+				B64414FE1F7856A900C9781B /* UIDevice+Util.swift in Sources */,
+				B64415001F7856EA00C9781B /* Date+Util.swift in Sources */,
+				B64414FC1F78569600C9781B /* Device.swift in Sources */,
 				B68B2E571F76BCEC000B7A3F /* AppDelegate.swift in Sources */,
+				B64415141F785B0D00C9781B /* UIApplication+SSID.swift in Sources */,
+				B64415021F78572400C9781B /* UITabBarController+Util.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +384,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6SS93B87P2;
-				INFOPLIST_FILE = KozLib/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/KozLib/Supporting FIles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kozinga.KozLib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -295,7 +399,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6SS93B87P2;
-				INFOPLIST_FILE = KozLib/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/KozLib/Supporting FIles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kozinga.KozLib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
