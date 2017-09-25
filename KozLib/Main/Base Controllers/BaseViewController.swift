@@ -16,3 +16,10 @@ class BaseViewController : UIViewController, PresentableController {
   var transitioningDelegateReference: UIViewControllerTransitioningDelegate? = nil
   var currentFlowFirstController: PresentableController? = nil
 }
+
+extension BaseViewController {
+  
+  var baseNavigationController: BaseNavigationController? {
+    return self.navigationController as? BaseNavigationController
+  }
+}

@@ -21,6 +21,21 @@ class ARPlaneMappingViewController : ARBaseViewController {
   // MARK: - Properties
   
   var planes: [UUID : Plane] = [:]
+  
+  // MARK: - Lifecycle
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    self.configureDefaultBackButton()
+    self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(self.stopButtonSelected))
+  }
+  
+  // MARK: - Actions
+  
+  @objc func stopButtonSelected() {
+    self.dismissController()
+  }
 }
 
 // MARK: - ARSCNViewDelegate

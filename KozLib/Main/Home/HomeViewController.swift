@@ -74,7 +74,7 @@ class HomeViewController : BaseTableViewController {
   
   func transtionToARKitPlaneMapping() {
     let viewController = ARPlaneMappingViewController.newViewController()
-    self.present(viewController: viewController, withMode: .navStack)
+    self.present(viewController: viewController, withMode: .rightToLeft, dismissInteractiveView: viewController.view)
   }
 }
 

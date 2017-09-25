@@ -34,12 +34,14 @@ class ARBaseViewController : BaseViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
+    self.baseNavigationController?.navigationBarStyle = .transparent
+    
     UIApplication.shared.isIdleTimerDisabled = true
     self.restartPlaneDetection()
   }
   
-  override func viewWillDisappear(_ animated: Bool) {
-    super.viewWillDisappear(animated)
+  override func viewDidDisappear(_ animated: Bool) {
+    super.viewDidDisappear(animated)
     
     self.session.pause()
   }
