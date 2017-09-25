@@ -52,10 +52,11 @@ class HomeViewController : BaseTableViewController {
     
     let item = self.items[indexPath.row]
     switch item {
+    case .arKitPlaneMapping:
+      self.transtionToARKitPlaneMapping()
+      break
     case .nfc:
       self.transitionToNfc()
-      break
-    case .arKit:
       break
     case .transparentNavigationBar:
       break
@@ -68,6 +69,11 @@ class HomeViewController : BaseTableViewController {
   
   func transitionToNfc() {
     let viewController = NFCTableViewController.newViewController()
+    self.present(viewController: viewController, withMode: .navStack)
+  }
+  
+  func transtionToARKitPlaneMapping() {
+    let viewController = ARPlaneMappingViewController.newViewController()
     self.present(viewController: viewController, withMode: .navStack)
   }
 }

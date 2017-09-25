@@ -10,20 +10,20 @@ import Foundation
 
 enum HomeListItem {
   case nfc
-  case arKit
+  case arKitPlaneMapping
   case transparentNavigationBar
   case expandingNavigationBar
   
   var title: String {
     switch self {
+    case .arKitPlaneMapping:
+      return "ARKit Plane Mapping"
     case .nfc:
       return "NFC Reader"
-    case .arKit:
-      return "ARKit"
     case .transparentNavigationBar, .expandingNavigationBar:
       return "TBD"
     }
   }
   
-  static let all: [HomeListItem] = [ .nfc, .arKit, .transparentNavigationBar, .expandingNavigationBar ]
+  static let all: [HomeListItem] = [ .arKitPlaneMapping, .nfc, .transparentNavigationBar, .expandingNavigationBar ]
 }

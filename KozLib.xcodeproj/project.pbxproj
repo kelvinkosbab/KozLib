@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B624C1CF1F78AC8F0027C95D /* ARPlaneMappingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B624C1CE1F78AC8F0027C95D /* ARPlaneMappingViewController.swift */; };
+		B624C1D11F78ACCD0027C95D /* ARKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B624C1D01F78ACCD0027C95D /* ARKit.storyboard */; };
+		B624C1D51F78B0650027C95D /* ARSCNView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B624C1D41F78B0650027C95D /* ARSCNView+Util.swift */; };
+		B624C1D81F78B2260027C95D /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B624C1D71F78B2260027C95D /* Utilities.swift */; };
 		B6350E441F786FB4004E6218 /* NFCReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6350E431F786FB4004E6218 /* NFCReader.swift */; };
 		B6350E461F786FBC004E6218 /* NFCMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6350E451F786FBC004E6218 /* NFCMessage.swift */; };
 		B6350E4A1F787767004E6218 /* DataMangerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6350E491F787767004E6218 /* DataMangerProtocol.swift */; };
@@ -52,6 +56,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B624C1CE1F78AC8F0027C95D /* ARPlaneMappingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARPlaneMappingViewController.swift; sourceTree = "<group>"; };
+		B624C1D01F78ACCD0027C95D /* ARKit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ARKit.storyboard; sourceTree = "<group>"; };
+		B624C1D21F78AF080027C95D /* KozLib.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KozLib.entitlements; sourceTree = "<group>"; };
+		B624C1D41F78B0650027C95D /* ARSCNView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARSCNView+Util.swift"; sourceTree = "<group>"; };
+		B624C1D61F78B1320027C95D /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
+		B624C1D71F78B2260027C95D /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		B6350E431F786FB4004E6218 /* NFCReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCReader.swift; sourceTree = "<group>"; };
 		B6350E451F786FBC004E6218 /* NFCMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCMessage.swift; sourceTree = "<group>"; };
 		B6350E491F787767004E6218 /* DataMangerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMangerProtocol.swift; sourceTree = "<group>"; };
@@ -109,6 +119,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B624C1CD1F78AC0D0027C95D /* ARKit Plane Mapping */ = {
+			isa = PBXGroup;
+			children = (
+				B624C1D61F78B1320027C95D /* Models.scnassets */,
+				B624C1D01F78ACCD0027C95D /* ARKit.storyboard */,
+				B624C1CE1F78AC8F0027C95D /* ARPlaneMappingViewController.swift */,
+			);
+			path = "ARKit Plane Mapping";
+			sourceTree = "<group>";
+		};
 		B6350E421F786FA3004E6218 /* NFC */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +199,8 @@
 				B64415091F78585600C9781B /* UIColor+Util.swift */,
 				B64415051F7857D800C9781B /* String+Util.swift */,
 				B64414FF1F7856EA00C9781B /* Date+Util.swift */,
+				B624C1D41F78B0650027C95D /* ARSCNView+Util.swift */,
+				B624C1D71F78B2260027C95D /* Utilities.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -200,6 +222,7 @@
 				B68B2E5A1F76BCEC000B7A3F /* Main.storyboard */,
 				B64415111F7859AE00C9781B /* RootViewController.swift */,
 				B65514401F78A0B200EEF26F /* Home */,
+				B624C1CD1F78AC0D0027C95D /* ARKit Plane Mapping */,
 				B6350E4B1F787A33004E6218 /* NFC */,
 			);
 			path = Main;
@@ -275,6 +298,7 @@
 		B68B2E551F76BCEC000B7A3F /* KozLib */ = {
 			isa = PBXGroup;
 			children = (
+				B624C1D21F78AF080027C95D /* KozLib.entitlements */,
 				B68B2E561F76BCEC000B7A3F /* AppDelegate.swift */,
 				B64414F91F78561A00C9781B /* Common */,
 				B68B2E6B1F76BDE5000B7A3F /* Model */,
@@ -328,6 +352,11 @@
 					B68B2E521F76BCEC000B7A3F = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.NearFieldCommunicationTagReading = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -355,6 +384,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6350E571F787F5A004E6218 /* NFC.storyboard in Resources */,
+				B624C1D11F78ACCD0027C95D /* ARKit.storyboard in Resources */,
 				B68B2E641F76BCEC000B7A3F /* LaunchScreen.storyboard in Resources */,
 				B68B2E611F76BCEC000B7A3F /* Assets.xcassets in Resources */,
 				B68B2E5C1F76BCEC000B7A3F /* Main.storyboard in Resources */,
@@ -376,8 +406,10 @@
 				B655143A1F78924A00EEF26F /* BaseViewController.swift in Sources */,
 				B6350E4A1F787767004E6218 /* DataMangerProtocol.swift in Sources */,
 				B6350E521F787D1C004E6218 /* ViewControllerFromStoryboardProtocol.swift in Sources */,
+				B624C1D81F78B2260027C95D /* Utilities.swift in Sources */,
 				B6350E4D1F787A41004E6218 /* NFCTableViewController.swift in Sources */,
 				B64415101F78597400C9781B /* HomeViewController.swift in Sources */,
+				B624C1D51F78B0650027C95D /* ARSCNView+Util.swift in Sources */,
 				B64415121F7859AE00C9781B /* RootViewController.swift in Sources */,
 				B655142D1F7882AF00EEF26F /* DragLeftDismissInteractiveTransition.swift in Sources */,
 				B64415041F78573E00C9781B /* UICollectionView+Reordering.swift in Sources */,
@@ -390,6 +422,7 @@
 				B68B2E6F1F76BED7000B7A3F /* MyDataManager.swift in Sources */,
 				B6350E611F7881A1004E6218 /* PresentationManagerProtocol.swift in Sources */,
 				B65514361F7883A500EEF26F /* FadeWithBlurPresentationManager.swift in Sources */,
+				B624C1CF1F78AC8F0027C95D /* ARPlaneMappingViewController.swift in Sources */,
 				B64414FE1F7856A900C9781B /* UIDevice+Util.swift in Sources */,
 				B65514291F78827C00EEF26F /* DragDownDismissInteractiveTransition.swift in Sources */,
 				B6350E5A1F7880C1004E6218 /* PresentableController.swift in Sources */,
@@ -542,6 +575,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = KozLib/KozLib.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6SS93B87P2;
 				INFOPLIST_FILE = "$(SRCROOT)/KozLib/Supporting FIles/Info.plist";
@@ -557,6 +591,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = KozLib/KozLib.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6SS93B87P2;
 				INFOPLIST_FILE = "$(SRCROOT)/KozLib/Supporting FIles/Info.plist";

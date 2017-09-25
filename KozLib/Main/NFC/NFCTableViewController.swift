@@ -10,7 +10,7 @@ import UIKit
 
 class NFCTableViewController : BaseTableViewController {
   
-  // MARK: - Class Accessors
+  // MARK: - Static Accessors
   
   static func newViewController() -> NFCTableViewController {
     return self.newViewController(fromStoryboardWithName: "NFC")
