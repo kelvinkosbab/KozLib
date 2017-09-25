@@ -32,6 +32,7 @@ extension PresentableController where Self : UIViewController {
     
     switch mode {
     case .modal:
+      presentingPresentableController?.currentFlowFirstController = self
       let viewController = inNavigationController ? UINavigationController(rootViewController: viewControllerToPresent) : viewControllerToPresent
       if UIDevice.current.isPhone {
         viewController.modalTransitionStyle = .coverVertical
@@ -44,6 +45,7 @@ extension PresentableController where Self : UIViewController {
       break
       
     case .modalOverCurrentContext:
+      presentingPresentableController?.currentFlowFirstController = self
       let viewController = inNavigationController ? UINavigationController(rootViewController: viewControllerToPresent) : viewControllerToPresent
       if UIDevice.current.isPhone {
         viewController.modalTransitionStyle = .coverVertical
@@ -56,6 +58,7 @@ extension PresentableController where Self : UIViewController {
       break
       
     case .leftMenu:
+      presentingPresentableController?.currentFlowFirstController = self
       let presentationManager = LeftMenuPresentationManager(dismissInteractor: DragLeftDismissInteractiveTransition(presentingController: viewControllerToPresent, interactiveView: dismissInteractiveView))
       viewControllerToPresent.modalPresentationStyle = .custom
       viewControllerToPresent.modalPresentationCapturesStatusBarAppearance = true
@@ -65,6 +68,7 @@ extension PresentableController where Self : UIViewController {
       break
       
     case .rightToLeft:
+      presentingPresentableController?.currentFlowFirstController = self
       let presentationManager = RightToLeftPresentationManager(dismissInteractor: DragRightDismissInteractiveTransition(presentingController: viewControllerToPresent, interactiveView: dismissInteractiveView))
       viewControllerToPresent.modalPresentationStyle = .custom
       viewControllerToPresent.modalPresentationCapturesStatusBarAppearance = true
@@ -74,6 +78,7 @@ extension PresentableController where Self : UIViewController {
       break
       
     case .fadeWithBlur:
+      presentingPresentableController?.currentFlowFirstController = self
       let presentationManager = HDFadeWithBlurPresentationManager()
       viewControllerToPresent.modalPresentationStyle = .custom
       viewControllerToPresent.modalPresentationCapturesStatusBarAppearance = true
@@ -83,6 +88,7 @@ extension PresentableController where Self : UIViewController {
       break
       
     case .overCurrentContext:
+      presentingPresentableController?.currentFlowFirstController = self
       let viewController = inNavigationController ? UINavigationController(rootViewController: viewControllerToPresent) : viewControllerToPresent
       viewController.modalPresentationStyle = .overCurrentContext
       viewController.modalTransitionStyle = .crossDissolve
