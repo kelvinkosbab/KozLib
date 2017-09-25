@@ -35,13 +35,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="UGi-pP-x19">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HomeTableListCell" id="FN7-ob-xsb" customClass="HomeTableListCell" customModule="KozLib" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UGi-pP-x19" id="1ZL-7h-dxW">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FN7-ob-xsb" id="uXX-zj-5NB">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRo-sW-3v0">
+                                            <rect key="frame" x="10" y="11.5" width="355" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="fRo-sW-3v0" firstAttribute="leading" secondItem="uXX-zj-5NB" secondAttribute="leading" constant="10" id="Aaa-dQ-DRA"/>
+                                        <constraint firstItem="fRo-sW-3v0" firstAttribute="centerY" secondItem="uXX-zj-5NB" secondAttribute="centerY" id="V1x-Tc-Iem"/>
+                                        <constraint firstAttribute="trailing" secondItem="fRo-sW-3v0" secondAttribute="trailing" constant="10" id="e9g-G3-sJ0"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="titleLabel" destination="fRo-sW-3v0" id="RGW-WS-cHH"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

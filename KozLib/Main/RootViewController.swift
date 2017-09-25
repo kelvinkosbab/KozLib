@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RootViewController : UINavigationController {
+class RootViewController : BaseNavigationController {
   
   // MARK: - Static Accessors
   

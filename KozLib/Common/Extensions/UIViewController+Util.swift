@@ -10,19 +10,22 @@ import UIKit
 
 extension UIViewController {
   
-  // MARK: - Accessing controllers from storyboard
-  
-  static func newStoryboardController(fromStoryboardWithName storyboard: String, withIdentifier identifier: String) -> UIViewController {
-    let storyboard = UIStoryboard(name: storyboard, bundle: nil)
-    return storyboard.instantiateViewController(withIdentifier: identifier)
-  }
-  
   // MARK: - Adding child view controller helpers
   
-  func addChildViewController(_ childViewController: UIViewController, intoView: UIView) {
+  func addChildViewController(_ childViewController: UIViewController, intoContainerView containerView: UIView) {
+    childViewController.view.translatesAutoresizingMaskIntoConstraints = false
     self.addChildViewController(childViewController)
-    childViewController.view.addToContainer(intoView)
+    childViewController.view.frame = containerView.frame
+    containerView.addSubview(childViewController.view)
     childViewController.didMove(toParentViewController: self)
+    
+    // Set up constraints for the embedded controller
+    let top = NSLayoutConstraint(item: childViewController.view, attribute: .top, relatedBy: .equal, toItem: containerView, attribute: .top, multiplier: 1, constant: 0)
+    let bottom = NSLayoutConstraint(item: childViewController.view, attribute: .bottom, relatedBy: .equal, toItem: containerView, attribute: .bottom, multiplier: 1, constant: 0)
+    let leading = NSLayoutConstraint(item: childViewController.view, attribute: .leading, relatedBy: .equal, toItem: containerView, attribute: .leading, multiplier: 1, constant: 0)
+    let trailing = NSLayoutConstraint(item: childViewController.view, attribute: .trailing, relatedBy: .equal, toItem: containerView, attribute: .trailing, multiplier: 1, constant: 0)
+    containerView.addConstraints([ top, bottom, leading, trailing ])
+    self.view.layoutIfNeeded()
     
     // Check if this view is a collection view, if so need to configure it for long-press reordering
     if let collectionViewController = childViewController as? UICollectionViewController {

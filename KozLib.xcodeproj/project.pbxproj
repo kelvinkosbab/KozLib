@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B6350E441F786FB4004E6218 /* NFCReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6350E431F786FB4004E6218 /* NFCReader.swift */; };
+		B6350E461F786FBC004E6218 /* NFCMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6350E451F786FBC004E6218 /* NFCMessage.swift */; };
+		B6350E4A1F787767004E6218 /* DataMangerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6350E491F787767004E6218 /* DataMangerProtocol.swift */; };
+		B6350E4D1F787A41004E6218 /* NFCTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6350E4C1F787A41004E6218 /* NFCTableViewController.swift */; };
+		B6350E4F1F787A47004E6218 /* NFCTableViewController+Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6350E4E1F787A47004E6218 /* NFCTableViewController+Cells.swift */; };
+		B6350E521F787D1C004E6218 /* ViewControllerFromStoryboardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6350E511F787D1C004E6218 /* ViewControllerFromStoryboardProtocol.swift */; };
+		B6350E551F787E7E004E6218 /* NFCMessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6350E541F787E7E004E6218 /* NFCMessageTableViewController.swift */; };
+		B6350E571F787F5A004E6218 /* NFC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6350E561F787F5A004E6218 /* NFC.storyboard */; };
+		B6350E5A1F7880C1004E6218 /* PresentableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6350E591F7880C1004E6218 /* PresentableController.swift */; };
+		B6350E5F1F78815B004E6218 /* InteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6350E5E1F78815B004E6218 /* InteractiveTransition.swift */; };
+		B6350E611F7881A1004E6218 /* PresentationManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6350E601F7881A1004E6218 /* PresentationManagerProtocol.swift */; };
 		B64414F81F78556200C9781B /* UIApplication+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64414F71F78556200C9781B /* UIApplication+Util.swift */; };
 		B64414FC1F78569600C9781B /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64414FB1F78569600C9781B /* Device.swift */; };
 		B64414FE1F7856A900C9781B /* UIDevice+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64414FD1F7856A900C9781B /* UIDevice+Util.swift */; };
@@ -16,10 +27,21 @@
 		B64415061F7857D800C9781B /* String+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64415051F7857D800C9781B /* String+Util.swift */; };
 		B644150A1F78585600C9781B /* UIColor+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64415091F78585600C9781B /* UIColor+Util.swift */; };
 		B644150C1F78588100C9781B /* UIViewController+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B644150B1F78588100C9781B /* UIViewController+Util.swift */; };
-		B644150E1F7858ED00C9781B /* UIView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B644150D1F7858ED00C9781B /* UIView+Util.swift */; };
 		B64415101F78597400C9781B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B644150F1F78597400C9781B /* HomeViewController.swift */; };
 		B64415121F7859AE00C9781B /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64415111F7859AE00C9781B /* RootViewController.swift */; };
 		B64415141F785B0D00C9781B /* UIApplication+SSID.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64415131F785B0D00C9781B /* UIApplication+SSID.swift */; };
+		B65514291F78827C00EEF26F /* DragDownDismissInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65514281F78827C00EEF26F /* DragDownDismissInteractiveTransition.swift */; };
+		B655142B1F7882A800EEF26F /* DragUpDismissInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B655142A1F7882A800EEF26F /* DragUpDismissInteractiveTransition.swift */; };
+		B655142D1F7882AF00EEF26F /* DragLeftDismissInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B655142C1F7882AF00EEF26F /* DragLeftDismissInteractiveTransition.swift */; };
+		B655142F1F7882B600EEF26F /* DragRightDismissInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B655142E1F7882B600EEF26F /* DragRightDismissInteractiveTransition.swift */; };
+		B65514321F78838300EEF26F /* LeftMenuPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65514311F78838300EEF26F /* LeftMenuPresentationManager.swift */; };
+		B65514341F78839800EEF26F /* RightToLeftPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65514331F78839800EEF26F /* RightToLeftPresentationManager.swift */; };
+		B65514361F7883A500EEF26F /* FadeWithBlurPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65514351F7883A500EEF26F /* FadeWithBlurPresentationManager.swift */; };
+		B65514381F7888B900EEF26F /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65514371F7888B900EEF26F /* BaseNavigationController.swift */; };
+		B655143A1F78924A00EEF26F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65514391F78924A00EEF26F /* BaseViewController.swift */; };
+		B655143D1F78928800EEF26F /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B655143C1F78928800EEF26F /* BaseTableViewController.swift */; };
+		B655143F1F7895AE00EEF26F /* UIView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B655143E1F7895AE00EEF26F /* UIView+Util.swift */; };
+		B65514421F78A0C800EEF26F /* HomeListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65514411F78A0C800EEF26F /* HomeListItem.swift */; };
 		B68B2E571F76BCEC000B7A3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B2E561F76BCEC000B7A3F /* AppDelegate.swift */; };
 		B68B2E5C1F76BCEC000B7A3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68B2E5A1F76BCEC000B7A3F /* Main.storyboard */; };
 		B68B2E5F1F76BCEC000B7A3F /* KozLib.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B68B2E5D1F76BCEC000B7A3F /* KozLib.xcdatamodeld */; };
@@ -30,6 +52,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B6350E431F786FB4004E6218 /* NFCReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCReader.swift; sourceTree = "<group>"; };
+		B6350E451F786FBC004E6218 /* NFCMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCMessage.swift; sourceTree = "<group>"; };
+		B6350E491F787767004E6218 /* DataMangerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMangerProtocol.swift; sourceTree = "<group>"; };
+		B6350E4C1F787A41004E6218 /* NFCTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCTableViewController.swift; sourceTree = "<group>"; };
+		B6350E4E1F787A47004E6218 /* NFCTableViewController+Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NFCTableViewController+Cells.swift"; sourceTree = "<group>"; };
+		B6350E511F787D1C004E6218 /* ViewControllerFromStoryboardProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFromStoryboardProtocol.swift; sourceTree = "<group>"; };
+		B6350E541F787E7E004E6218 /* NFCMessageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCMessageTableViewController.swift; sourceTree = "<group>"; };
+		B6350E561F787F5A004E6218 /* NFC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NFC.storyboard; sourceTree = "<group>"; };
+		B6350E591F7880C1004E6218 /* PresentableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableController.swift; sourceTree = "<group>"; };
+		B6350E5E1F78815B004E6218 /* InteractiveTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveTransition.swift; sourceTree = "<group>"; };
+		B6350E601F7881A1004E6218 /* PresentationManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationManagerProtocol.swift; sourceTree = "<group>"; };
 		B64414F71F78556200C9781B /* UIApplication+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Util.swift"; sourceTree = "<group>"; };
 		B64414FB1F78569600C9781B /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		B64414FD1F7856A900C9781B /* UIDevice+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Util.swift"; sourceTree = "<group>"; };
@@ -39,10 +72,21 @@
 		B64415051F7857D800C9781B /* String+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Util.swift"; sourceTree = "<group>"; };
 		B64415091F78585600C9781B /* UIColor+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Util.swift"; sourceTree = "<group>"; };
 		B644150B1F78588100C9781B /* UIViewController+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Util.swift"; sourceTree = "<group>"; };
-		B644150D1F7858ED00C9781B /* UIView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Util.swift"; sourceTree = "<group>"; };
 		B644150F1F78597400C9781B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B64415111F7859AE00C9781B /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		B64415131F785B0D00C9781B /* UIApplication+SSID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+SSID.swift"; sourceTree = "<group>"; };
+		B65514281F78827C00EEF26F /* DragDownDismissInteractiveTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragDownDismissInteractiveTransition.swift; sourceTree = "<group>"; };
+		B655142A1F7882A800EEF26F /* DragUpDismissInteractiveTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragUpDismissInteractiveTransition.swift; sourceTree = "<group>"; };
+		B655142C1F7882AF00EEF26F /* DragLeftDismissInteractiveTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragLeftDismissInteractiveTransition.swift; sourceTree = "<group>"; };
+		B655142E1F7882B600EEF26F /* DragRightDismissInteractiveTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragRightDismissInteractiveTransition.swift; sourceTree = "<group>"; };
+		B65514311F78838300EEF26F /* LeftMenuPresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuPresentationManager.swift; sourceTree = "<group>"; };
+		B65514331F78839800EEF26F /* RightToLeftPresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightToLeftPresentationManager.swift; sourceTree = "<group>"; };
+		B65514351F7883A500EEF26F /* FadeWithBlurPresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeWithBlurPresentationManager.swift; sourceTree = "<group>"; };
+		B65514371F7888B900EEF26F /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		B65514391F78924A00EEF26F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		B655143C1F78928800EEF26F /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		B655143E1F7895AE00EEF26F /* UIView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Util.swift"; sourceTree = "<group>"; };
+		B65514411F78A0C800EEF26F /* HomeListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListItem.swift; sourceTree = "<group>"; };
 		B68B2E531F76BCEC000B7A3F /* KozLib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KozLib.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B68B2E561F76BCEC000B7A3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B68B2E5B1F76BCEC000B7A3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,6 +109,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B6350E421F786FA3004E6218 /* NFC */ = {
+			isa = PBXGroup;
+			children = (
+				B6350E431F786FB4004E6218 /* NFCReader.swift */,
+				B6350E451F786FBC004E6218 /* NFCMessage.swift */,
+			);
+			path = NFC;
+			sourceTree = "<group>";
+		};
+		B6350E4B1F787A33004E6218 /* NFC */ = {
+			isa = PBXGroup;
+			children = (
+				B6350E561F787F5A004E6218 /* NFC.storyboard */,
+				B6350E4C1F787A41004E6218 /* NFCTableViewController.swift */,
+				B6350E4E1F787A47004E6218 /* NFCTableViewController+Cells.swift */,
+				B6350E531F787E6A004E6218 /* Message Detail */,
+			);
+			path = NFC;
+			sourceTree = "<group>";
+		};
+		B6350E501F787D15004E6218 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B6350E511F787D1C004E6218 /* ViewControllerFromStoryboardProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		B6350E531F787E6A004E6218 /* Message Detail */ = {
+			isa = PBXGroup;
+			children = (
+				B6350E541F787E7E004E6218 /* NFCMessageTableViewController.swift */,
+			);
+			path = "Message Detail";
+			sourceTree = "<group>";
+		};
+		B6350E581F787F95004E6218 /* Presenting Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B6350E591F7880C1004E6218 /* PresentableController.swift */,
+				B6350E5D1F78814C004E6218 /* Custom Controller Presentations */,
+				B65514301F78835F00EEF26F /* Interactive Transitions */,
+			);
+			path = "Presenting Controllers";
+			sourceTree = "<group>";
+		};
+		B6350E5D1F78814C004E6218 /* Custom Controller Presentations */ = {
+			isa = PBXGroup;
+			children = (
+				B6350E601F7881A1004E6218 /* PresentationManagerProtocol.swift */,
+				B65514311F78838300EEF26F /* LeftMenuPresentationManager.swift */,
+				B65514331F78839800EEF26F /* RightToLeftPresentationManager.swift */,
+				B65514351F7883A500EEF26F /* FadeWithBlurPresentationManager.swift */,
+			);
+			path = "Custom Controller Presentations";
+			sourceTree = "<group>";
+		};
 		B64414F41F7854E100C9781B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -74,7 +175,7 @@
 				B644150B1F78588100C9781B /* UIViewController+Util.swift */,
 				B64415011F78572400C9781B /* UITabBarController+Util.swift */,
 				B64415031F78573E00C9781B /* UICollectionView+Reordering.swift */,
-				B644150D1F7858ED00C9781B /* UIView+Util.swift */,
+				B655143E1F7895AE00EEF26F /* UIView+Util.swift */,
 				B64415091F78585600C9781B /* UIColor+Util.swift */,
 				B64415051F7857D800C9781B /* String+Util.swift */,
 				B64414FF1F7856EA00C9781B /* Date+Util.swift */,
@@ -95,9 +196,11 @@
 		B64414F61F78551800C9781B /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				B655143B1F78927500EEF26F /* Base Controllers */,
 				B68B2E5A1F76BCEC000B7A3F /* Main.storyboard */,
-				B644150F1F78597400C9781B /* HomeViewController.swift */,
 				B64415111F7859AE00C9781B /* RootViewController.swift */,
+				B65514401F78A0B200EEF26F /* Home */,
+				B6350E4B1F787A33004E6218 /* NFC */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -105,8 +208,11 @@
 		B64414F91F78561A00C9781B /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				B64414FA1F78568000C9781B /* Useful 3rd Party Libraries */,
+				B6350E581F787F95004E6218 /* Presenting Controllers */,
 				B64414F41F7854E100C9781B /* Extensions */,
+				B6350E501F787D15004E6218 /* Protocols */,
+				B6350E421F786FA3004E6218 /* NFC */,
+				B64414FA1F78568000C9781B /* Useful 3rd Party Libraries */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -117,6 +223,37 @@
 				B64414FB1F78569600C9781B /* Device.swift */,
 			);
 			path = "Useful 3rd Party Libraries";
+			sourceTree = "<group>";
+		};
+		B65514301F78835F00EEF26F /* Interactive Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				B6350E5E1F78815B004E6218 /* InteractiveTransition.swift */,
+				B65514281F78827C00EEF26F /* DragDownDismissInteractiveTransition.swift */,
+				B655142A1F7882A800EEF26F /* DragUpDismissInteractiveTransition.swift */,
+				B655142C1F7882AF00EEF26F /* DragLeftDismissInteractiveTransition.swift */,
+				B655142E1F7882B600EEF26F /* DragRightDismissInteractiveTransition.swift */,
+			);
+			path = "Interactive Transitions";
+			sourceTree = "<group>";
+		};
+		B655143B1F78927500EEF26F /* Base Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B65514371F7888B900EEF26F /* BaseNavigationController.swift */,
+				B65514391F78924A00EEF26F /* BaseViewController.swift */,
+				B655143C1F78928800EEF26F /* BaseTableViewController.swift */,
+			);
+			path = "Base Controllers";
+			sourceTree = "<group>";
+		};
+		B65514401F78A0B200EEF26F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B644150F1F78597400C9781B /* HomeViewController.swift */,
+				B65514411F78A0C800EEF26F /* HomeListItem.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		B68B2E4A1F76BCEC000B7A3F = {
@@ -151,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				B68B2E5D1F76BCEC000B7A3F /* KozLib.xcdatamodeld */,
+				B6350E491F787767004E6218 /* DataMangerProtocol.swift */,
 				B68B2E6E1F76BED7000B7A3F /* MyDataManager.swift */,
 				B68B2E6C1F76BE7E000B7A3F /* MyManagedObject.swift */,
 			);
@@ -216,6 +354,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6350E571F787F5A004E6218 /* NFC.storyboard in Resources */,
 				B68B2E641F76BCEC000B7A3F /* LaunchScreen.storyboard in Resources */,
 				B68B2E611F76BCEC000B7A3F /* Assets.xcassets in Resources */,
 				B68B2E5C1F76BCEC000B7A3F /* Main.storyboard in Resources */,
@@ -230,22 +369,43 @@
 			buildActionMask = 2147483647;
 			files = (
 				B644150C1F78588100C9781B /* UIViewController+Util.swift in Sources */,
-				B644150E1F7858ED00C9781B /* UIView+Util.swift in Sources */,
 				B64415061F7857D800C9781B /* String+Util.swift in Sources */,
+				B65514341F78839800EEF26F /* RightToLeftPresentationManager.swift in Sources */,
 				B64414F81F78556200C9781B /* UIApplication+Util.swift in Sources */,
 				B644150A1F78585600C9781B /* UIColor+Util.swift in Sources */,
+				B655143A1F78924A00EEF26F /* BaseViewController.swift in Sources */,
+				B6350E4A1F787767004E6218 /* DataMangerProtocol.swift in Sources */,
+				B6350E521F787D1C004E6218 /* ViewControllerFromStoryboardProtocol.swift in Sources */,
+				B6350E4D1F787A41004E6218 /* NFCTableViewController.swift in Sources */,
 				B64415101F78597400C9781B /* HomeViewController.swift in Sources */,
 				B64415121F7859AE00C9781B /* RootViewController.swift in Sources */,
+				B655142D1F7882AF00EEF26F /* DragLeftDismissInteractiveTransition.swift in Sources */,
 				B64415041F78573E00C9781B /* UICollectionView+Reordering.swift in Sources */,
+				B6350E551F787E7E004E6218 /* NFCMessageTableViewController.swift in Sources */,
 				B68B2E5F1F76BCEC000B7A3F /* KozLib.xcdatamodeld in Sources */,
+				B65514381F7888B900EEF26F /* BaseNavigationController.swift in Sources */,
+				B6350E5F1F78815B004E6218 /* InteractiveTransition.swift in Sources */,
 				B68B2E6D1F76BE7E000B7A3F /* MyManagedObject.swift in Sources */,
+				B655143D1F78928800EEF26F /* BaseTableViewController.swift in Sources */,
 				B68B2E6F1F76BED7000B7A3F /* MyDataManager.swift in Sources */,
+				B6350E611F7881A1004E6218 /* PresentationManagerProtocol.swift in Sources */,
+				B65514361F7883A500EEF26F /* FadeWithBlurPresentationManager.swift in Sources */,
 				B64414FE1F7856A900C9781B /* UIDevice+Util.swift in Sources */,
+				B65514291F78827C00EEF26F /* DragDownDismissInteractiveTransition.swift in Sources */,
+				B6350E5A1F7880C1004E6218 /* PresentableController.swift in Sources */,
+				B655142B1F7882A800EEF26F /* DragUpDismissInteractiveTransition.swift in Sources */,
 				B64415001F7856EA00C9781B /* Date+Util.swift in Sources */,
+				B655143F1F7895AE00EEF26F /* UIView+Util.swift in Sources */,
+				B6350E4F1F787A47004E6218 /* NFCTableViewController+Cells.swift in Sources */,
 				B64414FC1F78569600C9781B /* Device.swift in Sources */,
+				B6350E461F786FBC004E6218 /* NFCMessage.swift in Sources */,
+				B6350E441F786FB4004E6218 /* NFCReader.swift in Sources */,
 				B68B2E571F76BCEC000B7A3F /* AppDelegate.swift in Sources */,
+				B65514421F78A0C800EEF26F /* HomeListItem.swift in Sources */,
+				B65514321F78838300EEF26F /* LeftMenuPresentationManager.swift in Sources */,
 				B64415141F785B0D00C9781B /* UIApplication+SSID.swift in Sources */,
 				B64415021F78572400C9781B /* UITabBarController+Util.swift in Sources */,
+				B655142F1F7882B600EEF26F /* DragRightDismissInteractiveTransition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

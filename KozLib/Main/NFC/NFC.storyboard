@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13196"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Table View Controller-->
+        <scene sceneID="gq7-06-0OJ">
+            <objects>
+                <tableViewController storyboardIdentifier="NFCTableViewController" id="WbB-qK-ndz" customClass="NFCTableViewController" customModule="KozLib" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="dGn-Qc-67Y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NFCTableViewCell" id="moK-Hj-6KN" customClass="NFCTableViewCell" customModule="KozLib" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="moK-Hj-6KN" id="gIz-Kh-qs9">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4m-yY-LAG">
+                                            <rect key="frame" x="10" y="14.5" width="355" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="I4m-yY-LAG" firstAttribute="centerY" secondItem="gIz-Kh-qs9" secondAttribute="centerY" id="8th-Aj-9hj"/>
+                                        <constraint firstAttribute="trailing" secondItem="I4m-yY-LAG" secondAttribute="trailing" constant="10" id="Faz-l5-I5T"/>
+                                        <constraint firstItem="I4m-yY-LAG" firstAttribute="leading" secondItem="gIz-Kh-qs9" secondAttribute="leading" constant="10" id="gjW-Er-n7Z"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="titleLabel" destination="I4m-yY-LAG" id="6en-jW-SYV"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WbB-qK-ndz" id="yr7-kT-Pte"/>
+                            <outlet property="delegate" destination="WbB-qK-ndz" id="fI6-ay-OOE"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Qm0-qh-s4d"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S7k-iQ-NCR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-114" y="184"/>
+        </scene>
+        <!--Message Table View Controller-->
+        <scene sceneID="Cd3-T1-DV3">
+            <objects>
+                <tableViewController storyboardIdentifier="NFCMessageTableViewController" id="mYu-Jh-GiL" customClass="NFCMessageTableViewController" customModule="KozLib" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="xcw-xm-Ymm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NFCTableViewCell" id="t1q-F7-k3M" customClass="NFCTableViewCell" customModule="KozLib" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t1q-F7-k3M" id="4Cp-Uu-esH">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="99J-HR-RgS">
+                                            <rect key="frame" x="10" y="14.5" width="355" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="99J-HR-RgS" firstAttribute="leading" secondItem="4Cp-Uu-esH" secondAttribute="leading" constant="10" id="JWU-WT-18L"/>
+                                        <constraint firstItem="99J-HR-RgS" firstAttribute="centerY" secondItem="4Cp-Uu-esH" secondAttribute="centerY" id="PIP-Ds-mTw"/>
+                                        <constraint firstAttribute="trailing" secondItem="99J-HR-RgS" secondAttribute="trailing" constant="10" id="dsm-oC-ssg"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="titleLabel" destination="99J-HR-RgS" id="3u6-bn-sU3"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="mYu-Jh-GiL" id="xEi-bA-Yj3"/>
+                            <outlet property="delegate" destination="mYu-Jh-GiL" id="Ue5-ig-dwY"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="30j-7b-tzz"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lVd-cA-cVt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="518" y="183"/>
+        </scene>
+    </scenes>
+</document>
