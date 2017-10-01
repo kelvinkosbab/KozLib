@@ -15,4 +15,10 @@ class BaseTableViewController : UITableViewController, PresentableController {
   var presentedMode: PresentationMode = .modal
   var transitioningDelegateReference: UIViewControllerTransitioningDelegate? = nil
   var currentFlowFirstController: PresentableController? = nil
+  
+  // MARK: - UITableView
+  
+  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 50
+  }
 }

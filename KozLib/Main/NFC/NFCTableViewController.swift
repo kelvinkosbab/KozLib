@@ -27,6 +27,7 @@ class NFCTableViewController : BaseTableViewController {
     
     // Title
     self.navigationItem.title = "NFC Reader"
+    self.navigationItem.largeTitleDisplayMode = .never
     
     // Navigation elements
     self.configureDefaultBackButton()

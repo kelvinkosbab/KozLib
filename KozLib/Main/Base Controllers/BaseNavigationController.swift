@@ -16,6 +16,14 @@ class BaseNavigationController : UINavigationController, PresentableController {
   var transitioningDelegateReference: UIViewControllerTransitioningDelegate? = nil
   var currentFlowFirstController: PresentableController? = nil
   
+  // MARK: - Lifecycle
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    self.navigationBar.prefersLargeTitles = true
+  }
+  
   // MARK: - NavigationBarStyle
   
   enum NavigationBarStyle {

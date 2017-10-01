@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13526" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13524"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Kit Items View Controller-->
+        <scene sceneID="G6Y-Pi-aZJ">
+            <objects>
+                <tableViewController storyboardIdentifier="ARKitItemsViewController" id="biW-Ns-rVA" customClass="ARKitItemsViewController" customModule="KozLib" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="kDM-Jc-eqy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="biW-Ns-rVA" id="mAo-5a-32T"/>
+                            <outlet property="delegate" destination="biW-Ns-rVA" id="GwM-fP-uMh"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z6Q-f6-fh6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-529" y="152"/>
+        </scene>
         <!--Plane Mapping View Controller-->
         <scene sceneID="fPi-F8-GYA">
             <objects>
@@ -20,23 +38,23 @@
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="03B-bG-7ld">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </arscnView>
-                            <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tTh-BY-F9U">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gu9-no-JCu">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Uns-xy-mY2">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="x1a-Eb-D4K">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="tTh-BY-F9U" firstAttribute="bottom" secondItem="nFA-L1-m2H" secondAttribute="top" id="3Gs-D2-KIY"/>
-                            <constraint firstItem="tTh-BY-F9U" firstAttribute="leading" secondItem="nFA-L1-m2H" secondAttribute="leading" id="53e-CE-8ar"/>
-                            <constraint firstItem="tTh-BY-F9U" firstAttribute="top" secondItem="wv7-nD-dW1" secondAttribute="top" id="5Gt-2n-2zU"/>
+                            <constraint firstItem="gu9-no-JCu" firstAttribute="bottom" secondItem="nFA-L1-m2H" secondAttribute="top" id="0w9-bm-xZ7"/>
                             <constraint firstItem="03B-bG-7ld" firstAttribute="top" secondItem="wv7-nD-dW1" secondAttribute="top" id="JBh-UU-Tc2"/>
                             <constraint firstItem="nFA-L1-m2H" firstAttribute="trailing" secondItem="03B-bG-7ld" secondAttribute="trailing" id="QQf-ys-DL3"/>
-                            <constraint firstItem="nFA-L1-m2H" firstAttribute="trailing" secondItem="tTh-BY-F9U" secondAttribute="trailing" id="WmV-pY-zKh"/>
+                            <constraint firstItem="gu9-no-JCu" firstAttribute="top" secondItem="wv7-nD-dW1" secondAttribute="top" id="QXG-NY-Vzv"/>
+                            <constraint firstItem="nFA-L1-m2H" firstAttribute="trailing" secondItem="gu9-no-JCu" secondAttribute="trailing" id="fZQ-SC-Fm7"/>
+                            <constraint firstItem="gu9-no-JCu" firstAttribute="leading" secondItem="nFA-L1-m2H" secondAttribute="leading" id="oXq-l5-GXp"/>
                             <constraint firstItem="nFA-L1-m2H" firstAttribute="bottom" secondItem="03B-bG-7ld" secondAttribute="bottom" id="wij-rp-9vY"/>
                             <constraint firstItem="03B-bG-7ld" firstAttribute="leading" secondItem="nFA-L1-m2H" secondAttribute="leading" id="wny-w1-Wow"/>
                         </constraints>

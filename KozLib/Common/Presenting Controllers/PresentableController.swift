@@ -16,6 +16,7 @@ protocol PresentableController {
   var presentedMode: PresentationMode { get set }
   var transitioningDelegateReference: UIViewControllerTransitioningDelegate? { get set }
   var currentFlowFirstController: PresentableController? { get set }
+  func present(viewController: UIViewController, withMode mode: PresentationMode, inNavigationController: Bool, dismissInteractiveView: UIView?, completion: (() -> Void)?)
   func dismissController(completion: (() -> Void)?)
   func dismissCurrentNavigationFlow(completion: (() -> Void)?)
 }

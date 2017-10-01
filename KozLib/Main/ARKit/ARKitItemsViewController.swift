@@ -1,48 +1,49 @@
 //
-//  HomeViewController.swift
+//  ARKitItemsViewController.swift
 //  KozLib
 //
-//  Created by Kelvin Kosbab on 9/24/17.
+//  Created by Kelvin Kosbab on 10/1/17.
 //  Copyright © 2017 Kozinga. All rights reserved.
 //
 
 import UIKit
 
-class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFCNavigationDelegate {
+class ARKitItemsViewController : BaseTableViewController, ARKitNavigationDelegate {
   
-  // MARK: - Static Accessors
+  // MARK: - Class Accessors
   
-  static func newViewController() -> HomeViewController {
-    return self.newViewController(fromStoryboardWithName: "Main")
+  static func newViewController() -> ARKitItemsViewController {
+    return self.newViewController(fromStoryboardWithName: "ARKit")
   }
   
   // MARK: - Properties
   
-  enum HomeListItem {
-    case nfc, arKit, transparentNavigationBar, expandingNavigationBar, networkInfo
+  enum ARKitItem {
+    case visualizingPlaneDetection
     
     var title: String {
       switch self {
-      case .arKit:
-        return "ARKit Projects"
-      case .nfc:
-        return "NFC Reader"
-      case .transparentNavigationBar, .expandingNavigationBar:
-        return "TBD"
-      case .networkInfo:
-        return "Network Info"
+      case .visualizingPlaneDetection:
+        return "Visualizing Plane Detection"
+      }
+    }
+    
+    func getViewController() -> UIViewController {
+      switch self {
+      case .visualizingPlaneDetection:
+        return ARPlaneMappingViewController.newViewController()
       }
     }
   }
   
-  let items: [HomeListItem] = [ .arKit, .nfc, .transparentNavigationBar, .expandingNavigationBar ]
+  let items: [ARKitItem] = [ .visualizingPlaneDetection ]
   
   // MARK: - Lifecycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.navigationItem.title = "KozLib"
+    self.navigationItem.title = "ARKit Projects"
     self.navigationItem.largeTitleDisplayMode = .always
     
     self.configureDefaultBackButton()
@@ -50,7 +51,17 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
     self.tableView.register(BaseTableViewCell.nib, forCellReuseIdentifier: BaseTableViewCell.identifier)
   }
   
-  // MARK: - UITableView
+  // MARK: - Navigation
+  
+  func transitionToPlaneMapping() {
+    let viewController = ARPlaneMappingViewController.newViewController()
+    self.present(viewController: viewController, withMode: .rightToLeft, dismissInteractiveView: viewController.view)
+  }
+}
+
+// MARK: - UITableView
+
+extension ARKitItemsViewController {
   
   override func numberOfSections(in tableView: UITableView) -> Int {
     return 1
@@ -72,17 +83,8 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
     
     let item = self.items[indexPath.row]
     switch item {
-    case .arKit:
-      self.transitionToARKitItems(presentationMode: .navStack)
-      break
-    case .nfc:
-      self.transitionToNFC(presentationMode: .navStack)
-      break
-    case .transparentNavigationBar:
-      break
-    case .expandingNavigationBar:
-      break
-    case .networkInfo:
+    case .visualizingPlaneDetection:
+      self.transitionToPlaneVisualization()
       break
     }
   }

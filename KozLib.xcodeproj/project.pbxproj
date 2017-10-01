@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B61B8DD91F81429B00118C73 /* ARKitItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61B8DD81F81429B00118C73 /* ARKitItemsViewController.swift */; };
+		B61B8DDC1F816C8300118C73 /* Network.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B61B8DDB1F816C8300118C73 /* Network.storyboard */; };
+		B61B8DDE1F816C8F00118C73 /* NetworkInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61B8DDD1F816C8F00118C73 /* NetworkInfoTableViewController.swift */; };
+		B61B8DE01F81709D00118C73 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61B8DDF1F81709D00118C73 /* BaseTableViewCell.swift */; };
+		B61B8DE21F8170AC00118C73 /* BaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B61B8DE11F8170AC00118C73 /* BaseTableViewCell.xib */; };
+		B61B8DE41F8174EF00118C73 /* ARKitNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61B8DE31F8174EF00118C73 /* ARKitNavigationDelegate.swift */; };
+		B61B8DE61F81757C00118C73 /* NFCNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61B8DE51F81757C00118C73 /* NFCNavigationDelegate.swift */; };
 		B624C1CF1F78AC8F0027C95D /* ARPlaneMappingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B624C1CE1F78AC8F0027C95D /* ARPlaneMappingViewController.swift */; };
 		B624C1D11F78ACCD0027C95D /* ARKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B624C1D01F78ACCD0027C95D /* ARKit.storyboard */; };
 		B624C1D51F78B0650027C95D /* ARSCNView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B624C1D41F78B0650027C95D /* ARSCNView+Util.swift */; };
@@ -45,7 +52,6 @@
 		B655143A1F78924A00EEF26F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65514391F78924A00EEF26F /* BaseViewController.swift */; };
 		B655143D1F78928800EEF26F /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B655143C1F78928800EEF26F /* BaseTableViewController.swift */; };
 		B655143F1F7895AE00EEF26F /* UIView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B655143E1F7895AE00EEF26F /* UIView+Util.swift */; };
-		B65514421F78A0C800EEF26F /* HomeListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65514411F78A0C800EEF26F /* HomeListItem.swift */; };
 		B67756BA1F78BDB100B553F3 /* ARBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67756B91F78BDB100B553F3 /* ARBaseViewController.swift */; };
 		B67756BD1F78BFF900B553F3 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67756BC1F78BFF900B553F3 /* Plane.swift */; };
 		B68B2E571F76BCEC000B7A3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B2E561F76BCEC000B7A3F /* AppDelegate.swift */; };
@@ -58,6 +64,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B61B8DD81F81429B00118C73 /* ARKitItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKitItemsViewController.swift; sourceTree = "<group>"; };
+		B61B8DDB1F816C8300118C73 /* Network.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Network.storyboard; sourceTree = "<group>"; };
+		B61B8DDD1F816C8F00118C73 /* NetworkInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInfoTableViewController.swift; sourceTree = "<group>"; };
+		B61B8DDF1F81709D00118C73 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		B61B8DE11F8170AC00118C73 /* BaseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseTableViewCell.xib; sourceTree = "<group>"; };
+		B61B8DE31F8174EF00118C73 /* ARKitNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKitNavigationDelegate.swift; sourceTree = "<group>"; };
+		B61B8DE51F81757C00118C73 /* NFCNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCNavigationDelegate.swift; sourceTree = "<group>"; };
 		B624C1CE1F78AC8F0027C95D /* ARPlaneMappingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARPlaneMappingViewController.swift; sourceTree = "<group>"; };
 		B624C1D01F78ACCD0027C95D /* ARKit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ARKit.storyboard; sourceTree = "<group>"; };
 		B624C1D21F78AF080027C95D /* KozLib.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KozLib.entitlements; sourceTree = "<group>"; };
@@ -98,7 +111,6 @@
 		B65514391F78924A00EEF26F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B655143C1F78928800EEF26F /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		B655143E1F7895AE00EEF26F /* UIView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Util.swift"; sourceTree = "<group>"; };
-		B65514411F78A0C800EEF26F /* HomeListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListItem.swift; sourceTree = "<group>"; };
 		B67756B91F78BDB100B553F3 /* ARBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBaseViewController.swift; sourceTree = "<group>"; };
 		B67756BC1F78BFF900B553F3 /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
 		B68B2E531F76BCEC000B7A3F /* KozLib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KozLib.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,15 +135,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B624C1CD1F78AC0D0027C95D /* ARKit Plane Mapping */ = {
+		B61B8DDA1F81466700118C73 /* Network Info */ = {
+			isa = PBXGroup;
+			children = (
+				B61B8DDB1F816C8300118C73 /* Network.storyboard */,
+				B61B8DDD1F816C8F00118C73 /* NetworkInfoTableViewController.swift */,
+			);
+			path = "Network Info";
+			sourceTree = "<group>";
+		};
+		B61B8DE71F8178B900118C73 /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B61B8DDF1F81709D00118C73 /* BaseTableViewCell.swift */,
+				B61B8DE11F8170AC00118C73 /* BaseTableViewCell.xib */,
+			);
+			path = "Table View Cells";
+			sourceTree = "<group>";
+		};
+		B624C1CD1F78AC0D0027C95D /* ARKit */ = {
 			isa = PBXGroup;
 			children = (
 				B624C1D61F78B1320027C95D /* Models.scnassets */,
 				B624C1D01F78ACCD0027C95D /* ARKit.storyboard */,
+				B61B8DE31F8174EF00118C73 /* ARKitNavigationDelegate.swift */,
+				B61B8DD81F81429B00118C73 /* ARKitItemsViewController.swift */,
 				B67756B91F78BDB100B553F3 /* ARBaseViewController.swift */,
 				B624C1CE1F78AC8F0027C95D /* ARPlaneMappingViewController.swift */,
 			);
-			path = "ARKit Plane Mapping";
+			path = ARKit;
 			sourceTree = "<group>";
 		};
 		B6350E421F786FA3004E6218 /* NFC */ = {
@@ -147,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				B6350E561F787F5A004E6218 /* NFC.storyboard */,
+				B61B8DE51F81757C00118C73 /* NFCNavigationDelegate.swift */,
 				B6350E4C1F787A41004E6218 /* NFCTableViewController.swift */,
 				B6350E4E1F787A47004E6218 /* NFCTableViewController+Cells.swift */,
 				B6350E531F787E6A004E6218 /* Message Detail */,
@@ -223,12 +256,14 @@
 		B64414F61F78551800C9781B /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				B61B8DE71F8178B900118C73 /* Table View Cells */,
 				B655143B1F78927500EEF26F /* Base Controllers */,
 				B68B2E5A1F76BCEC000B7A3F /* Main.storyboard */,
 				B64415111F7859AE00C9781B /* RootViewController.swift */,
 				B65514401F78A0B200EEF26F /* Home */,
-				B624C1CD1F78AC0D0027C95D /* ARKit Plane Mapping */,
+				B624C1CD1F78AC0D0027C95D /* ARKit */,
 				B6350E4B1F787A33004E6218 /* NFC */,
+				B61B8DDA1F81466700118C73 /* Network Info */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -280,7 +315,6 @@
 			isa = PBXGroup;
 			children = (
 				B644150F1F78597400C9781B /* HomeViewController.swift */,
-				B65514411F78A0C800EEF26F /* HomeListItem.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -397,9 +431,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B61B8DE21F8170AC00118C73 /* BaseTableViewCell.xib in Resources */,
 				B6350E571F787F5A004E6218 /* NFC.storyboard in Resources */,
 				B624C1D11F78ACCD0027C95D /* ARKit.storyboard in Resources */,
 				B68B2E641F76BCEC000B7A3F /* LaunchScreen.storyboard in Resources */,
+				B61B8DDC1F816C8300118C73 /* Network.storyboard in Resources */,
 				B68B2E611F76BCEC000B7A3F /* Assets.xcassets in Resources */,
 				B68B2E5C1F76BCEC000B7A3F /* Main.storyboard in Resources */,
 			);
@@ -412,6 +448,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B61B8DDE1F816C8F00118C73 /* NetworkInfoTableViewController.swift in Sources */,
 				B644150C1F78588100C9781B /* UIViewController+Util.swift in Sources */,
 				B64415061F7857D800C9781B /* String+Util.swift in Sources */,
 				B65514341F78839800EEF26F /* RightToLeftPresentationManager.swift in Sources */,
@@ -424,6 +461,7 @@
 				B6350E4D1F787A41004E6218 /* NFCTableViewController.swift in Sources */,
 				B64415101F78597400C9781B /* HomeViewController.swift in Sources */,
 				B624C1D51F78B0650027C95D /* ARSCNView+Util.swift in Sources */,
+				B61B8DE01F81709D00118C73 /* BaseTableViewCell.swift in Sources */,
 				B64415121F7859AE00C9781B /* RootViewController.swift in Sources */,
 				B655142D1F7882AF00EEF26F /* DragLeftDismissInteractiveTransition.swift in Sources */,
 				B67756BA1F78BDB100B553F3 /* ARBaseViewController.swift in Sources */,
@@ -434,6 +472,7 @@
 				B6350E5F1F78815B004E6218 /* InteractiveTransition.swift in Sources */,
 				B68B2E6D1F76BE7E000B7A3F /* MyManagedObject.swift in Sources */,
 				B655143D1F78928800EEF26F /* BaseTableViewController.swift in Sources */,
+				B61B8DD91F81429B00118C73 /* ARKitItemsViewController.swift in Sources */,
 				B68B2E6F1F76BED7000B7A3F /* MyDataManager.swift in Sources */,
 				B6350E611F7881A1004E6218 /* PresentationManagerProtocol.swift in Sources */,
 				B65514361F7883A500EEF26F /* FadeWithBlurPresentationManager.swift in Sources */,
@@ -444,12 +483,13 @@
 				B655142B1F7882A800EEF26F /* DragUpDismissInteractiveTransition.swift in Sources */,
 				B64415001F7856EA00C9781B /* Date+Util.swift in Sources */,
 				B655143F1F7895AE00EEF26F /* UIView+Util.swift in Sources */,
+				B61B8DE61F81757C00118C73 /* NFCNavigationDelegate.swift in Sources */,
 				B6350E4F1F787A47004E6218 /* NFCTableViewController+Cells.swift in Sources */,
+				B61B8DE41F8174EF00118C73 /* ARKitNavigationDelegate.swift in Sources */,
 				B64414FC1F78569600C9781B /* Device.swift in Sources */,
 				B6350E461F786FBC004E6218 /* NFCMessage.swift in Sources */,
 				B6350E441F786FB4004E6218 /* NFCReader.swift in Sources */,
 				B68B2E571F76BCEC000B7A3F /* AppDelegate.swift in Sources */,
-				B65514421F78A0C800EEF26F /* HomeListItem.swift in Sources */,
 				B65514321F78838300EEF26F /* LeftMenuPresentationManager.swift in Sources */,
 				B64415141F785B0D00C9781B /* UIApplication+SSID.swift in Sources */,
 				B67756BD1F78BFF900B553F3 /* Plane.swift in Sources */,

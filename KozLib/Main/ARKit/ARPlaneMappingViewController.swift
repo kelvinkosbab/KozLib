@@ -27,6 +27,10 @@ class ARPlaneMappingViewController : ARBaseViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    self.navigationItem.title = "Plane Visualization"
+    self.navigationItem.largeTitleDisplayMode = .never
+    self.baseNavigationController?.navigationBarStyle = .transparent
+    
     self.configureDefaultBackButton()
     self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(self.stopButtonSelected))
   }
