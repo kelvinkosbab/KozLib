@@ -1,15 +1,16 @@
 //
-//  UIApplication+SSID.swift
+//  Network.swift
 //  KozLib
 //
-//  Created by Kelvin Kosbab on 9/24/17.
+//  Created by Kelvin Kosbab on 10/1/17.
 //  Copyright © 2017 Kozinga. All rights reserved.
 //
 
 import UIKit
+import CoreTelephony
 import SystemConfiguration.CaptiveNetwork
 
-extension UIApplication {
+struct Network {
   
   static var ssid: String? {
     
@@ -35,5 +36,15 @@ extension UIApplication {
     }
     
     return flatMap.first
+  }
+  
+  static var radioTechnology: String? {
+    let networkInfo = CTTelephonyNetworkInfo()
+    return networkInfo.currentRadioAccessTechnology
+  }
+  
+  static var cellularCarrier: CTCarrier? {
+    let networkInfo = CTTelephonyNetworkInfo()
+    return networkInfo.subscriberCellularProvider
   }
 }

@@ -16,7 +16,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lam-og-pdl">
-                    <rect key="frame" x="8" y="5" width="548" height="82"/>
+                    <rect key="frame" x="16" y="5" width="532" height="82"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -25,8 +25,8 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Lam-og-pdl" secondAttribute="bottom" constant="5" id="2VW-aK-g6R"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Lam-og-pdl" secondAttribute="trailing" constant="8" id="6F3-Ma-63N"/>
-                <constraint firstItem="Lam-og-pdl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="7Xe-Sj-FuM"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Lam-og-pdl" secondAttribute="trailing" constant="16" id="6F3-Ma-63N"/>
+                <constraint firstItem="Lam-og-pdl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="7Xe-Sj-FuM"/>
                 <constraint firstItem="Lam-og-pdl" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Xqx-gp-9cU"/>
                 <constraint firstItem="Lam-og-pdl" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="tYS-rl-Aer"/>
             </constraints>

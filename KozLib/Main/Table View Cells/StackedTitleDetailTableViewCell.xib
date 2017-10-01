@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13526" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13524"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="LO3-JD-MgM" customClass="StackedTitleDetailTableViewCell" customModule="KozLib" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="564" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhb-Cm-RMT">
+                    <rect key="frame" x="0.0" y="16.5" width="564" height="42.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIx-yQ-YkW">
+                            <rect key="frame" x="16" y="0.0" width="532" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ES6-cg-blD">
+                            <rect key="frame" x="16" y="25.5" width="532" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="sIx-yQ-YkW" firstAttribute="top" secondItem="lhb-Cm-RMT" secondAttribute="top" id="0ku-Qq-ENz"/>
+                        <constraint firstItem="ES6-cg-blD" firstAttribute="leading" secondItem="lhb-Cm-RMT" secondAttribute="leading" constant="16" id="1Oj-X6-h7d"/>
+                        <constraint firstItem="ES6-cg-blD" firstAttribute="top" secondItem="sIx-yQ-YkW" secondAttribute="bottom" constant="5" id="3dp-F2-MpL"/>
+                        <constraint firstAttribute="trailing" secondItem="ES6-cg-blD" secondAttribute="trailing" constant="16" id="SyN-JJ-yYC"/>
+                        <constraint firstItem="sIx-yQ-YkW" firstAttribute="leading" secondItem="lhb-Cm-RMT" secondAttribute="leading" constant="16" id="VRg-mE-yhN"/>
+                        <constraint firstAttribute="bottom" secondItem="ES6-cg-blD" secondAttribute="bottom" id="bay-MA-3yx"/>
+                        <constraint firstAttribute="trailing" secondItem="sIx-yQ-YkW" secondAttribute="trailing" constant="16" id="mho-jZ-4RB"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="lhb-Cm-RMT" firstAttribute="leading" secondItem="3vy-t1-Ufb" secondAttribute="leading" id="24L-VD-QuC"/>
+                <constraint firstItem="3vy-t1-Ufb" firstAttribute="trailing" secondItem="lhb-Cm-RMT" secondAttribute="trailing" id="Qbd-cJ-bq0"/>
+                <constraint firstItem="lhb-Cm-RMT" firstAttribute="centerY" secondItem="LO3-JD-MgM" secondAttribute="centerY" id="jZ8-RI-SqY"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="3vy-t1-Ufb"/>
+            <connections>
+                <outlet property="detailLabel" destination="ES6-cg-blD" id="fHZ-xF-qPE"/>
+                <outlet property="titleLabel" destination="sIx-yQ-YkW" id="Ug2-Kt-ITH"/>
+            </connections>
+            <point key="canvasLocation" x="-29" y="-302.5"/>
+        </view>
+    </objects>
+</document>

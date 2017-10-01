@@ -8,15 +8,7 @@
 
 import UIKit
 
-class BaseTableViewCell : UITableViewCell {
-  
-  // MARK: - Static Accessors
-  
-  static let identifier: String = "BaseTableViewCell"
-  
-  static var nib: UINib {
-    return UINib(nibName: self.identifier, bundle: nil)
-  }
+class BaseTableViewCell : UITableViewCell, Nibable {
   
   // MARK: - Properties
   

@@ -1,5 +1,5 @@
 //
-//  MyManagedObject.swift
+//  MyManagedObjectProtocol.swift
 //  KozLib
 //
 //  Created by Kelvin Kosbab on 9/23/17.

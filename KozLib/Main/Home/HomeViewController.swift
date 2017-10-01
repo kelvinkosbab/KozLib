@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFCNavigationDelegate {
+class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFCNavigationDelegate, NetworkInfoNavigationDelegate {
   
   // MARK: - Static Accessors
   
@@ -35,7 +35,7 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
     }
   }
   
-  let items: [HomeListItem] = [ .arKit, .nfc, .transparentNavigationBar, .expandingNavigationBar ]
+  let items: [HomeListItem] = [ .arKit, .nfc, .networkInfo ]
   
   // MARK: - Lifecycle
   
@@ -78,11 +78,10 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
     case .nfc:
       self.transitionToNFC(presentationMode: .navStack)
       break
-    case .transparentNavigationBar:
-      break
-    case .expandingNavigationBar:
-      break
     case .networkInfo:
+      self.transitionToNetworkInfo(presentationMode: .navStack)
+      break
+    case .expandingNavigationBar, .transparentNavigationBar:
       break
     }
   }
