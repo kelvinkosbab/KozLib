@@ -627,3 +627,9 @@ func createPlane(size: CGSize, contents: AnyObject?) -> SCNPlane {
   plane.materials = [SCNMaterial.material(withDiffuse: contents)]
   return plane
 }
+
+// MARK: - ARWorldTrackingConfiguration.PlaneDetection
+
+extension ARWorldTrackingConfiguration.PlaneDetection {
+  static let none = ARWorldTrackingConfiguration.PlaneDetection(rawValue: 0)
+}

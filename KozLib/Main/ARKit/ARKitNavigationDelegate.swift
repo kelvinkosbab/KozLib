@@ -16,8 +16,13 @@ extension ARKitNavigationDelegate where Self : PresentableController {
     self.present(viewController: viewController, withMode: presentationMode, inNavigationController: inNavigationController, dismissInteractiveView: dismissInteractiveView, completion: completion)
   }
   
-  func transitionToPlaneVisualization() {
+  func transitionToARPlaneVisualization() {
     let viewController = ARPlaneMappingViewController.newViewController()
+    self.present(viewController: viewController, withMode: .rightToLeft, inNavigationController: true, dismissInteractiveView: viewController.view, completion: nil)
+  }
+  
+  func transitionToARBlockPhysics() {
+    let viewController = ARBlockPhysicsViewController.newViewController()
     self.present(viewController: viewController, withMode: .rightToLeft, inNavigationController: true, dismissInteractiveView: viewController.view, completion: nil)
   }
 }

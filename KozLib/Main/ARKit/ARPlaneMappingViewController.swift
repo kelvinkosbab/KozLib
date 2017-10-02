@@ -12,12 +12,6 @@ import SceneKit
 
 class ARPlaneMappingViewController : ARBaseViewController {
   
-  // MARK: - Static Accessors
-  
-  static func newViewController() -> ARPlaneMappingViewController {
-    return self.newViewController(fromStoryboardWithName: "ARKit")
-  }
-  
   // MARK: - Properties
   
   var planes: [UUID : Plane] = [:]
@@ -54,7 +48,7 @@ extension ARPlaneMappingViewController {
     }
     
     // When a new plane is detected we create a new SceneKit plane to visualize it in 3D
-    let plane = Plane(anchor: anchor)
+    let plane = Plane(anchor: anchor, isHidden: false)
     self.planes[anchor.identifier] = plane
     node.addChildNode(plane)
   }

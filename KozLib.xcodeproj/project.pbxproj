@@ -59,6 +59,8 @@
 		B655143F1F7895AE00EEF26F /* UIView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B655143E1F7895AE00EEF26F /* UIView+Util.swift */; };
 		B67756BA1F78BDB100B553F3 /* ARBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67756B91F78BDB100B553F3 /* ARBaseViewController.swift */; };
 		B67756BD1F78BFF900B553F3 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67756BC1F78BFF900B553F3 /* Plane.swift */; };
+		B67949F11F81CE1900EEB926 /* ARBlockPhysicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67949F01F81CE1900EEB926 /* ARBlockPhysicsViewController.swift */; };
+		B67949F31F81D07800EEB926 /* NewViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67949F21F81D07800EEB926 /* NewViewControllerProtocol.swift */; };
 		B68B2E571F76BCEC000B7A3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B2E561F76BCEC000B7A3F /* AppDelegate.swift */; };
 		B68B2E5C1F76BCEC000B7A3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68B2E5A1F76BCEC000B7A3F /* Main.storyboard */; };
 		B68B2E5F1F76BCEC000B7A3F /* KozLib.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B68B2E5D1F76BCEC000B7A3F /* KozLib.xcdatamodeld */; };
@@ -123,6 +125,8 @@
 		B655143E1F7895AE00EEF26F /* UIView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Util.swift"; sourceTree = "<group>"; };
 		B67756B91F78BDB100B553F3 /* ARBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBaseViewController.swift; sourceTree = "<group>"; };
 		B67756BC1F78BFF900B553F3 /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
+		B67949F01F81CE1900EEB926 /* ARBlockPhysicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBlockPhysicsViewController.swift; sourceTree = "<group>"; };
+		B67949F21F81D07800EEB926 /* NewViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewControllerProtocol.swift; sourceTree = "<group>"; };
 		B68B2E531F76BCEC000B7A3F /* KozLib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KozLib.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B68B2E561F76BCEC000B7A3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B68B2E5B1F76BCEC000B7A3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 				B61B8DD81F81429B00118C73 /* ARKitItemsViewController.swift */,
 				B67756B91F78BDB100B553F3 /* ARBaseViewController.swift */,
 				B624C1CE1F78AC8F0027C95D /* ARPlaneMappingViewController.swift */,
+				B67949F01F81CE1900EEB926 /* ARBlockPhysicsViewController.swift */,
 			);
 			path = ARKit;
 			sourceTree = "<group>";
@@ -227,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				B6350E511F787D1C004E6218 /* ViewControllerFromStoryboardProtocol.swift */,
+				B67949F21F81D07800EEB926 /* NewViewControllerProtocol.swift */,
 				B61B8DEF1F81822E00118C73 /* Nibable.swift */,
 			);
 			path = Protocols;
@@ -493,6 +499,7 @@
 				B61B8DEA1F817D6500118C73 /* Network.swift in Sources */,
 				B64415061F7857D800C9781B /* String+Util.swift in Sources */,
 				B61B8DF01F81822E00118C73 /* Nibable.swift in Sources */,
+				B67949F11F81CE1900EEB926 /* ARBlockPhysicsViewController.swift in Sources */,
 				B65514341F78839800EEF26F /* RightToLeftPresentationManager.swift in Sources */,
 				B64414F81F78556200C9781B /* UIApplication+Util.swift in Sources */,
 				B644150A1F78585600C9781B /* UIColor+Util.swift in Sources */,
@@ -512,6 +519,7 @@
 				B6350E551F787E7E004E6218 /* NFCMessageTableViewController.swift in Sources */,
 				B68B2E5F1F76BCEC000B7A3F /* KozLib.xcdatamodeld in Sources */,
 				B65514381F7888B900EEF26F /* BaseNavigationController.swift in Sources */,
+				B67949F31F81D07800EEB926 /* NewViewControllerProtocol.swift in Sources */,
 				B6350E5F1F78815B004E6218 /* InteractiveTransition.swift in Sources */,
 				B68B2E6D1F76BE7E000B7A3F /* MyManagedObjectProtocol.swift in Sources */,
 				B655143D1F78928800EEF26F /* BaseTableViewController.swift in Sources */,

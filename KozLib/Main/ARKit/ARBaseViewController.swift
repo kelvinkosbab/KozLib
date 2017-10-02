@@ -10,7 +10,11 @@ import UIKit
 import ARKit
 import SceneKit
 
-class ARBaseViewController : BaseViewController {
+class ARBaseViewController : BaseViewController, NewViewControllerProtocol {
+  
+  // MARK: - NewViewControllerProtocol
+  
+  static let storyboardName: String = "ARKit"
   
   // MARK: - Properties
   
@@ -51,11 +55,8 @@ class ARBaseViewController : BaseViewController {
   override var preferredStatusBarStyle: UIStatusBarStyle {
     return .lightContent
   }
-}
-
-// MARK: - ARSCNView
-
-extension ARBaseViewController : ARSCNViewDelegate {
+  
+  // MARK: - Scene
   
   func setupScene() {
     self.sceneView.setUp(delegate: self, session: self.session)
@@ -63,6 +64,11 @@ extension ARBaseViewController : ARSCNViewDelegate {
       self.screenCenter = self.sceneView.bounds.mid
     }
   }
+}
+
+// MARK: - ARSCNView
+
+extension ARBaseViewController : ARSCNViewDelegate {
   
   func restartPlaneDetection() {
     

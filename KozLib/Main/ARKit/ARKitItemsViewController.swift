@@ -8,35 +8,28 @@
 
 import UIKit
 
-class ARKitItemsViewController : BaseTableViewController, ARKitNavigationDelegate {
+class ARKitItemsViewController : BaseTableViewController, NewViewControllerProtocol, ARKitNavigationDelegate {
   
-  // MARK: - Class Accessors
+  // MARK: - NewViewControllerProtocol
   
-  static func newViewController() -> ARKitItemsViewController {
-    return self.newViewController(fromStoryboardWithName: "ARKit")
-  }
+  static let storyboardName: String = "ARKit"
   
   // MARK: - Properties
   
   enum ARKitItem {
-    case visualizingPlaneDetection
+    case visualizingPlaneDetection, blockPhysics
     
     var title: String {
       switch self {
       case .visualizingPlaneDetection:
         return "Visualizing Plane Detection"
-      }
-    }
-    
-    func getViewController() -> UIViewController {
-      switch self {
-      case .visualizingPlaneDetection:
-        return ARPlaneMappingViewController.newViewController()
+      case .blockPhysics:
+        return "Block Physics"
       }
     }
   }
   
-  let items: [ARKitItem] = [ .visualizingPlaneDetection ]
+  let items: [ARKitItem] = [ .visualizingPlaneDetection, .blockPhysics ]
   
   // MARK: - Lifecycle
   
@@ -84,7 +77,10 @@ extension ARKitItemsViewController {
     let item = self.items[indexPath.row]
     switch item {
     case .visualizingPlaneDetection:
-      self.transitionToPlaneVisualization()
+      self.transitionToARPlaneVisualization()
+      break
+    case .blockPhysics:
+      self.transitionToARBlockPhysics()
       break
     }
   }
