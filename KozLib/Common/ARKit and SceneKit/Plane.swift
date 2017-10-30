@@ -14,27 +14,37 @@ class Plane : SCNNode {
   let anchor: ARPlaneAnchor
   let planeGeometry: SCNBox
   
-  init(anchor: ARPlaneAnchor, isHidden: Bool) {
+  var materialType: MaterialType {
+    didSet {
+      let material = PBRMaterial.fetch(self.materialType)
+      let transparentMaterial = SCNMaterial.transparent
+      let transform = self.planeGeometry.materials[4].diffuse.contentsTransform
+      material.diffuse.contentsTransform = transform
+      material.roughness.contentsTransform = transform
+      material.metalness.contentsTransform = transform
+      material.normal.contentsTransform = transform
+      self.planeGeometry.materials = [ transparentMaterial, transparentMaterial, transparentMaterial, transparentMaterial, material, transparentMaterial ]
+    }
+  }
+  
+  init(anchor: ARPlaneAnchor, isHidden: Bool, materialType: MaterialType = .tron) {
     
     // Using a SCNBox and not SCNPlane to make it easy for the geometry we add to the scene to interact with the plane.
     // For the physics engine to work properly give the plane some height so we get interactions between the plane and the gometry we add to the scene
     let planeHeight: CGFloat = 0.1
     self.anchor = anchor
     self.planeGeometry = SCNBox(width: CGFloat(anchor.extent.x), height: planeHeight, length: CGFloat(anchor.extent.z), chamferRadius: 0)
+    self.materialType = materialType
     super.init()
     
-    // Instead of just visualizing the grid as a gray plane, we will render it in some Tron style colours.
-    let material = SCNMaterial()
-    material.diffuse.contents = #imageLiteral(resourceName: "tron_grid")
-    
     // Since we are using a cube, we only want to render the tron grid on the top face, make the other sides transparent
-    let transparentMaterial = SCNMaterial()
-    transparentMaterial.diffuse.contents = UIColor(white: 1, alpha: 0)
+    let material = PBRMaterial.fetch(materialType)
+    let transparentMaterial = SCNMaterial.transparent
     
     if isHidden {
       self.planeGeometry.materials = [ transparentMaterial, transparentMaterial, transparentMaterial, transparentMaterial, transparentMaterial, transparentMaterial ]
     } else {
-      self.planeGeometry.materials = [transparentMaterial, transparentMaterial, transparentMaterial, transparentMaterial, material, transparentMaterial ]
+      self.planeGeometry.materials = [ transparentMaterial, transparentMaterial, transparentMaterial, transparentMaterial, material, transparentMaterial ]
     }
     
     // Since our plane has some height, move it down to be at the actual surface
@@ -65,6 +75,10 @@ class Plane : SCNNode {
     let node = self.childNodes.first
     node?.physicsBody = SCNPhysicsBody(type: .kinematic, shape: SCNPhysicsShape(geometry: self.planeGeometry, options: nil))
     self.setTextureScale()
+  }
+  
+  func changeMaterial() {
+    self.materialType = self.materialType.nextPlaneMaterial
   }
   
   func setTextureScale() {

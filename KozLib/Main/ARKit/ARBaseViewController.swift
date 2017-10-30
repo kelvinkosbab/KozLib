@@ -74,6 +74,7 @@ extension ARBaseViewController : ARSCNViewDelegate {
     
     // Configure session
     self.sessionConfig.planeDetection = .horizontal
+    self.sessionConfig.isLightEstimationEnabled = true
     self.session.run(self.sessionConfig, options: [.resetTracking, .removeExistingAnchors])
     
     // Reset timer

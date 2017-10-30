@@ -29,7 +29,7 @@ class InteractiveTransition : UIPercentDrivenInteractiveTransition {
     case negative, positive
   }
   
-  let presentingController: UIViewController
+  weak var presentingController: UIViewController?
   var interactiveView: UIView?
   var activeGestureRecognizer: UIGestureRecognizer?
   
@@ -78,7 +78,7 @@ class InteractiveTransition : UIPercentDrivenInteractiveTransition {
   // MARK: - Dismiss
   
   final func dismissController(completion: (() -> Void)? = nil) {
-    self.presentingController.dismiss(animated: true, completion: completion)
+    self.presentingController?.dismiss(animated: true, completion: completion)
   }
   
   // MARK: - Gestures

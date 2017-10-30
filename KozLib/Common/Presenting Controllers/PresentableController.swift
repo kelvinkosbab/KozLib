@@ -12,7 +12,7 @@ enum PresentationMode {
   case modal, modalOverCurrentContext, leftMenu, rightToLeft, fadeWithBlur, overCurrentContext, navStack
 }
 
-protocol PresentableController {
+protocol PresentableController : class {
   var presentedMode: PresentationMode { get set }
   var transitioningDelegateReference: UIViewControllerTransitioningDelegate? { get set }
   var currentFlowFirstController: PresentableController? { get set }

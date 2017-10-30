@@ -61,6 +61,11 @@
 		B67756BD1F78BFF900B553F3 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67756BC1F78BFF900B553F3 /* Plane.swift */; };
 		B67949F11F81CE1900EEB926 /* ARBlockPhysicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67949F01F81CE1900EEB926 /* ARBlockPhysicsViewController.swift */; };
 		B67949F31F81D07800EEB926 /* NewViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67949F21F81D07800EEB926 /* NewViewControllerProtocol.swift */; };
+		B67949F51F81FB5A00EEB926 /* CollisionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67949F41F81FB5A00EEB926 /* CollisionCategory.swift */; };
+		B67949F71F81FBC800EEB926 /* PBRMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67949F61F81FBC800EEB926 /* PBRMaterial.swift */; };
+		B67949F91F81FEF300EEB926 /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67949F81F81FEF300EEB926 /* Cube.swift */; };
+		B67949FB1F82010000EEB926 /* SCNMaterial+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67949FA1F82010000EEB926 /* SCNMaterial+Util.swift */; };
+		B67949FD1F82016000EEB926 /* MaterialType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67949FC1F82016000EEB926 /* MaterialType.swift */; };
 		B68B2E571F76BCEC000B7A3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B2E561F76BCEC000B7A3F /* AppDelegate.swift */; };
 		B68B2E5C1F76BCEC000B7A3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68B2E5A1F76BCEC000B7A3F /* Main.storyboard */; };
 		B68B2E5F1F76BCEC000B7A3F /* KozLib.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B68B2E5D1F76BCEC000B7A3F /* KozLib.xcdatamodeld */; };
@@ -127,6 +132,11 @@
 		B67756BC1F78BFF900B553F3 /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
 		B67949F01F81CE1900EEB926 /* ARBlockPhysicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBlockPhysicsViewController.swift; sourceTree = "<group>"; };
 		B67949F21F81D07800EEB926 /* NewViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewControllerProtocol.swift; sourceTree = "<group>"; };
+		B67949F41F81FB5A00EEB926 /* CollisionCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollisionCategory.swift; sourceTree = "<group>"; };
+		B67949F61F81FBC800EEB926 /* PBRMaterial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBRMaterial.swift; sourceTree = "<group>"; };
+		B67949F81F81FEF300EEB926 /* Cube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
+		B67949FA1F82010000EEB926 /* SCNMaterial+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNMaterial+Util.swift"; sourceTree = "<group>"; };
+		B67949FC1F82016000EEB926 /* MaterialType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialType.swift; sourceTree = "<group>"; };
 		B68B2E531F76BCEC000B7A3F /* KozLib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KozLib.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B68B2E561F76BCEC000B7A3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B68B2E5B1F76BCEC000B7A3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -367,6 +377,11 @@
 			isa = PBXGroup;
 			children = (
 				B67756BC1F78BFF900B553F3 /* Plane.swift */,
+				B67949F81F81FEF300EEB926 /* Cube.swift */,
+				B67949F41F81FB5A00EEB926 /* CollisionCategory.swift */,
+				B67949FC1F82016000EEB926 /* MaterialType.swift */,
+				B67949F61F81FBC800EEB926 /* PBRMaterial.swift */,
+				B67949FA1F82010000EEB926 /* SCNMaterial+Util.swift */,
 			);
 			path = "ARKit and SceneKit";
 			sourceTree = "<group>";
@@ -504,8 +519,10 @@
 				B64414F81F78556200C9781B /* UIApplication+Util.swift in Sources */,
 				B644150A1F78585600C9781B /* UIColor+Util.swift in Sources */,
 				B61B8DEC1F81806200118C73 /* StackedTitleDetailTableViewCell.swift in Sources */,
+				B67949FB1F82010000EEB926 /* SCNMaterial+Util.swift in Sources */,
 				B655143A1F78924A00EEF26F /* BaseViewController.swift in Sources */,
 				B6350E4A1F787767004E6218 /* DataMangerProtocol.swift in Sources */,
+				B67949F91F81FEF300EEB926 /* Cube.swift in Sources */,
 				B6350E521F787D1C004E6218 /* ViewControllerFromStoryboardProtocol.swift in Sources */,
 				B624C1D81F78B2260027C95D /* Utilities.swift in Sources */,
 				B6350E4D1F787A41004E6218 /* NFCTableViewController.swift in Sources */,
@@ -520,6 +537,7 @@
 				B68B2E5F1F76BCEC000B7A3F /* KozLib.xcdatamodeld in Sources */,
 				B65514381F7888B900EEF26F /* BaseNavigationController.swift in Sources */,
 				B67949F31F81D07800EEB926 /* NewViewControllerProtocol.swift in Sources */,
+				B67949F51F81FB5A00EEB926 /* CollisionCategory.swift in Sources */,
 				B6350E5F1F78815B004E6218 /* InteractiveTransition.swift in Sources */,
 				B68B2E6D1F76BE7E000B7A3F /* MyManagedObjectProtocol.swift in Sources */,
 				B655143D1F78928800EEF26F /* BaseTableViewController.swift in Sources */,
@@ -534,6 +552,7 @@
 				B65514291F78827C00EEF26F /* DragDownDismissInteractiveTransition.swift in Sources */,
 				B6350E5A1F7880C1004E6218 /* PresentableController.swift in Sources */,
 				B655142B1F7882A800EEF26F /* DragUpDismissInteractiveTransition.swift in Sources */,
+				B67949F71F81FBC800EEB926 /* PBRMaterial.swift in Sources */,
 				B64415001F7856EA00C9781B /* Date+Util.swift in Sources */,
 				B655143F1F7895AE00EEF26F /* UIView+Util.swift in Sources */,
 				B61B8DE61F81757C00118C73 /* NFCNavigationDelegate.swift in Sources */,
@@ -542,6 +561,7 @@
 				B64414FC1F78569600C9781B /* Device.swift in Sources */,
 				B6350E461F786FBC004E6218 /* NFCMessage.swift in Sources */,
 				B6350E441F786FB4004E6218 /* NFCReader.swift in Sources */,
+				B67949FD1F82016000EEB926 /* MaterialType.swift in Sources */,
 				B68B2E571F76BCEC000B7A3F /* AppDelegate.swift in Sources */,
 				B65514321F78838300EEF26F /* LeftMenuPresentationManager.swift in Sources */,
 				B67756BD1F78BFF900B553F3 /* Plane.swift in Sources */,

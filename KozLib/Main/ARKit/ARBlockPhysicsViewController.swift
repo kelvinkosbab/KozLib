@@ -14,7 +14,9 @@ class ARBlockPhysicsViewController : ARPlaneMappingViewController {
   
   // MARK: - Properties
   
-  var boxes: [SCNNode] = []
+  var cubes: [Cube] = []
+  var currentCubeMaterial: MaterialType = MaterialType.oakfloor2
+  var currentPlaneMaterial: MaterialType = MaterialType.tron
   
   // MARK: - Lifecycle
   
@@ -23,20 +25,23 @@ class ARBlockPhysicsViewController : ARPlaneMappingViewController {
     
     self.navigationItem.title = "Block Physics"
     
+    self.setupPhysics()
     self.setupGestureRecognizers()
   }
   
-  // MARK: - Collisions
+  // MARK: - Lights
   
-  enum CollisionCategory : Int {
-    case bottom = 1 // 1 << 0
-    case cube = 2 // 1 << 1
+  func setupLights() {
+    
+    // Turn off all the default lights SceneKit adds since we are handling it ourselves
+    self.sceneView.autoenablesDefaultLighting = false
+    self.sceneView.automaticallyUpdatesLighting = false
+    self.sceneView.scene.lightingEnvironment.contents = #imageLiteral(resourceName: "spherical.jpg")
   }
   
-  // MARK: - Scene
+  // MARK: - Physics
   
-  override func setupScene() {
-    super.setupScene()
+  func setupPhysics() {
     
     // For our physics interactions, we place a large node a couple of meters below the world origin, after an explosion, if the geometry we added has fallen onto this surface which is place way below all of the surfaces we would have detected via ARKit then we consider this geometry to have fallen out of the world and remove it
     let bottomPlane = SCNBox(width: 1000, height: 0.5, length: 1000, chamferRadius: 0)
@@ -88,7 +93,7 @@ class ARBlockPhysicsViewController : ARPlaneMappingViewController {
     }
     
     // If there are multiple hits, just pick the closest plane
-    self.insertGeometry(at: hitResult)
+    self.insertCube(at: hitResult)
   }
   
   @objc func handleHold(_ recognizer: UILongPressGestureRecognizer) {
@@ -138,7 +143,7 @@ class ARBlockPhysicsViewController : ARPlaneMappingViewController {
                               z: hitResult.worldTransform.columns.3.z)
     
     // We need to find all of the geometry affected by the explosion, ideally we would have some spatial data structure like an octree to efficiently find all geometry close to the explosion but since we don't have many items, we can just loop through all of the current geoemtry
-    for cubeNode in self.boxes {
+    for cubeNode in self.cubes {
       
       // The distance between the explosion and the geometry
       var distance = SCNVector3(x: cubeNode.worldPosition.x - position.x,
@@ -163,25 +168,33 @@ class ARBlockPhysicsViewController : ARPlaneMappingViewController {
     }
   }
   
-  func insertGeometry(at hitResult: ARHitTestResult) {
-    
-    // Right now we just insert a simple cube, later we will improve these to be more interesting and have better texture and shading
-    let dimension: CGFloat = 0.1
-    let cube = SCNBox(width: dimension, height: dimension, length: dimension, chamferRadius: 0)
-    let node = SCNNode(geometry: cube)
-    
-    // The physicsBody tells SceneKit this geometry should be manipulated by the physics engine
-    node.physicsBody = SCNPhysicsBody(type: .dynamic, shape: nil)
-    node.physicsBody?.mass = 2
-    node.physicsBody?.categoryBitMask = CollisionCategory.cube.rawValue
+  func insertCube(at hitResult: ARHitTestResult) {
     
     // We insert the geometry slightly above the point the user tapped, so that it drops onto the plane using the physics engine
     let insertionYOffset: Float = 0.5
-    node.position = SCNVector3(x: hitResult.worldTransform.columns.3.x,
-                               y: hitResult.worldTransform.columns.3.y + insertionYOffset,
-                               z: hitResult.worldTransform.columns.3.z)
-    self.sceneView.scene.rootNode.addChildNode(node)
-    self.boxes.append(node)
+    let position = SCNVector3(x: hitResult.worldTransform.columns.3.x,
+               y: hitResult.worldTransform.columns.3.y + insertionYOffset,
+               z: hitResult.worldTransform.columns.3.z)
+    
+    let cube = Cube(position: position, materialType: self.currentCubeMaterial)
+    self.cubes.append(cube)
+    self.sceneView.scene.rootNode.addChildNode(cube)
+  }
+  
+  override func sessionInterruptionEnded(_ session: ARSession) {
+    super.sessionInterruptionEnded(session)
+    
+    self.reset()
+  }
+  
+  func reset() {
+    for (_, plane) in self.planes {
+      plane.removeFromParentNode()
+    }
+    for cube in self.cubes {
+      cube.removeFromParentNode()
+    }
+    self.sceneView.session.run(self.sessionConfig, options: [ .resetTracking, .removeExistingAnchors ])
   }
 }
 
