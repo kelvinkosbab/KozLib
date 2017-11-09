@@ -24,6 +24,7 @@
 		B624C1D11F78ACCD0027C95D /* ARKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B624C1D01F78ACCD0027C95D /* ARKit.storyboard */; };
 		B624C1D51F78B0650027C95D /* ARSCNView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B624C1D41F78B0650027C95D /* ARSCNView+Util.swift */; };
 		B624C1D81F78B2260027C95D /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B624C1D71F78B2260027C95D /* Utilities.swift */; };
+		B62675941FB4302C004C003B /* BatchUpdatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62675931FB4302C004C003B /* BatchUpdatable.swift */; };
 		B6350E441F786FB4004E6218 /* NFCReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6350E431F786FB4004E6218 /* NFCReader.swift */; };
 		B6350E461F786FBC004E6218 /* NFCMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6350E451F786FBC004E6218 /* NFCMessage.swift */; };
 		B6350E4A1F787767004E6218 /* DataMangerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6350E491F787767004E6218 /* DataMangerProtocol.swift */; };
@@ -95,6 +96,7 @@
 		B624C1D41F78B0650027C95D /* ARSCNView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARSCNView+Util.swift"; sourceTree = "<group>"; };
 		B624C1D61F78B1320027C95D /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
 		B624C1D71F78B2260027C95D /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		B62675931FB4302C004C003B /* BatchUpdatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchUpdatable.swift; sourceTree = "<group>"; };
 		B6350E431F786FB4004E6218 /* NFCReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCReader.swift; sourceTree = "<group>"; };
 		B6350E451F786FBC004E6218 /* NFCMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCMessage.swift; sourceTree = "<group>"; };
 		B6350E491F787767004E6218 /* DataMangerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMangerProtocol.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 			children = (
 				B6350E511F787D1C004E6218 /* ViewControllerFromStoryboardProtocol.swift */,
 				B67949F21F81D07800EEB926 /* NewViewControllerProtocol.swift */,
+				B62675931FB4302C004C003B /* BatchUpdatable.swift */,
 				B61B8DEF1F81822E00118C73 /* Nibable.swift */,
 			);
 			path = Protocols;
@@ -543,6 +546,7 @@
 				B655143D1F78928800EEF26F /* BaseTableViewController.swift in Sources */,
 				B61B8DD91F81429B00118C73 /* ARKitItemsViewController.swift in Sources */,
 				B68B2E6F1F76BED7000B7A3F /* MyDataManager.swift in Sources */,
+				B62675941FB4302C004C003B /* BatchUpdatable.swift in Sources */,
 				B6350E611F7881A1004E6218 /* PresentationManagerProtocol.swift in Sources */,
 				B65514361F7883A500EEF26F /* FadeWithBlurPresentationManager.swift in Sources */,
 				B624C1CF1F78AC8F0027C95D /* ARPlaneMappingViewController.swift in Sources */,

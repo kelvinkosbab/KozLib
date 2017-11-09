@@ -12,10 +12,6 @@ extension String {
   
   // MARK: - Util
   
-  var length: Int {
-    return self.characters.count
-  }
-  
   var trim: String {
     return self.trimmingCharacters(in: .whitespacesAndNewlines)
   }
@@ -62,7 +58,7 @@ extension String {
   }
   
   func substring(from: Int) -> String {
-    return self[Range(min(from, self.length) ..< self.length)]
+    return self[Range(min(from, self.count) ..< self.count)]
   }
   
   func substring(to: Int) -> String {
@@ -70,7 +66,7 @@ extension String {
   }
   
   subscript (r: Range<Int>) -> String {
-    let range = Range(uncheckedBounds: (lower: max(0, min(self.length, r.lowerBound)), upper: min(self.length, max(0, r.upperBound))))
+    let range = Range(uncheckedBounds: (lower: max(0, min(self.count, r.lowerBound)), upper: min(self.count, max(0, r.upperBound))))
     let start = index(startIndex, offsetBy: range.lowerBound)
     let end = index(start, offsetBy: range.upperBound - range.lowerBound)
     return String(self[Range(start ..< end)])
@@ -93,14 +89,14 @@ extension String {
       return self
     }
     
-    switch firstComponent.length {
+    switch firstComponent.count {
     case 1:
       var adjustedComponents = components
       adjustedComponents[0] = cencoredCharacter
       return adjustedComponents.joined(separator: emailSeparator)
       
     case 2...5:
-      let censored = String(repeating: cencoredCharacter, count: firstComponent.length - 1)
+      let censored = String(repeating: cencoredCharacter, count: firstComponent.count - 1)
       let firstCharacter = firstComponent[0]
       let censoredEmail = "\(firstCharacter)\(censored)"
       var adjustedComponents = components
@@ -110,7 +106,7 @@ extension String {
     default:
       let censored = String(repeating: cencoredCharacter, count: 2)
       let emailStart = firstComponent.substring(to: 2)
-      let emailEnd = firstComponent.substring(from: firstComponent.length - 2)
+      let emailEnd = firstComponent.substring(from: firstComponent.count - 2)
       let censoredEmail = "\(emailStart)\(censored)\(emailEnd)"
       var adjustedComponents = components
       adjustedComponents[0] = censoredEmail

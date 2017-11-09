@@ -69,4 +69,3 @@ extension DataMangerProtocol {
     self.save(context: self.mainContext)
   }
 }
-

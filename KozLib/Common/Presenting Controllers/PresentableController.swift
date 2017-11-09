@@ -26,10 +26,10 @@ extension PresentableController where Self : UIViewController {
   func present(viewController: UIViewController, withMode mode: PresentationMode, inNavigationController: Bool = true, dismissInteractiveView: UIView? = nil, completion: (() -> Void)? = nil) {
     
     // Configure the view controller to present
-    var presentingPresentableController: PresentableController? = viewController as? PresentableController
+    let presentingPresentableController: PresentableController? = viewController as? PresentableController
     presentingPresentableController?.presentedMode = mode
     let viewControllerToPresent: UIViewController = mode != .navStack && inNavigationController ? BaseNavigationController(rootViewController: viewController) : viewController
-    var viewControllerToPresentPresentableController: PresentableController? = viewControllerToPresent as? PresentableController
+    let viewControllerToPresentPresentableController: PresentableController? = viewControllerToPresent as? PresentableController
     
     switch mode {
     case .modal:

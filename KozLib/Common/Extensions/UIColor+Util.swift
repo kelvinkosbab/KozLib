@@ -149,7 +149,7 @@ extension UIColor {
     }
     
     // Check if valid hex string
-    if (cString.characters.count == 6) {
+    if (cString.count == 6) {
       // Valid hex string
       var rgbValue: UInt32 = 0
       Scanner(string: cString).scanHexInt32(&rgbValue)
