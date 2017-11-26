@@ -139,7 +139,7 @@
 		B67949F81F81FEF300EEB926 /* Cube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
 		B67949FA1F82010000EEB926 /* SCNMaterial+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNMaterial+Util.swift"; sourceTree = "<group>"; };
 		B67949FC1F82016000EEB926 /* MaterialType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialType.swift; sourceTree = "<group>"; };
-		B68B2E531F76BCEC000B7A3F /* KozLib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KozLib.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B68B2E531F76BCEC000B7A3F /* KozLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KozLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B68B2E561F76BCEC000B7A3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B68B2E5B1F76BCEC000B7A3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B68B2E5E1F76BCEC000B7A3F /* KozLib.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KozLib.xcdatamodel; sourceTree = "<group>"; };
@@ -400,7 +400,7 @@
 		B68B2E541F76BCEC000B7A3F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B68B2E531F76BCEC000B7A3F /* KozLib.app */,
+				B68B2E531F76BCEC000B7A3F /* KozLibrary.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -433,9 +433,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B68B2E521F76BCEC000B7A3F /* KozLib */ = {
+		B68B2E521F76BCEC000B7A3F /* KozLibrary */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B68B2E681F76BCEC000B7A3F /* Build configuration list for PBXNativeTarget "KozLib" */;
+			buildConfigurationList = B68B2E681F76BCEC000B7A3F /* Build configuration list for PBXNativeTarget "KozLibrary" */;
 			buildPhases = (
 				B68B2E4F1F76BCEC000B7A3F /* Sources */,
 				B68B2E501F76BCEC000B7A3F /* Frameworks */,
@@ -445,9 +445,9 @@
 			);
 			dependencies = (
 			);
-			name = KozLib;
+			name = KozLibrary;
 			productName = KozLib;
-			productReference = B68B2E531F76BCEC000B7A3F /* KozLib.app */;
+			productReference = B68B2E531F76BCEC000B7A3F /* KozLibrary.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -471,7 +471,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B68B2E4E1F76BCEC000B7A3F /* Build configuration list for PBXProject "KozLib" */;
+			buildConfigurationList = B68B2E4E1F76BCEC000B7A3F /* Build configuration list for PBXProject "KozLibrary" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -484,7 +484,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B68B2E521F76BCEC000B7A3F /* KozLib */,
+				B68B2E521F76BCEC000B7A3F /* KozLibrary */,
 			);
 		};
 /* End PBXProject section */
@@ -738,7 +738,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B68B2E4E1F76BCEC000B7A3F /* Build configuration list for PBXProject "KozLib" */ = {
+		B68B2E4E1F76BCEC000B7A3F /* Build configuration list for PBXProject "KozLibrary" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B68B2E661F76BCEC000B7A3F /* Debug */,
@@ -747,7 +747,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B68B2E681F76BCEC000B7A3F /* Build configuration list for PBXNativeTarget "KozLib" */ = {
+		B68B2E681F76BCEC000B7A3F /* Build configuration list for PBXNativeTarget "KozLibrary" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B68B2E691F76BCEC000B7A3F /* Debug */,

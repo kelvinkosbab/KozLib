@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:KozLib.xcodeproj">
+      location = "self:/Users/kelvin/XCodeProjects/Kozinga/KozLib/KozLibrary.xcodeproj">
    </FileRef>
 </Workspace>

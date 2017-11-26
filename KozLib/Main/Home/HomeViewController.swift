@@ -42,7 +42,7 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.navigationItem.title = "KozLib"
+    self.navigationItem.title = "KozLibrary"
     self.navigationItem.largeTitleDisplayMode = .always
     
     self.configureDefaultBackButton()
@@ -74,15 +74,11 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
     switch item {
     case .arKit:
       self.transitionToARKitItems(presentationMode: .navStack)
-      break
     case .nfc:
       self.transitionToNFC(presentationMode: .navStack)
-      break
     case .networkInfo:
       self.transitionToNetworkInfo(presentationMode: .navStack)
-      break
-    case .expandingNavigationBar, .transparentNavigationBar:
-      break
+    case .expandingNavigationBar, .transparentNavigationBar: break
     }
   }
 }
