@@ -74,6 +74,7 @@
 		B68B2E641F76BCEC000B7A3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68B2E621F76BCEC000B7A3F /* LaunchScreen.storyboard */; };
 		B68B2E6D1F76BE7E000B7A3F /* MyManagedObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B2E6C1F76BE7E000B7A3F /* MyManagedObjectProtocol.swift */; };
 		B68B2E6F1F76BED7000B7A3F /* MyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B2E6E1F76BED7000B7A3F /* MyDataManager.swift */; };
+		B6F436671FD27CC1008C9C6B /* Locale+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F436661FD27CC1008C9C6B /* Locale+Util.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -148,6 +149,7 @@
 		B68B2E651F76BCEC000B7A3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B68B2E6C1F76BE7E000B7A3F /* MyManagedObjectProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyManagedObjectProtocol.swift; sourceTree = "<group>"; };
 		B68B2E6E1F76BED7000B7A3F /* MyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataManager.swift; sourceTree = "<group>"; };
+		B6F436661FD27CC1008C9C6B /* Locale+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale+Util.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,6 +294,7 @@
 				B64415091F78585600C9781B /* UIColor+Util.swift */,
 				B64415051F7857D800C9781B /* String+Util.swift */,
 				B64414FF1F7856EA00C9781B /* Date+Util.swift */,
+				B6F436661FD27CC1008C9C6B /* Locale+Util.swift */,
 				B624C1D41F78B0650027C95D /* ARSCNView+Util.swift */,
 				B624C1D71F78B2260027C95D /* Utilities.swift */,
 			);
@@ -549,6 +552,7 @@
 				B62675941FB4302C004C003B /* BatchUpdatable.swift in Sources */,
 				B6350E611F7881A1004E6218 /* PresentationManagerProtocol.swift in Sources */,
 				B65514361F7883A500EEF26F /* FadeWithBlurPresentationManager.swift in Sources */,
+				B6F436671FD27CC1008C9C6B /* Locale+Util.swift in Sources */,
 				B624C1CF1F78AC8F0027C95D /* ARPlaneMappingViewController.swift in Sources */,
 				B61B8DFA1F81868200118C73 /* Defaults+MyManagedObjectProtocol.swift in Sources */,
 				B64414FE1F7856A900C9781B /* UIDevice+Util.swift in Sources */,
