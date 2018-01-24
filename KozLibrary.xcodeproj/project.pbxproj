@@ -58,6 +58,7 @@
 		B655143A1F78924A00EEF26F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65514391F78924A00EEF26F /* BaseViewController.swift */; };
 		B655143D1F78928800EEF26F /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B655143C1F78928800EEF26F /* BaseTableViewController.swift */; };
 		B655143F1F7895AE00EEF26F /* UIView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B655143E1F7895AE00EEF26F /* UIView+Util.swift */; };
+		B66780F6201943370014781C /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66780F5201943370014781C /* NetworkExtension.framework */; };
 		B67756BA1F78BDB100B553F3 /* ARBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67756B91F78BDB100B553F3 /* ARBaseViewController.swift */; };
 		B67756BD1F78BFF900B553F3 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67756BC1F78BFF900B553F3 /* Plane.swift */; };
 		B67949F11F81CE1900EEB926 /* ARBlockPhysicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67949F01F81CE1900EEB926 /* ARBlockPhysicsViewController.swift */; };
@@ -131,6 +132,7 @@
 		B65514391F78924A00EEF26F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B655143C1F78928800EEF26F /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		B655143E1F7895AE00EEF26F /* UIView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Util.swift"; sourceTree = "<group>"; };
+		B66780F5201943370014781C /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		B67756B91F78BDB100B553F3 /* ARBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBaseViewController.swift; sourceTree = "<group>"; };
 		B67756BC1F78BFF900B553F3 /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
 		B67949F01F81CE1900EEB926 /* ARBlockPhysicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBlockPhysicsViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B66780F6201943370014781C /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,13 +193,6 @@
 				B61B8DE91F817D6500118C73 /* Network.swift */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		B61B8DF31F8185AA00118C73 /* First Launch Orientation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "First Launch Orientation";
 			sourceTree = "<group>";
 		};
 		B61B8DF81F81863300118C73 /* Managed Objects */ = {
@@ -318,11 +314,11 @@
 				B655143B1F78927500EEF26F /* Base Controllers */,
 				B68B2E5A1F76BCEC000B7A3F /* Main.storyboard */,
 				B64415111F7859AE00C9781B /* RootViewController.swift */,
-				B61B8DF31F8185AA00118C73 /* First Launch Orientation */,
 				B65514401F78A0B200EEF26F /* Home */,
 				B624C1CD1F78AC0D0027C95D /* ARKit */,
 				B6350E4B1F787A33004E6218 /* NFC */,
 				B61B8DDA1F81466700118C73 /* Network Info */,
+				B66780F7201947360014781C /* Network Extension */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -379,6 +375,21 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		B66780F4201943370014781C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B66780F5201943370014781C /* NetworkExtension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B66780F7201947360014781C /* Network Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Network Extension";
+			sourceTree = "<group>";
+		};
 		B67756BB1F78BFE300B553F3 /* ARKit and SceneKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -397,6 +408,7 @@
 			children = (
 				B68B2E551F76BCEC000B7A3F /* KozLib */,
 				B68B2E541F76BCEC000B7A3F /* Products */,
+				B66780F4201943370014781C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -468,6 +480,9 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.NearFieldCommunicationTagReading = {
+								enabled = 1;
+							};
+							com.apple.NetworkExtensions.iOS = {
 								enabled = 1;
 							};
 						};
