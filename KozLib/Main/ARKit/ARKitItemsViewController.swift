@@ -14,23 +14,6 @@ class ARKitItemsViewController : BaseTableViewController, NewViewControllerProto
   
   static let storyboardName: String = "ARKit"
   
-  // MARK: - Properties
-  
-  enum ARKitItem {
-    case visualizingPlaneDetection, blockPhysics
-    
-    var title: String {
-      switch self {
-      case .visualizingPlaneDetection:
-        return "Visualizing Plane Detection"
-      case .blockPhysics:
-        return "Block Physics"
-      }
-    }
-  }
-  
-  let items: [ARKitItem] = [ .visualizingPlaneDetection, .blockPhysics ]
-  
   // MARK: - Lifecycle
   
   override func viewDidLoad() {
@@ -44,11 +27,59 @@ class ARKitItemsViewController : BaseTableViewController, NewViewControllerProto
     self.tableView.register(BaseTableViewCell.nib, forCellReuseIdentifier: BaseTableViewCell.identifier)
   }
   
-  // MARK: - Navigation
+  // MARK: - SectionType
   
-  func transitionToPlaneMapping() {
-    let viewController = ARPlaneMappingViewController.newViewController()
-    self.present(viewController: viewController, withMode: .rightToLeft, dismissInteractiveView: viewController.view)
+  enum SectionType {
+    case list
+  }
+  
+  func getSectionType(section: Int) -> SectionType? {
+    switch section {
+    case 0:
+      return .list
+    default:
+      return nil
+    }
+  }
+  
+  // MARK: - RowType
+  
+  enum RowType {
+    case visualizingPlaneDetection, blockPhysics, planeMapping
+    
+    var title: String {
+      switch self {
+      case .visualizingPlaneDetection:
+        return "Visualizing Plane Detection"
+      case .blockPhysics:
+        return "Block Physics"
+      case .planeMapping:
+        return "Plane Mapping"
+      }
+    }
+  }
+  
+  func getRowType(at indexPath: IndexPath) -> RowType? {
+    
+    guard let sectionType = self.getSectionType(section: indexPath.section) else {
+      return nil
+    }
+    
+    switch sectionType {
+    case .list:
+      switch indexPath.row {
+      case 0:
+        return .visualizingPlaneDetection
+      case 1:
+        return .blockPhysics
+      case 2:
+        return .planeMapping
+      default:
+        return nil
+      }
+    default:
+      return nil
+    }
   }
 }
 
@@ -61,27 +92,44 @@ extension ARKitItemsViewController {
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return self.items.count
+    
+    guard let sectionType = self.getSectionType(section: section) else {
+      return 0
+    }
+    
+    switch sectionType {
+    case .list:
+      return 3
+    }
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    guard let rowType = self.getRowType(at: indexPath) else {
+      let cell = UITableViewCell()
+      cell.contentView.backgroundColor = tableView.backgroundColor
+      return cell
+    }
+    
     let cell = tableView.dequeueReusableCell(withIdentifier: BaseTableViewCell.identifier, for: indexPath) as! BaseTableViewCell
-    let item = self.items[indexPath.row]
-    cell.configure(title: item.title, accessoryType: .disclosureIndicator)
+    cell.configure(title: rowType.title, accessoryType: .disclosureIndicator)
     return cell
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
     
-    let item = self.items[indexPath.row]
-    switch item {
+    guard let rowType = self.getRowType(at: indexPath) else {
+      return
+    }
+    
+    switch rowType {
     case .visualizingPlaneDetection:
       self.transitionToARPlaneVisualization()
-      break
     case .blockPhysics:
       self.transitionToARBlockPhysics()
-      break
+    case .planeMapping:
+      self.transitionToPlaneMapping()
     }
   }
 }

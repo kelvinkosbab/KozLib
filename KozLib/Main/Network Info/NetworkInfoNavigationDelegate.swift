@@ -11,8 +11,8 @@ import UIKit
 protocol NetworkInfoNavigationDelegate {}
 extension NetworkInfoNavigationDelegate where Self : PresentableController {
   
-  func transitionToNetworkInfo(presentationMode: PresentationMode, inNavigationController: Bool = true, dismissInteractiveView: UIView? = nil, completion: (() -> Void)? = nil) {
+  func transitionToNetworkInfo(presentationMode: PresentationMode) {
     let viewController = NetworkInfoTableViewController.newViewController()
-    self.present(viewController: viewController, withMode: presentationMode, inNavigationController: inNavigationController, dismissInteractiveView: dismissInteractiveView, completion: completion)
+    self.present(viewController: viewController, withMode: presentationMode)
   }
 }

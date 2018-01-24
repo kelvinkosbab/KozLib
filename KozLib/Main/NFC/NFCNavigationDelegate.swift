@@ -11,8 +11,8 @@ import UIKit
 protocol NFCNavigationDelegate {}
 extension NFCNavigationDelegate where Self : PresentableController {
   
-  func transitionToNFC(presentationMode: PresentationMode, inNavigationController: Bool = true, dismissInteractiveView: UIView? = nil, completion: (() -> Void)? = nil) {
+  func transitionToNFC(presentationMode: PresentationMode) {
     let viewController = NFCTableViewController.newViewController()
-    self.present(viewController: viewController, withMode: presentationMode, inNavigationController: inNavigationController, dismissInteractiveView: dismissInteractiveView, completion: completion)
+    self.present(viewController: viewController, withMode: presentationMode)
   }
 }
