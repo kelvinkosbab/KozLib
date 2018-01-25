@@ -8,11 +8,16 @@
 
 import UIKit
 
-protocol NetworkInfoNavigationDelegate {}
-extension NetworkInfoNavigationDelegate where Self : PresentableController {
+protocol NetworkNavigationDelegate {}
+extension NetworkNavigationDelegate where Self : PresentableController {
   
   func transitionToNetworkInfo(presentationMode: PresentationMode) {
     let viewController = NetworkInfoTableViewController.newViewController()
+    self.present(viewController: viewController, withMode: presentationMode)
+  }
+  
+  func transitionToNetworkExtension(presentationMode: PresentationMode) {
+    let viewController = NetworkExtensionViewController.newViewController()
     self.present(viewController: viewController, withMode: presentationMode)
   }
 }

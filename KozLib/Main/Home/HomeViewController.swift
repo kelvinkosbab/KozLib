@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFCNavigationDelegate, NetworkInfoNavigationDelegate {
+class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFCNavigationDelegate, NetworkNavigationDelegate {
   
   // MARK: - Static Accessors
   
@@ -159,7 +159,7 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
     case .basicNetwork:
       self.transitionToNetworkInfo(presentationMode: .navStack)
     case .networkExtension:
-      break
+      self.transitionToNetworkExtension(presentationMode: .navStack)
     }
   }
 }
