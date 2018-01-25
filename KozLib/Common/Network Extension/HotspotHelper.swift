@@ -12,7 +12,10 @@ import NetworkExtension
 class HotspotHelper {
   
   /*
+   Apple Documentation: https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/Hotspot_Network_Subsystem_Guide/Contents/CommandHandlingDetails.html#//apple_ref/doc/uid/TP40016639-CH4-SW1
    Source Article: https://mobiarch.wordpress.com/2016/11/02/working-with-nehotspothelper/
+   Example Implementation: https://github.com/EyreFree/EFNEHotspotHelperDemo/blob/master/EFNEHotspotHelperDemo/ViewController.m
+   Issues: http://cennest.com/weblog/2016/09/apple-does-not-let-you-scan-for-wifi-networks/
    */
   
   /*
@@ -30,20 +33,55 @@ class HotspotHelper {
    NEHotspotHelperCommandType.authenticate – After the evaluation phase the closure is called again with an authenticate command. Your code can now perform custom authentication logic and respond with a success or failure status. If successful the connection is finally established.
    */
   
-  func test() {
+  // MARK: - Properties
+  
+  func scanForNetworks(completion: @escaping (_ command: NEHotspotHelperCommand, _ networks: [NEHotspotNetwork]) -> Void) {
+    Log.logMethodExecution()
     
-    let options: [String: NSObject] = [kNEHotspotHelperOptionDisplayName : "Join this WIFI" as NSObject]
-    let queue: DispatchQueue = DispatchQueue(label: "com.mobiarch", attributes: DispatchQueue.Attributes.concurrent)
-    
-    print("Started wifi scanning.")
-    
-    NEHotspotHelper.register(options: options, queue: queue) { (cmd: NEHotspotHelperCommand) in
-      print("Received command: \(cmd.commandType.rawValue)")
-      print("Network: \(cmd.network?.bssid ?? "nil")")
-      print("Network List: \(cmd.networkList?.count ?? 0)")
-      for network in cmd.networkList ?? [] {
-        print("   - \(network.bssid)")
+    let options: [String : NSObject] = [ kNEHotspotHelperOptionDisplayName : "Join this WIFI" as NSObject ]
+    let queue: DispatchQueue = DispatchQueue(label: "com.kozinga.HotspotHelper", attributes: .concurrent)
+    let registerResponse = NEHotspotHelper.register(options: options, queue: queue) { (command: NEHotspotHelperCommand) in
+      switch command.commandType {
+      case .filterScanList:
+        
+        // Get all available hotspots
+        let networkList: [NEHotspotNetwork] = command.networkList ?? []
+        
+        // Response
+        let response = command.createResponse(NEHotspotHelperResult.success)
+        response.setNetworkList(networkList)
+        response.deliver()
+        
+      case .evaluate:
+        
+        // Set high confidence for the network
+        if let network = command.network {
+          network.setConfidence(.high)
+          
+          let response = command.createResponse(.success)
+          response.setNetwork(network)
+          response.deliver()
+        }
+        
+      case .authenticate:
+        // Perform custom authentication and respond back with success
+        let response = command.createResponse(.success)
+        response.deliver()
+        
+      case .logoff, .maintain, .presentUI, .none: break
       }
+      
+      // Completion
+      DispatchQueue.main.async {
+        completion(command, command.networkList ?? [])
+      }
+    }
+    
+    // Check register response
+    if registerResponse {
+      Log.log("NEHotspotHelper:register succeeded")
+    } else {
+      Log.extendedLog("NEHotspotHelper:register failed", emoji: "❌❌❌")
     }
   }
 }

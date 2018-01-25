@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NetworkExtension
 
 class NetworkExtensionViewController : BaseTableViewController, NewViewControllerProtocol {
   
@@ -33,6 +34,8 @@ class NetworkExtensionViewController : BaseTableViewController, NewViewControlle
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
+    
+    self.hotspotHelper.scanForNetworks { (command, networks) in }
   }
   
   // MARK: - UITableView

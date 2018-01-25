@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B60AD104201A7919003A2E84 /* ConfigurationViewPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AD103201A7919003A2E84 /* ConfigurationViewPresentable.swift */; };
+		B60AD106201A79F2003A2E84 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AD105201A79F2003A2E84 /* Log.swift */; };
 		B61B8DD91F81429B00118C73 /* ARKitItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61B8DD81F81429B00118C73 /* ARKitItemsViewController.swift */; };
 		B61B8DDC1F816C8300118C73 /* Network.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B61B8DDB1F816C8300118C73 /* Network.storyboard */; };
 		B61B8DDE1F816C8F00118C73 /* NetworkInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61B8DDD1F816C8F00118C73 /* NetworkInfoTableViewController.swift */; };
@@ -83,6 +84,7 @@
 
 /* Begin PBXFileReference section */
 		B60AD103201A7919003A2E84 /* ConfigurationViewPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewPresentable.swift; sourceTree = "<group>"; };
+		B60AD105201A79F2003A2E84 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		B61B8DD81F81429B00118C73 /* ARKitItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKitItemsViewController.swift; sourceTree = "<group>"; };
 		B61B8DDB1F816C8300118C73 /* Network.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Network.storyboard; sourceTree = "<group>"; };
 		B61B8DDD1F816C8F00118C73 /* NetworkInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInfoTableViewController.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				B67949F21F81D07800EEB926 /* NewViewControllerProtocol.swift */,
 				B62675931FB4302C004C003B /* BatchUpdatable.swift */,
 				B61B8DEF1F81822E00118C73 /* Nibable.swift */,
+				B60AD105201A79F2003A2E84 /* Log.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -658,6 +661,7 @@
 				B67949F71F81FBC800EEB926 /* PBRMaterial.swift in Sources */,
 				B64415001F7856EA00C9781B /* Date+Util.swift in Sources */,
 				B655143F1F7895AE00EEF26F /* UIView+Util.swift in Sources */,
+				B60AD106201A79F2003A2E84 /* Log.swift in Sources */,
 				B61B8DE61F81757C00118C73 /* NFCNavigationDelegate.swift in Sources */,
 				B6350E4F1F787A47004E6218 /* NFCTableViewController+Cells.swift in Sources */,
 				B61B8DE41F8174EF00118C73 /* ARKitNavigationDelegate.swift in Sources */,
