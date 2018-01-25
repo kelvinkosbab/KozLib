@@ -18,16 +18,24 @@ extension ARKitNavigationDelegate where Self : PresentableController {
   
   func transitionToARPlaneVisualization() {
     let viewController = ARPlaneMappingViewController.newViewController()
-    self.present(viewController: viewController, withMode: .rightToLeft)
+    let interactiveElement = InteractiveElement(size: nil, offset: nil, view: viewController.view)
+    self.present(viewController: viewController, withMode: .rightToLeft, options: [ .dismissInteractiveElement(interactiveElement) ], completion: nil)
   }
   
   func transitionToARBlockPhysics() {
     let viewController = ARBlockPhysicsViewController.newViewController()
-    self.present(viewController: viewController, withMode: .rightToLeft)
+    let interactiveElement = InteractiveElement(size: nil, offset: nil, view: viewController.view)
+    self.present(viewController: viewController, withMode: .rightToLeft, options: [ .dismissInteractiveElement(interactiveElement) ], completion: nil)
   }
   
   func transitionToPlaneMapping() {
     let viewController = ARPlaneMappingViewController.newViewController()
+    let interactiveElement = InteractiveElement(size: nil, offset: nil, view: viewController.view)
+    self.present(viewController: viewController, withMode: .rightToLeft, options: [ .dismissInteractiveElement(interactiveElement) ], completion: nil)
+  }
+  
+  func transitionToARFaceTracking() {
+    let viewController = ARFaceTrackingViewController.newViewController()
     let interactiveElement = InteractiveElement(size: nil, offset: nil, view: viewController.view)
     self.present(viewController: viewController, withMode: .rightToLeft, options: [ .dismissInteractiveElement(interactiveElement) ], completion: nil)
   }

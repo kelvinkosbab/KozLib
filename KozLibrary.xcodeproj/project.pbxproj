@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B60AD104201A7919003A2E84 /* ConfigurationViewPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AD103201A7919003A2E84 /* ConfigurationViewPresentable.swift */; };
 		B60AD106201A79F2003A2E84 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AD105201A79F2003A2E84 /* Log.swift */; };
+		B60AD10A201A9010003A2E84 /* ARFaceTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AD109201A9010003A2E84 /* ARFaceTrackingViewController.swift */; };
+		B60AD10C201A9146003A2E84 /* ARState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AD10B201A9146003A2E84 /* ARState.swift */; };
 		B61B8DD91F81429B00118C73 /* ARKitItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61B8DD81F81429B00118C73 /* ARKitItemsViewController.swift */; };
 		B61B8DDC1F816C8300118C73 /* Network.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B61B8DDB1F816C8300118C73 /* Network.storyboard */; };
 		B61B8DDE1F816C8F00118C73 /* NetworkInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61B8DDD1F816C8F00118C73 /* NetworkInfoTableViewController.swift */; };
@@ -85,6 +87,8 @@
 /* Begin PBXFileReference section */
 		B60AD103201A7919003A2E84 /* ConfigurationViewPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewPresentable.swift; sourceTree = "<group>"; };
 		B60AD105201A79F2003A2E84 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		B60AD109201A9010003A2E84 /* ARFaceTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARFaceTrackingViewController.swift; sourceTree = "<group>"; };
+		B60AD10B201A9146003A2E84 /* ARState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARState.swift; sourceTree = "<group>"; };
 		B61B8DD81F81429B00118C73 /* ARKitItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKitItemsViewController.swift; sourceTree = "<group>"; };
 		B61B8DDB1F816C8300118C73 /* Network.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Network.storyboard; sourceTree = "<group>"; };
 		B61B8DDD1F816C8F00118C73 /* NetworkInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInfoTableViewController.swift; sourceTree = "<group>"; };
@@ -223,7 +227,7 @@
 				B6ACFE57201A428E002C2F59 /* Block Physics */,
 				B6ACFE56201A4284002C2F59 /* Plane Mapping */,
 				B6ACFE59201A42A6002C2F59 /* Vertical Surface Detection */,
-				B6ACFE5A201A42AD002C2F59 /* Face Detection */,
+				B6ACFE5A201A42AD002C2F59 /* Face Tracking */,
 			);
 			path = ARKit;
 			sourceTree = "<group>";
@@ -429,6 +433,7 @@
 				B67949FC1F82016000EEB926 /* MaterialType.swift */,
 				B67949F61F81FBC800EEB926 /* PBRMaterial.swift */,
 				B67949FA1F82010000EEB926 /* SCNMaterial+Util.swift */,
+				B60AD10B201A9146003A2E84 /* ARState.swift */,
 			);
 			path = "ARKit and SceneKit";
 			sourceTree = "<group>";
@@ -506,11 +511,12 @@
 			path = "Vertical Surface Detection";
 			sourceTree = "<group>";
 		};
-		B6ACFE5A201A42AD002C2F59 /* Face Detection */ = {
+		B6ACFE5A201A42AD002C2F59 /* Face Tracking */ = {
 			isa = PBXGroup;
 			children = (
+				B60AD109201A9010003A2E84 /* ARFaceTrackingViewController.swift */,
 			);
-			path = "Face Detection";
+			path = "Face Tracking";
 			sourceTree = "<group>";
 		};
 		B6C83B93201A51D40008CC55 /* Network Basic Info */ = {
@@ -613,6 +619,7 @@
 				B61B8DDE1F816C8F00118C73 /* NetworkInfoTableViewController.swift in Sources */,
 				B644150C1F78588100C9781B /* UIViewController+Util.swift in Sources */,
 				B61B8DEA1F817D6500118C73 /* Network.swift in Sources */,
+				B60AD10C201A9146003A2E84 /* ARState.swift in Sources */,
 				B66780FB201948E60014781C /* BottomUpPresentationManager.swift in Sources */,
 				B6480A09201A5B09000BE002 /* ConfiguringViewController.swift in Sources */,
 				B64415061F7857D800C9781B /* String+Util.swift in Sources */,
@@ -655,6 +662,7 @@
 				B6F436671FD27CC1008C9C6B /* Locale+Util.swift in Sources */,
 				B624C1CF1F78AC8F0027C95D /* ARPlaneMappingViewController.swift in Sources */,
 				B61B8DFA1F81868200118C73 /* Defaults+MyManagedObjectProtocol.swift in Sources */,
+				B60AD10A201A9010003A2E84 /* ARFaceTrackingViewController.swift in Sources */,
 				B64414FE1F7856A900C9781B /* UIDevice+Util.swift in Sources */,
 				B61B8DF21F81843800118C73 /* NetworkNavigationDelegate.swift in Sources */,
 				B6350E5A1F7880C1004E6218 /* PresentableController.swift in Sources */,

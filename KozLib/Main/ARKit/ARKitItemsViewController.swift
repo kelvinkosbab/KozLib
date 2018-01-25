@@ -139,7 +139,7 @@ extension ARKitItemsViewController {
     case .verticalSurfaceVisualization:
       break
     case .faceMappingVisulalization:
-      break
+      self.transitionToARFaceTracking()
     }
   }
 }
