@@ -8,34 +8,13 @@
 
 import UIKit
 
-class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFCNavigationDelegate, NetworkInfoNavigationDelegate {
+class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFCNavigationDelegate, NetworkNavigationDelegate {
   
   // MARK: - Static Accessors
   
   static func newViewController() -> HomeViewController {
     return self.newViewController(fromStoryboardWithName: "Main")
   }
-  
-  // MARK: - Properties
-  
-  enum HomeListItem {
-    case nfc, arKit, transparentNavigationBar, expandingNavigationBar, networkInfo
-    
-    var title: String {
-      switch self {
-      case .arKit:
-        return "ARKit Projects"
-      case .nfc:
-        return "NFC Reader"
-      case .transparentNavigationBar, .expandingNavigationBar:
-        return "TBD"
-      case .networkInfo:
-        return "Network Info"
-      }
-    }
-  }
-  
-  let items: [HomeListItem] = [ .arKit, .nfc, .networkInfo ]
   
   // MARK: - Lifecycle
   
@@ -50,35 +29,137 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
     self.tableView.register(BaseTableViewCell.nib, forCellReuseIdentifier: BaseTableViewCell.identifier)
   }
   
+  // MARK: - SectionType
+  
+  enum SectionType {
+    case misc, network
+    
+    var title: String? {
+      switch self {
+      case .misc:
+        return nil
+      case .network:
+        return "Network"
+      }
+    }
+  }
+  
+  func getSectionType(section: Int) -> SectionType? {
+    switch section {
+    case 0:
+      return .misc
+    case 1:
+      return .network
+    default:
+      return nil
+    }
+  }
+  
+  // MARK: - RowType
+  
+  enum RowType {
+    case arKit, nfc, basicNetwork, networkExtension
+    
+    var title: String {
+      switch self {
+      case .arKit:
+        return "ARKit Projects"
+      case .nfc:
+        return "NFC Reader"
+      case .basicNetwork:
+        return "Basic Network Info"
+      case .networkExtension:
+        return "Network Extension"
+      }
+    }
+  }
+  
+  func getRowType(at indexPath: IndexPath) -> RowType? {
+    
+    guard let sectionType = self.getSectionType(section: indexPath.section) else {
+      return nil
+    }
+    
+    switch sectionType {
+    case .misc:
+      switch indexPath.row {
+      case 0:
+        return .arKit
+      case 1:
+        return .nfc
+      default:
+        return nil
+      }
+    case .network:
+      switch indexPath.row {
+      case 0:
+        return .basicNetwork
+      case 1:
+        return .networkExtension
+      default:
+        return nil
+      }
+    }
+  }
+  
   // MARK: - UITableView
   
   override func numberOfSections(in tableView: UITableView) -> Int {
-    return 1
+    return 2
+  }
+  
+  override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    
+    guard let sectionType = self.getSectionType(section: section) else {
+      return nil
+    }
+    
+    return sectionType.title
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return self.items.count
+    
+    guard let sectionType = self.getSectionType(section: section) else {
+      return 0
+    }
+    
+    switch sectionType {
+    case .misc:
+      return 2
+    case .network:
+      return 2
+    }
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    guard let rowType = self.getRowType(at: indexPath) else {
+      let cell = UITableViewCell()
+      cell.contentView.backgroundColor = tableView.backgroundColor
+      return cell
+    }
+    
     let cell = tableView.dequeueReusableCell(withIdentifier: BaseTableViewCell.identifier, for: indexPath) as! BaseTableViewCell
-    let item = self.items[indexPath.row]
-    cell.configure(title: item.title, accessoryType: .disclosureIndicator)
+    cell.configure(title: rowType.title, accessoryType: .disclosureIndicator)
     return cell
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
     
-    let item = self.items[indexPath.row]
-    switch item {
+    guard let rowType = self.getRowType(at: indexPath) else {
+      return
+    }
+    
+    switch rowType {
     case .arKit:
       self.transitionToARKitItems(presentationMode: .navStack)
     case .nfc:
       self.transitionToNFC(presentationMode: .navStack)
-    case .networkInfo:
+    case .basicNetwork:
       self.transitionToNetworkInfo(presentationMode: .navStack)
-    case .expandingNavigationBar, .transparentNavigationBar: break
+    case .networkExtension:
+      self.transitionToNetworkExtension(presentationMode: .navStack)
     }
   }
 }

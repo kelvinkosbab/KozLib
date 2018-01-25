@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B60AD104201A7919003A2E84 /* ConfigurationViewPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AD103201A7919003A2E84 /* ConfigurationViewPresentable.swift */; };
+		B60AD106201A79F2003A2E84 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AD105201A79F2003A2E84 /* Log.swift */; };
 		B61B8DD91F81429B00118C73 /* ARKitItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61B8DD81F81429B00118C73 /* ARKitItemsViewController.swift */; };
 		B61B8DDC1F816C8300118C73 /* Network.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B61B8DDB1F816C8300118C73 /* Network.storyboard */; };
 		B61B8DDE1F816C8F00118C73 /* NetworkInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61B8DDD1F816C8F00118C73 /* NetworkInfoTableViewController.swift */; };
@@ -18,7 +20,7 @@
 		B61B8DEC1F81806200118C73 /* StackedTitleDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61B8DEB1F81806200118C73 /* StackedTitleDetailTableViewCell.swift */; };
 		B61B8DEE1F81813700118C73 /* StackedTitleDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B61B8DED1F81813700118C73 /* StackedTitleDetailTableViewCell.xib */; };
 		B61B8DF01F81822E00118C73 /* Nibable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61B8DEF1F81822E00118C73 /* Nibable.swift */; };
-		B61B8DF21F81843800118C73 /* NetworkInfoNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61B8DF11F81843800118C73 /* NetworkInfoNavigationDelegate.swift */; };
+		B61B8DF21F81843800118C73 /* NetworkNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61B8DF11F81843800118C73 /* NetworkNavigationDelegate.swift */; };
 		B61B8DFA1F81868200118C73 /* Defaults+MyManagedObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61B8DF91F81868200118C73 /* Defaults+MyManagedObjectProtocol.swift */; };
 		B624C1CF1F78AC8F0027C95D /* ARPlaneMappingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B624C1CE1F78AC8F0027C95D /* ARPlaneMappingViewController.swift */; };
 		B624C1D11F78ACCD0027C95D /* ARKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B624C1D01F78ACCD0027C95D /* ARKit.storyboard */; };
@@ -47,10 +49,9 @@
 		B644150C1F78588100C9781B /* UIViewController+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B644150B1F78588100C9781B /* UIViewController+Util.swift */; };
 		B64415101F78597400C9781B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B644150F1F78597400C9781B /* HomeViewController.swift */; };
 		B64415121F7859AE00C9781B /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64415111F7859AE00C9781B /* RootViewController.swift */; };
-		B65514291F78827C00EEF26F /* DragDownDismissInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65514281F78827C00EEF26F /* DragDownDismissInteractiveTransition.swift */; };
-		B655142B1F7882A800EEF26F /* DragUpDismissInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B655142A1F7882A800EEF26F /* DragUpDismissInteractiveTransition.swift */; };
-		B655142D1F7882AF00EEF26F /* DragLeftDismissInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B655142C1F7882AF00EEF26F /* DragLeftDismissInteractiveTransition.swift */; };
-		B655142F1F7882B600EEF26F /* DragRightDismissInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B655142E1F7882B600EEF26F /* DragRightDismissInteractiveTransition.swift */; };
+		B6480A06201A579C000BE002 /* HotspotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6480A05201A579C000BE002 /* HotspotHelper.swift */; };
+		B6480A09201A5B09000BE002 /* ConfiguringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6480A08201A5B09000BE002 /* ConfiguringViewController.swift */; };
+		B6480A0B201A5D07000BE002 /* ConfiguringView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6480A0A201A5D07000BE002 /* ConfiguringView.storyboard */; };
 		B65514321F78838300EEF26F /* LeftMenuPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65514311F78838300EEF26F /* LeftMenuPresentationManager.swift */; };
 		B65514341F78839800EEF26F /* RightToLeftPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65514331F78839800EEF26F /* RightToLeftPresentationManager.swift */; };
 		B65514361F7883A500EEF26F /* FadeWithBlurPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65514351F7883A500EEF26F /* FadeWithBlurPresentationManager.swift */; };
@@ -58,6 +59,9 @@
 		B655143A1F78924A00EEF26F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65514391F78924A00EEF26F /* BaseViewController.swift */; };
 		B655143D1F78928800EEF26F /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B655143C1F78928800EEF26F /* BaseTableViewController.swift */; };
 		B655143F1F7895AE00EEF26F /* UIView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B655143E1F7895AE00EEF26F /* UIView+Util.swift */; };
+		B66780F6201943370014781C /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66780F5201943370014781C /* NetworkExtension.framework */; };
+		B66780F9201948D20014781C /* TopDownPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66780F8201948D20014781C /* TopDownPresentationManager.swift */; };
+		B66780FB201948E60014781C /* BottomUpPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66780FA201948E60014781C /* BottomUpPresentationManager.swift */; };
 		B67756BA1F78BDB100B553F3 /* ARBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67756B91F78BDB100B553F3 /* ARBaseViewController.swift */; };
 		B67756BD1F78BFF900B553F3 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67756BC1F78BFF900B553F3 /* Plane.swift */; };
 		B67949F11F81CE1900EEB926 /* ARBlockPhysicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67949F01F81CE1900EEB926 /* ARBlockPhysicsViewController.swift */; };
@@ -74,10 +78,13 @@
 		B68B2E641F76BCEC000B7A3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68B2E621F76BCEC000B7A3F /* LaunchScreen.storyboard */; };
 		B68B2E6D1F76BE7E000B7A3F /* MyManagedObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B2E6C1F76BE7E000B7A3F /* MyManagedObjectProtocol.swift */; };
 		B68B2E6F1F76BED7000B7A3F /* MyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B2E6E1F76BED7000B7A3F /* MyDataManager.swift */; };
+		B6C83B90201A4CAC0008CC55 /* NetworkExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C83B8F201A4CAC0008CC55 /* NetworkExtensionViewController.swift */; };
 		B6F436671FD27CC1008C9C6B /* Locale+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F436661FD27CC1008C9C6B /* Locale+Util.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B60AD103201A7919003A2E84 /* ConfigurationViewPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewPresentable.swift; sourceTree = "<group>"; };
+		B60AD105201A79F2003A2E84 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		B61B8DD81F81429B00118C73 /* ARKitItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKitItemsViewController.swift; sourceTree = "<group>"; };
 		B61B8DDB1F816C8300118C73 /* Network.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Network.storyboard; sourceTree = "<group>"; };
 		B61B8DDD1F816C8F00118C73 /* NetworkInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInfoTableViewController.swift; sourceTree = "<group>"; };
@@ -89,7 +96,7 @@
 		B61B8DEB1F81806200118C73 /* StackedTitleDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackedTitleDetailTableViewCell.swift; sourceTree = "<group>"; };
 		B61B8DED1F81813700118C73 /* StackedTitleDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StackedTitleDetailTableViewCell.xib; sourceTree = "<group>"; };
 		B61B8DEF1F81822E00118C73 /* Nibable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nibable.swift; sourceTree = "<group>"; };
-		B61B8DF11F81843800118C73 /* NetworkInfoNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInfoNavigationDelegate.swift; sourceTree = "<group>"; };
+		B61B8DF11F81843800118C73 /* NetworkNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkNavigationDelegate.swift; sourceTree = "<group>"; };
 		B61B8DF91F81868200118C73 /* Defaults+MyManagedObjectProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Defaults+MyManagedObjectProtocol.swift"; sourceTree = "<group>"; };
 		B624C1CE1F78AC8F0027C95D /* ARPlaneMappingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARPlaneMappingViewController.swift; sourceTree = "<group>"; };
 		B624C1D01F78ACCD0027C95D /* ARKit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ARKit.storyboard; sourceTree = "<group>"; };
@@ -120,10 +127,9 @@
 		B644150B1F78588100C9781B /* UIViewController+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Util.swift"; sourceTree = "<group>"; };
 		B644150F1F78597400C9781B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B64415111F7859AE00C9781B /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		B65514281F78827C00EEF26F /* DragDownDismissInteractiveTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragDownDismissInteractiveTransition.swift; sourceTree = "<group>"; };
-		B655142A1F7882A800EEF26F /* DragUpDismissInteractiveTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragUpDismissInteractiveTransition.swift; sourceTree = "<group>"; };
-		B655142C1F7882AF00EEF26F /* DragLeftDismissInteractiveTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragLeftDismissInteractiveTransition.swift; sourceTree = "<group>"; };
-		B655142E1F7882B600EEF26F /* DragRightDismissInteractiveTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragRightDismissInteractiveTransition.swift; sourceTree = "<group>"; };
+		B6480A05201A579C000BE002 /* HotspotHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotspotHelper.swift; sourceTree = "<group>"; };
+		B6480A08201A5B09000BE002 /* ConfiguringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguringViewController.swift; sourceTree = "<group>"; };
+		B6480A0A201A5D07000BE002 /* ConfiguringView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConfiguringView.storyboard; sourceTree = "<group>"; };
 		B65514311F78838300EEF26F /* LeftMenuPresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuPresentationManager.swift; sourceTree = "<group>"; };
 		B65514331F78839800EEF26F /* RightToLeftPresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightToLeftPresentationManager.swift; sourceTree = "<group>"; };
 		B65514351F7883A500EEF26F /* FadeWithBlurPresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeWithBlurPresentationManager.swift; sourceTree = "<group>"; };
@@ -131,6 +137,9 @@
 		B65514391F78924A00EEF26F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B655143C1F78928800EEF26F /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		B655143E1F7895AE00EEF26F /* UIView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Util.swift"; sourceTree = "<group>"; };
+		B66780F5201943370014781C /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		B66780F8201948D20014781C /* TopDownPresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopDownPresentationManager.swift; sourceTree = "<group>"; };
+		B66780FA201948E60014781C /* BottomUpPresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomUpPresentationManager.swift; sourceTree = "<group>"; };
 		B67756B91F78BDB100B553F3 /* ARBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBaseViewController.swift; sourceTree = "<group>"; };
 		B67756BC1F78BFF900B553F3 /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
 		B67949F01F81CE1900EEB926 /* ARBlockPhysicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBlockPhysicsViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +158,7 @@
 		B68B2E651F76BCEC000B7A3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B68B2E6C1F76BE7E000B7A3F /* MyManagedObjectProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyManagedObjectProtocol.swift; sourceTree = "<group>"; };
 		B68B2E6E1F76BED7000B7A3F /* MyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataManager.swift; sourceTree = "<group>"; };
+		B6C83B8F201A4CAC0008CC55 /* NetworkExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkExtensionViewController.swift; sourceTree = "<group>"; };
 		B6F436661FD27CC1008C9C6B /* Locale+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale+Util.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,20 +167,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B66780F6201943370014781C /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B61B8DDA1F81466700118C73 /* Network Info */ = {
+		B61B8DDA1F81466700118C73 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				B61B8DDB1F816C8300118C73 /* Network.storyboard */,
-				B61B8DF11F81843800118C73 /* NetworkInfoNavigationDelegate.swift */,
-				B61B8DDD1F816C8F00118C73 /* NetworkInfoTableViewController.swift */,
+				B61B8DF11F81843800118C73 /* NetworkNavigationDelegate.swift */,
+				B6C83B93201A51D40008CC55 /* Network Basic Info */,
+				B66780F7201947360014781C /* Network Extension */,
 			);
-			path = "Network Info";
+			path = Network;
 			sourceTree = "<group>";
 		};
 		B61B8DE71F8178B900118C73 /* Table View Cells */ = {
@@ -192,13 +204,6 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		B61B8DF31F8185AA00118C73 /* First Launch Orientation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "First Launch Orientation";
-			sourceTree = "<group>";
-		};
 		B61B8DF81F81863300118C73 /* Managed Objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,9 +219,11 @@
 				B624C1D01F78ACCD0027C95D /* ARKit.storyboard */,
 				B61B8DE31F8174EF00118C73 /* ARKitNavigationDelegate.swift */,
 				B61B8DD81F81429B00118C73 /* ARKitItemsViewController.swift */,
-				B67756B91F78BDB100B553F3 /* ARBaseViewController.swift */,
-				B624C1CE1F78AC8F0027C95D /* ARPlaneMappingViewController.swift */,
-				B67949F01F81CE1900EEB926 /* ARBlockPhysicsViewController.swift */,
+				B6ACFE58201A4299002C2F59 /* Base Horizontal */,
+				B6ACFE57201A428E002C2F59 /* Block Physics */,
+				B6ACFE56201A4284002C2F59 /* Plane Mapping */,
+				B6ACFE59201A42A6002C2F59 /* Vertical Surface Detection */,
+				B6ACFE5A201A42AD002C2F59 /* Face Detection */,
 			);
 			path = ARKit;
 			sourceTree = "<group>";
@@ -249,6 +256,7 @@
 				B67949F21F81D07800EEB926 /* NewViewControllerProtocol.swift */,
 				B62675931FB4302C004C003B /* BatchUpdatable.swift */,
 				B61B8DEF1F81822E00118C73 /* Nibable.swift */,
+				B60AD105201A79F2003A2E84 /* Log.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -278,6 +286,8 @@
 				B65514311F78838300EEF26F /* LeftMenuPresentationManager.swift */,
 				B65514331F78839800EEF26F /* RightToLeftPresentationManager.swift */,
 				B65514351F7883A500EEF26F /* FadeWithBlurPresentationManager.swift */,
+				B66780F8201948D20014781C /* TopDownPresentationManager.swift */,
+				B66780FA201948E60014781C /* BottomUpPresentationManager.swift */,
 			);
 			path = "Custom Controller Presentations";
 			sourceTree = "<group>";
@@ -318,11 +328,11 @@
 				B655143B1F78927500EEF26F /* Base Controllers */,
 				B68B2E5A1F76BCEC000B7A3F /* Main.storyboard */,
 				B64415111F7859AE00C9781B /* RootViewController.swift */,
-				B61B8DF31F8185AA00118C73 /* First Launch Orientation */,
+				B6480A07201A5AF3000BE002 /* Configuring View */,
 				B65514401F78A0B200EEF26F /* Home */,
 				B624C1CD1F78AC0D0027C95D /* ARKit */,
 				B6350E4B1F787A33004E6218 /* NFC */,
-				B61B8DDA1F81466700118C73 /* Network Info */,
+				B61B8DDA1F81466700118C73 /* Network */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -336,6 +346,7 @@
 				B6350E421F786FA3004E6218 /* NFC */,
 				B67756BB1F78BFE300B553F3 /* ARKit and SceneKit */,
 				B61B8DE81F817D5300118C73 /* Network */,
+				B6480A04201A578C000BE002 /* Network Extension */,
 				B64414FA1F78568000C9781B /* Useful 3rd Party Libraries */,
 			);
 			path = Common;
@@ -349,14 +360,28 @@
 			path = "Useful 3rd Party Libraries";
 			sourceTree = "<group>";
 		};
+		B6480A04201A578C000BE002 /* Network Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B6480A05201A579C000BE002 /* HotspotHelper.swift */,
+			);
+			path = "Network Extension";
+			sourceTree = "<group>";
+		};
+		B6480A07201A5AF3000BE002 /* Configuring View */ = {
+			isa = PBXGroup;
+			children = (
+				B6480A0A201A5D07000BE002 /* ConfiguringView.storyboard */,
+				B60AD103201A7919003A2E84 /* ConfigurationViewPresentable.swift */,
+				B6480A08201A5B09000BE002 /* ConfiguringViewController.swift */,
+			);
+			path = "Configuring View";
+			sourceTree = "<group>";
+		};
 		B65514301F78835F00EEF26F /* Interactive Transitions */ = {
 			isa = PBXGroup;
 			children = (
 				B6350E5E1F78815B004E6218 /* InteractiveTransition.swift */,
-				B65514281F78827C00EEF26F /* DragDownDismissInteractiveTransition.swift */,
-				B655142A1F7882A800EEF26F /* DragUpDismissInteractiveTransition.swift */,
-				B655142C1F7882AF00EEF26F /* DragLeftDismissInteractiveTransition.swift */,
-				B655142E1F7882B600EEF26F /* DragRightDismissInteractiveTransition.swift */,
 			);
 			path = "Interactive Transitions";
 			sourceTree = "<group>";
@@ -379,6 +404,22 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		B66780F4201943370014781C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B66780F5201943370014781C /* NetworkExtension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B66780F7201947360014781C /* Network Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B6C83B8F201A4CAC0008CC55 /* NetworkExtensionViewController.swift */,
+			);
+			path = "Network Extension";
+			sourceTree = "<group>";
+		};
 		B67756BB1F78BFE300B553F3 /* ARKit and SceneKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -397,6 +438,7 @@
 			children = (
 				B68B2E551F76BCEC000B7A3F /* KozLib */,
 				B68B2E541F76BCEC000B7A3F /* Products */,
+				B66780F4201943370014781C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -433,6 +475,52 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		B6ACFE56201A4284002C2F59 /* Plane Mapping */ = {
+			isa = PBXGroup;
+			children = (
+				B624C1CE1F78AC8F0027C95D /* ARPlaneMappingViewController.swift */,
+			);
+			path = "Plane Mapping";
+			sourceTree = "<group>";
+		};
+		B6ACFE57201A428E002C2F59 /* Block Physics */ = {
+			isa = PBXGroup;
+			children = (
+				B67949F01F81CE1900EEB926 /* ARBlockPhysicsViewController.swift */,
+			);
+			path = "Block Physics";
+			sourceTree = "<group>";
+		};
+		B6ACFE58201A4299002C2F59 /* Base Horizontal */ = {
+			isa = PBXGroup;
+			children = (
+				B67756B91F78BDB100B553F3 /* ARBaseViewController.swift */,
+			);
+			path = "Base Horizontal";
+			sourceTree = "<group>";
+		};
+		B6ACFE59201A42A6002C2F59 /* Vertical Surface Detection */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Vertical Surface Detection";
+			sourceTree = "<group>";
+		};
+		B6ACFE5A201A42AD002C2F59 /* Face Detection */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Face Detection";
+			sourceTree = "<group>";
+		};
+		B6C83B93201A51D40008CC55 /* Network Basic Info */ = {
+			isa = PBXGroup;
+			children = (
+				B61B8DDD1F816C8F00118C73 /* NetworkInfoTableViewController.swift */,
+			);
+			path = "Network Basic Info";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -460,14 +548,20 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Kozinga;
 				TargetAttributes = {
 					B68B2E521F76BCEC000B7A3F = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.NearFieldCommunicationTagReading = {
+								enabled = 1;
+							};
+							com.apple.NetworkExtensions.iOS = {
 								enabled = 1;
 							};
 						};
@@ -499,6 +593,7 @@
 			files = (
 				B61B8DE21F8170AC00118C73 /* BaseTableViewCell.xib in Resources */,
 				B6350E571F787F5A004E6218 /* NFC.storyboard in Resources */,
+				B6480A0B201A5D07000BE002 /* ConfiguringView.storyboard in Resources */,
 				B624C1D11F78ACCD0027C95D /* ARKit.storyboard in Resources */,
 				B61B8DEE1F81813700118C73 /* StackedTitleDetailTableViewCell.xib in Resources */,
 				B68B2E641F76BCEC000B7A3F /* LaunchScreen.storyboard in Resources */,
@@ -518,6 +613,8 @@
 				B61B8DDE1F816C8F00118C73 /* NetworkInfoTableViewController.swift in Sources */,
 				B644150C1F78588100C9781B /* UIViewController+Util.swift in Sources */,
 				B61B8DEA1F817D6500118C73 /* Network.swift in Sources */,
+				B66780FB201948E60014781C /* BottomUpPresentationManager.swift in Sources */,
+				B6480A09201A5B09000BE002 /* ConfiguringViewController.swift in Sources */,
 				B64415061F7857D800C9781B /* String+Util.swift in Sources */,
 				B61B8DF01F81822E00118C73 /* Nibable.swift in Sources */,
 				B67949F11F81CE1900EEB926 /* ARBlockPhysicsViewController.swift in Sources */,
@@ -529,15 +626,17 @@
 				B655143A1F78924A00EEF26F /* BaseViewController.swift in Sources */,
 				B6350E4A1F787767004E6218 /* DataMangerProtocol.swift in Sources */,
 				B67949F91F81FEF300EEB926 /* Cube.swift in Sources */,
+				B6480A06201A579C000BE002 /* HotspotHelper.swift in Sources */,
 				B6350E521F787D1C004E6218 /* ViewControllerFromStoryboardProtocol.swift in Sources */,
 				B624C1D81F78B2260027C95D /* Utilities.swift in Sources */,
 				B6350E4D1F787A41004E6218 /* NFCTableViewController.swift in Sources */,
 				B64415101F78597400C9781B /* HomeViewController.swift in Sources */,
+				B60AD104201A7919003A2E84 /* ConfigurationViewPresentable.swift in Sources */,
 				B624C1D51F78B0650027C95D /* ARSCNView+Util.swift in Sources */,
 				B61B8DE01F81709D00118C73 /* BaseTableViewCell.swift in Sources */,
 				B64415121F7859AE00C9781B /* RootViewController.swift in Sources */,
-				B655142D1F7882AF00EEF26F /* DragLeftDismissInteractiveTransition.swift in Sources */,
 				B67756BA1F78BDB100B553F3 /* ARBaseViewController.swift in Sources */,
+				B6C83B90201A4CAC0008CC55 /* NetworkExtensionViewController.swift in Sources */,
 				B64415041F78573E00C9781B /* UICollectionView+Reordering.swift in Sources */,
 				B6350E551F787E7E004E6218 /* NFCMessageTableViewController.swift in Sources */,
 				B68B2E5F1F76BCEC000B7A3F /* KozLib.xcdatamodeld in Sources */,
@@ -546,6 +645,7 @@
 				B67949F51F81FB5A00EEB926 /* CollisionCategory.swift in Sources */,
 				B6350E5F1F78815B004E6218 /* InteractiveTransition.swift in Sources */,
 				B68B2E6D1F76BE7E000B7A3F /* MyManagedObjectProtocol.swift in Sources */,
+				B66780F9201948D20014781C /* TopDownPresentationManager.swift in Sources */,
 				B655143D1F78928800EEF26F /* BaseTableViewController.swift in Sources */,
 				B61B8DD91F81429B00118C73 /* ARKitItemsViewController.swift in Sources */,
 				B68B2E6F1F76BED7000B7A3F /* MyDataManager.swift in Sources */,
@@ -556,13 +656,12 @@
 				B624C1CF1F78AC8F0027C95D /* ARPlaneMappingViewController.swift in Sources */,
 				B61B8DFA1F81868200118C73 /* Defaults+MyManagedObjectProtocol.swift in Sources */,
 				B64414FE1F7856A900C9781B /* UIDevice+Util.swift in Sources */,
-				B61B8DF21F81843800118C73 /* NetworkInfoNavigationDelegate.swift in Sources */,
-				B65514291F78827C00EEF26F /* DragDownDismissInteractiveTransition.swift in Sources */,
+				B61B8DF21F81843800118C73 /* NetworkNavigationDelegate.swift in Sources */,
 				B6350E5A1F7880C1004E6218 /* PresentableController.swift in Sources */,
-				B655142B1F7882A800EEF26F /* DragUpDismissInteractiveTransition.swift in Sources */,
 				B67949F71F81FBC800EEB926 /* PBRMaterial.swift in Sources */,
 				B64415001F7856EA00C9781B /* Date+Util.swift in Sources */,
 				B655143F1F7895AE00EEF26F /* UIView+Util.swift in Sources */,
+				B60AD106201A79F2003A2E84 /* Log.swift in Sources */,
 				B61B8DE61F81757C00118C73 /* NFCNavigationDelegate.swift in Sources */,
 				B6350E4F1F787A47004E6218 /* NFCTableViewController+Cells.swift in Sources */,
 				B61B8DE41F8174EF00118C73 /* ARKitNavigationDelegate.swift in Sources */,
@@ -574,7 +673,6 @@
 				B65514321F78838300EEF26F /* LeftMenuPresentationManager.swift in Sources */,
 				B67756BD1F78BFF900B553F3 /* Plane.swift in Sources */,
 				B64415021F78572400C9781B /* UITabBarController+Util.swift in Sources */,
-				B655142F1F7882B600EEF26F /* DragRightDismissInteractiveTransition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,6 +712,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -621,6 +720,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -671,6 +771,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -678,6 +779,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -711,6 +813,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = KozLib/KozLib.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6SS93B87P2;
@@ -727,6 +830,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = KozLib/KozLib.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6SS93B87P2;

@@ -35,11 +35,11 @@ protocol BatchUpdatable : class {
 }
 
 protocol BatchUpdatableTableController : BatchUpdatable {
-  weak var tableView: UITableView! { get set }
+  var tableView: UITableView! { get set }
 }
 
 protocol BatchUpdatableCollectionController : BatchUpdatable {
-  weak var collectionView: UICollectionView! { get set }
+  var collectionView: UICollectionView! { get set }
 }
 
 extension BatchUpdatable {

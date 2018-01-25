@@ -22,7 +22,7 @@ struct Network {
       return nil
     }
     
-    let flatMap: [String] = interfaceNames.flatMap { name in
+    let flatMap: [String] = interfaceNames.compactMap { name in
       
       guard let info = CNCopyCurrentNetworkInfo(name as CFString) as? [AnyHashable : Any] else {
         return nil
