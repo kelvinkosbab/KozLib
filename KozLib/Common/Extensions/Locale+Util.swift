@@ -35,7 +35,7 @@ extension Locale {
   static var countries: [Country] {
     var countries: [Country] = []
     for code in NSLocale.isoCountryCodes {
-      let id = NSLocale.localeIdentifier(fromComponents: [String(NSLocale.Key.countryCode._rawValue) : code])
+      let id = NSLocale.localeIdentifier(fromComponents: [String(NSLocale.Key.countryCode.rawValue) : code])
       if let currentLanguage = self.preferredLanguages.first, let name = NSLocale(localeIdentifier: currentLanguage).displayName(forKey: .identifier, value: id) {
         let country = Country(code: code, name: name)
         countries.append(country)

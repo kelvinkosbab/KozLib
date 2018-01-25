@@ -206,9 +206,11 @@
 				B624C1D01F78ACCD0027C95D /* ARKit.storyboard */,
 				B61B8DE31F8174EF00118C73 /* ARKitNavigationDelegate.swift */,
 				B61B8DD81F81429B00118C73 /* ARKitItemsViewController.swift */,
-				B67756B91F78BDB100B553F3 /* ARBaseViewController.swift */,
-				B624C1CE1F78AC8F0027C95D /* ARPlaneMappingViewController.swift */,
-				B67949F01F81CE1900EEB926 /* ARBlockPhysicsViewController.swift */,
+				B6ACFE58201A4299002C2F59 /* Base Horizontal */,
+				B6ACFE57201A428E002C2F59 /* Block Physics */,
+				B6ACFE56201A4284002C2F59 /* Plane Mapping */,
+				B6ACFE59201A42A6002C2F59 /* Vertical Surface Detection */,
+				B6ACFE5A201A42AD002C2F59 /* Face Detection */,
 			);
 			path = ARKit;
 			sourceTree = "<group>";
@@ -439,6 +441,44 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		B6ACFE56201A4284002C2F59 /* Plane Mapping */ = {
+			isa = PBXGroup;
+			children = (
+				B624C1CE1F78AC8F0027C95D /* ARPlaneMappingViewController.swift */,
+			);
+			path = "Plane Mapping";
+			sourceTree = "<group>";
+		};
+		B6ACFE57201A428E002C2F59 /* Block Physics */ = {
+			isa = PBXGroup;
+			children = (
+				B67949F01F81CE1900EEB926 /* ARBlockPhysicsViewController.swift */,
+			);
+			path = "Block Physics";
+			sourceTree = "<group>";
+		};
+		B6ACFE58201A4299002C2F59 /* Base Horizontal */ = {
+			isa = PBXGroup;
+			children = (
+				B67756B91F78BDB100B553F3 /* ARBaseViewController.swift */,
+			);
+			path = "Base Horizontal";
+			sourceTree = "<group>";
+		};
+		B6ACFE59201A42A6002C2F59 /* Vertical Surface Detection */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Vertical Surface Detection";
+			sourceTree = "<group>";
+		};
+		B6ACFE5A201A42AD002C2F59 /* Face Detection */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Face Detection";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -466,13 +506,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Kozinga;
 				TargetAttributes = {
 					B68B2E521F76BCEC000B7A3F = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.NearFieldCommunicationTagReading = {
 								enabled = 1;
 							};
@@ -621,6 +664,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -628,6 +672,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -678,6 +723,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -685,6 +731,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -709,6 +756,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -718,6 +766,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = KozLib/KozLib.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6SS93B87P2;
@@ -734,6 +783,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = KozLib/KozLib.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6SS93B87P2;

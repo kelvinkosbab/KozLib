@@ -45,16 +45,20 @@ class ARKitItemsViewController : BaseTableViewController, NewViewControllerProto
   // MARK: - RowType
   
   enum RowType {
-    case visualizingPlaneDetection, blockPhysics, planeMapping
+    case horizontalSurfaceVisualization, blockPhysics, planeMapping, verticalSurfaceVisualization, faceMappingVisulalization
     
     var title: String {
       switch self {
-      case .visualizingPlaneDetection:
+      case .horizontalSurfaceVisualization:
         return "Visualizing Plane Detection"
       case .blockPhysics:
         return "Block Physics"
       case .planeMapping:
         return "Plane Mapping"
+      case .verticalSurfaceVisualization:
+        return "Vertical Surface Visualization"
+      case .faceMappingVisulalization:
+        return "Face Mapping Visualization"
       }
     }
   }
@@ -69,16 +73,18 @@ class ARKitItemsViewController : BaseTableViewController, NewViewControllerProto
     case .list:
       switch indexPath.row {
       case 0:
-        return .visualizingPlaneDetection
+        return .horizontalSurfaceVisualization
       case 1:
         return .blockPhysics
       case 2:
         return .planeMapping
+      case 3:
+        return .verticalSurfaceVisualization
+      case 4:
+        return .faceMappingVisulalization
       default:
         return nil
       }
-    default:
-      return nil
     }
   }
 }
@@ -99,7 +105,7 @@ extension ARKitItemsViewController {
     
     switch sectionType {
     case .list:
-      return 3
+      return 5
     }
   }
   
@@ -124,12 +130,16 @@ extension ARKitItemsViewController {
     }
     
     switch rowType {
-    case .visualizingPlaneDetection:
+    case .horizontalSurfaceVisualization:
       self.transitionToARPlaneVisualization()
     case .blockPhysics:
       self.transitionToARBlockPhysics()
     case .planeMapping:
       self.transitionToPlaneMapping()
+    case .verticalSurfaceVisualization:
+      break
+    case .faceMappingVisulalization:
+      break
     }
   }
 }

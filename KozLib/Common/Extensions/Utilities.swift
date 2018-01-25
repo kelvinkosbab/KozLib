@@ -80,7 +80,7 @@ extension Array where Iterator.Element == SCNVector3 {
   }
 }
 
-extension RangeReplaceableCollection where IndexDistance == Int {
+extension RangeReplaceableCollection {
   mutating func keepLast(_ elementsToKeep: Int) {
     if count > elementsToKeep {
       self.removeFirst(count - elementsToKeep)
@@ -114,9 +114,7 @@ extension SCNNode {
 extension SCNVector3 {
   
   init(_ vec: vector_float3) {
-    self.x = vec.x
-    self.y = vec.y
-    self.z = vec.z
+    self = SCNVector3(x: vec.x, y: vec.y, z: vec.z)
   }
   
   func length() -> Float {
@@ -232,13 +230,11 @@ extension SCNMaterial {
 extension CGPoint {
   
   init(_ size: CGSize) {
-    self.x = size.width
-    self.y = size.height
+    self = CGPoint(x: size.width, y: size.height)
   }
   
   init(_ vector: SCNVector3) {
-    self.x = CGFloat(vector.x)
-    self.y = CGFloat(vector.y)
+    self = CGPoint(x: CGFloat(vector.x), y: CGFloat(vector.y))
   }
   
   func distanceTo(_ point: CGPoint) -> CGFloat {
@@ -295,8 +291,7 @@ func *= (left: inout CGPoint, right: CGFloat) {
 extension CGSize {
   
   init(_ point: CGPoint) {
-    self.width = point.x
-    self.height = point.y
+    self = CGSize(width: point.x, height: point.y)
   }
   
   func friendlyString() -> String {
