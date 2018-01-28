@@ -89,7 +89,6 @@
 		B67756BA1F78BDB100B553F3 /* ARBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67756B91F78BDB100B553F3 /* ARBaseViewController.swift */; };
 		B67756BD1F78BFF900B553F3 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67756BC1F78BFF900B553F3 /* Plane.swift */; };
 		B67949F11F81CE1900EEB926 /* ARBlockPhysicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67949F01F81CE1900EEB926 /* ARBlockPhysicsViewController.swift */; };
-		B67949F31F81D07800EEB926 /* NewViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67949F21F81D07800EEB926 /* NewViewControllerProtocol.swift */; };
 		B67949F51F81FB5A00EEB926 /* CollisionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67949F41F81FB5A00EEB926 /* CollisionCategory.swift */; };
 		B67949F71F81FBC800EEB926 /* PBRMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67949F61F81FBC800EEB926 /* PBRMaterial.swift */; };
 		B67949F91F81FEF300EEB926 /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67949F81F81FEF300EEB926 /* Cube.swift */; };
@@ -191,7 +190,6 @@
 		B67756B91F78BDB100B553F3 /* ARBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBaseViewController.swift; sourceTree = "<group>"; };
 		B67756BC1F78BFF900B553F3 /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
 		B67949F01F81CE1900EEB926 /* ARBlockPhysicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBlockPhysicsViewController.swift; sourceTree = "<group>"; };
-		B67949F21F81D07800EEB926 /* NewViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewControllerProtocol.swift; sourceTree = "<group>"; };
 		B67949F41F81FB5A00EEB926 /* CollisionCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollisionCategory.swift; sourceTree = "<group>"; };
 		B67949F61F81FBC800EEB926 /* PBRMaterial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBRMaterial.swift; sourceTree = "<group>"; };
 		B67949F81F81FEF300EEB926 /* Cube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
@@ -359,7 +357,6 @@
 			isa = PBXGroup;
 			children = (
 				B6350E511F787D1C004E6218 /* ViewControllerFromStoryboardProtocol.swift */,
-				B67949F21F81D07800EEB926 /* NewViewControllerProtocol.swift */,
 				B62675931FB4302C004C003B /* BatchUpdatable.swift */,
 				B61B8DEF1F81822E00118C73 /* Nibable.swift */,
 				B60AD105201A79F2003A2E84 /* Log.swift */,
@@ -461,11 +458,11 @@
 				B655143B1F78927500EEF26F /* Base Controllers */,
 				B68B2E5A1F76BCEC000B7A3F /* Main.storyboard */,
 				B64415111F7859AE00C9781B /* RootViewController.swift */,
-				B629C229201E772A0083D708 /* Permissions */,
 				B6480A07201A5AF3000BE002 /* Configuring View */,
 				B65514401F78A0B200EEF26F /* Home */,
-				B624C1CD1F78AC0D0027C95D /* ARKit */,
+				B629C229201E772A0083D708 /* Permissions */,
 				B6350E4B1F787A33004E6218 /* NFC */,
+				B624C1CD1F78AC0D0027C95D /* ARKit */,
 				B61B8DDA1F81466700118C73 /* Network */,
 			);
 			path = Main;
@@ -802,7 +799,6 @@
 				B68B2E5F1F76BCEC000B7A3F /* KozLib.xcdatamodeld in Sources */,
 				B63A82B9201E646400E6C8C6 /* ARFaceTrackingStatusViewController.swift in Sources */,
 				B65514381F7888B900EEF26F /* BaseNavigationController.swift in Sources */,
-				B67949F31F81D07800EEB926 /* NewViewControllerProtocol.swift in Sources */,
 				B63A82CA201E65CC00E6C8C6 /* VirtualContentUpdater.swift in Sources */,
 				B67949F51F81FB5A00EEB926 /* CollisionCategory.swift in Sources */,
 				B6350E5F1F78815B004E6218 /* InteractiveTransition.swift in Sources */,

@@ -58,16 +58,16 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
   // MARK: - RowType
   
   enum RowType {
-    case permissions, arKit, nfc, basicNetwork, networkExtension
+    case permissions, nfc, arKit, basicNetwork, networkExtension
     
     var title: String {
       switch self {
       case .permissions:
         return "Permissions"
-      case .arKit:
-        return "ARKit Projects"
       case .nfc:
         return "NFC Reader"
+      case .arKit:
+        return "ARKit Projects"
       case .basicNetwork:
         return "Basic Network Info"
       case .networkExtension:
@@ -88,9 +88,9 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
       case 0:
         return .permissions
       case 1:
-        return .arKit
-      case 2:
         return .nfc
+      case 2:
+        return .arKit
       default:
         return nil
       }

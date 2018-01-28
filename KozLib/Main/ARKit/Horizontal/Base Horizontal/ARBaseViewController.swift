@@ -10,11 +10,13 @@ import UIKit
 import ARKit
 import SceneKit
 
-class ARBaseViewController : BaseViewController, NewViewControllerProtocol {
+class ARBaseViewController : BaseViewController {
   
-  // MARK: - NewViewControllerProtocol
+  // MARK: - Static Accessors
   
-  static let storyboardName: String = "ARKit"
+  static func newViewController() -> ARBaseViewController {
+    return self.newViewController(fromStoryboardWithName: "ARKit")
+  }
   
   // MARK: - Properties
   

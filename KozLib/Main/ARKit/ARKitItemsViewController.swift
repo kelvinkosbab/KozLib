@@ -9,11 +9,13 @@
 import UIKit
 import ARKit
 
-class ARKitItemsViewController : BaseTableViewController, NewViewControllerProtocol, ARKitNavigationDelegate {
+class ARKitItemsViewController : BaseTableViewController, ARKitNavigationDelegate {
   
-  // MARK: - NewViewControllerProtocol
+  // MARK: - Static Accessors
   
-  static let storyboardName: String = "ARKit"
+  static func newViewController() -> ARKitItemsViewController {
+    return self.newViewController(fromStoryboardWithName: "ARKit")
+  }
   
   // MARK: - Lifecycle
   

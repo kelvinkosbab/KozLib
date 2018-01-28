@@ -14,11 +14,13 @@ import SceneKit
  * Source: https://developer.apple.com/documentation/arkit/creating_face_based_ar_experiences
  */
 
-class ARFaceTrackingViewController : BaseViewController, NewViewControllerProtocol, ARSessionDelegate {
+class ARFaceTrackingViewController : BaseViewController, ARSessionDelegate {
   
-  // MARK: - NewViewControllerProtocol
+  // MARK: - Static Accessors
   
-  static let storyboardName: String = "ARFaceTracking"
+  static func newViewController() -> ARFaceTrackingViewController {
+    return self.newViewController(fromStoryboardWithName: "ARFaceTracking")
+  }
   
   // MARK: Outlets
   
