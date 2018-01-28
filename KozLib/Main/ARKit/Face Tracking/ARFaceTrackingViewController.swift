@@ -10,113 +10,87 @@ import UIKit
 import ARKit
 import SceneKit
 
-class ARFaceTrackingViewController : BaseViewController, NewViewControllerProtocol {
+/*
+ * Source: https://developer.apple.com/documentation/arkit/creating_face_based_ar_experiences
+ */
+
+class ARFaceTrackingViewController : BaseViewController, NewViewControllerProtocol, ARSessionDelegate {
   
   // MARK: - NewViewControllerProtocol
   
-  static let storyboardName: String = "ARKit"
+  static let storyboardName: String = "ARFaceTracking"
   
-  // MARK: - Properties
+  // MARK: Outlets
   
-  @IBOutlet weak var sceneView: ARSCNView!
+  @IBOutlet var sceneView: ARSCNView!
   
-  internal weak var sceneNode: SCNNode?
+  @IBOutlet weak var blurView: UIVisualEffectView!
   
-  private let session = ARSession()
-  private let sessionConfig = ARFaceTrackingConfiguration()
+  lazy var statusViewController: ARFaceTrackingStatusViewController = {
+    return childViewControllers.lazy.flatMap({ $0 as? ARFaceTrackingStatusViewController }).first!
+  }()
   
-  // MARK: - AR Scene Properties
+  // MARK: Properties
   
-  private var currentCameraTrackingState: ARCamera.TrackingState? = nil {
+  /// Convenience accessor for the session owned by ARSCNView.
+  var session: ARSession {
+    return sceneView.session
+  }
+  
+  var nodeForContentType = [VirtualContentType: VirtualFaceNode]()
+  
+  let contentUpdater = VirtualContentUpdater()
+  
+  var selectedVirtualContent: VirtualContentType = .overlayModel {
     didSet {
-      
-      // Check if the device supports ARKit
-      if let state = self.state {
-        switch state {
-        case .unsupported:
-          return
-        default: break
-        }
-      }
-      
-      guard let currentCameraTrackingState = self.currentCameraTrackingState else {
-        self.state = .configuring
-        return
-      }
-      
-      switch currentCameraTrackingState {
-      case .limited(.insufficientFeatures):
-        self.state = .limited(.insufficientFeatures)
-      case .limited(.excessiveMotion):
-        self.state = .limited(.excessiveMotion)
-      case .limited(.initializing):
-        self.state = .limited(.initializing)
-      case .limited(.relocalizing):
-        self.state = .limited(.relocalizing)
-      case .normal:
-        self.state = .normal
-      case .notAvailable:
-        self.state = .notAvailable
-      }
+      // Set the selected content based on the content type.
+      contentUpdater.virtualFaceNode = nodeForContentType[selectedVirtualContent]
     }
   }
   
-  var state: ARState? = nil {
-    didSet {
-      if let state = self.state {
-        self.arStateDidUpdate(state)
-      }
-    }
-  }
-  
-  // MARK: - Lifecycle
+  // MARK: - View Controller Life Cycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Navigation bar
-    self.navigationItem.title = "Face Tracking"
+    self.title = "FaceTracking"
     self.navigationItem.largeTitleDisplayMode = .never
     self.baseNavigationController?.navigationBarStyle = .transparent
+    
     self.configureDefaultBackButton()
     self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(self.stopButtonSelected))
     
-    // Setup the scene
-    self.sceneView.setUp(delegate: self, session: self.session)
+    sceneView.delegate = contentUpdater
+    sceneView.session.delegate = self
+    sceneView.automaticallyUpdatesLighting = true
+    
+    createFaceGeometry()
+    
+    // Set the initial face content, if any.
+    contentUpdater.virtualFaceNode = nodeForContentType[selectedVirtualContent]
+    
+    // Hook up status view controller callback(s).
+    statusViewController.restartExperienceHandler = { [unowned self] in
+      self.restartExperience()
+    }
   }
   
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
     
-    // Set idle timer flag
+    /*
+     AR experiences typically involve moving the device without
+     touch input for some time, so prevent auto screen dimming.
+     */
     UIApplication.shared.isIdleTimerDisabled = true
     
-    // Start / restart plane detection
-    self.restartPlaneDetection()
-    
-    // Check camera tracking state
-    self.arStateDidUpdate(self.state ?? .configuring)
-    
-    // Notifications
-    NotificationCenter.default.addObserver(self, selector: #selector(self.restartPlaneDetection), name: .UIApplicationDidBecomeActive, object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(self.pauseScene), name: .UIApplicationWillResignActive, object: nil)
+    resetTracking()
   }
   
-  override func viewDidDisappear(_ animated: Bool) {
-    super.viewDidDisappear(animated)
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
     
-    // Reset idle timer flat
-    UIApplication.shared.isIdleTimerDisabled = false
-    
-    // Pause the AR scene
-    self.pauseScene()
-    
-    // Check camera tracking state
-    self.arStateDidUpdate(self.state ?? .configuring)
-    
-    // Remove self from notifications
-    NotificationCenter.default.removeObserver(self, name: .UIApplicationDidBecomeActive, object: nil)
-    NotificationCenter.default.removeObserver(self, name: .UIApplicationWillResignActive, object: nil)
+    session.pause()
   }
   
   // MARK: - Actions
@@ -125,125 +99,127 @@ class ARFaceTrackingViewController : BaseViewController, NewViewControllerProtoc
     self.dismissController()
   }
   
-  // MARK: - Scene
+  // MARK: - Setup
   
-  @objc func pauseScene() {
-    self.session.pause()
+  /// - Tag: CreateARSCNFaceGeometry
+  func createFaceGeometry() {
+    // This relies on the earlier check of `ARFaceTrackingConfiguration.isSupported`.
+    let device = sceneView.device!
+    let maskGeometry = ARSCNFaceGeometry(device: device)!
+    let glassesGeometry = ARSCNFaceGeometry(device: device)!
+    
+    nodeForContentType = [
+      .faceGeometry: Mask(geometry: maskGeometry),
+      .overlayModel: GlassesOverlay(geometry: glassesGeometry),
+      .blendShapeModel: RobotHead()
+    ]
   }
   
-  @objc func restartPlaneDetection() {
-    
-    // Remove all nodes
-    self.sceneNode = nil
-    self.sceneView.scene.rootNode.enumerateChildNodes { (node, _) in
-      node.removeFromParentNode()
-    }
-    
-    // Configure session
-//    self.sessionConfig.planeDetection = .hori
-    self.sessionConfig.isLightEstimationEnabled = true
-    self.sessionConfig.worldAlignment = .gravityAndHeading
-    self.session.run(self.sessionConfig, options: [.resetTracking, .removeExistingAnchors])
-  }
-}
-
-// MARK: - ARSCNViewDelegate
-
-extension ARFaceTrackingViewController : ARSCNViewDelegate {
+  // MARK: - ARSessionDelegate
   
-  func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+  func session(_ session: ARSession, didFailWithError error: Error) {
+    guard error is ARError else { return }
     
-    guard let anchor = anchor as? ARPlaneAnchor else {
-      return
-    }
+    let errorWithInfo = error as NSError
+    let messages = [
+      errorWithInfo.localizedDescription,
+      errorWithInfo.localizedFailureReason,
+      errorWithInfo.localizedRecoverySuggestion
+    ]
+    let errorMessage = messages.compactMap({ $0 }).joined(separator: "\n")
     
-    _ = SCNMaterial.tron
-    // When a new plane is detected we create a new SceneKit plane to visualize it in 3D
-//    let plane = Plane(anchor: anchor, isHidden: false)
-//    self.planes[anchor.identifier] = plane
-//    node.addChildNode(plane)
-  }
-  
-  func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
-    
-//    guard let plane = self.planes[anchor.identifier], let anchor = anchor as? ARPlaneAnchor else {
-//      return
-//    }
-//
-//    // When an anchor is updated we need to also update our 3D geometry too. For example the width and height of the plane detection may have changed so we need to update our SceneKit geometry to match that
-//    plane.update(anchor: anchor)
-  }
-  
-  func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {
-    
-    // Nodes will be removed if planes multiple individual planes that are detected to all be part of a larger plane are merged.
-//    self.planes.removeValue(forKey: anchor.identifier)
-  }
-  
-  func renderer(_ renderer: SCNSceneRenderer, didRenderScene scene: SCNScene, atTime time: TimeInterval) {
-    
-    // Set the root scene node if the camera tracking state is normal
-    if self.sceneNode == nil, let cameraTrackingState = self.currentCameraTrackingState {
-      switch cameraTrackingState {
-      case .normal:
-        let sceneNode = SCNNode()
-        self.sceneNode = sceneNode
-        scene.rootNode.addChildNode(sceneNode)
-        
-      default: break
-      }
+    DispatchQueue.main.async {
+      self.displayErrorMessage(title: "The AR session failed.", message: errorMessage)
     }
   }
   
   func sessionWasInterrupted(_ session: ARSession) {
-    Log.extendedLog("Session was interrupted")
+    blurView.isHidden = false
+    statusViewController.showMessage("""
+        SESSION INTERRUPTED
+        The session will be reset after the interruption has ended.
+        """, autoHide: false)
   }
   
   func sessionInterruptionEnded(_ session: ARSession) {
-    Log.extendedLog("Session interruption ended")
-  }
-  
-  func session(_ session: ARSession, didFailWithError error: Error) {
-    Log.extendedLog("Session did fail with error: \(error)")
-    self.state = .unsupported
-  }
-  
-  func session(_ session: ARSession, cameraDidChangeTrackingState camera: ARCamera) {
-    self.currentCameraTrackingState = camera.trackingState
-    switch camera.trackingState {
-    case .limited(.insufficientFeatures):
-      Log.extendedLog("Camera did change tracking state: limited, insufficient features")
-    case .limited(.excessiveMotion):
-      Log.extendedLog("Camera did change tracking state: limited, excessive motion")
-    case .limited(.initializing):
-      Log.extendedLog("Camera did change tracking state: limited, initializing")
-    case .limited(.relocalizing):
-      Log.extendedLog("Camera did change tracking state: limited, relocalizing")
-    case .normal:
-      Log.extendedLog("Camera did change tracking state: normal")
-    case .notAvailable:
-      Log.extendedLog("Camera did change tracking state: not available")
+    blurView.isHidden = true
+    
+    DispatchQueue.main.async {
+      self.resetTracking()
     }
+  }
+  
+  /// - Tag: ARFaceTrackingSetup
+  func resetTracking() {
+    statusViewController.showMessage("STARTING A NEW SESSION")
+    
+    guard ARFaceTrackingConfiguration.isSupported else { return }
+    let configuration = ARFaceTrackingConfiguration()
+    configuration.isLightEstimationEnabled = true
+    session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
+  }
+  
+  // MARK: - Interface Actions
+  
+  /// - Tag: restartExperience
+  func restartExperience() {
+    // Disable Restart button for a while in order to give the session enough time to restart.
+    statusViewController.isRestartExperienceButtonEnabled = false
+    DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+      self.statusViewController.isRestartExperienceButtonEnabled = true
+    }
+    
+    resetTracking()
+  }
+  
+  // MARK: - Error handling
+  
+  func displayErrorMessage(title: String, message: String) {
+    // Blur the background.
+    blurView.isHidden = false
+    
+    // Present an alert informing about the error that has occurred.
+    let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    let restartAction = UIAlertAction(title: "Restart Session", style: .default) { _ in
+      alertController.dismiss(animated: true, completion: nil)
+      self.blurView.isHidden = true
+      self.resetTracking()
+    }
+    alertController.addAction(restartAction)
+    present(alertController, animated: true, completion: nil)
   }
 }
 
-// MARK: - ARStateDelegate
+// MARK: - UIPopoverPresentationControllerDelegate
 
-extension ARFaceTrackingViewController : ARStateDelegate, ConfigurationViewPresentable {
+extension ARFaceTrackingViewController : UIPopoverPresentationControllerDelegate {
   
-  func arStateDidUpdate(_ state: ARState) {
+  func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+    /*
+     Popover segues should not adapt to fullscreen on iPhone, so that
+     the AR session's view controller stays visible and active.
+     */
+    return .none
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    /*
+     All segues in this app are popovers even on iPhone. Configure their popover
+     origin accordingly.
+     */
+    guard let popoverController = segue.destination.popoverPresentationController, let button = sender as? UIButton else { return }
+    popoverController.delegate = self
+    popoverController.sourceRect = button.bounds
     
-    // Check if the scene hasn't already been configured
-    guard self.sceneNode == nil else {
-      // TODO: - KAK future - display any necessary state messages
-      return
-    }
+    // Set up the view controller embedded in the popover.
+    let contentSelectionController = popoverController.presentedViewController as! ARFaceTrackingContentSelectionController
     
-    switch state {
-    case .normal:
-      self.hideConfiguringView()
-    default:
-      self.showConfiguringView(.statusMessage(state.status, state.message))
+    // Set the initially selected virtual content.
+    contentSelectionController.selectedVirtualContent = selectedVirtualContent
+    
+    // Update our view controller's selected virtual content when the selection changes.
+    contentSelectionController.selectionHandler = { [unowned self] newSelectedVirtualContent in
+      self.selectedVirtualContent = newSelectedVirtualContent
     }
   }
 }

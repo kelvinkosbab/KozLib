@@ -13,10 +13,14 @@ protocol ARStateDelegate : class {
 }
 
 enum ARState {
-  case configuring, normal, limited(Reason), notAvailable, unsupported
+  case configuring, normal, limited(Reason), notAvailable, unsupported(UnsupportedType)
   
   enum Reason {
     case insufficientFeatures, excessiveMotion, initializing, relocalizing
+  }
+  
+  enum UnsupportedType {
+    case ar, faceTracking
   }
   
   var status: String? {
@@ -33,7 +37,7 @@ enum ARState {
       return "Relocalizing"
     case .notAvailable:
       return "Not Available"
-    case .unsupported:
+    case .unsupported(_):
       return "Unsupported Device"
     case .normal:
       return nil
@@ -48,8 +52,10 @@ enum ARState {
       return "Please hold the device steady pointing horizontally."
     case .limited(.initializing), .limited(.relocalizing):
       return "Please hold the device steady pointing horizontally in a well lit area."
-    case .notAvailable, .unsupported:
+    case .notAvailable, .unsupported(.ar):
       return "Only supported on Apple devices with an A9, A10, or A11 chip or newer. This includes all phones including the iPhone 6s/6s+ and newer as well as all iPad Pro models and the 2017 iPad."
+    case .unsupported(.faceTracking):
+      return "Face tracking requires a device with a TrueDepth front-facing camera."
     case .normal, .configuring:
       return nil
     }
