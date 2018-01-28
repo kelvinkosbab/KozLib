@@ -34,6 +34,12 @@ extension ARKitNavigationDelegate where Self : PresentableController {
     self.present(viewController: viewController, withMode: .rightToLeft, options: [ .dismissInteractiveElement(interactiveElement) ], completion: nil)
   }
   
+  func transitionToDragonDemo() {
+    let viewController = TackDragonMainViewController.newViewController()
+    let interactiveElement = InteractiveElement(size: nil, offset: nil, view: viewController.view)
+    self.present(viewController: viewController, withMode: .rightToLeft, options: [ .dismissInteractiveElement(interactiveElement) ], completion: nil)
+  }
+  
   func transitionToARFaceTracking() {
     let viewController = ARFaceTrackingViewController.newViewController()
     let interactiveElement = InteractiveElement(size: nil, offset: nil, view: viewController.view)

@@ -75,6 +75,12 @@ class ARFaceTrackingViewController : BaseViewController, NewViewControllerProtoc
     }
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    self.baseNavigationController?.navigationBarStyle = .transparent
+  }
+  
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     
@@ -91,6 +97,12 @@ class ARFaceTrackingViewController : BaseViewController, NewViewControllerProtoc
     super.viewWillDisappear(animated)
     
     session.pause()
+  }
+  
+  // MARK: - Status Bar
+  
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    return .lightContent
   }
   
   // MARK: - Actions
