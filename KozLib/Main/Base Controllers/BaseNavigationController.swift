@@ -59,9 +59,18 @@ class BaseNavigationController : UINavigationController, PresentableController {
     var titleTextAttributes: [NSAttributedStringKey : Any]? {
       switch self {
       case .standard:
-        return [ NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16), NSAttributedStringKey.foregroundColor: UIColor.black ]
+        return [ .font: UIFont.systemFont(ofSize: 16), .foregroundColor: UIColor.black ]
       case .transparent:
-        return [ NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16), NSAttributedStringKey.foregroundColor: UIColor.white ]
+        return [ .font: UIFont.systemFont(ofSize: 16), .foregroundColor: UIColor.white ]
+      }
+    }
+    
+    var largeTitleTextAttributes: [NSAttributedStringKey : Any]? {
+      switch self {
+      case .standard:
+        return [ .foregroundColor: UIColor.black ]
+      case .transparent:
+        return [ .foregroundColor: UIColor.white ]
       }
     }
     
@@ -100,6 +109,7 @@ class BaseNavigationController : UINavigationController, PresentableController {
     self.navigationBar.barTintColor = self.navigationBarStyle.barTintColor
     self.navigationBar.tintColor = self.navigationBarStyle.tintColor
     self.navigationBar.titleTextAttributes = self.navigationBarStyle.titleTextAttributes
+    self.navigationBar.largeTitleTextAttributes = self.navigationBarStyle.largeTitleTextAttributes
     self.navigationBar.isTranslucent = self.navigationBarStyle.isTranslucent
     
     // Back button
@@ -112,9 +122,7 @@ class BaseNavigationController : UINavigationController, PresentableController {
       self.navigationBar.setBackgroundImage(UIImage(), for: .default)
       self.navigationBar.shadowImage = UIImage()
       self.navigationBar.backgroundColor = .clear
-      break
-    default:
-      break
+    default: break
     }
     
     // Update the status bar

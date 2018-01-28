@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ARKit
 
 class ARKitItemsViewController : BaseTableViewController, NewViewControllerProtocol, ARKitNavigationDelegate {
   
@@ -25,18 +26,34 @@ class ARKitItemsViewController : BaseTableViewController, NewViewControllerProto
     self.configureDefaultBackButton()
     
     self.tableView.register(BaseTableViewCell.nib, forCellReuseIdentifier: BaseTableViewCell.identifier)
+    self.tableView.register(StackedTitleDetailTableViewCell.nib, forCellReuseIdentifier: StackedTitleDetailTableViewCell.identifier)
   }
   
   // MARK: - SectionType
   
   enum SectionType {
-    case list
+    case horizontal, vertical, faceTracking
+    
+    var sectionTitle: String {
+      switch self {
+      case .horizontal:
+        return "Horizontal"
+      case .vertical:
+        return "Vertical"
+      case .faceTracking:
+        return "Face Tracking"
+      }
+    }
   }
   
   func getSectionType(section: Int) -> SectionType? {
     switch section {
     case 0:
-      return .list
+      return .horizontal
+    case 1:
+      return .vertical
+    case 2:
+      return .faceTracking
     default:
       return nil
     }
@@ -58,7 +75,22 @@ class ARKitItemsViewController : BaseTableViewController, NewViewControllerProto
       case .verticalSurfaceVisualization:
         return "Vertical Surface Visualization"
       case .faceMappingVisulalization:
-        return "Face Mapping Visualization"
+        return "Face Tracking"
+      }
+    }
+    
+    var detail: String {
+      switch self {
+      case .horizontalSurfaceVisualization:
+        return "Simple Horizontal Plane Detection"
+      case .blockPhysics:
+        return "Block Physics"
+      case .planeMapping:
+        return "Plane Mapping"
+      case .verticalSurfaceVisualization:
+        return "Vertical Surface Visualization"
+      case .faceMappingVisulalization:
+        return "This features "
       }
     }
   }
@@ -70,7 +102,7 @@ class ARKitItemsViewController : BaseTableViewController, NewViewControllerProto
     }
     
     switch sectionType {
-    case .list:
+    case .horizontal:
       switch indexPath.row {
       case 0:
         return .horizontalSurfaceVisualization
@@ -78,9 +110,19 @@ class ARKitItemsViewController : BaseTableViewController, NewViewControllerProto
         return .blockPhysics
       case 2:
         return .planeMapping
-      case 3:
+      default:
+        return nil
+      }
+    case .vertical:
+      switch indexPath.row {
+      case 0:
         return .verticalSurfaceVisualization
-      case 4:
+      default:
+        return nil
+      }
+    case .faceTracking:
+      switch indexPath.row {
+      case 0:
         return .faceMappingVisulalization
       default:
         return nil
@@ -94,7 +136,16 @@ class ARKitItemsViewController : BaseTableViewController, NewViewControllerProto
 extension ARKitItemsViewController {
   
   override func numberOfSections(in tableView: UITableView) -> Int {
-    return 1
+    return 3
+  }
+  
+  override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    
+    guard let sectionType = self.getSectionType(section: section) else {
+      return nil
+    }
+    
+    return sectionType.sectionTitle
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -104,8 +155,12 @@ extension ARKitItemsViewController {
     }
     
     switch sectionType {
-    case .list:
-      return 5
+    case .horizontal:
+      return 3
+    case .vertical:
+      return 1
+    case .faceTracking:
+      return 1
     }
   }
   
@@ -117,9 +172,22 @@ extension ARKitItemsViewController {
       return cell
     }
     
-    let cell = tableView.dequeueReusableCell(withIdentifier: BaseTableViewCell.identifier, for: indexPath) as! BaseTableViewCell
-    cell.configure(title: rowType.title, accessoryType: .disclosureIndicator)
-    return cell
+    switch rowType {
+    case .blockPhysics, .horizontalSurfaceVisualization, .planeMapping, .verticalSurfaceVisualization:
+      let cell = tableView.dequeueReusableCell(withIdentifier: BaseTableViewCell.identifier, for: indexPath) as! BaseTableViewCell
+      cell.configure(title: rowType.title, accessoryType: .disclosureIndicator)
+      return cell
+    case .faceMappingVisulalization:
+      if ARFaceTrackingConfiguration.isSupported {
+        let cell = tableView.dequeueReusableCell(withIdentifier: BaseTableViewCell.identifier, for: indexPath) as! BaseTableViewCell
+        cell.configure(title: rowType.title, accessoryType: .disclosureIndicator)
+        return cell
+      } else {
+        let cell = tableView.dequeueReusableCell(withIdentifier: StackedTitleDetailTableViewCell.identifier, for: indexPath) as! StackedTitleDetailTableViewCell
+        cell.configure(title: rowType.title, detail: "This feature requires and iPhone X", accessoryType: .disclosureIndicator)
+        return cell
+      }
+    }
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -139,7 +207,17 @@ extension ARKitItemsViewController {
     case .verticalSurfaceVisualization:
       break
     case .faceMappingVisulalization:
-      break
+      
+      guard ARFaceTrackingConfiguration.isSupported else {
+        let arState = ARState.unsupported(.faceTracking)
+        let alertController = UIAlertController(title: arState.status, message: arState.message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+        return
+      }
+      
+      self.transitionToARFaceTracking()
     }
   }
 }
