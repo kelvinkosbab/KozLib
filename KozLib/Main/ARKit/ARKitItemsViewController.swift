@@ -9,11 +9,13 @@
 import UIKit
 import ARKit
 
-class ARKitItemsViewController : BaseTableViewController, NewViewControllerProtocol, ARKitNavigationDelegate {
+class ARKitItemsViewController : BaseTableViewController, ARKitNavigationDelegate {
   
-  // MARK: - NewViewControllerProtocol
+  // MARK: - Static Accessors
   
-  static let storyboardName: String = "ARKit"
+  static func newViewController() -> ARKitItemsViewController {
+    return self.newViewController(fromStoryboardWithName: "ARKit")
+  }
   
   // MARK: - Lifecycle
   
@@ -62,7 +64,7 @@ class ARKitItemsViewController : BaseTableViewController, NewViewControllerProto
   // MARK: - RowType
   
   enum RowType {
-    case horizontalSurfaceVisualization, blockPhysics, planeMapping, verticalSurfaceVisualization, faceMappingVisulalization
+    case horizontalSurfaceVisualization, blockPhysics, planeMapping, tackDragonDemo, verticalSurfaceVisualization, faceMappingVisulalization
     
     var title: String {
       switch self {
@@ -72,25 +74,12 @@ class ARKitItemsViewController : BaseTableViewController, NewViewControllerProto
         return "Block Physics"
       case .planeMapping:
         return "Plane Mapping"
+      case .tackDragonDemo:
+        return "Tack Mobile AR Dragon Demo"
       case .verticalSurfaceVisualization:
         return "Vertical Surface Visualization"
       case .faceMappingVisulalization:
         return "Face Tracking"
-      }
-    }
-    
-    var detail: String {
-      switch self {
-      case .horizontalSurfaceVisualization:
-        return "Simple Horizontal Plane Detection"
-      case .blockPhysics:
-        return "Block Physics"
-      case .planeMapping:
-        return "Plane Mapping"
-      case .verticalSurfaceVisualization:
-        return "Vertical Surface Visualization"
-      case .faceMappingVisulalization:
-        return "This features "
       }
     }
   }
@@ -110,6 +99,8 @@ class ARKitItemsViewController : BaseTableViewController, NewViewControllerProto
         return .blockPhysics
       case 2:
         return .planeMapping
+      case 3:
+        return .tackDragonDemo
       default:
         return nil
       }
@@ -156,7 +147,7 @@ extension ARKitItemsViewController {
     
     switch sectionType {
     case .horizontal:
-      return 3
+      return 4
     case .vertical:
       return 1
     case .faceTracking:
@@ -173,10 +164,11 @@ extension ARKitItemsViewController {
     }
     
     switch rowType {
-    case .blockPhysics, .horizontalSurfaceVisualization, .planeMapping, .verticalSurfaceVisualization:
+    case .blockPhysics, .horizontalSurfaceVisualization, .planeMapping, .verticalSurfaceVisualization, .tackDragonDemo:
       let cell = tableView.dequeueReusableCell(withIdentifier: BaseTableViewCell.identifier, for: indexPath) as! BaseTableViewCell
       cell.configure(title: rowType.title, accessoryType: .disclosureIndicator)
       return cell
+      
     case .faceMappingVisulalization:
       if ARFaceTrackingConfiguration.isSupported {
         let cell = tableView.dequeueReusableCell(withIdentifier: BaseTableViewCell.identifier, for: indexPath) as! BaseTableViewCell
@@ -184,7 +176,7 @@ extension ARKitItemsViewController {
         return cell
       } else {
         let cell = tableView.dequeueReusableCell(withIdentifier: StackedTitleDetailTableViewCell.identifier, for: indexPath) as! StackedTitleDetailTableViewCell
-        cell.configure(title: rowType.title, detail: "This feature requires and iPhone X", accessoryType: .disclosureIndicator)
+        cell.configure(title: rowType.title, detail: "This feature requires true-depth front-facing camera.", accessoryType: .none)
         return cell
       }
     }
@@ -204,6 +196,8 @@ extension ARKitItemsViewController {
       self.transitionToARBlockPhysics()
     case .planeMapping:
       self.transitionToPlaneMapping()
+    case .tackDragonDemo:
+      self.transitionToDragonDemo()
     case .verticalSurfaceVisualization:
       break
     case .faceMappingVisulalization:

@@ -9,11 +9,13 @@
 import UIKit
 import NetworkExtension
 
-class NetworkExtensionViewController : BaseTableViewController, NewViewControllerProtocol {
+class NetworkExtensionViewController : BaseTableViewController {
   
-  // MARK: - NewViewControllerProtocol
+  // MARK: - Static Accessors
   
-  static let storyboardName: String = "Network"
+  static func newViewController() -> NetworkExtensionViewController {
+    return self.newViewController(fromStoryboardWithName: "Network")
+  }
   
   // MARK - Properties
   

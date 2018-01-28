@@ -8,11 +8,13 @@
 
 import UIKit
 
-class NetworkInfoTableViewController : BaseTableViewController, NewViewControllerProtocol {
+class NetworkInfoTableViewController : BaseTableViewController {
   
-  // MARK: - NewViewControllerProtocol
+  // MARK: - Static Accessors
   
-  static let storyboardName: String = "Network"
+  static func newViewController() -> NetworkInfoTableViewController {
+    return self.newViewController(fromStoryboardWithName: "Network")
+  }
   
   // MARK: - Lifecycle
   

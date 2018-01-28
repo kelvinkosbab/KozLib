@@ -86,27 +86,25 @@ extension PresentableController where Self : UIViewController {
     switch mode {
     case .modal:
       presentingPresentableController?.currentFlowFirstController = self
-      let viewController = inNavigationController ? UINavigationController(rootViewController: viewControllerToPresent) : viewControllerToPresent
       if UIDevice.current.isPhone {
-        viewController.modalTransitionStyle = .coverVertical
-        viewController.modalPresentationStyle = .overFullScreen
-        viewController.modalPresentationCapturesStatusBarAppearance = true
+        viewControllerToPresent.modalTransitionStyle = .coverVertical
+        viewControllerToPresent.modalPresentationStyle = .overFullScreen
+        viewControllerToPresent.modalPresentationCapturesStatusBarAppearance = true
       } else {
-        viewController.modalPresentationStyle = .formSheet
+        viewControllerToPresent.modalPresentationStyle = .formSheet
       }
-      self.present(viewController, animated: true, completion: completion)
+      self.present(viewControllerToPresent, animated: true, completion: completion)
       
     case .modalOverCurrentContext:
       presentingPresentableController?.currentFlowFirstController = self
-      let viewController = inNavigationController ? UINavigationController(rootViewController: viewControllerToPresent) : viewControllerToPresent
       if UIDevice.current.isPhone {
-        viewController.modalTransitionStyle = .coverVertical
-        viewController.modalPresentationStyle = .overFullScreen
-        viewController.modalPresentationCapturesStatusBarAppearance = true
+        viewControllerToPresent.modalTransitionStyle = .coverVertical
+        viewControllerToPresent.modalPresentationStyle = .overFullScreen
+        viewControllerToPresent.modalPresentationCapturesStatusBarAppearance = true
       } else {
-        viewController.modalPresentationStyle = .overCurrentContext
+        viewControllerToPresent.modalPresentationStyle = .overCurrentContext
       }
-      self.present(viewController, animated: true, completion: completion)
+      self.present(viewControllerToPresent, animated: true, completion: completion)
       
     case .leftMenu:
       presentingPresentableController?.currentFlowFirstController = self
@@ -138,7 +136,7 @@ extension PresentableController where Self : UIViewController {
       
     case .overCurrentContext:
       presentingPresentableController?.currentFlowFirstController = self
-      let viewController = inNavigationController ? UINavigationController(rootViewController: viewControllerToPresent) : viewControllerToPresent
+      let viewController = inNavigationController ? BaseNavigationController(rootViewController: viewControllerToPresent) : viewControllerToPresent
       viewController.modalPresentationStyle = .overCurrentContext
       viewController.modalTransitionStyle = .crossDissolve
       self.present(viewController, animated: true, completion: completion)

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFCNavigationDelegate, NetworkNavigationDelegate {
+class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFCNavigationDelegate, NetworkNavigationDelegate, PermissionsNavigationDelegate {
   
   // MARK: - Static Accessors
   
@@ -58,14 +58,16 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
   // MARK: - RowType
   
   enum RowType {
-    case arKit, nfc, basicNetwork, networkExtension
+    case permissions, nfc, arKit, basicNetwork, networkExtension
     
     var title: String {
       switch self {
-      case .arKit:
-        return "ARKit Projects"
+      case .permissions:
+        return "Permissions"
       case .nfc:
         return "NFC Reader"
+      case .arKit:
+        return "ARKit Projects"
       case .basicNetwork:
         return "Basic Network Info"
       case .networkExtension:
@@ -84,9 +86,11 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
     case .misc:
       switch indexPath.row {
       case 0:
-        return .arKit
+        return .permissions
       case 1:
         return .nfc
+      case 2:
+        return .arKit
       default:
         return nil
       }
@@ -125,7 +129,7 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
     
     switch sectionType {
     case .misc:
-      return 2
+      return 3
     case .network:
       return 2
     }
@@ -152,6 +156,8 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
     }
     
     switch rowType {
+    case .permissions:
+      self.transitionToPermissions()
     case .arKit:
       self.transitionToARKitItems(presentationMode: .navStack)
     case .nfc:

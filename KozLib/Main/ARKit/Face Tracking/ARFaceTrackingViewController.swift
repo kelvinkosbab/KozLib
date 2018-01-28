@@ -14,11 +14,13 @@ import SceneKit
  * Source: https://developer.apple.com/documentation/arkit/creating_face_based_ar_experiences
  */
 
-class ARFaceTrackingViewController : BaseViewController, NewViewControllerProtocol, ARSessionDelegate {
+class ARFaceTrackingViewController : BaseViewController, ARSessionDelegate {
   
-  // MARK: - NewViewControllerProtocol
+  // MARK: - Static Accessors
   
-  static let storyboardName: String = "ARFaceTracking"
+  static func newViewController() -> ARFaceTrackingViewController {
+    return self.newViewController(fromStoryboardWithName: "ARFaceTracking")
+  }
   
   // MARK: Outlets
   
@@ -75,6 +77,12 @@ class ARFaceTrackingViewController : BaseViewController, NewViewControllerProtoc
     }
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    self.baseNavigationController?.navigationBarStyle = .transparent
+  }
+  
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     
@@ -91,6 +99,12 @@ class ARFaceTrackingViewController : BaseViewController, NewViewControllerProtoc
     super.viewWillDisappear(animated)
     
     session.pause()
+  }
+  
+  // MARK: - Status Bar
+  
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    return .lightContent
   }
   
   // MARK: - Actions

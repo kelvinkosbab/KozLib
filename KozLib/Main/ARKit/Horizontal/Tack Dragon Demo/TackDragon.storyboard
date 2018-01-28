@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14087.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jGf-cX-DNQ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14075.4"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tack Dragon Main View Controller-->
+        <scene sceneID="93g-hL-r5q">
+            <objects>
+                <viewController storyboardIdentifier="TackDragonMainViewController" id="jGf-cX-DNQ" customClass="TackDragonMainViewController" customModule="KozLibrary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="trF-jV-9V1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a5F-eh-cH2">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <segue destination="d0o-eO-Q5V" kind="embed" id="4vJ-Z5-pv5"/>
+                                </connections>
+                            </containerView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XKx-3W-d5i">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="aA4-Nt-9Bn">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XKx-3W-d5i" firstAttribute="bottom" secondItem="SG3-zW-fXm" secondAttribute="top" id="4SK-Lt-gBh"/>
+                            <constraint firstItem="a5F-eh-cH2" firstAttribute="top" secondItem="trF-jV-9V1" secondAttribute="top" id="8DO-pN-ibL"/>
+                            <constraint firstItem="XKx-3W-d5i" firstAttribute="leading" secondItem="SG3-zW-fXm" secondAttribute="leading" id="94O-2N-PVE"/>
+                            <constraint firstItem="SG3-zW-fXm" firstAttribute="trailing" secondItem="XKx-3W-d5i" secondAttribute="trailing" id="CoH-18-3Fn"/>
+                            <constraint firstItem="XKx-3W-d5i" firstAttribute="top" secondItem="trF-jV-9V1" secondAttribute="top" id="HWc-HG-jyt"/>
+                            <constraint firstItem="a5F-eh-cH2" firstAttribute="leading" secondItem="SG3-zW-fXm" secondAttribute="leading" id="OFe-X3-Nvs"/>
+                            <constraint firstItem="SG3-zW-fXm" firstAttribute="trailing" secondItem="a5F-eh-cH2" secondAttribute="trailing" id="gRz-Xg-saf"/>
+                            <constraint firstAttribute="bottom" secondItem="a5F-eh-cH2" secondAttribute="bottom" id="ywN-Gw-xXr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SG3-zW-fXm"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bbH-sj-HyG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zqy-bf-adb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="488.80000000000001" y="176.76161919040482"/>
+        </scene>
+        <!--Tack DragonAR View Controller-->
+        <scene sceneID="Umk-P9-IPL">
+            <objects>
+                <viewController storyboardIdentifier="TackDragonARViewController" id="d0o-eO-Q5V" customClass="TackDragonARViewController" customModule="KozLibrary" customModuleProvider="target" sceneMemberID="viewController">
+                    <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="XmI-2K-6Ge">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </arscnView>
+                    <connections>
+                        <outlet property="sceneView" destination="XmI-2K-6Ge" id="95R-OG-XCo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sIR-AZ-hxk" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1231" y="177"/>
+        </scene>
+    </scenes>
+</document>
