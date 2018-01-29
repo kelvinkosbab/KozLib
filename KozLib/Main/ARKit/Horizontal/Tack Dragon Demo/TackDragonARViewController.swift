@@ -19,7 +19,7 @@ class TackDragonARViewController : UIViewController {
   weak var trackingStateDelegate: ARStateDelegate? = nil
   private let session = ARSession()
   private let sessionConfig = ARWorldTrackingConfiguration()
-  var planeAnchorDragons = Set<PlaneAnchorDragon>()
+  var planeAnchorDragons: [ARPlaneAnchor : DragonNode] = [:]
   
   // MARK: - AR Scene Properties
   
@@ -126,6 +126,9 @@ class TackDragonARViewController : UIViewController {
   func clearScene() {
     
     // Remove all dragons
+    for (_, dragon) in self.planeAnchorDragons {
+      dragon.removeFromParentNode()
+    }
     self.planeAnchorDragons.removeAll()
     
     // Remove all nodes
@@ -165,8 +168,7 @@ class TackDragonARViewController : UIViewController {
       dragonNode.position = SCNVector3(x: position.columns.3.x, y: position.columns.3.y, z: position.columns.3.z)
       
       // Add the dragon to the scene
-      let planeAnchorDragon = PlaneAnchorDragon(planeAnchor: anchor, dragonNode: dragonNode)
-      self?.planeAnchorDragons.insert(planeAnchorDragon)
+      self?.planeAnchorDragons[anchor] = dragonNode
       self?.sceneView.scene.rootNode.addChildNode(dragonNode)
       
       // Pause any animations
@@ -215,9 +217,9 @@ extension TackDragonARViewController : ARSCNViewDelegate {
     Log.logMethodExecution()
     
     // Remove the dragon node associated with the anchor
-    if let planeAnchor = anchor as? ARPlaneAnchor, let planeAnchorDragon = self.planeAnchorDragons.first(where: { $0.planeAnchor == planeAnchor }) {
-      planeAnchorDragon.dragonNode?.removeFromParentNode()
-      self.planeAnchorDragons.remove(planeAnchorDragon)
+    if let planeAnchor = anchor as? ARPlaneAnchor, let dragonNode = self.planeAnchorDragons[planeAnchor] {
+      dragonNode.removeFromParentNode()
+      self.planeAnchorDragons[planeAnchor] = nil
     }
   }
   
