@@ -86,7 +86,7 @@
 		B66780F9201948D20014781C /* TopDownPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66780F8201948D20014781C /* TopDownPresentationManager.swift */; };
 		B66780FB201948E60014781C /* BottomUpPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66780FA201948E60014781C /* BottomUpPresentationManager.swift */; };
 		B67756BA1F78BDB100B553F3 /* ARBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67756B91F78BDB100B553F3 /* ARBaseViewController.swift */; };
-		B67756BD1F78BFF900B553F3 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67756BC1F78BFF900B553F3 /* Plane.swift */; };
+		B67756BD1F78BFF900B553F3 /* BoxPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67756BC1F78BFF900B553F3 /* BoxPlane.swift */; };
 		B67949F11F81CE1900EEB926 /* ARBlockPhysicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67949F01F81CE1900EEB926 /* ARBlockPhysicsViewController.swift */; };
 		B67949F51F81FB5A00EEB926 /* CollisionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67949F41F81FB5A00EEB926 /* CollisionCategory.swift */; };
 		B67949F71F81FBC800EEB926 /* PBRMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67949F61F81FBC800EEB926 /* PBRMaterial.swift */; };
@@ -104,6 +104,8 @@
 		B6D00254201E7CBD0009EE1E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D00253201E7CBD0009EE1E /* LocationManager.swift */; };
 		B6D9205620238835008A6361 /* ARWallDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D9205520238835008A6361 /* ARWallDetectionViewController.swift */; };
 		B6F436671FD27CC1008C9C6B /* Locale+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F436661FD27CC1008C9C6B /* Locale+Util.swift */; };
+		B6F9756520239D1900BE9D9D /* VerticalBoxPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F9756420239D1900BE9D9D /* VerticalBoxPlane.swift */; };
+		B6F9756720239D2200BE9D9D /* HorizontalBoxPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F9756620239D2200BE9D9D /* HorizontalBoxPlane.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -187,7 +189,7 @@
 		B66780F8201948D20014781C /* TopDownPresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopDownPresentationManager.swift; sourceTree = "<group>"; };
 		B66780FA201948E60014781C /* BottomUpPresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomUpPresentationManager.swift; sourceTree = "<group>"; };
 		B67756B91F78BDB100B553F3 /* ARBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBaseViewController.swift; sourceTree = "<group>"; };
-		B67756BC1F78BFF900B553F3 /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
+		B67756BC1F78BFF900B553F3 /* BoxPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxPlane.swift; sourceTree = "<group>"; };
 		B67949F01F81CE1900EEB926 /* ARBlockPhysicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBlockPhysicsViewController.swift; sourceTree = "<group>"; };
 		B67949F41F81FB5A00EEB926 /* CollisionCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollisionCategory.swift; sourceTree = "<group>"; };
 		B67949F61F81FBC800EEB926 /* PBRMaterial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBRMaterial.swift; sourceTree = "<group>"; };
@@ -207,6 +209,8 @@
 		B6D00253201E7CBD0009EE1E /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		B6D9205520238835008A6361 /* ARWallDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARWallDetectionViewController.swift; sourceTree = "<group>"; };
 		B6F436661FD27CC1008C9C6B /* Locale+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale+Util.swift"; sourceTree = "<group>"; };
+		B6F9756420239D1900BE9D9D /* VerticalBoxPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalBoxPlane.swift; sourceTree = "<group>"; };
+		B6F9756620239D2200BE9D9D /* HorizontalBoxPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalBoxPlane.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -555,7 +559,7 @@
 			isa = PBXGroup;
 			children = (
 				B624C1D61F78B1320027C95D /* Models.scnassets */,
-				B67756BC1F78BFF900B553F3 /* Plane.swift */,
+				B6F975682023A3C300BE9D9D /* BoxPlane */,
 				B67949F81F81FEF300EEB926 /* Cube.swift */,
 				B67949F41F81FB5A00EEB926 /* CollisionCategory.swift */,
 				B67949FC1F82016000EEB926 /* MaterialType.swift */,
@@ -663,6 +667,16 @@
 			path = "Network Basic Info";
 			sourceTree = "<group>";
 		};
+		B6F975682023A3C300BE9D9D /* BoxPlane */ = {
+			isa = PBXGroup;
+			children = (
+				B67756BC1F78BFF900B553F3 /* BoxPlane.swift */,
+				B6F9756620239D2200BE9D9D /* HorizontalBoxPlane.swift */,
+				B6F9756420239D1900BE9D9D /* VerticalBoxPlane.swift */,
+			);
+			path = BoxPlane;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -760,6 +774,7 @@
 				B61B8DDE1F816C8F00118C73 /* NetworkInfoTableViewController.swift in Sources */,
 				B644150C1F78588100C9781B /* UIViewController+Util.swift in Sources */,
 				B61B8DEA1F817D6500118C73 /* Network.swift in Sources */,
+				B6F9756520239D1900BE9D9D /* VerticalBoxPlane.swift in Sources */,
 				B60AD10C201A9146003A2E84 /* ARState.swift in Sources */,
 				B629C22B201E77420083D708 /* PermissionsViewController.swift in Sources */,
 				B66780FB201948E60014781C /* BottomUpPresentationManager.swift in Sources */,
@@ -816,6 +831,7 @@
 				B6F436671FD27CC1008C9C6B /* Locale+Util.swift in Sources */,
 				B624C1CF1F78AC8F0027C95D /* ARPlaneMappingViewController.swift in Sources */,
 				B61B8DFA1F81868200118C73 /* Defaults+MyManagedObjectProtocol.swift in Sources */,
+				B6F9756720239D2200BE9D9D /* HorizontalBoxPlane.swift in Sources */,
 				B60AD10A201A9010003A2E84 /* ARFaceTrackingViewController.swift in Sources */,
 				B64414FE1F7856A900C9781B /* UIDevice+Util.swift in Sources */,
 				B61B8DF21F81843800118C73 /* NetworkNavigationDelegate.swift in Sources */,
@@ -836,7 +852,7 @@
 				B68B2E571F76BCEC000B7A3F /* AppDelegate.swift in Sources */,
 				B65514321F78838300EEF26F /* LeftMenuPresentationManager.swift in Sources */,
 				B6D00254201E7CBD0009EE1E /* LocationManager.swift in Sources */,
-				B67756BD1F78BFF900B553F3 /* Plane.swift in Sources */,
+				B67756BD1F78BFF900B553F3 /* BoxPlane.swift in Sources */,
 				B629C22F201E785F0083D708 /* TackDragonMainViewController.swift in Sources */,
 				B64415021F78572400C9781B /* UITabBarController+Util.swift in Sources */,
 			);
