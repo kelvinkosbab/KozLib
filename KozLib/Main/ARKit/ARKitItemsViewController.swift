@@ -64,7 +64,7 @@ class ARKitItemsViewController : BaseTableViewController, ARKitNavigationDelegat
   // MARK: - RowType
   
   enum RowType {
-    case horizontalSurfaceVisualization, blockPhysics, planeMapping, tackDragonDemo, verticalSurfaceVisualization, faceMappingVisulalization
+    case horizontalSurfaceVisualization, blockPhysics, planeMapping, tackDragonDemo, wallDetection, faceMappingVisulalization
     
     var title: String {
       switch self {
@@ -76,8 +76,8 @@ class ARKitItemsViewController : BaseTableViewController, ARKitNavigationDelegat
         return "Plane Mapping"
       case .tackDragonDemo:
         return "Tack Mobile AR Dragon Demo"
-      case .verticalSurfaceVisualization:
-        return "Vertical Surface Visualization"
+      case .wallDetection:
+        return "Wall Detection"
       case .faceMappingVisulalization:
         return "Face Tracking"
       }
@@ -107,7 +107,7 @@ class ARKitItemsViewController : BaseTableViewController, ARKitNavigationDelegat
     case .vertical:
       switch indexPath.row {
       case 0:
-        return .verticalSurfaceVisualization
+        return .wallDetection
       default:
         return nil
       }
@@ -164,7 +164,7 @@ extension ARKitItemsViewController {
     }
     
     switch rowType {
-    case .blockPhysics, .horizontalSurfaceVisualization, .planeMapping, .verticalSurfaceVisualization, .tackDragonDemo:
+    case .blockPhysics, .horizontalSurfaceVisualization, .planeMapping, .tackDragonDemo, .wallDetection:
       let cell = tableView.dequeueReusableCell(withIdentifier: BaseTableViewCell.identifier, for: indexPath) as! BaseTableViewCell
       cell.configure(title: rowType.title, accessoryType: .disclosureIndicator)
       return cell
@@ -198,8 +198,8 @@ extension ARKitItemsViewController {
       self.transitionToPlaneMapping()
     case .tackDragonDemo:
       self.transitionToDragonDemo()
-    case .verticalSurfaceVisualization:
-      break
+    case .wallDetection:
+      self.transitionToWallDetection()
     case .faceMappingVisulalization:
       
       guard ARFaceTrackingConfiguration.isSupported else {

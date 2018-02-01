@@ -102,6 +102,7 @@
 		B68B2E6F1F76BED7000B7A3F /* MyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B2E6E1F76BED7000B7A3F /* MyDataManager.swift */; };
 		B6C83B90201A4CAC0008CC55 /* NetworkExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C83B8F201A4CAC0008CC55 /* NetworkExtensionViewController.swift */; };
 		B6D00254201E7CBD0009EE1E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D00253201E7CBD0009EE1E /* LocationManager.swift */; };
+		B6D9205620238835008A6361 /* ARWallDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D9205520238835008A6361 /* ARWallDetectionViewController.swift */; };
 		B6F436671FD27CC1008C9C6B /* Locale+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F436661FD27CC1008C9C6B /* Locale+Util.swift */; };
 /* End PBXBuildFile section */
 
@@ -204,6 +205,7 @@
 		B68B2E6E1F76BED7000B7A3F /* MyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataManager.swift; sourceTree = "<group>"; };
 		B6C83B8F201A4CAC0008CC55 /* NetworkExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkExtensionViewController.swift; sourceTree = "<group>"; };
 		B6D00253201E7CBD0009EE1E /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		B6D9205520238835008A6361 /* ARWallDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARWallDetectionViewController.swift; sourceTree = "<group>"; };
 		B6F436661FD27CC1008C9C6B /* Locale+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale+Util.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -636,6 +638,7 @@
 		B6ACFE59201A42A6002C2F59 /* Vertical Surface Detection */ = {
 			isa = PBXGroup;
 			children = (
+				B6D9205520238835008A6361 /* ARWallDetectionViewController.swift */,
 			);
 			path = "Vertical Surface Detection";
 			sourceTree = "<group>";
@@ -765,6 +768,7 @@
 				B61B8DF01F81822E00118C73 /* Nibable.swift in Sources */,
 				B629C225201E74EB0083D708 /* CameraPermissionManager.swift in Sources */,
 				B67949F11F81CE1900EEB926 /* ARBlockPhysicsViewController.swift in Sources */,
+				B6D9205620238835008A6361 /* ARWallDetectionViewController.swift in Sources */,
 				B63A82C4201E656200E6C8C6 /* Mask.swift in Sources */,
 				B65514341F78839800EEF26F /* RightToLeftPresentationManager.swift in Sources */,
 				B64414F81F78556200C9781B /* UIApplication+Util.swift in Sources */,

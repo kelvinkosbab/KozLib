@@ -118,9 +118,11 @@ class ARFaceTrackingViewController : BaseViewController, ARSessionDelegate {
   /// - Tag: CreateARSCNFaceGeometry
   func createFaceGeometry() {
     // This relies on the earlier check of `ARFaceTrackingConfiguration.isSupported`.
-    let device = sceneView.device!
-    let maskGeometry = ARSCNFaceGeometry(device: device)!
-    let glassesGeometry = ARSCNFaceGeometry(device: device)!
+    guard let device = sceneView.device,
+      let maskGeometry = ARSCNFaceGeometry(device: device),
+      let glassesGeometry = ARSCNFaceGeometry(device: device) else {
+      return
+    }
     
     nodeForContentType = [
       .faceGeometry: Mask(geometry: maskGeometry),

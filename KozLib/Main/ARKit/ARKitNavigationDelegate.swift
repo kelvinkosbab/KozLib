@@ -11,6 +11,8 @@ import UIKit
 protocol ARKitNavigationDelegate {}
 extension ARKitNavigationDelegate where Self : PresentableController {
   
+  // MARK: - Horizontal
+  
   func transitionToARKitItems(presentationMode: PresentationMode) {
     let viewController = ARKitItemsViewController.newViewController()
     self.present(viewController: viewController, withMode: presentationMode)
@@ -39,6 +41,16 @@ extension ARKitNavigationDelegate where Self : PresentableController {
     let interactiveElement = InteractiveElement(size: nil, offset: nil, view: viewController.view)
     self.present(viewController: viewController, withMode: .rightToLeft, options: [ .dismissInteractiveElement(interactiveElement) ], completion: nil)
   }
+  
+  // MARK: - Vertical
+  
+  func transitionToWallDetection() {
+    let viewController = ARWallDetectionViewController.newViewController()
+    let interactiveElement = InteractiveElement(size: nil, offset: nil, view: viewController.view)
+    self.present(viewController: viewController, withMode: .rightToLeft, options: [ .dismissInteractiveElement(interactiveElement) ], completion: nil)
+  }
+  
+  // MARK: - Face Tracking
   
   func transitionToARFaceTracking() {
     let viewController = ARFaceTrackingViewController.newViewController()

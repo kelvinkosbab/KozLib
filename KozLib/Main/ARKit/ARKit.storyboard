@@ -150,5 +150,46 @@
             </objects>
             <point key="canvasLocation" x="1470" y="152"/>
         </scene>
+        <!--Wall Detection View Controller-->
+        <scene sceneID="bdv-pq-Zsr">
+            <objects>
+                <viewController storyboardIdentifier="ARWallDetectionViewController" id="1uR-1i-5qf" customClass="ARWallDetectionViewController" customModule="KozLibrary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tUI-YF-aXz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9n3-Tk-LbK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </arscnView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o8G-DE-65I">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rRe-AD-HC3">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1yk-Kd-l3y" firstAttribute="trailing" secondItem="o8G-DE-65I" secondAttribute="trailing" id="DDk-FT-feE"/>
+                            <constraint firstItem="9n3-Tk-LbK" firstAttribute="leading" secondItem="1yk-Kd-l3y" secondAttribute="leading" id="IvQ-Ia-TZb"/>
+                            <constraint firstItem="1yk-Kd-l3y" firstAttribute="trailing" secondItem="9n3-Tk-LbK" secondAttribute="trailing" id="M5p-cI-GJw"/>
+                            <constraint firstItem="9n3-Tk-LbK" firstAttribute="top" secondItem="tUI-YF-aXz" secondAttribute="top" id="alV-If-UJY"/>
+                            <constraint firstItem="o8G-DE-65I" firstAttribute="bottom" secondItem="1yk-Kd-l3y" secondAttribute="top" id="cZe-FA-Kf2"/>
+                            <constraint firstItem="1yk-Kd-l3y" firstAttribute="bottom" secondItem="9n3-Tk-LbK" secondAttribute="bottom" id="l8r-rg-Lyu"/>
+                            <constraint firstItem="o8G-DE-65I" firstAttribute="top" secondItem="tUI-YF-aXz" secondAttribute="top" id="lgS-zN-869"/>
+                            <constraint firstItem="o8G-DE-65I" firstAttribute="leading" secondItem="1yk-Kd-l3y" secondAttribute="leading" id="zZp-i6-fT0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1yk-Kd-l3y"/>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="9n3-Tk-LbK" id="haa-6D-WAl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sC5-UX-bCh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2113" y="152"/>
+        </scene>
     </scenes>
 </document>
