@@ -60,6 +60,8 @@ protocol PresentableController : class {
   var transitioningDelegateReference: UIViewControllerTransitioningDelegate? { get set }
   var currentFlowFirstController: PresentableController? { get set }
   func present(viewController: UIViewController, withMode mode: PresentationMode)
+  func present(viewController: UIViewController, withMode mode: PresentationMode, completion: (() -> Void)?)
+  func present(viewController: UIViewController, withMode mode: PresentationMode, options: [PresentableControllerOption])
   func present(viewController: UIViewController, withMode mode: PresentationMode, options: [PresentableControllerOption], completion: (() -> Void)?)
   func dismissController(completion: (() -> Void)?)
   func dismissCurrentNavigationFlow(completion: (() -> Void)?)
@@ -69,6 +71,14 @@ extension PresentableController where Self : UIViewController {
   
   func present(viewController: UIViewController, withMode mode: PresentationMode) {
     self.present(viewController: viewController, withMode: mode, options: [], completion: nil)
+  }
+  
+  func present(viewController: UIViewController, withMode mode: PresentationMode, completion: (() -> Void)?) {
+    self.present(viewController: viewController, withMode: mode, options: [], completion: completion)
+  }
+  
+  func present(viewController: UIViewController, withMode mode: PresentationMode, options: [PresentableControllerOption]) {
+    self.present(viewController: viewController, withMode: mode, options: options, completion: nil)
   }
   
   func present(viewController: UIViewController, withMode mode: PresentationMode, options: [PresentableControllerOption], completion: (() -> Void)?) {
