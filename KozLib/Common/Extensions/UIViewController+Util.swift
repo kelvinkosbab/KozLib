@@ -42,4 +42,26 @@ extension UIViewController {
   func configureDefaultBackButton(target: Any? = nil, action: Selector? = nil) {
     self.configureBackButton(title: "Back", target: target, action: action)
   }
+  
+  // MARK: - Top View Controller
+  
+  var topViewController: UIViewController {
+    var topViewController = self
+    while let presentedViewController = topViewController.presentedViewController {
+      topViewController = presentedViewController
+    }
+    
+    // Check for UITabBarController
+    if let tabBarController = topViewController as? UITabBarController, let selectedViewController = tabBarController.viewControllers?[tabBarController.selectedIndex] {
+      topViewController = selectedViewController.topViewController
+    }
+    
+    // Check for UINavigationBarController
+    if let navigationController = topViewController as? UINavigationController, let lastViewController = navigationController.viewControllers.last {
+      topViewController = lastViewController.topViewController
+    }
+    
+    // Completion
+    return topViewController
+  }
 }

@@ -20,7 +20,7 @@ extension CustomPresentationController {
     var interactiveViews: [UIView] = []
     
     // Presenting view controller
-    if let presentationInteractable = self.presentingViewController as? PresentationInteractable, presentationInteractable.presentationInteractiveViews.count > 0 {
+    if let presentationInteractable = self.presentingViewController.topViewController as? PresentationInteractable, presentationInteractable.presentationInteractiveViews.count > 0 {
       interactiveViews += presentationInteractable.presentationInteractiveViews
     }
     
@@ -36,7 +36,7 @@ extension CustomPresentationController {
     var interactiveViews: [UIView] = []
     
     // Presented view controller
-    if let dismissInteractable = self.presentedViewController as? DismissInteractable, dismissInteractable.dismissInteractiveViews.count > 0 {
+    if let dismissInteractable = self.presentedViewController.topViewController as? DismissInteractable, dismissInteractable.dismissInteractiveViews.count > 0 {
       interactiveViews += dismissInteractable.dismissInteractiveViews
     }
     
