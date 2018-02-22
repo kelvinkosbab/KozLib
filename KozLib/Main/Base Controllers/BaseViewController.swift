@@ -1,6 +1,6 @@
 //
 //  BaseViewController.swift
-//  KozLib
+//  KozLibrary
 //
 //  Created by Kelvin Kosbab on 9/24/17.
 //  Copyright © 2017 Kozinga. All rights reserved.
@@ -13,8 +13,8 @@ class BaseViewController : UIViewController, PresentableController {
   // MARK: - PresentableController
   
   var presentedMode: PresentationMode = .modal
-  var transitioningDelegateReference: UIViewControllerTransitioningDelegate? = nil
-  var currentFlowFirstController: PresentableController? = nil
+  var presentationManager: UIViewControllerTransitioningDelegate?
+  var currentFlowInitialController: PresentableController?
 }
 
 extension BaseViewController {

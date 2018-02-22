@@ -10,12 +10,21 @@ import UIKit
 import ARKit
 import SceneKit
 
-class ARWallDetectionViewController : BaseViewController, ConfigurationViewPresentable {
+class ARWallDetectionViewController : BaseViewController, ConfigurationViewPresentable, DismissInteractable {
   
   // MARK: - Static Accessors
   
   static func newViewController() -> ARWallDetectionViewController {
     return self.newViewController(fromStoryboardWithName: "ARKit")
+  }
+  
+  // MARK: - DismissInteractable
+  
+  var dismissInteractiveViews: [UIView] {
+    if let view = self.view {
+      return [ view ]
+    }
+    return []
   }
   
   // MARK: - Properties

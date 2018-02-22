@@ -1,6 +1,6 @@
 //
 //  ARKitItemsViewController.swift
-//  KozLib
+//  KozLibrary
 //
 //  Created by Kelvin Kosbab on 10/1/17.
 //  Copyright © 2017 Kozinga. All rights reserved.
@@ -75,7 +75,7 @@ class ARKitItemsViewController : BaseTableViewController, ARKitNavigationDelegat
       case .planeMapping:
         return "Plane Mapping"
       case .tackDragonDemo:
-        return "Tack Mobile AR Dragon Demo"
+        return "Kozinga AR Dragon Demo"
       case .wallDetection:
         return "Wall Detection"
       case .faceMappingVisulalization:

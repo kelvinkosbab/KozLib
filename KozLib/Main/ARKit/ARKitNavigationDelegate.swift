@@ -1,6 +1,6 @@
 //
 //  ARKitNavigationDelegate.swift
-//  KozLib
+//  KozLibrary
 //
 //  Created by Kelvin Kosbab on 10/1/17.
 //  Copyright © 2017 Kozinga. All rights reserved.
@@ -8,53 +8,47 @@
 
 import UIKit
 
-protocol ARKitNavigationDelegate {}
+protocol ARKitNavigationDelegate : class {}
 extension ARKitNavigationDelegate where Self : PresentableController {
   
   // MARK: - Horizontal
   
   func transitionToARKitItems(presentationMode: PresentationMode) {
     let viewController = ARKitItemsViewController.newViewController()
-    self.present(viewController: viewController, withMode: presentationMode)
+    self.present(viewController: viewController, withMode: presentationMode, options: [])
   }
   
   func transitionToARPlaneVisualization() {
     let viewController = ARPlaneMappingViewController.newViewController()
-    let interactiveElement = InteractiveElement(size: nil, offset: nil, view: viewController.view)
-    self.present(viewController: viewController, withMode: .rightToLeft, options: [ .dismissInteractiveElement(interactiveElement) ], completion: nil)
+    self.present(viewController: viewController, withMode: .custom(.rightToLeft), options: [])
   }
   
   func transitionToARBlockPhysics() {
     let viewController = ARBlockPhysicsViewController.newViewController()
-    let interactiveElement = InteractiveElement(size: nil, offset: nil, view: viewController.view)
-    self.present(viewController: viewController, withMode: .rightToLeft, options: [ .dismissInteractiveElement(interactiveElement) ], completion: nil)
+    self.present(viewController: viewController, withMode: .custom(.rightToLeft), options: [])
   }
   
   func transitionToPlaneMapping() {
     let viewController = ARPlaneMappingViewController.newViewController()
-    let interactiveElement = InteractiveElement(size: nil, offset: nil, view: viewController.view)
-    self.present(viewController: viewController, withMode: .rightToLeft, options: [ .dismissInteractiveElement(interactiveElement) ], completion: nil)
+    self.present(viewController: viewController, withMode: .custom(.rightToLeft), options: [])
   }
   
   func transitionToDragonDemo() {
     let viewController = TackDragonMainViewController.newViewController()
-    let interactiveElement = InteractiveElement(size: nil, offset: nil, view: viewController.view)
-    self.present(viewController: viewController, withMode: .rightToLeft, options: [ .dismissInteractiveElement(interactiveElement) ], completion: nil)
+    self.present(viewController: viewController, withMode: .custom(.rightToLeft), options: [])
   }
   
   // MARK: - Vertical
   
   func transitionToWallDetection() {
     let viewController = ARWallDetectionViewController.newViewController()
-    let interactiveElement = InteractiveElement(size: nil, offset: nil, view: viewController.view)
-    self.present(viewController: viewController, withMode: .rightToLeft, options: [ .dismissInteractiveElement(interactiveElement) ], completion: nil)
+    self.present(viewController: viewController, withMode: .custom(.rightToLeft), options: [])
   }
   
   // MARK: - Face Tracking
   
   func transitionToARFaceTracking() {
     let viewController = ARFaceTrackingViewController.newViewController()
-    let interactiveElement = InteractiveElement(size: nil, offset: nil, view: viewController.view)
-    self.present(viewController: viewController, withMode: .rightToLeft, options: [ .dismissInteractiveElement(interactiveElement) ], completion: nil)
+    self.present(viewController: viewController, withMode: .custom(.rightToLeft), options: [])
   }
 }

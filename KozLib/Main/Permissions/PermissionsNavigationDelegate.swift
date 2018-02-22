@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol PermissionsNavigationDelegate {}
+protocol PermissionsNavigationDelegate : class {}
 extension PermissionsNavigationDelegate where Self : PresentableController {
   
   func transitionToPermissions(delegate: PermissionsViewControllerDelegate? = nil) {
     let viewController = PermissionsViewController.newViewController(delegate: delegate)
-    self.present(viewController: viewController, withMode: .modal)
+    self.present(viewController: viewController, withMode: .custom(.bottomUp), options: [])
   }
 }
