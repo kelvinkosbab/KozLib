@@ -14,12 +14,21 @@ import SceneKit
  * Source: https://developer.apple.com/documentation/arkit/creating_face_based_ar_experiences
  */
 
-class ARFaceTrackingViewController : BaseViewController, ARSessionDelegate {
+class ARFaceTrackingViewController : BaseViewController, ARSessionDelegate, DismissInteractable {
   
   // MARK: - Static Accessors
   
   static func newViewController() -> ARFaceTrackingViewController {
     return self.newViewController(fromStoryboardWithName: "ARFaceTracking")
+  }
+  
+  // MARK: - DismissInteractable
+  
+  var dismissInteractiveViews: [UIView] {
+    if let view = self.view {
+      return [ view ]
+    }
+    return []
   }
   
   // MARK: Outlets
@@ -117,16 +126,27 @@ class ARFaceTrackingViewController : BaseViewController, ARSessionDelegate {
   
   /// - Tag: CreateARSCNFaceGeometry
   func createFaceGeometry() {
+    
+    // Check if simulator
+    
+    #if targetEnvironment(simulator)
+    return
+    #else
+    
     // This relies on the earlier check of `ARFaceTrackingConfiguration.isSupported`.
-    let device = sceneView.device!
-    let maskGeometry = ARSCNFaceGeometry(device: device)!
-    let glassesGeometry = ARSCNFaceGeometry(device: device)!
+    guard let device = sceneView.device,
+      let maskGeometry = ARSCNFaceGeometry(device: device),
+      let glassesGeometry = ARSCNFaceGeometry(device: device) else {
+        return
+    }
     
     nodeForContentType = [
       .faceGeometry: Mask(geometry: maskGeometry),
       .overlayModel: GlassesOverlay(geometry: glassesGeometry),
       .blendShapeModel: RobotHead()
     ]
+    
+    #endif
   }
   
   // MARK: - ARSessionDelegate

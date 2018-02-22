@@ -1,6 +1,6 @@
 //
 //  NetworkInfoNavigationDelegate.swift
-//  KozLib
+//  KozLibrary
 //
 //  Created by Kelvin Kosbab on 10/1/17.
 //  Copyright © 2017 Kozinga. All rights reserved.
@@ -8,17 +8,17 @@
 
 import UIKit
 
-protocol NetworkNavigationDelegate {}
+protocol NetworkNavigationDelegate : class {}
 extension NetworkNavigationDelegate where Self : PresentableController {
   
   func transitionToNetworkInfo(presentationMode: PresentationMode) {
     let viewController = NetworkInfoTableViewController.newViewController()
-    self.present(viewController: viewController, withMode: presentationMode)
+    self.present(viewController: viewController, withMode: presentationMode, options: [])
   }
   
   func transitionToNetworkExtension(presentationMode: PresentationMode) {
     let viewController = NetworkExtensionViewController.newViewController()
-    self.present(viewController: viewController, withMode: presentationMode)
+    self.present(viewController: viewController, withMode: presentationMode, options: [])
   }
   
   func openWiFiSettings() {

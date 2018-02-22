@@ -1,6 +1,6 @@
 //
 //  ARPlaneMappingViewController.swift
-//  KozLib
+//  KozLibrary
 //
 //  Created by Kelvin Kosbab on 9/24/17.
 //  Copyright © 2017 Kozinga. All rights reserved.
@@ -14,7 +14,7 @@ class ARPlaneMappingViewController : ARBaseViewController {
   
   // MARK: - Properties
   
-  var planes: [UUID : Plane] = [:]
+  var planes: [UUID : BoxPlane] = [:]
   
   // MARK: - Lifecycle
   
@@ -48,7 +48,7 @@ extension ARPlaneMappingViewController {
     }
     
     // When a new plane is detected we create a new SceneKit plane to visualize it in 3D
-    let plane = Plane(anchor: anchor, isHidden: false)
+    let plane = BoxPlane.createPlane(.horizontal, anchor: anchor)
     self.planes[anchor.identifier] = plane
     node.addChildNode(plane)
   }

@@ -1,6 +1,6 @@
 //
 //  ARBaseViewController.swift
-//  KozLib
+//  KozLibrary
 //
 //  Created by Kelvin Kosbab on 9/24/17.
 //  Copyright © 2017 Kozinga. All rights reserved.
@@ -10,12 +10,21 @@ import UIKit
 import ARKit
 import SceneKit
 
-class ARBaseViewController : BaseViewController {
+class ARBaseViewController : BaseViewController, DismissInteractable {
   
   // MARK: - Static Accessors
   
   static func newViewController() -> ARBaseViewController {
     return self.newViewController(fromStoryboardWithName: "ARKit")
+  }
+  
+  // MARK: - DismissInteractable
+  
+  var dismissInteractiveViews: [UIView] {
+    if let view = self.view {
+      return [ view ]
+    }
+    return []
   }
   
   // MARK: - Properties

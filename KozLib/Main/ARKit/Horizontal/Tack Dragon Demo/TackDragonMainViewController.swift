@@ -8,12 +8,21 @@
 
 import UIKit
 
-class TackDragonMainViewController : BaseViewController {
+class TackDragonMainViewController : BaseViewController, DismissInteractable {
   
   // MARK: - Static Accessors
   
   static func newViewController() -> TackDragonMainViewController {
     return self.newViewController(fromStoryboardWithName: "TackDragon")
+  }
+  
+  // MARK: - DismissInteractable
+  
+  var dismissInteractiveViews: [UIView] {
+    if let view = self.view {
+      return [ view ]
+    }
+    return []
   }
   
   // MARK: - Properties

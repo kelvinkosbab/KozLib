@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14092" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14081.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <visualEffectView opaque="NO" contentMode="scaleToFill" id="ON0-h4-IMV" customClass="TopKnobVisualEffectView" customModule="ARMap" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="B1O-ev-bhA">
+                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vrd-Bb-W0w">
+                        <rect key="frame" x="100" y="5" width="40" height="3"/>
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="PtB-em-ZB1">
+                            <rect key="frame" x="0.0" y="0.0" width="40" height="3"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </view>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="UQi-pP-WbB"/>
+                            <constraint firstAttribute="height" constant="3" id="dJq-As-knb"/>
+                        </constraints>
+                        <blurEffect style="dark"/>
+                    </visualEffectView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mgc-08-u6V">
+                        <rect key="frame" x="0.0" y="18" width="240" height="110"/>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Vrd-Bb-W0w" firstAttribute="top" secondItem="B1O-ev-bhA" secondAttribute="top" constant="5" id="8X0-DY-zli"/>
+                    <constraint firstItem="Mgc-08-u6V" firstAttribute="top" secondItem="Vrd-Bb-W0w" secondAttribute="bottom" constant="10" id="HTa-Ca-lwc"/>
+                    <constraint firstItem="Vrd-Bb-W0w" firstAttribute="centerX" secondItem="B1O-ev-bhA" secondAttribute="centerX" id="deE-hs-8h0"/>
+                    <constraint firstAttribute="trailing" secondItem="Mgc-08-u6V" secondAttribute="trailing" id="gZl-bO-RWa"/>
+                    <constraint firstAttribute="bottom" secondItem="Mgc-08-u6V" secondAttribute="bottom" id="nK7-iY-wie"/>
+                    <constraint firstItem="Mgc-08-u6V" firstAttribute="leading" secondItem="B1O-ev-bhA" secondAttribute="leading" id="uJy-Ay-TXZ"/>
+                </constraints>
+            </view>
+            <blurEffect style="prominent"/>
+            <connections>
+                <outlet property="containerView" destination="Mgc-08-u6V" id="IMK-Rj-vVx"/>
+                <outlet property="knobVisualEffectView" destination="Vrd-Bb-W0w" id="F92-EH-eAU"/>
+            </connections>
+            <point key="canvasLocation" x="-16" y="-21"/>
+        </visualEffectView>
+    </objects>
+</document>

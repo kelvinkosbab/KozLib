@@ -1,6 +1,6 @@
 //
 //  NFCNavigationDelegate.swift
-//  KozLib
+//  KozLibrary
 //
 //  Created by Kelvin Kosbab on 10/1/17.
 //  Copyright © 2017 Kozinga. All rights reserved.
@@ -13,6 +13,6 @@ extension NFCNavigationDelegate where Self : PresentableController {
   
   func transitionToNFC(presentationMode: PresentationMode) {
     let viewController = NFCTableViewController.newViewController()
-    self.present(viewController: viewController, withMode: presentationMode)
+    self.present(viewController: viewController, withMode: presentationMode, options: [])
   }
 }

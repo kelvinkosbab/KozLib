@@ -1,6 +1,6 @@
 //
 //  NFCMessageTableViewController.swift
-//  KozLib
+//  KozLibrary
 //
 //  Created by Kelvin Kosbab on 9/24/17.
 //  Copyright © 2017 Kozinga. All rights reserved.

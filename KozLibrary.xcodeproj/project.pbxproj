@@ -11,6 +11,30 @@
 		B60AD106201A79F2003A2E84 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AD105201A79F2003A2E84 /* Log.swift */; };
 		B60AD10A201A9010003A2E84 /* ARFaceTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AD109201A9010003A2E84 /* ARFaceTrackingViewController.swift */; };
 		B60AD10C201A9146003A2E84 /* ARState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AD10B201A9146003A2E84 /* ARState.swift */; };
+		B619F9DB203E93DB00764577 /* TopKnobVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B619F9D9203E93DB00764577 /* TopKnobVisualEffectView.swift */; };
+		B619F9DC203E93DB00764577 /* TopKnobVisualEffectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B619F9DA203E93DB00764577 /* TopKnobVisualEffectView.xib */; };
+		B619F9FC203E94A000764577 /* InteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B619F9DF203E94A000764577 /* InteractiveTransition.swift */; };
+		B619F9FD203E94A000764577 /* InteractiveTransitionOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = B619F9E0203E94A000764577 /* InteractiveTransitionOption.swift */; };
+		B619F9FE203E94A000764577 /* InteractiveTransition+Subclasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = B619F9E1203E94A000764577 /* InteractiveTransition+Subclasses.swift */; };
+		B619F9FF203E94A000764577 /* PresentableControllerOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = B619F9E2203E94A000764577 /* PresentableControllerOption.swift */; };
+		B619FA00203E94A000764577 /* PresentableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B619F9E3203E94A000764577 /* PresentableController.swift */; };
+		B619FA01203E94A000764577 /* PresentableManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B619F9E5203E94A000764577 /* PresentableManager.swift */; };
+		B619FA02203E94A000764577 /* PresentingViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B619F9E6203E94A000764577 /* PresentingViewControllerDelegate.swift */; };
+		B619FA03203E94A000764577 /* TopDownAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B619F9E8203E94A000764577 /* TopDownAnimator.swift */; };
+		B619FA04203E94A000764577 /* TopDownPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B619F9E9203E94A000764577 /* TopDownPresentationController.swift */; };
+		B619FA05203E94A000764577 /* CustomPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B619F9EA203E94A000764577 /* CustomPresentationController.swift */; };
+		B619FA06203E94A000764577 /* VisualEffectFadePresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B619F9EC203E94A000764577 /* VisualEffectFadePresentationController.swift */; };
+		B619FA07203E94A000764577 /* VisualEffectFadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B619F9ED203E94A000764577 /* VisualEffectFadeAnimator.swift */; };
+		B619FA08203E94A000764577 /* LeftMenuAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B619F9EF203E94A000764577 /* LeftMenuAnimator.swift */; };
+		B619FA09203E94A000764577 /* LeftMenuPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B619F9F0203E94A000764577 /* LeftMenuPresentationController.swift */; };
+		B619FA0A203E94A000764577 /* PresentableAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B619F9F1203E94A000764577 /* PresentableAnimator.swift */; };
+		B619FA0B203E94A000764577 /* RightToLeftAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B619F9F3203E94A000764577 /* RightToLeftAnimator.swift */; };
+		B619FA0C203E94A000764577 /* RightToLeftPresenationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B619F9F4203E94A000764577 /* RightToLeftPresenationController.swift */; };
+		B619FA0D203E94A000764577 /* BottomUpPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B619F9F6203E94A000764577 /* BottomUpPresentationController.swift */; };
+		B619FA0E203E94A000764577 /* BottomUpAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B619F9F7203E94A000764577 /* BottomUpAnimator.swift */; };
+		B619FA0F203E94A000764577 /* TopKnobBottomUpPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B619F9F9203E94A000764577 /* TopKnobBottomUpPresentationController.swift */; };
+		B619FA10203E94A000764577 /* TopKnobBottomUpAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B619F9FA203E94A000764577 /* TopKnobBottomUpAnimator.swift */; };
+		B619FA11203E94A000764577 /* PresentationMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B619F9FB203E94A000764577 /* PresentationMode.swift */; };
 		B61B8DD91F81429B00118C73 /* ARKitItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61B8DD81F81429B00118C73 /* ARKitItemsViewController.swift */; };
 		B61B8DDC1F816C8300118C73 /* Network.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B61B8DDB1F816C8300118C73 /* Network.storyboard */; };
 		B61B8DDE1F816C8F00118C73 /* NetworkInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61B8DDD1F816C8F00118C73 /* NetworkInfoTableViewController.swift */; };
@@ -49,9 +73,6 @@
 		B6350E521F787D1C004E6218 /* ViewControllerFromStoryboardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6350E511F787D1C004E6218 /* ViewControllerFromStoryboardProtocol.swift */; };
 		B6350E551F787E7E004E6218 /* NFCMessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6350E541F787E7E004E6218 /* NFCMessageTableViewController.swift */; };
 		B6350E571F787F5A004E6218 /* NFC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6350E561F787F5A004E6218 /* NFC.storyboard */; };
-		B6350E5A1F7880C1004E6218 /* PresentableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6350E591F7880C1004E6218 /* PresentableController.swift */; };
-		B6350E5F1F78815B004E6218 /* InteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6350E5E1F78815B004E6218 /* InteractiveTransition.swift */; };
-		B6350E611F7881A1004E6218 /* PresentationManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6350E601F7881A1004E6218 /* PresentationManagerProtocol.swift */; };
 		B63A82B7201E640C00E6C8C6 /* ARFaceTracking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B63A82B6201E640C00E6C8C6 /* ARFaceTracking.storyboard */; };
 		B63A82B9201E646400E6C8C6 /* ARFaceTrackingStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A82B8201E646400E6C8C6 /* ARFaceTrackingStatusViewController.swift */; };
 		B63A82BD201E64B800E6C8C6 /* VirtualContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A82BC201E64B800E6C8C6 /* VirtualContentType.swift */; };
@@ -75,18 +96,13 @@
 		B6480A06201A579C000BE002 /* HotspotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6480A05201A579C000BE002 /* HotspotHelper.swift */; };
 		B6480A09201A5B09000BE002 /* ConfiguringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6480A08201A5B09000BE002 /* ConfiguringViewController.swift */; };
 		B6480A0B201A5D07000BE002 /* ConfiguringView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6480A0A201A5D07000BE002 /* ConfiguringView.storyboard */; };
-		B65514321F78838300EEF26F /* LeftMenuPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65514311F78838300EEF26F /* LeftMenuPresentationManager.swift */; };
-		B65514341F78839800EEF26F /* RightToLeftPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65514331F78839800EEF26F /* RightToLeftPresentationManager.swift */; };
-		B65514361F7883A500EEF26F /* FadeWithBlurPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65514351F7883A500EEF26F /* FadeWithBlurPresentationManager.swift */; };
 		B65514381F7888B900EEF26F /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65514371F7888B900EEF26F /* BaseNavigationController.swift */; };
 		B655143A1F78924A00EEF26F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65514391F78924A00EEF26F /* BaseViewController.swift */; };
 		B655143D1F78928800EEF26F /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B655143C1F78928800EEF26F /* BaseTableViewController.swift */; };
 		B655143F1F7895AE00EEF26F /* UIView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B655143E1F7895AE00EEF26F /* UIView+Util.swift */; };
 		B66780F6201943370014781C /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66780F5201943370014781C /* NetworkExtension.framework */; };
-		B66780F9201948D20014781C /* TopDownPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66780F8201948D20014781C /* TopDownPresentationManager.swift */; };
-		B66780FB201948E60014781C /* BottomUpPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66780FA201948E60014781C /* BottomUpPresentationManager.swift */; };
 		B67756BA1F78BDB100B553F3 /* ARBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67756B91F78BDB100B553F3 /* ARBaseViewController.swift */; };
-		B67756BD1F78BFF900B553F3 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67756BC1F78BFF900B553F3 /* Plane.swift */; };
+		B67756BD1F78BFF900B553F3 /* BoxPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67756BC1F78BFF900B553F3 /* BoxPlane.swift */; };
 		B67949F11F81CE1900EEB926 /* ARBlockPhysicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67949F01F81CE1900EEB926 /* ARBlockPhysicsViewController.swift */; };
 		B67949F51F81FB5A00EEB926 /* CollisionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67949F41F81FB5A00EEB926 /* CollisionCategory.swift */; };
 		B67949F71F81FBC800EEB926 /* PBRMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67949F61F81FBC800EEB926 /* PBRMaterial.swift */; };
@@ -102,14 +118,67 @@
 		B68B2E6F1F76BED7000B7A3F /* MyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B2E6E1F76BED7000B7A3F /* MyDataManager.swift */; };
 		B6C83B90201A4CAC0008CC55 /* NetworkExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C83B8F201A4CAC0008CC55 /* NetworkExtensionViewController.swift */; };
 		B6D00254201E7CBD0009EE1E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D00253201E7CBD0009EE1E /* LocationManager.swift */; };
+		B6D1312A202CD1A90035736E /* AppProxyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D13129202CD1A90035736E /* AppProxyProvider.swift */; };
+		B6D13130202CD1A90035736E /* KozNetAppProxy.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B6D13127202CD1A90035736E /* KozNetAppProxy.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B6D9205620238835008A6361 /* ARWallDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D9205520238835008A6361 /* ARWallDetectionViewController.swift */; };
 		B6F436671FD27CC1008C9C6B /* Locale+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F436661FD27CC1008C9C6B /* Locale+Util.swift */; };
+		B6F9756520239D1900BE9D9D /* VerticalBoxPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F9756420239D1900BE9D9D /* VerticalBoxPlane.swift */; };
+		B6F9756720239D2200BE9D9D /* HorizontalBoxPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F9756620239D2200BE9D9D /* HorizontalBoxPlane.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B6D1312D202CD1A90035736E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B68B2E4B1F76BCEC000B7A3F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B6D13126202CD1A90035736E;
+			remoteInfo = KozNetAppProxy;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B6D1312F202CD1A90035736E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B6D13130202CD1A90035736E /* KozNetAppProxy.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B60AD103201A7919003A2E84 /* ConfigurationViewPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewPresentable.swift; sourceTree = "<group>"; };
 		B60AD105201A79F2003A2E84 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		B60AD109201A9010003A2E84 /* ARFaceTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARFaceTrackingViewController.swift; sourceTree = "<group>"; };
 		B60AD10B201A9146003A2E84 /* ARState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARState.swift; sourceTree = "<group>"; };
+		B619F9D9203E93DB00764577 /* TopKnobVisualEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopKnobVisualEffectView.swift; sourceTree = "<group>"; };
+		B619F9DA203E93DB00764577 /* TopKnobVisualEffectView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopKnobVisualEffectView.xib; sourceTree = "<group>"; };
+		B619F9DF203E94A000764577 /* InteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveTransition.swift; sourceTree = "<group>"; };
+		B619F9E0203E94A000764577 /* InteractiveTransitionOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveTransitionOption.swift; sourceTree = "<group>"; };
+		B619F9E1203E94A000764577 /* InteractiveTransition+Subclasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InteractiveTransition+Subclasses.swift"; sourceTree = "<group>"; };
+		B619F9E2203E94A000764577 /* PresentableControllerOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentableControllerOption.swift; sourceTree = "<group>"; };
+		B619F9E3203E94A000764577 /* PresentableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentableController.swift; sourceTree = "<group>"; };
+		B619F9E5203E94A000764577 /* PresentableManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentableManager.swift; sourceTree = "<group>"; };
+		B619F9E6203E94A000764577 /* PresentingViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentingViewControllerDelegate.swift; sourceTree = "<group>"; };
+		B619F9E8203E94A000764577 /* TopDownAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopDownAnimator.swift; sourceTree = "<group>"; };
+		B619F9E9203E94A000764577 /* TopDownPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopDownPresentationController.swift; sourceTree = "<group>"; };
+		B619F9EA203E94A000764577 /* CustomPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPresentationController.swift; sourceTree = "<group>"; };
+		B619F9EC203E94A000764577 /* VisualEffectFadePresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectFadePresentationController.swift; sourceTree = "<group>"; };
+		B619F9ED203E94A000764577 /* VisualEffectFadeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectFadeAnimator.swift; sourceTree = "<group>"; };
+		B619F9EF203E94A000764577 /* LeftMenuAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuAnimator.swift; sourceTree = "<group>"; };
+		B619F9F0203E94A000764577 /* LeftMenuPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuPresentationController.swift; sourceTree = "<group>"; };
+		B619F9F1203E94A000764577 /* PresentableAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentableAnimator.swift; sourceTree = "<group>"; };
+		B619F9F3203E94A000764577 /* RightToLeftAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightToLeftAnimator.swift; sourceTree = "<group>"; };
+		B619F9F4203E94A000764577 /* RightToLeftPresenationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightToLeftPresenationController.swift; sourceTree = "<group>"; };
+		B619F9F6203E94A000764577 /* BottomUpPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomUpPresentationController.swift; sourceTree = "<group>"; };
+		B619F9F7203E94A000764577 /* BottomUpAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomUpAnimator.swift; sourceTree = "<group>"; };
+		B619F9F9203E94A000764577 /* TopKnobBottomUpPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopKnobBottomUpPresentationController.swift; sourceTree = "<group>"; };
+		B619F9FA203E94A000764577 /* TopKnobBottomUpAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopKnobBottomUpAnimator.swift; sourceTree = "<group>"; };
+		B619F9FB203E94A000764577 /* PresentationMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationMode.swift; sourceTree = "<group>"; };
 		B61B8DD81F81429B00118C73 /* ARKitItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKitItemsViewController.swift; sourceTree = "<group>"; };
 		B61B8DDB1F816C8300118C73 /* Network.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Network.storyboard; sourceTree = "<group>"; };
 		B61B8DDD1F816C8F00118C73 /* NetworkInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInfoTableViewController.swift; sourceTree = "<group>"; };
@@ -149,9 +218,6 @@
 		B6350E511F787D1C004E6218 /* ViewControllerFromStoryboardProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFromStoryboardProtocol.swift; sourceTree = "<group>"; };
 		B6350E541F787E7E004E6218 /* NFCMessageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCMessageTableViewController.swift; sourceTree = "<group>"; };
 		B6350E561F787F5A004E6218 /* NFC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NFC.storyboard; sourceTree = "<group>"; };
-		B6350E591F7880C1004E6218 /* PresentableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableController.swift; sourceTree = "<group>"; };
-		B6350E5E1F78815B004E6218 /* InteractiveTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveTransition.swift; sourceTree = "<group>"; };
-		B6350E601F7881A1004E6218 /* PresentationManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationManagerProtocol.swift; sourceTree = "<group>"; };
 		B63A82B6201E640C00E6C8C6 /* ARFaceTracking.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ARFaceTracking.storyboard; sourceTree = "<group>"; };
 		B63A82B8201E646400E6C8C6 /* ARFaceTrackingStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARFaceTrackingStatusViewController.swift; sourceTree = "<group>"; };
 		B63A82BC201E64B800E6C8C6 /* VirtualContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualContentType.swift; sourceTree = "<group>"; };
@@ -175,18 +241,13 @@
 		B6480A05201A579C000BE002 /* HotspotHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotspotHelper.swift; sourceTree = "<group>"; };
 		B6480A08201A5B09000BE002 /* ConfiguringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguringViewController.swift; sourceTree = "<group>"; };
 		B6480A0A201A5D07000BE002 /* ConfiguringView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConfiguringView.storyboard; sourceTree = "<group>"; };
-		B65514311F78838300EEF26F /* LeftMenuPresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuPresentationManager.swift; sourceTree = "<group>"; };
-		B65514331F78839800EEF26F /* RightToLeftPresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightToLeftPresentationManager.swift; sourceTree = "<group>"; };
-		B65514351F7883A500EEF26F /* FadeWithBlurPresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeWithBlurPresentationManager.swift; sourceTree = "<group>"; };
 		B65514371F7888B900EEF26F /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		B65514391F78924A00EEF26F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B655143C1F78928800EEF26F /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		B655143E1F7895AE00EEF26F /* UIView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Util.swift"; sourceTree = "<group>"; };
 		B66780F5201943370014781C /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
-		B66780F8201948D20014781C /* TopDownPresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopDownPresentationManager.swift; sourceTree = "<group>"; };
-		B66780FA201948E60014781C /* BottomUpPresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomUpPresentationManager.swift; sourceTree = "<group>"; };
 		B67756B91F78BDB100B553F3 /* ARBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBaseViewController.swift; sourceTree = "<group>"; };
-		B67756BC1F78BFF900B553F3 /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
+		B67756BC1F78BFF900B553F3 /* BoxPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxPlane.swift; sourceTree = "<group>"; };
 		B67949F01F81CE1900EEB926 /* ARBlockPhysicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBlockPhysicsViewController.swift; sourceTree = "<group>"; };
 		B67949F41F81FB5A00EEB926 /* CollisionCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollisionCategory.swift; sourceTree = "<group>"; };
 		B67949F61F81FBC800EEB926 /* PBRMaterial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBRMaterial.swift; sourceTree = "<group>"; };
@@ -204,7 +265,14 @@
 		B68B2E6E1F76BED7000B7A3F /* MyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataManager.swift; sourceTree = "<group>"; };
 		B6C83B8F201A4CAC0008CC55 /* NetworkExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkExtensionViewController.swift; sourceTree = "<group>"; };
 		B6D00253201E7CBD0009EE1E /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		B6D13127202CD1A90035736E /* KozNetAppProxy.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KozNetAppProxy.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6D13129202CD1A90035736E /* AppProxyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppProxyProvider.swift; sourceTree = "<group>"; };
+		B6D1312B202CD1A90035736E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6D1312C202CD1A90035736E /* KozNetAppProxy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KozNetAppProxy.entitlements; sourceTree = "<group>"; };
+		B6D9205520238835008A6361 /* ARWallDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARWallDetectionViewController.swift; sourceTree = "<group>"; };
 		B6F436661FD27CC1008C9C6B /* Locale+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale+Util.swift"; sourceTree = "<group>"; };
+		B6F9756420239D1900BE9D9D /* VerticalBoxPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalBoxPlane.swift; sourceTree = "<group>"; };
+		B6F9756620239D2200BE9D9D /* HorizontalBoxPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalBoxPlane.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,9 +284,126 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B6D13124202CD1A90035736E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B619F9D7203E93A200764577 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				B619F9D8203E93DB00764577 /* Top Knob Visual Effect View */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		B619F9D8203E93DB00764577 /* Top Knob Visual Effect View */ = {
+			isa = PBXGroup;
+			children = (
+				B619F9D9203E93DB00764577 /* TopKnobVisualEffectView.swift */,
+				B619F9DA203E93DB00764577 /* TopKnobVisualEffectView.xib */,
+			);
+			path = "Top Knob Visual Effect View";
+			sourceTree = "<group>";
+		};
+		B619F9DD203E94A000764577 /* Presenting Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B619F9E3203E94A000764577 /* PresentableController.swift */,
+				B619F9FB203E94A000764577 /* PresentationMode.swift */,
+				B619F9E2203E94A000764577 /* PresentableControllerOption.swift */,
+				B619F9E4203E94A000764577 /* Custom Controller Presentations */,
+				B619F9DE203E94A000764577 /* Interactive Transitions */,
+			);
+			path = "Presenting Controllers";
+			sourceTree = "<group>";
+		};
+		B619F9DE203E94A000764577 /* Interactive Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				B619F9DF203E94A000764577 /* InteractiveTransition.swift */,
+				B619F9E0203E94A000764577 /* InteractiveTransitionOption.swift */,
+				B619F9E1203E94A000764577 /* InteractiveTransition+Subclasses.swift */,
+			);
+			path = "Interactive Transitions";
+			sourceTree = "<group>";
+		};
+		B619F9E4203E94A000764577 /* Custom Controller Presentations */ = {
+			isa = PBXGroup;
+			children = (
+				B619F9E5203E94A000764577 /* PresentableManager.swift */,
+				B619F9E6203E94A000764577 /* PresentingViewControllerDelegate.swift */,
+				B619F9E7203E94A000764577 /* Top Down */,
+				B619F9EA203E94A000764577 /* CustomPresentationController.swift */,
+				B619F9EB203E94A000764577 /* Visual Effect Fade */,
+				B619F9EE203E94A000764577 /* Left Menu */,
+				B619F9F1203E94A000764577 /* PresentableAnimator.swift */,
+				B619F9F2203E94A000764577 /* Right to Left */,
+				B619F9F5203E94A000764577 /* Bottom Up */,
+				B619F9F8203E94A000764577 /* Top Knob Bottom Up */,
+			);
+			path = "Custom Controller Presentations";
+			sourceTree = "<group>";
+		};
+		B619F9E7203E94A000764577 /* Top Down */ = {
+			isa = PBXGroup;
+			children = (
+				B619F9E8203E94A000764577 /* TopDownAnimator.swift */,
+				B619F9E9203E94A000764577 /* TopDownPresentationController.swift */,
+			);
+			path = "Top Down";
+			sourceTree = "<group>";
+		};
+		B619F9EB203E94A000764577 /* Visual Effect Fade */ = {
+			isa = PBXGroup;
+			children = (
+				B619F9EC203E94A000764577 /* VisualEffectFadePresentationController.swift */,
+				B619F9ED203E94A000764577 /* VisualEffectFadeAnimator.swift */,
+			);
+			path = "Visual Effect Fade";
+			sourceTree = "<group>";
+		};
+		B619F9EE203E94A000764577 /* Left Menu */ = {
+			isa = PBXGroup;
+			children = (
+				B619F9EF203E94A000764577 /* LeftMenuAnimator.swift */,
+				B619F9F0203E94A000764577 /* LeftMenuPresentationController.swift */,
+			);
+			path = "Left Menu";
+			sourceTree = "<group>";
+		};
+		B619F9F2203E94A000764577 /* Right to Left */ = {
+			isa = PBXGroup;
+			children = (
+				B619F9F3203E94A000764577 /* RightToLeftAnimator.swift */,
+				B619F9F4203E94A000764577 /* RightToLeftPresenationController.swift */,
+			);
+			path = "Right to Left";
+			sourceTree = "<group>";
+		};
+		B619F9F5203E94A000764577 /* Bottom Up */ = {
+			isa = PBXGroup;
+			children = (
+				B619F9F6203E94A000764577 /* BottomUpPresentationController.swift */,
+				B619F9F7203E94A000764577 /* BottomUpAnimator.swift */,
+			);
+			path = "Bottom Up";
+			sourceTree = "<group>";
+		};
+		B619F9F8203E94A000764577 /* Top Knob Bottom Up */ = {
+			isa = PBXGroup;
+			children = (
+				B619F9F9203E94A000764577 /* TopKnobBottomUpPresentationController.swift */,
+				B619F9FA203E94A000764577 /* TopKnobBottomUpAnimator.swift */,
+			);
+			path = "Top Knob Bottom Up";
+			sourceTree = "<group>";
+		};
 		B61B8DDA1F81466700118C73 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,29 +554,6 @@
 			path = "Message Detail";
 			sourceTree = "<group>";
 		};
-		B6350E581F787F95004E6218 /* Presenting Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				B6350E591F7880C1004E6218 /* PresentableController.swift */,
-				B6350E5D1F78814C004E6218 /* Custom Controller Presentations */,
-				B65514301F78835F00EEF26F /* Interactive Transitions */,
-			);
-			path = "Presenting Controllers";
-			sourceTree = "<group>";
-		};
-		B6350E5D1F78814C004E6218 /* Custom Controller Presentations */ = {
-			isa = PBXGroup;
-			children = (
-				B6350E601F7881A1004E6218 /* PresentationManagerProtocol.swift */,
-				B65514311F78838300EEF26F /* LeftMenuPresentationManager.swift */,
-				B65514331F78839800EEF26F /* RightToLeftPresentationManager.swift */,
-				B65514351F7883A500EEF26F /* FadeWithBlurPresentationManager.swift */,
-				B66780F8201948D20014781C /* TopDownPresentationManager.swift */,
-				B66780FA201948E60014781C /* BottomUpPresentationManager.swift */,
-			);
-			path = "Custom Controller Presentations";
-			sourceTree = "<group>";
-		};
 		B63A82BA201E649B00E6C8C6 /* Tracking Status */ = {
 			isa = PBXGroup;
 			children = (
@@ -468,7 +630,7 @@
 		B64414F91F78561A00C9781B /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				B6350E581F787F95004E6218 /* Presenting Controllers */,
+				B619F9DD203E94A000764577 /* Presenting Controllers */,
 				B64414F41F7854E100C9781B /* Extensions */,
 				B6350E501F787D15004E6218 /* Protocols */,
 				B6350E421F786FA3004E6218 /* NFC */,
@@ -476,6 +638,7 @@
 				B61B8DE81F817D5300118C73 /* Network */,
 				B6480A04201A578C000BE002 /* Network Extension */,
 				B629C221201E74C20083D708 /* Permissions */,
+				B619F9D7203E93A200764577 /* Custom Views */,
 				B64414FA1F78568000C9781B /* Useful 3rd Party Libraries */,
 			);
 			path = Common;
@@ -505,14 +668,6 @@
 				B6480A08201A5B09000BE002 /* ConfiguringViewController.swift */,
 			);
 			path = "Configuring View";
-			sourceTree = "<group>";
-		};
-		B65514301F78835F00EEF26F /* Interactive Transitions */ = {
-			isa = PBXGroup;
-			children = (
-				B6350E5E1F78815B004E6218 /* InteractiveTransition.swift */,
-			);
-			path = "Interactive Transitions";
 			sourceTree = "<group>";
 		};
 		B655143B1F78927500EEF26F /* Base Controllers */ = {
@@ -553,7 +708,7 @@
 			isa = PBXGroup;
 			children = (
 				B624C1D61F78B1320027C95D /* Models.scnassets */,
-				B67756BC1F78BFF900B553F3 /* Plane.swift */,
+				B6F975682023A3C300BE9D9D /* BoxPlane */,
 				B67949F81F81FEF300EEB926 /* Cube.swift */,
 				B67949F41F81FB5A00EEB926 /* CollisionCategory.swift */,
 				B67949FC1F82016000EEB926 /* MaterialType.swift */,
@@ -571,6 +726,7 @@
 			isa = PBXGroup;
 			children = (
 				B68B2E551F76BCEC000B7A3F /* KozLib */,
+				B6D13128202CD1A90035736E /* KozNetAppProxy */,
 				B68B2E541F76BCEC000B7A3F /* Products */,
 				B66780F4201943370014781C /* Frameworks */,
 			);
@@ -580,6 +736,7 @@
 			isa = PBXGroup;
 			children = (
 				B68B2E531F76BCEC000B7A3F /* KozLibrary.app */,
+				B6D13127202CD1A90035736E /* KozNetAppProxy.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -636,6 +793,7 @@
 		B6ACFE59201A42A6002C2F59 /* Vertical Surface Detection */ = {
 			isa = PBXGroup;
 			children = (
+				B6D9205520238835008A6361 /* ARWallDetectionViewController.swift */,
 			);
 			path = "Vertical Surface Detection";
 			sourceTree = "<group>";
@@ -660,6 +818,26 @@
 			path = "Network Basic Info";
 			sourceTree = "<group>";
 		};
+		B6D13128202CD1A90035736E /* KozNetAppProxy */ = {
+			isa = PBXGroup;
+			children = (
+				B6D13129202CD1A90035736E /* AppProxyProvider.swift */,
+				B6D1312B202CD1A90035736E /* Info.plist */,
+				B6D1312C202CD1A90035736E /* KozNetAppProxy.entitlements */,
+			);
+			path = KozNetAppProxy;
+			sourceTree = "<group>";
+		};
+		B6F975682023A3C300BE9D9D /* BoxPlane */ = {
+			isa = PBXGroup;
+			children = (
+				B67756BC1F78BFF900B553F3 /* BoxPlane.swift */,
+				B6F9756620239D2200BE9D9D /* HorizontalBoxPlane.swift */,
+				B6F9756420239D1900BE9D9D /* VerticalBoxPlane.swift */,
+			);
+			path = BoxPlane;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -670,15 +848,34 @@
 				B68B2E4F1F76BCEC000B7A3F /* Sources */,
 				B68B2E501F76BCEC000B7A3F /* Frameworks */,
 				B68B2E511F76BCEC000B7A3F /* Resources */,
+				B6D1312F202CD1A90035736E /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B6D1312E202CD1A90035736E /* PBXTargetDependency */,
 			);
 			name = KozLibrary;
 			productName = KozLib;
 			productReference = B68B2E531F76BCEC000B7A3F /* KozLibrary.app */;
 			productType = "com.apple.product-type.application";
+		};
+		B6D13126202CD1A90035736E /* KozNetAppProxy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6D13133202CD1A90035736E /* Build configuration list for PBXNativeTarget "KozNetAppProxy" */;
+			buildPhases = (
+				B6D13123202CD1A90035736E /* Sources */,
+				B6D13124202CD1A90035736E /* Frameworks */,
+				B6D13125202CD1A90035736E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KozNetAppProxy;
+			productName = KozNetAppProxy;
+			productReference = B6D13127202CD1A90035736E /* KozNetAppProxy.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -686,7 +883,7 @@
 		B68B2E4B1F76BCEC000B7A3F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0900;
+				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Kozinga;
 				TargetAttributes = {
@@ -705,6 +902,10 @@
 							};
 						};
 					};
+					B6D13126202CD1A90035736E = {
+						CreatedOnToolsVersion = 9.3;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = B68B2E4E1F76BCEC000B7A3F /* Build configuration list for PBXProject "KozLibrary" */;
@@ -721,6 +922,7 @@
 			projectRoot = "";
 			targets = (
 				B68B2E521F76BCEC000B7A3F /* KozLibrary */,
+				B6D13126202CD1A90035736E /* KozNetAppProxy */,
 			);
 		};
 /* End PBXProject section */
@@ -737,12 +939,20 @@
 				B6480A0B201A5D07000BE002 /* ConfiguringView.storyboard in Resources */,
 				B629C22D201E77680083D708 /* Permissions.storyboard in Resources */,
 				B624C1D11F78ACCD0027C95D /* ARKit.storyboard in Resources */,
+				B619F9DC203E93DB00764577 /* TopKnobVisualEffectView.xib in Resources */,
 				B61B8DEE1F81813700118C73 /* StackedTitleDetailTableViewCell.xib in Resources */,
 				B629C233201E78B80083D708 /* TackDragon.storyboard in Resources */,
 				B68B2E641F76BCEC000B7A3F /* LaunchScreen.storyboard in Resources */,
 				B61B8DDC1F816C8300118C73 /* Network.storyboard in Resources */,
 				B68B2E611F76BCEC000B7A3F /* Assets.xcassets in Resources */,
 				B68B2E5C1F76BCEC000B7A3F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6D13125202CD1A90035736E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -757,30 +967,37 @@
 				B61B8DDE1F816C8F00118C73 /* NetworkInfoTableViewController.swift in Sources */,
 				B644150C1F78588100C9781B /* UIViewController+Util.swift in Sources */,
 				B61B8DEA1F817D6500118C73 /* Network.swift in Sources */,
+				B6F9756520239D1900BE9D9D /* VerticalBoxPlane.swift in Sources */,
 				B60AD10C201A9146003A2E84 /* ARState.swift in Sources */,
 				B629C22B201E77420083D708 /* PermissionsViewController.swift in Sources */,
-				B66780FB201948E60014781C /* BottomUpPresentationManager.swift in Sources */,
+				B619FA0F203E94A000764577 /* TopKnobBottomUpPresentationController.swift in Sources */,
 				B6480A09201A5B09000BE002 /* ConfiguringViewController.swift in Sources */,
 				B64415061F7857D800C9781B /* String+Util.swift in Sources */,
 				B61B8DF01F81822E00118C73 /* Nibable.swift in Sources */,
+				B619F9FD203E94A000764577 /* InteractiveTransitionOption.swift in Sources */,
 				B629C225201E74EB0083D708 /* CameraPermissionManager.swift in Sources */,
 				B67949F11F81CE1900EEB926 /* ARBlockPhysicsViewController.swift in Sources */,
+				B6D9205620238835008A6361 /* ARWallDetectionViewController.swift in Sources */,
 				B63A82C4201E656200E6C8C6 /* Mask.swift in Sources */,
-				B65514341F78839800EEF26F /* RightToLeftPresentationManager.swift in Sources */,
 				B64414F81F78556200C9781B /* UIApplication+Util.swift in Sources */,
 				B644150A1F78585600C9781B /* UIColor+Util.swift in Sources */,
 				B61B8DEC1F81806200118C73 /* StackedTitleDetailTableViewCell.swift in Sources */,
 				B63A82BD201E64B800E6C8C6 /* VirtualContentType.swift in Sources */,
 				B67949FB1F82010000EEB926 /* SCNMaterial+Util.swift in Sources */,
 				B63A82BF201E64E300E6C8C6 /* ARFaceTrackingContentSelectionController.swift in Sources */,
+				B619FA0A203E94A000764577 /* PresentableAnimator.swift in Sources */,
 				B629C223201E74D30083D708 /* PermissionManager.swift in Sources */,
 				B655143A1F78924A00EEF26F /* BaseViewController.swift in Sources */,
 				B63A82C8201E657300E6C8C6 /* RobotHead.swift in Sources */,
+				B619FA05203E94A000764577 /* CustomPresentationController.swift in Sources */,
 				B6350E4A1F787767004E6218 /* DataMangerProtocol.swift in Sources */,
+				B619FA08203E94A000764577 /* LeftMenuAnimator.swift in Sources */,
+				B619FA0E203E94A000764577 /* BottomUpAnimator.swift in Sources */,
 				B67949F91F81FEF300EEB926 /* Cube.swift in Sources */,
 				B6480A06201A579C000BE002 /* HotspotHelper.swift in Sources */,
 				B6350E521F787D1C004E6218 /* ViewControllerFromStoryboardProtocol.swift in Sources */,
 				B624C1D81F78B2260027C95D /* Utilities.swift in Sources */,
+				B619F9FC203E94A000764577 /* InteractiveTransition.swift in Sources */,
 				B6350E4D1F787A41004E6218 /* NFCTableViewController.swift in Sources */,
 				B64415101F78597400C9781B /* HomeViewController.swift in Sources */,
 				B60AD104201A7919003A2E84 /* ConfigurationViewPresentable.swift in Sources */,
@@ -789,56 +1006,83 @@
 				B61B8DE01F81709D00118C73 /* BaseTableViewCell.swift in Sources */,
 				B64415121F7859AE00C9781B /* RootViewController.swift in Sources */,
 				B67756BA1F78BDB100B553F3 /* ARBaseViewController.swift in Sources */,
+				B619FA0D203E94A000764577 /* BottomUpPresentationController.swift in Sources */,
 				B6C83B90201A4CAC0008CC55 /* NetworkExtensionViewController.swift in Sources */,
 				B64415041F78573E00C9781B /* UICollectionView+Reordering.swift in Sources */,
+				B619FA04203E94A000764577 /* TopDownPresentationController.swift in Sources */,
 				B6350E551F787E7E004E6218 /* NFCMessageTableViewController.swift in Sources */,
+				B619FA0B203E94A000764577 /* RightToLeftAnimator.swift in Sources */,
 				B68B2E5F1F76BCEC000B7A3F /* KozLib.xcdatamodeld in Sources */,
 				B63A82B9201E646400E6C8C6 /* ARFaceTrackingStatusViewController.swift in Sources */,
 				B65514381F7888B900EEF26F /* BaseNavigationController.swift in Sources */,
 				B63A82CA201E65CC00E6C8C6 /* VirtualContentUpdater.swift in Sources */,
 				B67949F51F81FB5A00EEB926 /* CollisionCategory.swift in Sources */,
-				B6350E5F1F78815B004E6218 /* InteractiveTransition.swift in Sources */,
+				B619FA11203E94A000764577 /* PresentationMode.swift in Sources */,
 				B68B2E6D1F76BE7E000B7A3F /* MyManagedObjectProtocol.swift in Sources */,
-				B66780F9201948D20014781C /* TopDownPresentationManager.swift in Sources */,
+				B619F9DB203E93DB00764577 /* TopKnobVisualEffectView.swift in Sources */,
 				B629C21B201E74640083D708 /* VirtualObject.swift in Sources */,
+				B619FA06203E94A000764577 /* VisualEffectFadePresentationController.swift in Sources */,
 				B655143D1F78928800EEF26F /* BaseTableViewController.swift in Sources */,
+				B619F9FE203E94A000764577 /* InteractiveTransition+Subclasses.swift in Sources */,
 				B629C235201E79D10083D708 /* PermissionsNavigationDelegate.swift in Sources */,
 				B61B8DD91F81429B00118C73 /* ARKitItemsViewController.swift in Sources */,
 				B629C231201E78680083D708 /* TackDragonARViewController.swift in Sources */,
 				B68B2E6F1F76BED7000B7A3F /* MyDataManager.swift in Sources */,
 				B62675941FB4302C004C003B /* BatchUpdatable.swift in Sources */,
-				B6350E611F7881A1004E6218 /* PresentationManagerProtocol.swift in Sources */,
-				B65514361F7883A500EEF26F /* FadeWithBlurPresentationManager.swift in Sources */,
 				B6F436671FD27CC1008C9C6B /* Locale+Util.swift in Sources */,
 				B624C1CF1F78AC8F0027C95D /* ARPlaneMappingViewController.swift in Sources */,
+				B619FA10203E94A000764577 /* TopKnobBottomUpAnimator.swift in Sources */,
 				B61B8DFA1F81868200118C73 /* Defaults+MyManagedObjectProtocol.swift in Sources */,
+				B6F9756720239D2200BE9D9D /* HorizontalBoxPlane.swift in Sources */,
 				B60AD10A201A9010003A2E84 /* ARFaceTrackingViewController.swift in Sources */,
 				B64414FE1F7856A900C9781B /* UIDevice+Util.swift in Sources */,
 				B61B8DF21F81843800118C73 /* NetworkNavigationDelegate.swift in Sources */,
-				B6350E5A1F7880C1004E6218 /* PresentableController.swift in Sources */,
 				B67949F71F81FBC800EEB926 /* PBRMaterial.swift in Sources */,
 				B64415001F7856EA00C9781B /* Date+Util.swift in Sources */,
+				B619FA00203E94A000764577 /* PresentableController.swift in Sources */,
 				B655143F1F7895AE00EEF26F /* UIView+Util.swift in Sources */,
 				B60AD106201A79F2003A2E84 /* Log.swift in Sources */,
+				B619FA07203E94A000764577 /* VisualEffectFadeAnimator.swift in Sources */,
 				B61B8DE61F81757C00118C73 /* NFCNavigationDelegate.swift in Sources */,
 				B6350E4F1F787A47004E6218 /* NFCTableViewController+Cells.swift in Sources */,
 				B61B8DE41F8174EF00118C73 /* ARKitNavigationDelegate.swift in Sources */,
+				B619FA01203E94A000764577 /* PresentableManager.swift in Sources */,
 				B629C228201E76F50083D708 /* SCNNode+Util.swift in Sources */,
 				B64414FC1F78569600C9781B /* Device.swift in Sources */,
+				B619F9FF203E94A000764577 /* PresentableControllerOption.swift in Sources */,
 				B6350E461F786FBC004E6218 /* NFCMessage.swift in Sources */,
 				B6350E441F786FB4004E6218 /* NFCReader.swift in Sources */,
+				B619FA02203E94A000764577 /* PresentingViewControllerDelegate.swift in Sources */,
+				B619FA09203E94A000764577 /* LeftMenuPresentationController.swift in Sources */,
+				B619FA03203E94A000764577 /* TopDownAnimator.swift in Sources */,
 				B67949FD1F82016000EEB926 /* MaterialType.swift in Sources */,
 				B63A82C2201E655700E6C8C6 /* VirtualFaceContent.swift in Sources */,
 				B68B2E571F76BCEC000B7A3F /* AppDelegate.swift in Sources */,
-				B65514321F78838300EEF26F /* LeftMenuPresentationManager.swift in Sources */,
 				B6D00254201E7CBD0009EE1E /* LocationManager.swift in Sources */,
-				B67756BD1F78BFF900B553F3 /* Plane.swift in Sources */,
+				B67756BD1F78BFF900B553F3 /* BoxPlane.swift in Sources */,
+				B619FA0C203E94A000764577 /* RightToLeftPresenationController.swift in Sources */,
 				B629C22F201E785F0083D708 /* TackDragonMainViewController.swift in Sources */,
 				B64415021F78572400C9781B /* UITabBarController+Util.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B6D13123202CD1A90035736E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6D1312A202CD1A90035736E /* AppProxyProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B6D1312E202CD1A90035736E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B6D13126202CD1A90035736E /* KozNetAppProxy */;
+			targetProxy = B6D1312D202CD1A90035736E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B68B2E5A1F76BCEC000B7A3F /* Main.storyboard */ = {
@@ -974,6 +1218,7 @@
 		B68B2E691F76BCEC000B7A3F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = KozLib/KozLib.entitlements;
@@ -991,6 +1236,7 @@
 		B68B2E6A1F76BCEC000B7A3F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = KozLib/KozLib.entitlements;
@@ -1000,6 +1246,42 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kozinga.KozLib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B6D13131202CD1A90035736E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = KozNetAppProxy/KozNetAppProxy.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6SS93B87P2;
+				INFOPLIST_FILE = KozNetAppProxy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kozinga.KozLib.KozNetAppProxy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B6D13132202CD1A90035736E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = KozNetAppProxy/KozNetAppProxy.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6SS93B87P2;
+				INFOPLIST_FILE = KozNetAppProxy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kozinga.KozLib.KozNetAppProxy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1022,6 +1304,15 @@
 			buildConfigurations = (
 				B68B2E691F76BCEC000B7A3F /* Debug */,
 				B68B2E6A1F76BCEC000B7A3F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6D13133202CD1A90035736E /* Build configuration list for PBXNativeTarget "KozNetAppProxy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6D13131202CD1A90035736E /* Debug */,
+				B6D13132202CD1A90035736E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
