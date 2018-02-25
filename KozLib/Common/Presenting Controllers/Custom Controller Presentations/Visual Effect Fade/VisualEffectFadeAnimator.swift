@@ -35,37 +35,37 @@ class VisualEffectFadeAnimator : NSObject, PresentableAnimator {
     if isPresenting {
       
       // Currently presenting
-      self.presentingViewControllerDelegate?.willPresentViewController(presentedViewController)
-      self.presentedViewControllerDelegate?.willPresentViewController()
+      self.presentingViewControllerDelegate?.willPresentViewController(presentedViewController, usingMode: .custom(.visualEffectFade))
+      self.presentedViewControllerDelegate?.willPresentViewController(usingMode: .custom(.visualEffectFade))
       presentedViewController.view.backgroundColor = .clear
       presentedViewController.view.alpha = 0
       presentedViewController.view.addToContainer(containerView)
       UIView.animate(withDuration: self.transitionDuration(using: transitionContext), animations: {
         presentedViewController.view.alpha = 1
-        self.presentingViewControllerDelegate?.isPresentingViewController(presentedViewController)
-        self.presentedViewControllerDelegate?.isPresentingViewController()
+        self.presentingViewControllerDelegate?.isPresentingViewController(presentedViewController, usingMode: .custom(.visualEffectFade))
+        self.presentedViewControllerDelegate?.isPresentingViewController(usingMode: .custom(.visualEffectFade))
       }, completion: { _ in
-        self.presentingViewControllerDelegate?.didPresentViewController(presentedViewController)
-        self.presentedViewControllerDelegate?.isPresentingViewController()
+        self.presentingViewControllerDelegate?.didPresentViewController(presentedViewController, usingMode: .custom(.visualEffectFade))
+        self.presentedViewControllerDelegate?.isPresentingViewController(usingMode: .custom(.visualEffectFade))
         transitionContext.completeTransition(true)
       })
       
     } else {
       
       // Currently not presenting
-      self.presentingViewControllerDelegate?.willDismissViewController(presentedViewController)
-      self.presentedViewControllerDelegate?.willDismissViewController()
+      self.presentingViewControllerDelegate?.willDismissViewController(presentedViewController, usingMode: .custom(.visualEffectFade))
+      self.presentedViewControllerDelegate?.willDismissViewController(usingMode: .custom(.visualEffectFade))
       UIView.animate(withDuration: self.transitionDuration(using: transitionContext), animations: {
         presentedViewController.view.alpha = 0
-        self.presentingViewControllerDelegate?.isDismissingViewController(presentedViewController)
-        self.presentedViewControllerDelegate?.isDismissingViewController()
+        self.presentingViewControllerDelegate?.isDismissingViewController(presentedViewController, usingMode: .custom(.visualEffectFade))
+        self.presentedViewControllerDelegate?.isDismissingViewController(usingMode: .custom(.visualEffectFade))
       }, completion: { _ in
         if transitionContext.transitionWasCancelled {
-          self.presentingViewControllerDelegate?.didCancelDissmissViewController(presentedViewController)
-          self.presentedViewControllerDelegate?.didCancelDissmissViewController()
+          self.presentingViewControllerDelegate?.didCancelDissmissViewController(presentedViewController, usingMode: .custom(.visualEffectFade))
+          self.presentedViewControllerDelegate?.didCancelDissmissViewController(usingMode: .custom(.visualEffectFade))
         } else {
-          self.presentingViewControllerDelegate?.didDismissViewController(presentedViewController)
-          self.presentedViewControllerDelegate?.didDismissViewController()
+          self.presentingViewControllerDelegate?.didDismissViewController(presentedViewController, usingMode: .custom(.visualEffectFade))
+          self.presentedViewControllerDelegate?.didDismissViewController(usingMode: .custom(.visualEffectFade))
         }
         transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
       })

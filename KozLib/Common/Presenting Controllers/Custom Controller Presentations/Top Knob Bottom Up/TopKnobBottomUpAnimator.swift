@@ -38,38 +38,38 @@ class TopKnobBottomUpAnimator : NSObject, PresentableAnimator {
     if isPresenting {
       
       // Currently presenting
-      self.presentingViewControllerDelegate?.willPresentViewController(presentedViewController)
-      self.presentedViewControllerDelegate?.willPresentViewController()
+      self.presentingViewControllerDelegate?.willPresentViewController(presentedViewController, usingMode: .custom(.topKnobBottomUp))
+      self.presentedViewControllerDelegate?.willPresentViewController(usingMode: .custom(.topKnobBottomUp))
       presentedViewController.view.frame.origin.y = containerView.bounds.height
       containerView.addSubview(presentedViewController.view)
       
       // Animate the presentation
       UIView.animate(withDuration: self.transitionDuration(using: transitionContext), animations: {
         presentedViewController.view.frame.origin.y -= presentedYOffset
-        self.presentingViewControllerDelegate?.isPresentingViewController(presentedViewController)
-        self.presentedViewControllerDelegate?.isPresentingViewController()
+        self.presentingViewControllerDelegate?.isPresentingViewController(presentedViewController, usingMode: .custom(.topKnobBottomUp))
+        self.presentedViewControllerDelegate?.isPresentingViewController(usingMode: .custom(.topKnobBottomUp))
       }, completion: { _ in
-        self.presentingViewControllerDelegate?.didPresentViewController(presentedViewController)
-        self.presentedViewControllerDelegate?.didPresentViewController()
+        self.presentingViewControllerDelegate?.didPresentViewController(presentedViewController, usingMode: .custom(.topKnobBottomUp))
+        self.presentedViewControllerDelegate?.didPresentViewController(usingMode: .custom(.topKnobBottomUp))
         transitionContext.completeTransition(true)
       })
       
     } else {
       
       // Currently dismissing
-      self.presentingViewControllerDelegate?.willDismissViewController(presentedViewController)
-      self.presentedViewControllerDelegate?.willDismissViewController()
+      self.presentingViewControllerDelegate?.willDismissViewController(presentedViewController, usingMode: .custom(.topKnobBottomUp))
+      self.presentedViewControllerDelegate?.willDismissViewController(usingMode: .custom(.topKnobBottomUp))
       UIView.animate(withDuration: self.transitionDuration(using: transitionContext), animations: {
         presentedViewController.view.frame.origin.y += presentedYOffset
-        self.presentingViewControllerDelegate?.isDismissingViewController(presentedViewController)
-        self.presentedViewControllerDelegate?.isDismissingViewController()
+        self.presentingViewControllerDelegate?.isDismissingViewController(presentedViewController, usingMode: .custom(.topKnobBottomUp))
+        self.presentedViewControllerDelegate?.isDismissingViewController(usingMode: .custom(.topKnobBottomUp))
       }, completion: { _ in
         if transitionContext.transitionWasCancelled {
-          self.presentingViewControllerDelegate?.didCancelDissmissViewController(presentedViewController)
-          self.presentedViewControllerDelegate?.didCancelDissmissViewController()
+          self.presentingViewControllerDelegate?.didCancelDissmissViewController(presentedViewController, usingMode: .custom(.topKnobBottomUp))
+          self.presentedViewControllerDelegate?.didCancelDissmissViewController(usingMode: .custom(.topKnobBottomUp))
         } else {
-          self.presentingViewControllerDelegate?.didDismissViewController(presentedViewController)
-          self.presentedViewControllerDelegate?.didDismissViewController()
+          self.presentingViewControllerDelegate?.didDismissViewController(presentedViewController, usingMode: .custom(.topKnobBottomUp))
+          self.presentedViewControllerDelegate?.didDismissViewController(usingMode: .custom(.topKnobBottomUp))
         }
         transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
       })

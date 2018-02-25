@@ -50,36 +50,36 @@ class LeftMenuAnimator : NSObject, PresentableAnimator {
       containerView.addConstraints([ top, bottom ])
       
       // Currently presenting
-      self.presentingViewControllerDelegate?.willPresentViewController(presentedViewController)
-      self.presentedViewControllerDelegate?.willPresentViewController()
+      self.presentingViewControllerDelegate?.willPresentViewController(presentedViewController, usingMode: .custom(.leftMenu))
+      self.presentedViewControllerDelegate?.willPresentViewController(usingMode: .custom(.leftMenu))
       presentedViewController.view.frame.origin.x = -presentedWidth
       UIView.animate(withDuration: self.transitionDuration(using: transitionContext), animations: {
         presentedViewController.view.layoutIfNeeded()
         presentedViewController.view.frame.origin.x += presentedWidth
-        self.presentingViewControllerDelegate?.isPresentingViewController(presentedViewController)
-        self.presentedViewControllerDelegate?.isPresentingViewController()
+        self.presentingViewControllerDelegate?.isPresentingViewController(presentedViewController, usingMode: .custom(.leftMenu))
+        self.presentedViewControllerDelegate?.isPresentingViewController(usingMode: .custom(.leftMenu))
       }, completion: { _ in
-        self.presentingViewControllerDelegate?.didPresentViewController(presentedViewController)
-        self.presentedViewControllerDelegate?.didPresentViewController()
+        self.presentingViewControllerDelegate?.didPresentViewController(presentedViewController, usingMode: .custom(.leftMenu))
+        self.presentedViewControllerDelegate?.didPresentViewController(usingMode: .custom(.leftMenu))
         transitionContext.completeTransition(true)
       })
       
     } else {
       
       // Currently dismissing
-      self.presentingViewControllerDelegate?.willDismissViewController(presentedViewController)
-      self.presentedViewControllerDelegate?.willDismissViewController()
+      self.presentingViewControllerDelegate?.willDismissViewController(presentedViewController, usingMode: .custom(.leftMenu))
+      self.presentedViewControllerDelegate?.willDismissViewController(usingMode: .custom(.leftMenu))
       UIView.animate(withDuration: self.transitionDuration(using: transitionContext), animations: {
         presentedViewController.view.frame.origin.x -= presentedWidth
-        self.presentingViewControllerDelegate?.isDismissingViewController(presentedViewController)
-        self.presentedViewControllerDelegate?.isDismissingViewController()
+        self.presentingViewControllerDelegate?.isDismissingViewController(presentedViewController, usingMode: .custom(.leftMenu))
+        self.presentedViewControllerDelegate?.isDismissingViewController(usingMode: .custom(.leftMenu))
       }, completion: { _ in
         if transitionContext.transitionWasCancelled {
-          self.presentingViewControllerDelegate?.didCancelDissmissViewController(presentedViewController)
-          self.presentedViewControllerDelegate?.didCancelDissmissViewController()
+          self.presentingViewControllerDelegate?.didCancelDissmissViewController(presentedViewController, usingMode: .custom(.leftMenu))
+          self.presentedViewControllerDelegate?.didCancelDissmissViewController(usingMode: .custom(.leftMenu))
         } else {
-          self.presentingViewControllerDelegate?.didDismissViewController(presentedViewController)
-          self.presentedViewControllerDelegate?.didDismissViewController()
+          self.presentingViewControllerDelegate?.didDismissViewController(presentedViewController, usingMode: .custom(.leftMenu))
+          self.presentedViewControllerDelegate?.didDismissViewController(usingMode: .custom(.leftMenu))
         }
         transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
       })

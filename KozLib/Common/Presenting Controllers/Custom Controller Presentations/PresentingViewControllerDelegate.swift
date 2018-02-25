@@ -9,21 +9,21 @@
 import UIKit
 
 protocol PresentingViewControllerDelegate : class {
-  func willPresentViewController(_ viewController: UIViewController)
-  func isPresentingViewController(_ viewController: UIViewController?)
-  func didPresentViewController(_ viewController: UIViewController?)
-  func willDismissViewController(_ viewController: UIViewController)
-  func isDismissingViewController(_ viewController: UIViewController?)
-  func didDismissViewController(_ viewController: UIViewController?)
-  func didCancelDissmissViewController(_ viewController: UIViewController?)
+  func willPresentViewController(_ viewController: UIViewController, usingMode: PresentationMode)
+  func isPresentingViewController(_ viewController: UIViewController?, usingMode: PresentationMode)
+  func didPresentViewController(_ viewController: UIViewController?, usingMode: PresentationMode)
+  func willDismissViewController(_ viewController: UIViewController, usingMode: PresentationMode)
+  func isDismissingViewController(_ viewController: UIViewController?, usingMode: PresentationMode)
+  func didDismissViewController(_ viewController: UIViewController?, usingMode: PresentationMode)
+  func didCancelDissmissViewController(_ viewController: UIViewController?, usingMode: PresentationMode)
 }
 
 protocol PresentedViewControllerDelegate : class {
-  func willPresentViewController()
-  func isPresentingViewController()
-  func didPresentViewController()
-  func willDismissViewController()
-  func isDismissingViewController()
-  func didDismissViewController()
-  func didCancelDissmissViewController()
+  func willPresentViewController(usingMode: PresentationMode)
+  func isPresentingViewController(usingMode: PresentationMode)
+  func didPresentViewController(usingMode: PresentationMode)
+  func willDismissViewController(usingMode: PresentationMode)
+  func isDismissingViewController(usingMode: PresentationMode)
+  func didDismissViewController(usingMode: PresentationMode)
+  func didCancelDissmissViewController(usingMode: PresentationMode)
 }

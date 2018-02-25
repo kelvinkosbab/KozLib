@@ -35,36 +35,36 @@ class RightToLeftAnimator : NSObject, PresentableAnimator {
     if isPresenting {
       
       // Currently presenting
-      self.presentingViewControllerDelegate?.willPresentViewController(presentedViewController)
-      self.presentedViewControllerDelegate?.willPresentViewController()
+      self.presentingViewControllerDelegate?.willPresentViewController(presentedViewController, usingMode: .custom(.rightToLeft))
+      self.presentedViewControllerDelegate?.willPresentViewController(usingMode: .custom(.rightToLeft))
       presentedViewController.view.frame.origin.x = containerView.frame.width
       containerView.addSubview(presentedViewController.view)
       UIView.animate(withDuration: self.transitionDuration(using: transitionContext), animations: {
         presentedViewController.view.frame.origin.x -= containerView.frame.width
-        self.presentingViewControllerDelegate?.isPresentingViewController(presentedViewController)
-        self.presentedViewControllerDelegate?.isPresentingViewController()
+        self.presentingViewControllerDelegate?.isPresentingViewController(presentedViewController, usingMode: .custom(.rightToLeft))
+        self.presentedViewControllerDelegate?.isPresentingViewController(usingMode: .custom(.rightToLeft))
       }, completion: { _ in
-        self.presentingViewControllerDelegate?.didPresentViewController(presentedViewController)
-        self.presentedViewControllerDelegate?.didPresentViewController()
+        self.presentingViewControllerDelegate?.didPresentViewController(presentedViewController, usingMode: .custom(.rightToLeft))
+        self.presentedViewControllerDelegate?.didPresentViewController(usingMode: .custom(.rightToLeft))
         transitionContext.completeTransition(true)
       })
       
     } else {
       
       // Currently dismissing
-      self.presentingViewControllerDelegate?.willDismissViewController(presentedViewController)
-      self.presentedViewControllerDelegate?.willDismissViewController()
+      self.presentingViewControllerDelegate?.willDismissViewController(presentedViewController, usingMode: .custom(.rightToLeft))
+      self.presentedViewControllerDelegate?.willDismissViewController(usingMode: .custom(.rightToLeft))
       UIView.animate(withDuration: self.transitionDuration(using: transitionContext), animations: {
         presentedViewController.view.frame.origin.x += containerView.frame.width
-        self.presentingViewControllerDelegate?.isDismissingViewController(presentedViewController)
-        self.presentedViewControllerDelegate?.isDismissingViewController()
+        self.presentingViewControllerDelegate?.isDismissingViewController(presentedViewController, usingMode: .custom(.rightToLeft))
+        self.presentedViewControllerDelegate?.isDismissingViewController(usingMode: .custom(.rightToLeft))
       }, completion: { _ in
         if transitionContext.transitionWasCancelled {
-          self.presentingViewControllerDelegate?.didCancelDissmissViewController(presentedViewController)
-          self.presentedViewControllerDelegate?.didCancelDissmissViewController()
+          self.presentingViewControllerDelegate?.didCancelDissmissViewController(presentedViewController, usingMode: .custom(.rightToLeft))
+          self.presentedViewControllerDelegate?.didCancelDissmissViewController(usingMode: .custom(.rightToLeft))
         } else {
-          self.presentingViewControllerDelegate?.didDismissViewController(presentedViewController)
-          self.presentedViewControllerDelegate?.didDismissViewController()
+          self.presentingViewControllerDelegate?.didDismissViewController(presentedViewController, usingMode: .custom(.rightToLeft))
+          self.presentedViewControllerDelegate?.didDismissViewController(usingMode: .custom(.rightToLeft))
         }
         transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
       })
