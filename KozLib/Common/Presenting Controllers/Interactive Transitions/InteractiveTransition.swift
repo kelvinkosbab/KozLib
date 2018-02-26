@@ -8,26 +8,6 @@
 
 import UIKit
 
-// MARK: - PresentationInteractable
-
-protocol PresentationInteractable : class {
-  var presentationInteractiveViews: [UIView] { get }
-}
-
-// MARK: - DismissInteractable
-
-protocol DismissInteractable : class {
-  var dismissInteractiveViews: [UIView] { get }
-}
-
-// MARK: - InteractiveTransitionDelegate
-
-protocol InteractiveTransitionDelegate : class {
-  func interactionDidSurpassThreshold(_ interactiveTransition: InteractiveTransition)
-}
-
-// MARK: - InteractiveTransition
-
 class InteractiveTransition : UIPercentDrivenInteractiveTransition {
   
   // MARK: - Properties

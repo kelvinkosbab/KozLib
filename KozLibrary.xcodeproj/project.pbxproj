@@ -127,6 +127,7 @@
 		B68B2E641F76BCEC000B7A3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68B2E621F76BCEC000B7A3F /* LaunchScreen.storyboard */; };
 		B68B2E6D1F76BE7E000B7A3F /* MyManagedObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B2E6C1F76BE7E000B7A3F /* MyManagedObjectProtocol.swift */; };
 		B68B2E6F1F76BED7000B7A3F /* MyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B2E6E1F76BED7000B7A3F /* MyDataManager.swift */; };
+		B6A63ABD20445E3F00C53429 /* InteractiveTransition+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A63ABC20445E3F00C53429 /* InteractiveTransition+Protocols.swift */; };
 		B6C83B90201A4CAC0008CC55 /* NetworkExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C83B8F201A4CAC0008CC55 /* NetworkExtensionViewController.swift */; };
 		B6D00254201E7CBD0009EE1E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D00253201E7CBD0009EE1E /* LocationManager.swift */; };
 		B6D1312A202CD1A90035736E /* AppProxyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D13129202CD1A90035736E /* AppProxyProvider.swift */; };
@@ -290,6 +291,7 @@
 		B68B2E651F76BCEC000B7A3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B68B2E6C1F76BE7E000B7A3F /* MyManagedObjectProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyManagedObjectProtocol.swift; sourceTree = "<group>"; };
 		B68B2E6E1F76BED7000B7A3F /* MyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataManager.swift; sourceTree = "<group>"; };
+		B6A63ABC20445E3F00C53429 /* InteractiveTransition+Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InteractiveTransition+Protocols.swift"; sourceTree = "<group>"; };
 		B6C83B8F201A4CAC0008CC55 /* NetworkExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkExtensionViewController.swift; sourceTree = "<group>"; };
 		B6D00253201E7CBD0009EE1E /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		B6D13127202CD1A90035736E /* KozNetAppProxy.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KozNetAppProxy.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -368,6 +370,7 @@
 			isa = PBXGroup;
 			children = (
 				B619F9DF203E94A000764577 /* InteractiveTransition.swift */,
+				B6A63ABC20445E3F00C53429 /* InteractiveTransition+Protocols.swift */,
 				B619F9E0203E94A000764577 /* InteractiveTransitionOption.swift */,
 				B619F9E1203E94A000764577 /* InteractiveTransition+Subclasses.swift */,
 			);
@@ -379,11 +382,11 @@
 			children = (
 				B619F9E5203E94A000764577 /* PresentableManager.swift */,
 				B619F9E6203E94A000764577 /* PresentingViewControllerDelegate.swift */,
-				B619F9E7203E94A000764577 /* Top Down */,
 				B619F9EA203E94A000764577 /* CustomPresentationController.swift */,
+				B619F9F1203E94A000764577 /* PresentableAnimator.swift */,
+				B619F9E7203E94A000764577 /* Top Down */,
 				B619F9EB203E94A000764577 /* Visual Effect Fade */,
 				B619F9EE203E94A000764577 /* Left Menu */,
-				B619F9F1203E94A000764577 /* PresentableAnimator.swift */,
 				B619F9F2203E94A000764577 /* Right to Left */,
 				B619F9F5203E94A000764577 /* Bottom Up */,
 				B619F9F8203E94A000764577 /* Top Knob Bottom Up */,
@@ -1179,6 +1182,7 @@
 				B619FA0D203E94A000764577 /* BottomUpPresentationController.swift in Sources */,
 				B6C83B90201A4CAC0008CC55 /* NetworkExtensionViewController.swift in Sources */,
 				B64415041F78573E00C9781B /* UICollectionView+Reordering.swift in Sources */,
+				B6A63ABD20445E3F00C53429 /* InteractiveTransition+Protocols.swift in Sources */,
 				B619FA04203E94A000764577 /* TopDownPresentationController.swift in Sources */,
 				B6350E551F787E7E004E6218 /* NFCMessageTableViewController.swift in Sources */,
 				B619FA0B203E94A000764577 /* RightToLeftAnimator.swift in Sources */,

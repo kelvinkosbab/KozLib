@@ -10,12 +10,21 @@ import ARKit
 import SceneKit
 import UIKit
 
-class ARRecognizingImagesViewController: BaseViewController, ARSCNViewDelegate {
+class ARRecognizingImagesViewController: BaseViewController, ARSCNViewDelegate, DismissInteractable {
   
   // MARK: - Static Accessors
   
   static func newViewController() -> ARRecognizingImagesViewController {
     return self.newViewController(fromStoryboardWithName: "ARKit")
+  }
+  
+  // MARK: - DismissInteractable
+  
+  var dismissInteractiveViews: [UIView] {
+    if let view = self.view {
+      return [ view ]
+    }
+    return []
   }
   
   // MARK: - Properties

@@ -9,7 +9,6 @@
 import UIKit
 
 class CustomPresentationController : UIPresentationController {
-  
   var presentationInteractiveTransition: InteractiveTransition?
   var dismissInteractiveTransition: InteractiveTransition?
 }
@@ -18,7 +17,6 @@ extension CustomPresentationController {
   
   internal var allPresentationInteractiveViews: [UIView] {
     var interactiveViews: [UIView] = []
-    
     // Presenting view controller
     if let presentationInteractable = self.presentingViewController.topViewController as? PresentationInteractable, presentationInteractable.presentationInteractiveViews.count > 0 {
       interactiveViews += presentationInteractable.presentationInteractiveViews
