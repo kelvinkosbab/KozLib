@@ -4,21 +4,29 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>KozLib.xcscheme</key>
+		<key>Alamofire.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>KozLibrary.xcscheme</key>
+		<key>Pods-KozLibrary.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>1</integer>
 		</dict>
-		<key>KozNetAppProxy.xcscheme</key>
+		<key>Pods-KozNetAppProxy.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>2</integer>
 		</dict>
 	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict/>
 </dict>
 </plist>

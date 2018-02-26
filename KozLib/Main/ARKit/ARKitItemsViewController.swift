@@ -195,17 +195,6 @@ extension ARKitItemsViewController {
       cell.configure(title: rowType.title, accessoryType: .disclosureIndicator)
       return cell
       
-    case .recognizingImages:
-      if ARSupported.isImageTrackingSupported {
-        let cell = tableView.dequeueReusableCell(withIdentifier: BaseTableViewCell.identifier, for: indexPath) as! BaseTableViewCell
-        cell.configure(title: rowType.title, accessoryType: .disclosureIndicator)
-        return cell
-      } else {
-        let cell = tableView.dequeueReusableCell(withIdentifier: StackedTitleDetailTableViewCell.identifier, for: indexPath) as! StackedTitleDetailTableViewCell
-        cell.configure(title: rowType.title, detail: "This feature requires iOS 11.3 or newer.", accessoryType: .none)
-        return cell
-      }
-      
     case .faceMappingVisulalization:
       if ARSupported.isFaceTrackingSupported {
         let cell = tableView.dequeueReusableCell(withIdentifier: BaseTableViewCell.identifier, for: indexPath) as! BaseTableViewCell
@@ -214,6 +203,17 @@ extension ARKitItemsViewController {
       } else {
         let cell = tableView.dequeueReusableCell(withIdentifier: StackedTitleDetailTableViewCell.identifier, for: indexPath) as! StackedTitleDetailTableViewCell
         cell.configure(title: rowType.title, detail: "This feature requires true-depth front-facing camera.", accessoryType: .none)
+        return cell
+      }
+      
+    case .recognizingImages:
+      if ARSupported.isImageTrackingSupported {
+        let cell = tableView.dequeueReusableCell(withIdentifier: BaseTableViewCell.identifier, for: indexPath) as! BaseTableViewCell
+        cell.configure(title: rowType.title, accessoryType: .disclosureIndicator)
+        return cell
+      } else {
+        let cell = tableView.dequeueReusableCell(withIdentifier: StackedTitleDetailTableViewCell.identifier, for: indexPath) as! StackedTitleDetailTableViewCell
+        cell.configure(title: rowType.title, detail: "This feature requires iOS 11.3 or newer.", accessoryType: .none)
         return cell
       }
     }
@@ -227,6 +227,8 @@ extension ARKitItemsViewController {
     }
     
     switch rowType {
+      
+    // Horizontal
     case .horizontalSurfaceVisualization:
       self.transitionToARPlaneVisualization()
     case .blockPhysics:
@@ -236,23 +238,13 @@ extension ARKitItemsViewController {
     case .tackDragonDemo:
       self.transitionToDragonDemo()
       
-    case .recognizingImages:
-      guard ARFaceTrackingConfiguration.isSupported else {
-        let arState = ARState.unsupported(.faceTracking)
-        let alertController = UIAlertController(title: arState.status, message: arState.message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alertController.addAction(okAction)
-        self.present(alertController, animated: true, completion: nil)
-        return
-      }
-      
-      self.transitionToRecognizingImages()
-      
+    // Vertical
     case .wallDetection:
       self.transitionToWallDetection()
       
+    // Face tracking
     case .faceMappingVisulalization:
-      guard ARFaceTrackingConfiguration.isSupported else {
+      guard ARSupported.isFaceTrackingSupported else {
         let arState = ARState.unsupported(.faceTracking)
         let alertController = UIAlertController(title: arState.status, message: arState.message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -262,6 +254,19 @@ extension ARKitItemsViewController {
       }
       
       self.transitionToARFaceTracking()
+      
+    // Image recognition
+    case .recognizingImages:
+      guard ARSupported.isImageTrackingSupported else {
+        let arState = ARState.unsupported(.imageTracking)
+        let alertController = UIAlertController(title: arState.status, message: arState.message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+        return
+      }
+      
+      self.transitionToRecognizingImages()
     }
   }
 }
