@@ -21,7 +21,7 @@ extension InteractiveTransition {
   enum Option {
     case percent(CGFloat), velocity(CGFloat), contentSize(CGSize), gestureType(InteractiveTransition.GestureType)
     
-    static let defaultPercentThreshold: CGFloat = 0.3
+    static let defaultPercentThreshold: CGFloat = 0.5
     static let defaultVelocityThreshold: CGFloat = 850
   }
   
