@@ -20,7 +20,7 @@ enum ARState {
   }
   
   enum UnsupportedType {
-    case ar, faceTracking
+    case ar, faceTracking, imageTracking
   }
   
   var status: String? {
@@ -56,6 +56,8 @@ enum ARState {
       return "Only supported on Apple devices with an A9, A10, or A11 chip or newer. This includes all phones including the iPhone 6s/6s+ and newer as well as all iPad Pro models and the 2017 iPad."
     case .unsupported(.faceTracking):
       return "Face tracking requires a device with a TrueDepth front-facing camera."
+    case .unsupported(.imageTracking):
+      return "Image tracking requites a device running iOS 11.3 or newer."
     case .normal, .configuring:
       return nil
     }

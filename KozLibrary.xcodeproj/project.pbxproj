@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		541E4F54F33D7BF473C23DC3 /* Pods_KozLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B69D5459F6097DA494B9FC9 /* Pods_KozLibrary.framework */; };
 		B60AD104201A7919003A2E84 /* ConfigurationViewPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AD103201A7919003A2E84 /* ConfigurationViewPresentable.swift */; };
 		B60AD106201A79F2003A2E84 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AD105201A79F2003A2E84 /* Log.swift */; };
 		B60AD10A201A9010003A2E84 /* ARFaceTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AD109201A9010003A2E84 /* ARFaceTrackingViewController.swift */; };
@@ -109,6 +110,16 @@
 		B67949F91F81FEF300EEB926 /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67949F81F81FEF300EEB926 /* Cube.swift */; };
 		B67949FB1F82010000EEB926 /* SCNMaterial+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67949FA1F82010000EEB926 /* SCNMaterial+Util.swift */; };
 		B67949FD1F82016000EEB926 /* MaterialType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67949FC1F82016000EEB926 /* MaterialType.swift */; };
+		B6811F4C2043B279008C3CAC /* ARRecognizingImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6811F4B2043B279008C3CAC /* ARRecognizingImagesViewController.swift */; };
+		B6811F4E2043B2BF008C3CAC /* ARRecognizingImageStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6811F4D2043B2BF008C3CAC /* ARRecognizingImageStatusViewController.swift */; };
+		B6811F502043B7AB008C3CAC /* ARConfigurationSupported.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6811F4F2043B7AB008C3CAC /* ARConfigurationSupported.swift */; };
+		B6811F542043C6B8008C3CAC /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6811F532043C6B8008C3CAC /* Service.swift */; };
+		B6811F562043C6ED008C3CAC /* ServiceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6811F552043C6ED008C3CAC /* ServiceResponse.swift */; };
+		B6811F5A2043C763008C3CAC /* Loggable+Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6811F592043C763008C3CAC /* Loggable+Service.swift */; };
+		B6811F5C2043C7DC008C3CAC /* ClassNamable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6811F5B2043C7DC008C3CAC /* ClassNamable.swift */; };
+		B6811F5E2043C810008C3CAC /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6811F5D2043C810008C3CAC /* SessionManager.swift */; };
+		B6811F602043C829008C3CAC /* AuthenticationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6811F5F2043C829008C3CAC /* AuthenticationState.swift */; };
+		B6811F622043C875008C3CAC /* Data+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6811F612043C875008C3CAC /* Data+JSON.swift */; };
 		B68B2E571F76BCEC000B7A3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B2E561F76BCEC000B7A3F /* AppDelegate.swift */; };
 		B68B2E5C1F76BCEC000B7A3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68B2E5A1F76BCEC000B7A3F /* Main.storyboard */; };
 		B68B2E5F1F76BCEC000B7A3F /* KozLib.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B68B2E5D1F76BCEC000B7A3F /* KozLib.xcdatamodeld */; };
@@ -124,6 +135,7 @@
 		B6F436671FD27CC1008C9C6B /* Locale+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F436661FD27CC1008C9C6B /* Locale+Util.swift */; };
 		B6F9756520239D1900BE9D9D /* VerticalBoxPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F9756420239D1900BE9D9D /* VerticalBoxPlane.swift */; };
 		B6F9756720239D2200BE9D9D /* HorizontalBoxPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F9756620239D2200BE9D9D /* HorizontalBoxPlane.swift */; };
+		D4E12D99AEB77142AD4EB826 /* Pods_KozNetAppProxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 938C5F92CF5BF4E0190C4216 /* Pods_KozNetAppProxy.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +163,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1120A6BA1A48E5A8FBFA3E20 /* Pods-KozNetAppProxy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KozNetAppProxy.release.xcconfig"; path = "Pods/Target Support Files/Pods-KozNetAppProxy/Pods-KozNetAppProxy.release.xcconfig"; sourceTree = "<group>"; };
+		4A9AF09A1F7676C39EC0A462 /* Pods-KozLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KozLibrary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KozLibrary/Pods-KozLibrary.debug.xcconfig"; sourceTree = "<group>"; };
+		7B69D5459F6097DA494B9FC9 /* Pods_KozLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KozLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E99B36D26AD314F94038556 /* Pods-KozLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KozLibrary.release.xcconfig"; path = "Pods/Target Support Files/Pods-KozLibrary/Pods-KozLibrary.release.xcconfig"; sourceTree = "<group>"; };
+		938C5F92CF5BF4E0190C4216 /* Pods_KozNetAppProxy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KozNetAppProxy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B60AD103201A7919003A2E84 /* ConfigurationViewPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewPresentable.swift; sourceTree = "<group>"; };
 		B60AD105201A79F2003A2E84 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		B60AD109201A9010003A2E84 /* ARFaceTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARFaceTrackingViewController.swift; sourceTree = "<group>"; };
@@ -254,6 +271,16 @@
 		B67949F81F81FEF300EEB926 /* Cube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
 		B67949FA1F82010000EEB926 /* SCNMaterial+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNMaterial+Util.swift"; sourceTree = "<group>"; };
 		B67949FC1F82016000EEB926 /* MaterialType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialType.swift; sourceTree = "<group>"; };
+		B6811F4B2043B279008C3CAC /* ARRecognizingImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARRecognizingImagesViewController.swift; sourceTree = "<group>"; };
+		B6811F4D2043B2BF008C3CAC /* ARRecognizingImageStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARRecognizingImageStatusViewController.swift; sourceTree = "<group>"; };
+		B6811F4F2043B7AB008C3CAC /* ARConfigurationSupported.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARConfigurationSupported.swift; sourceTree = "<group>"; };
+		B6811F532043C6B8008C3CAC /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		B6811F552043C6ED008C3CAC /* ServiceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResponse.swift; sourceTree = "<group>"; };
+		B6811F592043C763008C3CAC /* Loggable+Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Loggable+Service.swift"; sourceTree = "<group>"; };
+		B6811F5B2043C7DC008C3CAC /* ClassNamable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNamable.swift; sourceTree = "<group>"; };
+		B6811F5D2043C810008C3CAC /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		B6811F5F2043C829008C3CAC /* AuthenticationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationState.swift; sourceTree = "<group>"; };
+		B6811F612043C875008C3CAC /* Data+JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+JSON.swift"; sourceTree = "<group>"; };
 		B68B2E531F76BCEC000B7A3F /* KozLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KozLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B68B2E561F76BCEC000B7A3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B68B2E5B1F76BCEC000B7A3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -273,6 +300,7 @@
 		B6F436661FD27CC1008C9C6B /* Locale+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale+Util.swift"; sourceTree = "<group>"; };
 		B6F9756420239D1900BE9D9D /* VerticalBoxPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalBoxPlane.swift; sourceTree = "<group>"; };
 		B6F9756620239D2200BE9D9D /* HorizontalBoxPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalBoxPlane.swift; sourceTree = "<group>"; };
+		C50D1D707E34FC993690352E /* Pods-KozNetAppProxy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KozNetAppProxy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KozNetAppProxy/Pods-KozNetAppProxy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B66780F6201943370014781C /* NetworkExtension.framework in Frameworks */,
+				541E4F54F33D7BF473C23DC3 /* Pods_KozLibrary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,12 +317,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4E12D99AEB77142AD4EB826 /* Pods_KozNetAppProxy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		018A99DD97F776BBCC461A5C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4A9AF09A1F7676C39EC0A462 /* Pods-KozLibrary.debug.xcconfig */,
+				7E99B36D26AD314F94038556 /* Pods-KozLibrary.release.xcconfig */,
+				C50D1D707E34FC993690352E /* Pods-KozNetAppProxy.debug.xcconfig */,
+				1120A6BA1A48E5A8FBFA3E20 /* Pods-KozNetAppProxy.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B619F9D7203E93A200764577 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -451,6 +492,7 @@
 				B629C218201E6DE20083D708 /* Horizontal */,
 				B6ACFE59201A42A6002C2F59 /* Vertical Surface Detection */,
 				B6ACFE5A201A42AD002C2F59 /* Face Tracking */,
+				B6811F4A2043B253008C3CAC /* Recognizing Images */,
 			);
 			path = ARKit;
 			sourceTree = "<group>";
@@ -542,6 +584,7 @@
 				B62675931FB4302C004C003B /* BatchUpdatable.swift */,
 				B61B8DEF1F81822E00118C73 /* Nibable.swift */,
 				B60AD105201A79F2003A2E84 /* Log.swift */,
+				B6811F5B2043C7DC008C3CAC /* ClassNamable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -630,6 +673,7 @@
 		B64414F91F78561A00C9781B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B6811F522043C323008C3CAC /* Network Service */,
 				B619F9DD203E94A000764577 /* Presenting Controllers */,
 				B64414F41F7854E100C9781B /* Extensions */,
 				B6350E501F787D15004E6218 /* Protocols */,
@@ -692,6 +736,8 @@
 			isa = PBXGroup;
 			children = (
 				B66780F5201943370014781C /* NetworkExtension.framework */,
+				7B69D5459F6097DA494B9FC9 /* Pods_KozLibrary.framework */,
+				938C5F92CF5BF4E0190C4216 /* Pods_KozNetAppProxy.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -715,11 +761,34 @@
 				B67949F61F81FBC800EEB926 /* PBRMaterial.swift */,
 				B60AD10B201A9146003A2E84 /* ARState.swift */,
 				B629C21A201E74640083D708 /* VirtualObject.swift */,
+				B6811F4F2043B7AB008C3CAC /* ARConfigurationSupported.swift */,
 				B629C226201E76EA0083D708 /* Extensions */,
 				B629C21C201E747B0083D708 /* Tack Dragon Demo */,
 				B63A82C0201E653800E6C8C6 /* Virtual Face Content */,
 			);
 			path = "ARKit and SceneKit";
+			sourceTree = "<group>";
+		};
+		B6811F4A2043B253008C3CAC /* Recognizing Images */ = {
+			isa = PBXGroup;
+			children = (
+				B6811F4B2043B279008C3CAC /* ARRecognizingImagesViewController.swift */,
+				B6811F4D2043B2BF008C3CAC /* ARRecognizingImageStatusViewController.swift */,
+			);
+			path = "Recognizing Images";
+			sourceTree = "<group>";
+		};
+		B6811F522043C323008C3CAC /* Network Service */ = {
+			isa = PBXGroup;
+			children = (
+				B6811F532043C6B8008C3CAC /* Service.swift */,
+				B6811F5D2043C810008C3CAC /* SessionManager.swift */,
+				B6811F552043C6ED008C3CAC /* ServiceResponse.swift */,
+				B6811F592043C763008C3CAC /* Loggable+Service.swift */,
+				B6811F5F2043C829008C3CAC /* AuthenticationState.swift */,
+				B6811F612043C875008C3CAC /* Data+JSON.swift */,
+			);
+			path = "Network Service";
 			sourceTree = "<group>";
 		};
 		B68B2E4A1F76BCEC000B7A3F = {
@@ -729,6 +798,7 @@
 				B6D13128202CD1A90035736E /* KozNetAppProxy */,
 				B68B2E541F76BCEC000B7A3F /* Products */,
 				B66780F4201943370014781C /* Frameworks */,
+				018A99DD97F776BBCC461A5C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -845,10 +915,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B68B2E681F76BCEC000B7A3F /* Build configuration list for PBXNativeTarget "KozLibrary" */;
 			buildPhases = (
+				DAB82ECAC09B9F78F1773C35 /* [CP] Check Pods Manifest.lock */,
 				B68B2E4F1F76BCEC000B7A3F /* Sources */,
 				B68B2E501F76BCEC000B7A3F /* Frameworks */,
 				B68B2E511F76BCEC000B7A3F /* Resources */,
 				B6D1312F202CD1A90035736E /* Embed App Extensions */,
+				F7BFA98AA0CE97E6045BD234 /* [CP] Embed Pods Frameworks */,
+				D08D3C2E1B8CEED98AF7792E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -864,9 +937,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B6D13133202CD1A90035736E /* Build configuration list for PBXNativeTarget "KozNetAppProxy" */;
 			buildPhases = (
+				E7B85259F5DF5F997C7337CE /* [CP] Check Pods Manifest.lock */,
 				B6D13123202CD1A90035736E /* Sources */,
 				B6D13124202CD1A90035736E /* Frameworks */,
 				B6D13125202CD1A90035736E /* Resources */,
+				1F8C9C55B4A21B6243F3FD4A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -958,12 +1033,100 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1F8C9C55B4A21B6243F3FD4A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KozNetAppProxy/Pods-KozNetAppProxy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D08D3C2E1B8CEED98AF7792E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KozLibrary/Pods-KozLibrary-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DAB82ECAC09B9F78F1773C35 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KozLibrary-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7B85259F5DF5F997C7337CE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KozNetAppProxy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7BFA98AA0CE97E6045BD234 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-KozLibrary/Pods-KozLibrary-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KozLibrary/Pods-KozLibrary-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B68B2E4F1F76BCEC000B7A3F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B629C21E201E74860083D708 /* DragonNode.swift in Sources */,
+				B6811F542043C6B8008C3CAC /* Service.swift in Sources */,
 				B61B8DDE1F816C8F00118C73 /* NetworkInfoTableViewController.swift in Sources */,
 				B644150C1F78588100C9781B /* UIViewController+Util.swift in Sources */,
 				B61B8DEA1F817D6500118C73 /* Network.swift in Sources */,
@@ -973,13 +1136,17 @@
 				B619FA0F203E94A000764577 /* TopKnobBottomUpPresentationController.swift in Sources */,
 				B6480A09201A5B09000BE002 /* ConfiguringViewController.swift in Sources */,
 				B64415061F7857D800C9781B /* String+Util.swift in Sources */,
+				B6811F622043C875008C3CAC /* Data+JSON.swift in Sources */,
 				B61B8DF01F81822E00118C73 /* Nibable.swift in Sources */,
+				B6811F5C2043C7DC008C3CAC /* ClassNamable.swift in Sources */,
 				B619F9FD203E94A000764577 /* InteractiveTransitionOption.swift in Sources */,
 				B629C225201E74EB0083D708 /* CameraPermissionManager.swift in Sources */,
 				B67949F11F81CE1900EEB926 /* ARBlockPhysicsViewController.swift in Sources */,
 				B6D9205620238835008A6361 /* ARWallDetectionViewController.swift in Sources */,
 				B63A82C4201E656200E6C8C6 /* Mask.swift in Sources */,
 				B64414F81F78556200C9781B /* UIApplication+Util.swift in Sources */,
+				B6811F5A2043C763008C3CAC /* Loggable+Service.swift in Sources */,
+				B6811F562043C6ED008C3CAC /* ServiceResponse.swift in Sources */,
 				B644150A1F78585600C9781B /* UIColor+Util.swift in Sources */,
 				B61B8DEC1F81806200118C73 /* StackedTitleDetailTableViewCell.swift in Sources */,
 				B63A82BD201E64B800E6C8C6 /* VirtualContentType.swift in Sources */,
@@ -988,6 +1155,8 @@
 				B619FA0A203E94A000764577 /* PresentableAnimator.swift in Sources */,
 				B629C223201E74D30083D708 /* PermissionManager.swift in Sources */,
 				B655143A1F78924A00EEF26F /* BaseViewController.swift in Sources */,
+				B6811F602043C829008C3CAC /* AuthenticationState.swift in Sources */,
+				B6811F4C2043B279008C3CAC /* ARRecognizingImagesViewController.swift in Sources */,
 				B63A82C8201E657300E6C8C6 /* RobotHead.swift in Sources */,
 				B619FA05203E94A000764577 /* CustomPresentationController.swift in Sources */,
 				B6350E4A1F787767004E6218 /* DataMangerProtocol.swift in Sources */,
@@ -996,6 +1165,7 @@
 				B67949F91F81FEF300EEB926 /* Cube.swift in Sources */,
 				B6480A06201A579C000BE002 /* HotspotHelper.swift in Sources */,
 				B6350E521F787D1C004E6218 /* ViewControllerFromStoryboardProtocol.swift in Sources */,
+				B6811F5E2043C810008C3CAC /* SessionManager.swift in Sources */,
 				B624C1D81F78B2260027C95D /* Utilities.swift in Sources */,
 				B619F9FC203E94A000764577 /* InteractiveTransition.swift in Sources */,
 				B6350E4D1F787A41004E6218 /* NFCTableViewController.swift in Sources */,
@@ -1025,6 +1195,7 @@
 				B655143D1F78928800EEF26F /* BaseTableViewController.swift in Sources */,
 				B619F9FE203E94A000764577 /* InteractiveTransition+Subclasses.swift in Sources */,
 				B629C235201E79D10083D708 /* PermissionsNavigationDelegate.swift in Sources */,
+				B6811F502043B7AB008C3CAC /* ARConfigurationSupported.swift in Sources */,
 				B61B8DD91F81429B00118C73 /* ARKitItemsViewController.swift in Sources */,
 				B629C231201E78680083D708 /* TackDragonARViewController.swift in Sources */,
 				B68B2E6F1F76BED7000B7A3F /* MyDataManager.swift in Sources */,
@@ -1051,6 +1222,7 @@
 				B64414FC1F78569600C9781B /* Device.swift in Sources */,
 				B619F9FF203E94A000764577 /* PresentableControllerOption.swift in Sources */,
 				B6350E461F786FBC004E6218 /* NFCMessage.swift in Sources */,
+				B6811F4E2043B2BF008C3CAC /* ARRecognizingImageStatusViewController.swift in Sources */,
 				B6350E441F786FB4004E6218 /* NFCReader.swift in Sources */,
 				B619FA02203E94A000764577 /* PresentingViewControllerDelegate.swift in Sources */,
 				B619FA09203E94A000764577 /* LeftMenuPresentationController.swift in Sources */,
@@ -1217,14 +1389,15 @@
 		};
 		B68B2E691F76BCEC000B7A3F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A9AF09A1F7676C39EC0A462 /* Pods-KozLibrary.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = KozLib/KozLib.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6SS93B87P2;
 				INFOPLIST_FILE = "$(SRCROOT)/KozLib/Supporting FIles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kozinga.KozLib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1235,14 +1408,15 @@
 		};
 		B68B2E6A1F76BCEC000B7A3F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E99B36D26AD314F94038556 /* Pods-KozLibrary.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = KozLib/KozLib.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6SS93B87P2;
 				INFOPLIST_FILE = "$(SRCROOT)/KozLib/Supporting FIles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kozinga.KozLib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1253,6 +1427,7 @@
 		};
 		B6D13131202CD1A90035736E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C50D1D707E34FC993690352E /* Pods-KozNetAppProxy.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = KozNetAppProxy/KozNetAppProxy.entitlements;
@@ -1271,6 +1446,7 @@
 		};
 		B6D13132202CD1A90035736E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1120A6BA1A48E5A8FBFA3E20 /* Pods-KozNetAppProxy.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = KozNetAppProxy/KozNetAppProxy.entitlements;

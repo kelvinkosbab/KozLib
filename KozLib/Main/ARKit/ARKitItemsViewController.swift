@@ -34,7 +34,7 @@ class ARKitItemsViewController : BaseTableViewController, ARKitNavigationDelegat
   // MARK: - SectionType
   
   enum SectionType {
-    case horizontal, vertical, faceTracking
+    case horizontal, vertical, faceTracking, recognizingImages
     
     var sectionTitle: String {
       switch self {
@@ -44,6 +44,8 @@ class ARKitItemsViewController : BaseTableViewController, ARKitNavigationDelegat
         return "Vertical"
       case .faceTracking:
         return "Face Tracking"
+      case .recognizingImages:
+        return "Recognizing Images"
       }
     }
   }
@@ -56,6 +58,8 @@ class ARKitItemsViewController : BaseTableViewController, ARKitNavigationDelegat
       return .vertical
     case 2:
       return .faceTracking
+    case 3:
+      return .recognizingImages
     default:
       return nil
     }
@@ -64,7 +68,18 @@ class ARKitItemsViewController : BaseTableViewController, ARKitNavigationDelegat
   // MARK: - RowType
   
   enum RowType {
-    case horizontalSurfaceVisualization, blockPhysics, planeMapping, tackDragonDemo, wallDetection, faceMappingVisulalization
+    
+    // Horizontal
+    case horizontalSurfaceVisualization, blockPhysics, planeMapping, tackDragonDemo
+    
+    // Vertical
+    case wallDetection
+    
+    // Face tracking
+    case faceMappingVisulalization
+    
+    // Recognizing Images
+    case recognizingImages
     
     var title: String {
       switch self {
@@ -80,6 +95,8 @@ class ARKitItemsViewController : BaseTableViewController, ARKitNavigationDelegat
         return "Wall Detection"
       case .faceMappingVisulalization:
         return "Face Tracking"
+      case .recognizingImages:
+        return "Recognizing Images"
       }
     }
   }
@@ -118,6 +135,13 @@ class ARKitItemsViewController : BaseTableViewController, ARKitNavigationDelegat
       default:
         return nil
       }
+    case .recognizingImages:
+      switch indexPath.row {
+      case 0:
+        return .recognizingImages
+      default:
+        return nil
+      }
     }
   }
 }
@@ -127,7 +151,7 @@ class ARKitItemsViewController : BaseTableViewController, ARKitNavigationDelegat
 extension ARKitItemsViewController {
   
   override func numberOfSections(in tableView: UITableView) -> Int {
-    return 3
+    return 4
   }
   
   override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -152,6 +176,8 @@ extension ARKitItemsViewController {
       return 1
     case .faceTracking:
       return 1
+    case .recognizingImages:
+      return 1
     }
   }
   
@@ -170,13 +196,24 @@ extension ARKitItemsViewController {
       return cell
       
     case .faceMappingVisulalization:
-      if ARFaceTrackingConfiguration.isSupported {
+      if ARSupported.isFaceTrackingSupported {
         let cell = tableView.dequeueReusableCell(withIdentifier: BaseTableViewCell.identifier, for: indexPath) as! BaseTableViewCell
         cell.configure(title: rowType.title, accessoryType: .disclosureIndicator)
         return cell
       } else {
         let cell = tableView.dequeueReusableCell(withIdentifier: StackedTitleDetailTableViewCell.identifier, for: indexPath) as! StackedTitleDetailTableViewCell
         cell.configure(title: rowType.title, detail: "This feature requires true-depth front-facing camera.", accessoryType: .none)
+        return cell
+      }
+      
+    case .recognizingImages:
+      if ARSupported.isImageTrackingSupported {
+        let cell = tableView.dequeueReusableCell(withIdentifier: BaseTableViewCell.identifier, for: indexPath) as! BaseTableViewCell
+        cell.configure(title: rowType.title, accessoryType: .disclosureIndicator)
+        return cell
+      } else {
+        let cell = tableView.dequeueReusableCell(withIdentifier: StackedTitleDetailTableViewCell.identifier, for: indexPath) as! StackedTitleDetailTableViewCell
+        cell.configure(title: rowType.title, detail: "This feature requires iOS 11.3 or newer.", accessoryType: .none)
         return cell
       }
     }
@@ -190,6 +227,8 @@ extension ARKitItemsViewController {
     }
     
     switch rowType {
+      
+    // Horizontal
     case .horizontalSurfaceVisualization:
       self.transitionToARPlaneVisualization()
     case .blockPhysics:
@@ -198,11 +237,14 @@ extension ARKitItemsViewController {
       self.transitionToPlaneMapping()
     case .tackDragonDemo:
       self.transitionToDragonDemo()
+      
+    // Vertical
     case .wallDetection:
       self.transitionToWallDetection()
-    case .faceMappingVisulalization:
       
-      guard ARFaceTrackingConfiguration.isSupported else {
+    // Face tracking
+    case .faceMappingVisulalization:
+      guard ARSupported.isFaceTrackingSupported else {
         let arState = ARState.unsupported(.faceTracking)
         let alertController = UIAlertController(title: arState.status, message: arState.message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -212,6 +254,19 @@ extension ARKitItemsViewController {
       }
       
       self.transitionToARFaceTracking()
+      
+    // Image recognition
+    case .recognizingImages:
+      guard ARSupported.isImageTrackingSupported else {
+        let arState = ARState.unsupported(.imageTracking)
+        let alertController = UIAlertController(title: arState.status, message: arState.message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+        return
+      }
+      
+      self.transitionToRecognizingImages()
     }
   }
 }
