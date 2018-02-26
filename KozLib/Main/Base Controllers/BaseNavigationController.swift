@@ -12,7 +12,7 @@ class BaseNavigationController : UINavigationController, PresentableController {
   
   // MARK: - PresentableController
   
-  var presentedMode: PresentationMode = .modal
+  var presentedMode: PresentationMode = .modal(.formSheet, .coverVertical)
   var presentationManager: UIViewControllerTransitioningDelegate?
   var currentFlowInitialController: PresentableController?
   

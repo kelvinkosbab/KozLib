@@ -9,7 +9,7 @@
 import UIKit
 
 enum PresentationMode {
-  case modal, modalOverCurrentContext, overCurrentContext
+  case modal(UIModalPresentationStyle, UIModalTransitionStyle)
   case custom(CustomPresentationMode)
   case navStack
   
