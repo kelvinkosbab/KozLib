@@ -40,6 +40,11 @@ extension ARKitNavigationDelegate where Self : PresentableController {
   
   // MARK: - Vertical
   
+  func transitionToRecognizingImages() {
+    let viewController = ARRecognizingImagesViewController.newViewController()
+    self.present(viewController: viewController, withMode: .custom(.rightToLeft), options: [])
+  }
+  
   func transitionToWallDetection() {
     let viewController = ARWallDetectionViewController.newViewController()
     self.present(viewController: viewController, withMode: .custom(.rightToLeft), options: [])

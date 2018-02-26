@@ -109,6 +109,9 @@
 		B67949F91F81FEF300EEB926 /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67949F81F81FEF300EEB926 /* Cube.swift */; };
 		B67949FB1F82010000EEB926 /* SCNMaterial+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67949FA1F82010000EEB926 /* SCNMaterial+Util.swift */; };
 		B67949FD1F82016000EEB926 /* MaterialType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67949FC1F82016000EEB926 /* MaterialType.swift */; };
+		B6811F4C2043B279008C3CAC /* ARRecognizingImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6811F4B2043B279008C3CAC /* ARRecognizingImagesViewController.swift */; };
+		B6811F4E2043B2BF008C3CAC /* ARRecognizingImageStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6811F4D2043B2BF008C3CAC /* ARRecognizingImageStatusViewController.swift */; };
+		B6811F502043B7AB008C3CAC /* ARConfigurationSupported.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6811F4F2043B7AB008C3CAC /* ARConfigurationSupported.swift */; };
 		B68B2E571F76BCEC000B7A3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B2E561F76BCEC000B7A3F /* AppDelegate.swift */; };
 		B68B2E5C1F76BCEC000B7A3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68B2E5A1F76BCEC000B7A3F /* Main.storyboard */; };
 		B68B2E5F1F76BCEC000B7A3F /* KozLib.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B68B2E5D1F76BCEC000B7A3F /* KozLib.xcdatamodeld */; };
@@ -254,6 +257,9 @@
 		B67949F81F81FEF300EEB926 /* Cube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
 		B67949FA1F82010000EEB926 /* SCNMaterial+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNMaterial+Util.swift"; sourceTree = "<group>"; };
 		B67949FC1F82016000EEB926 /* MaterialType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialType.swift; sourceTree = "<group>"; };
+		B6811F4B2043B279008C3CAC /* ARRecognizingImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARRecognizingImagesViewController.swift; sourceTree = "<group>"; };
+		B6811F4D2043B2BF008C3CAC /* ARRecognizingImageStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARRecognizingImageStatusViewController.swift; sourceTree = "<group>"; };
+		B6811F4F2043B7AB008C3CAC /* ARConfigurationSupported.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARConfigurationSupported.swift; sourceTree = "<group>"; };
 		B68B2E531F76BCEC000B7A3F /* KozLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KozLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B68B2E561F76BCEC000B7A3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B68B2E5B1F76BCEC000B7A3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -451,6 +457,7 @@
 				B629C218201E6DE20083D708 /* Horizontal */,
 				B6ACFE59201A42A6002C2F59 /* Vertical Surface Detection */,
 				B6ACFE5A201A42AD002C2F59 /* Face Tracking */,
+				B6811F4A2043B253008C3CAC /* Recognizing Images */,
 			);
 			path = ARKit;
 			sourceTree = "<group>";
@@ -715,11 +722,21 @@
 				B67949F61F81FBC800EEB926 /* PBRMaterial.swift */,
 				B60AD10B201A9146003A2E84 /* ARState.swift */,
 				B629C21A201E74640083D708 /* VirtualObject.swift */,
+				B6811F4F2043B7AB008C3CAC /* ARConfigurationSupported.swift */,
 				B629C226201E76EA0083D708 /* Extensions */,
 				B629C21C201E747B0083D708 /* Tack Dragon Demo */,
 				B63A82C0201E653800E6C8C6 /* Virtual Face Content */,
 			);
 			path = "ARKit and SceneKit";
+			sourceTree = "<group>";
+		};
+		B6811F4A2043B253008C3CAC /* Recognizing Images */ = {
+			isa = PBXGroup;
+			children = (
+				B6811F4B2043B279008C3CAC /* ARRecognizingImagesViewController.swift */,
+				B6811F4D2043B2BF008C3CAC /* ARRecognizingImageStatusViewController.swift */,
+			);
+			path = "Recognizing Images";
 			sourceTree = "<group>";
 		};
 		B68B2E4A1F76BCEC000B7A3F = {
@@ -988,6 +1005,7 @@
 				B619FA0A203E94A000764577 /* PresentableAnimator.swift in Sources */,
 				B629C223201E74D30083D708 /* PermissionManager.swift in Sources */,
 				B655143A1F78924A00EEF26F /* BaseViewController.swift in Sources */,
+				B6811F4C2043B279008C3CAC /* ARRecognizingImagesViewController.swift in Sources */,
 				B63A82C8201E657300E6C8C6 /* RobotHead.swift in Sources */,
 				B619FA05203E94A000764577 /* CustomPresentationController.swift in Sources */,
 				B6350E4A1F787767004E6218 /* DataMangerProtocol.swift in Sources */,
@@ -1025,6 +1043,7 @@
 				B655143D1F78928800EEF26F /* BaseTableViewController.swift in Sources */,
 				B619F9FE203E94A000764577 /* InteractiveTransition+Subclasses.swift in Sources */,
 				B629C235201E79D10083D708 /* PermissionsNavigationDelegate.swift in Sources */,
+				B6811F502043B7AB008C3CAC /* ARConfigurationSupported.swift in Sources */,
 				B61B8DD91F81429B00118C73 /* ARKitItemsViewController.swift in Sources */,
 				B629C231201E78680083D708 /* TackDragonARViewController.swift in Sources */,
 				B68B2E6F1F76BED7000B7A3F /* MyDataManager.swift in Sources */,
@@ -1051,6 +1070,7 @@
 				B64414FC1F78569600C9781B /* Device.swift in Sources */,
 				B619F9FF203E94A000764577 /* PresentableControllerOption.swift in Sources */,
 				B6350E461F786FBC004E6218 /* NFCMessage.swift in Sources */,
+				B6811F4E2043B2BF008C3CAC /* ARRecognizingImageStatusViewController.swift in Sources */,
 				B6350E441F786FB4004E6218 /* NFCReader.swift in Sources */,
 				B619FA02203E94A000764577 /* PresentingViewControllerDelegate.swift in Sources */,
 				B619FA09203E94A000764577 /* LeftMenuPresentationController.swift in Sources */,
@@ -1225,6 +1245,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6SS93B87P2;
 				INFOPLIST_FILE = "$(SRCROOT)/KozLib/Supporting FIles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kozinga.KozLib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1243,6 +1264,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6SS93B87P2;
 				INFOPLIST_FILE = "$(SRCROOT)/KozLib/Supporting FIles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kozinga.KozLib;
 				PRODUCT_NAME = "$(TARGET_NAME)";

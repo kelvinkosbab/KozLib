@@ -64,7 +64,7 @@ class ARFaceTrackingViewController : BaseViewController, ARSessionDelegate, Dism
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.title = "FaceTracking"
+    self.title = "Face Tracking"
     self.navigationItem.largeTitleDisplayMode = .never
     self.baseNavigationController?.navigationBarStyle = .transparent
     
