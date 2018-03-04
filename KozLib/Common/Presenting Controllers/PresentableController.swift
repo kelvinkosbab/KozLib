@@ -25,9 +25,11 @@ extension PresentableController where Self : UIViewController {
     let viewControllerToPresent: UIViewController = mode.isNavStack ? viewController : options.inNavigationController ? BaseNavigationController(rootViewController: viewController) : viewController
     
     // Configure the initial flow controller
-    if let presentableController = viewController as? PresentableController, !mode.isNavStack {
-      presentableController.currentFlowInitialController = self
+    if let presentableController = viewController as? PresentableController {
       presentableController.presentedMode = mode
+      if !mode.isNavStack {
+        presentableController.currentFlowInitialController = self
+      }
     }
     
     // Present the controller
