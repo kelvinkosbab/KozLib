@@ -12,12 +12,39 @@ class LeftMenuPresentationController : CustomPresentationController {
   
   // MARK: - Properties
   
-  private var dismissView: UIVisualEffectView? = nil
+  private var dismissView: UIView? = nil
+  private var dismissVisualEffectView: UIVisualEffectView? = nil
+  private let darkBlurEffect = UIBlurEffect(style: .dark)
   
   // MARK: - Fullscreen
   
   override var shouldPresentInFullscreen: Bool {
     return false
+  }
+  
+  // MARK: - Dismiss View
+  
+  private func createDismissView() -> UIView {
+    let blurView = UIView()
+    blurView.frame = self.presentingViewController.view.bounds
+    blurView.isUserInteractionEnabled = true
+    blurView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissController)))
+    
+    // Set up visual effect view
+    if !UIAccessibilityIsReduceTransparencyEnabled() {
+      let visualEffectView = UIVisualEffectView(effect: nil)
+      self.dismissVisualEffectView = visualEffectView
+      visualEffectView.frame = blurView.bounds
+      visualEffectView.addToContainer(blurView)
+      blurView.backgroundColor = .clear
+      blurView.alpha = 1
+    } else {
+      self.dismissVisualEffectView = nil
+      blurView.backgroundColor = .black
+      blurView.alpha = 0
+    }
+    
+    return blurView
   }
   
   // MARK: - UIPresentationController
@@ -29,20 +56,26 @@ class LeftMenuPresentationController : CustomPresentationController {
       return
     }
     
-    // Setup blur view
-    let dismissView = UIVisualEffectView(effect: nil)
-    dismissView.frame = self.presentingViewController.view.bounds
+    // Setup dismiss view
+    let dismissView = self.dismissView ?? self.createDismissView()
     self.dismissView = dismissView
     dismissView.addToContainer(containerView, atIndex: 0)
-    dismissView.effect = nil
-    dismissView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissController)))
+    if let visualEffectView = self.dismissVisualEffectView {
+      visualEffectView.effect = nil
+    } else {
+      dismissView.alpha = 0
+    }
     
     let presentedWidth = max(min(containerView.bounds.width - 40, 360), 280)
     self.presentedViewController.preferredContentSize.width = presentedWidth
     
     // Begin animation
     self.presentedViewController.transitionCoordinator?.animate(alongsideTransition: { context in
-      dismissView.effect = UIBlurEffect(style: .dark)
+      if let visualEffectView = self.dismissVisualEffectView {
+        visualEffectView.effect = self.darkBlurEffect
+      } else {
+        dismissView.alpha = 0.75
+      }
     }, completion: nil)
     
     // Configure presentation interaction
@@ -63,7 +96,7 @@ class LeftMenuPresentationController : CustomPresentationController {
     super.dismissalTransitionWillBegin()
     
     self.presentedViewController.transitionCoordinator?.animate(alongsideTransition: { context in
-      self.dismissView?.effect = nil
+      self.dismissView?.alpha = 0
     }, completion: nil)
   }
   
