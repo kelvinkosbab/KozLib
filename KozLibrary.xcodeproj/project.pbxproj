@@ -442,8 +442,8 @@
 		B619F9F8203E94A000764577 /* Top Knob Bottom Up */ = {
 			isa = PBXGroup;
 			children = (
-				B619F9F9203E94A000764577 /* TopKnobBottomUpPresentationController.swift */,
 				B619F9FA203E94A000764577 /* TopKnobBottomUpAnimator.swift */,
+				B619F9F9203E94A000764577 /* TopKnobBottomUpPresentationController.swift */,
 			);
 			path = "Top Knob Bottom Up";
 			sourceTree = "<group>";

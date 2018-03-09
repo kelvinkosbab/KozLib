@@ -11,6 +11,12 @@ import UIKit
 class CustomPresentationController : UIPresentationController {
   var presentationInteractiveTransition: InteractiveTransition?
   var dismissInteractiveTransition: InteractiveTransition?
+  
+  override func containerViewWillLayoutSubviews() {
+    super.containerViewWillLayoutSubviews()
+    
+    self.presentedView?.frame = self.frameOfPresentedViewInContainerView
+  }
 }
 
 extension CustomPresentationController {

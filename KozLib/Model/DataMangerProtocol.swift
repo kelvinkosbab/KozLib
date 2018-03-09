@@ -25,6 +25,14 @@ extension DataMangerProtocol {
      error conditions that could cause the creation of the store to fail.
      */
     let container = NSPersistentContainer(name: self.persistentContainerName)
+    
+    // Enable lightweight migrations
+    let persistentStoreDescription = NSPersistentStoreDescription()
+    persistentStoreDescription.shouldInferMappingModelAutomatically = true
+    persistentStoreDescription.shouldMigrateStoreAutomatically = true
+    container.persistentStoreDescriptions = [ persistentStoreDescription ]
+    
+    // Load the persistent store
     container.loadPersistentStores(completionHandler: { (storeDescription, error) in
       if let error = error as NSError? {
         // Replace this implementation with code to handle the error appropriately.
