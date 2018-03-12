@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFCNavigationDelegate, NetworkNavigationDelegate, PermissionsNavigationDelegate {
+class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFCNavigationDelegate, NetworkNavigationDelegate, PermissionsNavigationDelegate, GeofencingNavigationDelegate {
   
   // MARK: - Static Accessors
   
@@ -146,7 +146,8 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
       self.transitionToPermissions()
     case .arKit:
       self.transitionToARKitItems(presentationMode: .navStack)
-    case .geofencing: break
+    case .geofencing:
+      self.transitionToGeotification(presentationMode: .navStack)
     case .nfc:
       self.transitionToNFC(presentationMode: .navStack)
     case .basicNetwork:

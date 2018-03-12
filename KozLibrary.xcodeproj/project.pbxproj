@@ -103,6 +103,13 @@
 		B655143D1F78928800EEF26F /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B655143C1F78928800EEF26F /* BaseTableViewController.swift */; };
 		B655143F1F7895AE00EEF26F /* UIView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B655143E1F7895AE00EEF26F /* UIView+Util.swift */; };
 		B66780F6201943370014781C /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66780F5201943370014781C /* NetworkExtension.framework */; };
+		B66927E020571F7500EF915C /* Geofencing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B66927DF20571F7500EF915C /* Geofencing.storyboard */; };
+		B66927E220571FCF00EF915C /* GeotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66927E120571FCF00EF915C /* GeotificationsViewController.swift */; };
+		B66927E42057201C00EF915C /* AddGeotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66927E32057201C00EF915C /* AddGeotificationViewController.swift */; };
+		B66927E62057205100EF915C /* Geotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66927E52057205100EF915C /* Geotification.swift */; };
+		B66927E82057208600EF915C /* Geotification+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66927E72057208600EF915C /* Geotification+Utilities.swift */; };
+		B66927EA205720C700EF915C /* GeofencingNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66927E9205720C700EF915C /* GeofencingNavigationDelegate.swift */; };
+		B66927EC2057342E00EF915C /* LocationManager+Geofencing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66927EB2057342E00EF915C /* LocationManager+Geofencing.swift */; };
 		B67756BA1F78BDB100B553F3 /* ARBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67756B91F78BDB100B553F3 /* ARBaseViewController.swift */; };
 		B67756BD1F78BFF900B553F3 /* BoxPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67756BC1F78BFF900B553F3 /* BoxPlane.swift */; };
 		B67949F11F81CE1900EEB926 /* ARBlockPhysicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67949F01F81CE1900EEB926 /* ARBlockPhysicsViewController.swift */; };
@@ -266,6 +273,13 @@
 		B655143C1F78928800EEF26F /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		B655143E1F7895AE00EEF26F /* UIView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Util.swift"; sourceTree = "<group>"; };
 		B66780F5201943370014781C /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		B66927DF20571F7500EF915C /* Geofencing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Geofencing.storyboard; sourceTree = "<group>"; };
+		B66927E120571FCF00EF915C /* GeotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeotificationsViewController.swift; sourceTree = "<group>"; };
+		B66927E32057201C00EF915C /* AddGeotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGeotificationViewController.swift; sourceTree = "<group>"; };
+		B66927E52057205100EF915C /* Geotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geotification.swift; sourceTree = "<group>"; };
+		B66927E72057208600EF915C /* Geotification+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Geotification+Utilities.swift"; sourceTree = "<group>"; };
+		B66927E9205720C700EF915C /* GeofencingNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofencingNavigationDelegate.swift; sourceTree = "<group>"; };
+		B66927EB2057342E00EF915C /* LocationManager+Geofencing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationManager+Geofencing.swift"; sourceTree = "<group>"; };
 		B67756B91F78BDB100B553F3 /* ARBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBaseViewController.swift; sourceTree = "<group>"; };
 		B67756BC1F78BFF900B553F3 /* BoxPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxPlane.swift; sourceTree = "<group>"; };
 		B67949F01F81CE1900EEB926 /* ARBlockPhysicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBlockPhysicsViewController.swift; sourceTree = "<group>"; };
@@ -537,6 +551,7 @@
 				B629C222201E74D30083D708 /* PermissionManager.swift */,
 				B629C224201E74EB0083D708 /* CameraPermissionManager.swift */,
 				B6D00253201E7CBD0009EE1E /* LocationManager.swift */,
+				B66927EB2057342E00EF915C /* LocationManager+Geofencing.swift */,
 			);
 			path = Permissions;
 			sourceTree = "<group>";
@@ -671,6 +686,7 @@
 				B629C229201E772A0083D708 /* Permissions */,
 				B6350E4B1F787A33004E6218 /* NFC */,
 				B624C1CD1F78AC0D0027C95D /* ARKit */,
+				B66927DE20571E2600EF915C /* Geofencing */,
 				B61B8DDA1F81466700118C73 /* Network */,
 			);
 			path = Main;
@@ -679,6 +695,7 @@
 		B64414F91F78561A00C9781B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B66927ED2057351F00EF915C /* Notifications */,
 				B6811F522043C323008C3CAC /* Network Service */,
 				B619F9DD203E94A000764577 /* Presenting Controllers */,
 				B64414F41F7854E100C9781B /* Extensions */,
@@ -754,6 +771,26 @@
 				B6C83B8F201A4CAC0008CC55 /* NetworkExtensionViewController.swift */,
 			);
 			path = "Network Extension";
+			sourceTree = "<group>";
+		};
+		B66927DE20571E2600EF915C /* Geofencing */ = {
+			isa = PBXGroup;
+			children = (
+				B66927E9205720C700EF915C /* GeofencingNavigationDelegate.swift */,
+				B66927DF20571F7500EF915C /* Geofencing.storyboard */,
+				B66927E120571FCF00EF915C /* GeotificationsViewController.swift */,
+				B66927E32057201C00EF915C /* AddGeotificationViewController.swift */,
+				B66927E52057205100EF915C /* Geotification.swift */,
+				B66927E72057208600EF915C /* Geotification+Utilities.swift */,
+			);
+			path = Geofencing;
+			sourceTree = "<group>";
+		};
+		B66927ED2057351F00EF915C /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 		B67756BB1F78BFE300B553F3 /* ARKit and SceneKit */ = {
@@ -1027,6 +1064,7 @@
 				B61B8DDC1F816C8300118C73 /* Network.storyboard in Resources */,
 				B68B2E611F76BCEC000B7A3F /* Assets.xcassets in Resources */,
 				B68B2E5C1F76BCEC000B7A3F /* Main.storyboard in Resources */,
+				B66927E020571F7500EF915C /* Geofencing.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1144,6 +1182,7 @@
 				B64415061F7857D800C9781B /* String+Util.swift in Sources */,
 				B6811F622043C875008C3CAC /* Data+JSON.swift in Sources */,
 				B61B8DF01F81822E00118C73 /* Nibable.swift in Sources */,
+				B66927E62057205100EF915C /* Geotification.swift in Sources */,
 				B6811F5C2043C7DC008C3CAC /* ClassNamable.swift in Sources */,
 				B619F9FD203E94A000764577 /* InteractiveTransitionOption.swift in Sources */,
 				B629C225201E74EB0083D708 /* CameraPermissionManager.swift in Sources */,
@@ -1159,6 +1198,7 @@
 				B67949FB1F82010000EEB926 /* SCNMaterial+Util.swift in Sources */,
 				B63A82BF201E64E300E6C8C6 /* ARFaceTrackingContentSelectionController.swift in Sources */,
 				B619FA0A203E94A000764577 /* PresentableAnimator.swift in Sources */,
+				B66927E220571FCF00EF915C /* GeotificationsViewController.swift in Sources */,
 				B629C223201E74D30083D708 /* PermissionManager.swift in Sources */,
 				B655143A1F78924A00EEF26F /* BaseViewController.swift in Sources */,
 				B6811F602043C829008C3CAC /* AuthenticationState.swift in Sources */,
@@ -1169,6 +1209,7 @@
 				B619FA08203E94A000764577 /* LeftMenuAnimator.swift in Sources */,
 				B619FA0E203E94A000764577 /* BottomUpAnimator.swift in Sources */,
 				B67949F91F81FEF300EEB926 /* Cube.swift in Sources */,
+				B66927E82057208600EF915C /* Geotification+Utilities.swift in Sources */,
 				B6480A06201A579C000BE002 /* HotspotHelper.swift in Sources */,
 				B6350E521F787D1C004E6218 /* ViewControllerFromStoryboardProtocol.swift in Sources */,
 				B6811F5E2043C810008C3CAC /* SessionManager.swift in Sources */,
@@ -1204,6 +1245,7 @@
 				B619F9FE203E94A000764577 /* InteractiveTransition+Subclasses.swift in Sources */,
 				B629C235201E79D10083D708 /* PermissionsNavigationDelegate.swift in Sources */,
 				B6811F502043B7AB008C3CAC /* ARConfigurationSupported.swift in Sources */,
+				B66927EA205720C700EF915C /* GeofencingNavigationDelegate.swift in Sources */,
 				B61B8DD91F81429B00118C73 /* ARKitItemsViewController.swift in Sources */,
 				B629C231201E78680083D708 /* TackDragonARViewController.swift in Sources */,
 				B68B2E6F1F76BED7000B7A3F /* MyDataManager.swift in Sources */,
@@ -1211,9 +1253,11 @@
 				B6F436671FD27CC1008C9C6B /* Locale+Util.swift in Sources */,
 				B624C1CF1F78AC8F0027C95D /* ARPlaneMappingViewController.swift in Sources */,
 				B619FA10203E94A000764577 /* TopKnobBottomUpAnimator.swift in Sources */,
+				B66927EC2057342E00EF915C /* LocationManager+Geofencing.swift in Sources */,
 				B61B8DFA1F81868200118C73 /* Defaults+MyManagedObjectProtocol.swift in Sources */,
 				B6F9756720239D2200BE9D9D /* HorizontalBoxPlane.swift in Sources */,
 				B60AD10A201A9010003A2E84 /* ARFaceTrackingViewController.swift in Sources */,
+				B66927E42057201C00EF915C /* AddGeotificationViewController.swift in Sources */,
 				B64414FE1F7856A900C9781B /* UIDevice+Util.swift in Sources */,
 				B61B8DF21F81843800118C73 /* NetworkNavigationDelegate.swift in Sources */,
 				B67949F71F81FBC800EEB926 /* PBRMaterial.swift in Sources */,

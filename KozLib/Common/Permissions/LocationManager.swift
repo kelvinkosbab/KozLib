@@ -138,7 +138,7 @@ class LocationManager : NSObject, CLLocationManagerDelegate, PermissionManagerDe
     case .denied, .restricted:
       return
     case .notDetermined:
-      self.locationManager.requestWhenInUseAuthorization()
+      self.locationManager.requestAlwaysAuthorization()
     }
   }
   
