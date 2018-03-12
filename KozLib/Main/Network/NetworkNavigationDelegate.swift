@@ -9,16 +9,16 @@
 import UIKit
 
 protocol NetworkNavigationDelegate : class {}
-extension NetworkNavigationDelegate where Self : PresentableController {
+extension NetworkNavigationDelegate where Self : UIViewController {
   
   func transitionToNetworkInfo(presentationMode: PresentationMode) {
     let viewController = NetworkInfoTableViewController.newViewController()
-    self.present(viewController: viewController, withMode: presentationMode, options: [])
+    viewController.presentIn(self, withMode: presentationMode)
   }
   
   func transitionToNetworkExtension(presentationMode: PresentationMode) {
     let viewController = NetworkExtensionViewController.newViewController()
-    self.present(viewController: viewController, withMode: presentationMode, options: [])
+    viewController.presentIn(self, withMode: presentationMode)
   }
   
   func openWiFiSettings() {

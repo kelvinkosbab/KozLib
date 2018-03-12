@@ -73,7 +73,7 @@ class NFCTableViewController : BaseTableViewController {
     
     // Transition to message detail
     let viewController = NFCMessageTableViewController.newViewController(message: message)
-    self.present(viewController: viewController, withMode: .navStack)
+    viewController.presentIn(self, withMode: .navStack)
   }
 }
 

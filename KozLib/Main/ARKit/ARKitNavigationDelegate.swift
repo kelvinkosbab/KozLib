@@ -9,51 +9,51 @@
 import UIKit
 
 protocol ARKitNavigationDelegate : class {}
-extension ARKitNavigationDelegate where Self : PresentableController {
+extension ARKitNavigationDelegate where Self : UIViewController {
   
   // MARK: - Horizontal
   
   func transitionToARKitItems(presentationMode: PresentationMode) {
     let viewController = ARKitItemsViewController.newViewController()
-    self.present(viewController: viewController, withMode: presentationMode, options: [])
+    viewController.presentIn(self, withMode: presentationMode)
   }
   
   func transitionToARPlaneVisualization() {
     let viewController = ARPlaneMappingViewController.newViewController()
-    self.present(viewController: viewController, withMode: .custom(.rightToLeft), options: [])
+    viewController.presentIn(self, withMode: .custom(.rightToLeft))
   }
   
   func transitionToARBlockPhysics() {
     let viewController = ARBlockPhysicsViewController.newViewController()
-    self.present(viewController: viewController, withMode: .custom(.rightToLeft), options: [])
+    viewController.presentIn(self, withMode: .custom(.rightToLeft))
   }
   
   func transitionToPlaneMapping() {
     let viewController = ARPlaneMappingViewController.newViewController()
-    self.present(viewController: viewController, withMode: .custom(.rightToLeft), options: [])
+    viewController.presentIn(self, withMode: .custom(.rightToLeft))
   }
   
   func transitionToDragonDemo() {
     let viewController = TackDragonMainViewController.newViewController()
-    self.present(viewController: viewController, withMode: .custom(.rightToLeft), options: [])
+    viewController.presentIn(self, withMode: .custom(.rightToLeft))
   }
   
   // MARK: - Vertical
   
   func transitionToRecognizingImages() {
     let viewController = ARRecognizingImagesViewController.newViewController()
-    self.present(viewController: viewController, withMode: .custom(.rightToLeft), options: [])
+    viewController.presentIn(self, withMode: .custom(.rightToLeft))
   }
   
   func transitionToWallDetection() {
     let viewController = ARWallDetectionViewController.newViewController()
-    self.present(viewController: viewController, withMode: .custom(.rightToLeft), options: [])
+    viewController.presentIn(self, withMode: .custom(.rightToLeft))
   }
   
   // MARK: - Face Tracking
   
   func transitionToARFaceTracking() {
     let viewController = ARFaceTrackingViewController.newViewController()
-    self.present(viewController: viewController, withMode: .custom(.rightToLeft), options: [])
+    viewController.presentIn(self, withMode: .custom(.rightToLeft))
   }
 }

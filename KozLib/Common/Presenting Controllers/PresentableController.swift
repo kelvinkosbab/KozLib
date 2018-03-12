@@ -12,24 +12,21 @@ protocol PresentableController : class {
   var presentedMode: PresentationMode { get set }
   var presentationManager: UIViewControllerTransitioningDelegate? { get set }
   var currentFlowInitialController: PresentableController? { get set }
-  func present(viewController: UIViewController, withMode mode: PresentationMode, options: [PresentableControllerOption])
   func dismissController(completion: (() -> Void)?)
   func dismissCurrentNavigationFlow(completion: (() -> Void)?)
 }
 
 extension PresentableController where Self : UIViewController {
   
-  func present(viewController: UIViewController, withMode mode: PresentationMode, options: [PresentableControllerOption] = []) {
+  func presentIn(_ presentingViewController: UIViewController, withMode mode: PresentationMode, options: [PresentableControllerOption] = []) {
     
     // Configure the view controller to present
-    let viewControllerToPresent: UIViewController = mode.isNavStack ? viewController : options.inNavigationController ? BaseNavigationController(rootViewController: viewController) : viewController
+    let viewControllerToPresent: UIViewController = mode.isNavStack ? self : options.inNavigationController ? BaseNavigationController(rootViewController: self) : self
     
     // Configure the initial flow controller
-    if let presentableController = viewController as? PresentableController {
-      presentableController.presentedMode = mode
-      if !mode.isNavStack {
-        presentableController.currentFlowInitialController = self
-      }
+    self.presentedMode = mode
+    if !mode.isNavStack {
+      self.currentFlowInitialController = self
     }
     
     // Present the controller
@@ -38,7 +35,7 @@ extension PresentableController where Self : UIViewController {
       viewControllerToPresent.modalPresentationStyle = presentationStyle
       viewControllerToPresent.modalTransitionStyle = transitionStyle
       viewControllerToPresent.modalPresentationCapturesStatusBarAppearance = true
-      self.present(viewControllerToPresent, animated: true, completion: nil)
+      presentingViewController.present(viewControllerToPresent, animated: true, completion: nil)
       
     case .custom(let customPresentationMode):
       viewControllerToPresent.modalPresentationStyle = .custom
@@ -52,10 +49,10 @@ extension PresentableController where Self : UIViewController {
       if let presentedPresentableController = viewControllerToPresent as? PresentableController {
         presentedPresentableController.presentationManager = presentationManager
       }
-      self.present(viewControllerToPresent, animated: true, completion: nil)
+      presentingViewController.present(viewControllerToPresent, animated: true, completion: nil)
       
     case .navStack:
-      self.navigationController?.pushViewController(viewControllerToPresent, animated: true)
+      presentingViewController.navigationController?.pushViewController(viewControllerToPresent, animated: true)
     }
   }
   

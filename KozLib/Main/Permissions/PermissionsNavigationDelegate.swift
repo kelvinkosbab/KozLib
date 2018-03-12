@@ -9,10 +9,10 @@
 import UIKit
 
 protocol PermissionsNavigationDelegate : class {}
-extension PermissionsNavigationDelegate where Self : PresentableController {
+extension PermissionsNavigationDelegate where Self : UIViewController {
   
   func transitionToPermissions(delegate: PermissionsViewControllerDelegate? = nil) {
     let viewController = PermissionsViewController.newViewController(delegate: delegate)
-    self.present(viewController: viewController, withMode: .custom(.bottomUp), options: [])
+    viewController.presentIn(self, withMode: .modal(.formSheet, .coverVertical))
   }
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		541E4F54F33D7BF473C23DC3 /* Pods_KozLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B69D5459F6097DA494B9FC9 /* Pods_KozLibrary.framework */; };
+		B6082E0C2055EC5C0022943F /* UINavigationController+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6082E0B2055EC5C0022943F /* UINavigationController+Util.swift */; };
 		B60AD104201A7919003A2E84 /* ConfigurationViewPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AD103201A7919003A2E84 /* ConfigurationViewPresentable.swift */; };
 		B60AD106201A79F2003A2E84 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AD105201A79F2003A2E84 /* Log.swift */; };
 		B60AD10A201A9010003A2E84 /* ARFaceTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AD109201A9010003A2E84 /* ARFaceTrackingViewController.swift */; };
@@ -169,6 +170,7 @@
 		7B69D5459F6097DA494B9FC9 /* Pods_KozLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KozLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E99B36D26AD314F94038556 /* Pods-KozLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KozLibrary.release.xcconfig"; path = "Pods/Target Support Files/Pods-KozLibrary/Pods-KozLibrary.release.xcconfig"; sourceTree = "<group>"; };
 		938C5F92CF5BF4E0190C4216 /* Pods_KozNetAppProxy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KozNetAppProxy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6082E0B2055EC5C0022943F /* UINavigationController+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Util.swift"; sourceTree = "<group>"; };
 		B60AD103201A7919003A2E84 /* ConfigurationViewPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewPresentable.swift; sourceTree = "<group>"; };
 		B60AD105201A79F2003A2E84 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		B60AD109201A9010003A2E84 /* ARFaceTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARFaceTrackingViewController.swift; sourceTree = "<group>"; };
@@ -633,6 +635,7 @@
 			children = (
 				B64414F71F78556200C9781B /* UIApplication+Util.swift */,
 				B64414FD1F7856A900C9781B /* UIDevice+Util.swift */,
+				B6082E0B2055EC5C0022943F /* UINavigationController+Util.swift */,
 				B644150B1F78588100C9781B /* UIViewController+Util.swift */,
 				B64415011F78572400C9781B /* UITabBarController+Util.swift */,
 				B64415031F78573E00C9781B /* UICollectionView+Reordering.swift */,
@@ -1181,6 +1184,7 @@
 				B67756BA1F78BDB100B553F3 /* ARBaseViewController.swift in Sources */,
 				B619FA0D203E94A000764577 /* BottomUpPresentationController.swift in Sources */,
 				B6C83B90201A4CAC0008CC55 /* NetworkExtensionViewController.swift in Sources */,
+				B6082E0C2055EC5C0022943F /* UINavigationController+Util.swift in Sources */,
 				B64415041F78573E00C9781B /* UICollectionView+Reordering.swift in Sources */,
 				B6A63ABD20445E3F00C53429 /* InteractiveTransition+Protocols.swift in Sources */,
 				B619FA04203E94A000764577 /* TopDownPresentationController.swift in Sources */,

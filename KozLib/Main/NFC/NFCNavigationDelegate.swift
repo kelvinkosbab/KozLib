@@ -9,10 +9,10 @@
 import UIKit
 
 protocol NFCNavigationDelegate {}
-extension NFCNavigationDelegate where Self : PresentableController {
+extension NFCNavigationDelegate where Self : UIViewController {
   
   func transitionToNFC(presentationMode: PresentationMode) {
     let viewController = NFCTableViewController.newViewController()
-    self.present(viewController: viewController, withMode: presentationMode, options: [])
+    viewController.presentIn(self, withMode: presentationMode)
   }
 }
