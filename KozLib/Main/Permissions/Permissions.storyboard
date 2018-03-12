@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14087.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14105" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14075.4"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,6 +30,10 @@
                                 </view>
                                 <blurEffect style="dark"/>
                             </visualEffectView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="MaO-9t-orX">
+                                <rect key="frame" x="177" y="283" width="20" height="20"/>
+                                <color key="color" name="SeaBlue"/>
+                            </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uHP-XO-LdX">
                                 <rect key="frame" x="111" y="278.5" width="153" height="30"/>
                                 <state key="normal" title="Allow Location Access">
@@ -38,8 +43,8 @@
                                     <action selector="locationPermissionButtonSelected" destination="8eQ-ZA-bs7" eventType="touchUpInside" id="Ele-DV-tpV"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="MaO-9t-orX">
-                                <rect key="frame" x="177" y="283.5" width="20" height="20"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="dLj-Qm-fjN">
+                                <rect key="frame" x="177" y="363" width="20" height="20"/>
                                 <color key="color" name="SeaBlue"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jeu-eg-rdX">
@@ -51,10 +56,19 @@
                                     <action selector="cameraPermissionButtonSelected" destination="8eQ-ZA-bs7" eventType="touchUpInside" id="KYN-Yp-PcM"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="dLj-Qm-fjN">
-                                <rect key="frame" x="177" y="363" width="20" height="20"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="FsT-JZ-JvH">
+                                <rect key="frame" x="177" y="433" width="20" height="20"/>
                                 <color key="color" name="SeaBlue"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIj-KN-twR">
+                                <rect key="frame" x="123" y="428.5" width="128" height="30"/>
+                                <state key="normal" title="Allow Notifications">
+                                    <color key="titleColor" name="SeaBlue"/>
+                                </state>
+                                <connections>
+                                    <action selector="notificationsPermissionButtonSelected" destination="8eQ-ZA-bs7" eventType="touchUpInside" id="Efs-7Z-Unu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -65,13 +79,17 @@
                             <constraint firstItem="jeu-eg-rdX" firstAttribute="centerY" secondItem="Ibt-iC-eDb" secondAttribute="centerY" constant="40" id="GAk-9o-RN2"/>
                             <constraint firstItem="jeu-eg-rdX" firstAttribute="centerX" secondItem="Ibt-iC-eDb" secondAttribute="centerX" id="H2d-tL-NXw"/>
                             <constraint firstItem="MaO-9t-orX" firstAttribute="centerY" secondItem="uHP-XO-LdX" secondAttribute="centerY" id="Rqn-6e-oMI"/>
+                            <constraint firstItem="AIj-KN-twR" firstAttribute="centerX" secondItem="FsT-JZ-JvH" secondAttribute="centerX" id="YsE-xH-n2H"/>
                             <constraint firstItem="MaO-9t-orX" firstAttribute="centerX" secondItem="uHP-XO-LdX" secondAttribute="centerX" id="ZH6-dt-hx3"/>
                             <constraint firstItem="0A4-2c-ivF" firstAttribute="leading" secondItem="Lf4-Bd-6LN" secondAttribute="leading" id="d46-ZY-4tZ"/>
+                            <constraint firstItem="AIj-KN-twR" firstAttribute="centerY" secondItem="FsT-JZ-JvH" secondAttribute="centerY" id="d8v-UU-hR3"/>
                             <constraint firstItem="Lf4-Bd-6LN" firstAttribute="trailing" secondItem="Phq-uk-7tt" secondAttribute="trailing" id="e7m-ca-nj9"/>
                             <constraint firstItem="Phq-uk-7tt" firstAttribute="leading" secondItem="Lf4-Bd-6LN" secondAttribute="leading" id="gOH-3W-FBY"/>
+                            <constraint firstItem="AIj-KN-twR" firstAttribute="top" secondItem="jeu-eg-rdX" secondAttribute="bottom" constant="40" id="gsg-VP-qKg"/>
                             <constraint firstItem="Lf4-Bd-6LN" firstAttribute="trailing" secondItem="0A4-2c-ivF" secondAttribute="trailing" id="uiQ-o8-8Vh"/>
                             <constraint firstItem="dLj-Qm-fjN" firstAttribute="centerY" secondItem="jeu-eg-rdX" secondAttribute="centerY" id="v8B-0m-iFA"/>
                             <constraint firstItem="uHP-XO-LdX" firstAttribute="centerX" secondItem="Ibt-iC-eDb" secondAttribute="centerX" id="vAh-bY-dX4"/>
+                            <constraint firstItem="AIj-KN-twR" firstAttribute="centerX" secondItem="Ibt-iC-eDb" secondAttribute="centerX" id="vKY-Ch-mol"/>
                             <constraint firstItem="Lf4-Bd-6LN" firstAttribute="bottom" secondItem="0A4-2c-ivF" secondAttribute="bottom" id="xdB-ro-bub"/>
                             <constraint firstItem="uHP-XO-LdX" firstAttribute="centerY" secondItem="Ibt-iC-eDb" secondAttribute="centerY" constant="-40" id="yoI-EH-oIf"/>
                         </constraints>
@@ -82,15 +100,23 @@
                         <outlet property="cameraPermissionButton" destination="jeu-eg-rdX" id="NLl-6t-atx"/>
                         <outlet property="locationActivityIndicatorView" destination="MaO-9t-orX" id="28g-4X-fLf"/>
                         <outlet property="locationPermissionButton" destination="uHP-XO-LdX" id="6hV-Gv-hrA"/>
+                        <outlet property="notificationsActivityIndicatorView" destination="FsT-JZ-JvH" id="8xH-Ba-7I3"/>
+                        <outlet property="notificationsPermissionButton" destination="AIj-KN-twR" id="dhN-Ud-8x4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YvZ-8b-NMa" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-786" y="-684"/>
+            <point key="canvasLocation" x="-786.39999999999998" y="-684.10794602698661"/>
         </scene>
     </scenes>
     <resources>
         <image name="assetSpherical" width="3584" height="1792"/>
+        <namedColor name="SeaBlue">
+            <color red="0.28999999170000001" green="0.56499999759999997" blue="0.88599997760000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SeaBlue">
+            <color red="0.28999999170000001" green="0.56499999759999997" blue="0.88599997760000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="SeaBlue">
             <color red="0.28999999170000001" green="0.56499999759999997" blue="0.88599997760000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

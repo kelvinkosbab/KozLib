@@ -31,20 +31,22 @@ struct PermissionManager : PermissionManagerDelegate {
   
   let locationManager = LocationManager.shared
   let cameraManager = CameraPermissionManager.shared
+  let notificationManager = NotificationManager.shared
   
   // MARK: - PermissionManagerDelegate
   
   var status: PermissionAuthorizationStatus {
     let locationStatus = self.locationManager.status
     let cameraStatus = self.cameraManager.status
+    let notificationStatus = self.notificationManager.status
     
     // Check authorized status
-    if locationStatus == .authorized && cameraStatus == .authorized {
+    if locationStatus == .authorized && cameraStatus == .authorized && notificationStatus == .authorized {
       return .authorized
     }
     
     // Check not determiend status
-    if locationStatus == .notDetermined || cameraStatus == .notDetermined {
+    if locationStatus == .notDetermined || cameraStatus == .notDetermined || notificationStatus == .notDetermined {
       return .notDetermined
     }
     
@@ -53,14 +55,14 @@ struct PermissionManager : PermissionManagerDelegate {
   }
   
   var isAccessAuthorized: Bool {
-    return self.locationManager.isAccessAuthorized && self.cameraManager.isAccessAuthorized
+    return self.locationManager.isAccessAuthorized && self.cameraManager.isAccessAuthorized && self.notificationManager.isAccessAuthorized
   }
   
   var isAccessDenied: Bool {
-    return self.locationManager.isAccessDenied || self.cameraManager.isAccessDenied
+    return self.locationManager.isAccessDenied || self.cameraManager.isAccessDenied || self.notificationManager.isAccessDenied
   }
   
   var isAccessNotDetermined: Bool {
-    return self.locationManager.isAccessNotDetermined || self.cameraManager.isAccessNotDetermined
+    return self.locationManager.isAccessNotDetermined || self.cameraManager.isAccessNotDetermined || self.notificationManager.isAccessNotDetermined
   }
 }

@@ -110,6 +110,7 @@
 		B66927E82057208600EF915C /* Geotification+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66927E72057208600EF915C /* Geotification+Utilities.swift */; };
 		B66927EA205720C700EF915C /* GeofencingNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66927E9205720C700EF915C /* GeofencingNavigationDelegate.swift */; };
 		B66927EC2057342E00EF915C /* LocationManager+Geofencing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66927EB2057342E00EF915C /* LocationManager+Geofencing.swift */; };
+		B66927EF2057360400EF915C /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66927EE2057360400EF915C /* NotificationManager.swift */; };
 		B67756BA1F78BDB100B553F3 /* ARBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67756B91F78BDB100B553F3 /* ARBaseViewController.swift */; };
 		B67756BD1F78BFF900B553F3 /* BoxPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67756BC1F78BFF900B553F3 /* BoxPlane.swift */; };
 		B67949F11F81CE1900EEB926 /* ARBlockPhysicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67949F01F81CE1900EEB926 /* ARBlockPhysicsViewController.swift */; };
@@ -280,6 +281,7 @@
 		B66927E72057208600EF915C /* Geotification+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Geotification+Utilities.swift"; sourceTree = "<group>"; };
 		B66927E9205720C700EF915C /* GeofencingNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofencingNavigationDelegate.swift; sourceTree = "<group>"; };
 		B66927EB2057342E00EF915C /* LocationManager+Geofencing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationManager+Geofencing.swift"; sourceTree = "<group>"; };
+		B66927EE2057360400EF915C /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		B67756B91F78BDB100B553F3 /* ARBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBaseViewController.swift; sourceTree = "<group>"; };
 		B67756BC1F78BFF900B553F3 /* BoxPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxPlane.swift; sourceTree = "<group>"; };
 		B67949F01F81CE1900EEB926 /* ARBlockPhysicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBlockPhysicsViewController.swift; sourceTree = "<group>"; };
@@ -550,8 +552,6 @@
 			children = (
 				B629C222201E74D30083D708 /* PermissionManager.swift */,
 				B629C224201E74EB0083D708 /* CameraPermissionManager.swift */,
-				B6D00253201E7CBD0009EE1E /* LocationManager.swift */,
-				B66927EB2057342E00EF915C /* LocationManager+Geofencing.swift */,
 			);
 			path = Permissions;
 			sourceTree = "<group>";
@@ -695,7 +695,9 @@
 		B64414F91F78561A00C9781B /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				B66927ED2057351F00EF915C /* Notifications */,
+				B629C221201E74C20083D708 /* Permissions */,
+				B66927F020573C6600EF915C /* Location Manager */,
+				B66927ED2057351F00EF915C /* NotificationManager */,
 				B6811F522043C323008C3CAC /* Network Service */,
 				B619F9DD203E94A000764577 /* Presenting Controllers */,
 				B64414F41F7854E100C9781B /* Extensions */,
@@ -704,7 +706,6 @@
 				B67756BB1F78BFE300B553F3 /* ARKit and SceneKit */,
 				B61B8DE81F817D5300118C73 /* Network */,
 				B6480A04201A578C000BE002 /* Network Extension */,
-				B629C221201E74C20083D708 /* Permissions */,
 				B619F9D7203E93A200764577 /* Custom Views */,
 				B64414FA1F78568000C9781B /* Useful 3rd Party Libraries */,
 			);
@@ -786,11 +787,21 @@
 			path = Geofencing;
 			sourceTree = "<group>";
 		};
-		B66927ED2057351F00EF915C /* Notifications */ = {
+		B66927ED2057351F00EF915C /* NotificationManager */ = {
 			isa = PBXGroup;
 			children = (
+				B66927EE2057360400EF915C /* NotificationManager.swift */,
 			);
-			path = Notifications;
+			path = NotificationManager;
+			sourceTree = "<group>";
+		};
+		B66927F020573C6600EF915C /* Location Manager */ = {
+			isa = PBXGroup;
+			children = (
+				B6D00253201E7CBD0009EE1E /* LocationManager.swift */,
+				B66927EB2057342E00EF915C /* LocationManager+Geofencing.swift */,
+			);
+			path = "Location Manager";
 			sourceTree = "<group>";
 		};
 		B67756BB1F78BFE300B553F3 /* ARKit and SceneKit */ = {
@@ -1187,6 +1198,7 @@
 				B619F9FD203E94A000764577 /* InteractiveTransitionOption.swift in Sources */,
 				B629C225201E74EB0083D708 /* CameraPermissionManager.swift in Sources */,
 				B67949F11F81CE1900EEB926 /* ARBlockPhysicsViewController.swift in Sources */,
+				B66927EF2057360400EF915C /* NotificationManager.swift in Sources */,
 				B6D9205620238835008A6361 /* ARWallDetectionViewController.swift in Sources */,
 				B63A82C4201E656200E6C8C6 /* Mask.swift in Sources */,
 				B64414F81F78556200C9781B /* UIApplication+Util.swift in Sources */,

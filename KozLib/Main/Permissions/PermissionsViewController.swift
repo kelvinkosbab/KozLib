@@ -32,6 +32,8 @@ class PermissionsViewController : BaseViewController {
   @IBOutlet weak var locationActivityIndicatorView: UIActivityIndicatorView!
   @IBOutlet weak var cameraPermissionButton: UIButton!
   @IBOutlet weak var cameraActivityIndicatorView: UIActivityIndicatorView!
+  @IBOutlet weak var notificationsPermissionButton: UIButton!
+  @IBOutlet weak var notificationsActivityIndicatorView: UIActivityIndicatorView!
   
   weak var delegate: PermissionsViewControllerDelegate? = nil
   
@@ -46,8 +48,11 @@ class PermissionsViewController : BaseViewController {
   var isCameraAuthorized: Bool = CameraPermissionManager.shared.isAccessAuthorized
   var isCameraNotDetermined: Bool = CameraPermissionManager.shared.isAccessNotDetermined
   
+  var isNotificationsAuthorized: Bool = NotificationManager.shared.isAccessAuthorized
+  var isNotificationsNotDetermined: Bool = NotificationManager.shared.isAccessNotDetermined
+  
   var areAllPermissionAuthorized: Bool {
-    return self.isLocationAuthorized && self.isCameraAuthorized
+    return self.isLocationAuthorized && self.isCameraAuthorized && self.isNotificationsAuthorized
   }
   
   // MARK: - Lifecycle
@@ -64,6 +69,7 @@ class PermissionsViewController : BaseViewController {
     
     self.locationActivityIndicatorView.isHidden = true
     self.cameraActivityIndicatorView.isHidden = true
+    self.notificationsActivityIndicatorView.isHidden = true
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -71,8 +77,11 @@ class PermissionsViewController : BaseViewController {
     
     LocationManager.shared.authorizationDelegate = self
     CameraPermissionManager.shared.authorizationDelegate = self
+    NotificationManager.shared.authorizationDelegate = self
     self.isCameraAuthorized = CameraPermissionManager.shared.isAccessAuthorized
     self.isCameraNotDetermined = CameraPermissionManager.shared.isAccessNotDetermined
+    self.isNotificationsNotDetermined = NotificationManager.shared.isAccessNotDetermined
+    self.isNotificationsNotDetermined = NotificationManager.shared.isAccessNotDetermined
     self.reloadContent()
   }
   
@@ -110,6 +119,17 @@ class PermissionsViewController : BaseViewController {
       self.cameraPermissionButton.setTitle("Allow Camera Access", for: .normal)
       self.cameraPermissionButton.isUserInteractionEnabled = true
       self.cameraPermissionButton.setTitleColor(.cyan, for: .normal)
+    }
+    
+    // Notifications
+    if self.isNotificationsAuthorized {
+      self.notificationsPermissionButton.setTitle("Notifications Access Granted", for: .normal)
+      self.notificationsPermissionButton.isUserInteractionEnabled = false
+      self.notificationsPermissionButton.setTitleColor(.lightGray, for: .normal)
+    } else {
+      self.notificationsPermissionButton.setTitle("Allow Notifications Access", for: .normal)
+      self.notificationsPermissionButton.isUserInteractionEnabled = true
+      self.notificationsPermissionButton.setTitleColor(.cyan, for: .normal)
     }
   }
   
@@ -149,6 +169,24 @@ class PermissionsViewController : BaseViewController {
     
     // Request permissions
     CameraPermissionManager.shared.requestAuthorization()
+  }
+  
+  @IBAction func notificationsPermissionButtonSelected() {
+    
+    // Check if access has been denied - Settings
+    guard self.isNotificationsNotDetermined else {
+      self.showSettingsAlert()
+      return
+    }
+    
+    // Show loading
+    self.notificationsActivityIndicatorView.isHidden = false
+    self.notificationsActivityIndicatorView.startAnimating()
+    self.notificationsPermissionButton.isUserInteractionEnabled = false
+    self.notificationsPermissionButton.isHidden = true
+    
+    // Request permissions
+    NotificationManager.shared.requestAuthorization()
   }
   
   private func showSettingsAlert() {
@@ -199,6 +237,7 @@ extension PermissionsViewController : CameraPermissionDelegate {
   
   func cameraPermissionManagerDidUpdateAuthorization(isAuthorized: Bool) {
     self.isCameraAuthorized = isAuthorized
+    self.isCameraNotDetermined = false
     if self.areAllPermissionAuthorized {
       self.delegate?.didAuthorizeAllPermissions()
     }
@@ -211,5 +250,25 @@ extension PermissionsViewController : CameraPermissionDelegate {
     self.cameraActivityIndicatorView.isHidden = true
     self.cameraPermissionButton.isUserInteractionEnabled = true
     self.cameraPermissionButton.isHidden = false
+  }
+}
+
+extension PermissionsViewController : NotificationPermissionDelegate {
+  
+  func notificationDidUpdateAuthorization(status: PermissionAuthorizationStatus) {
+    self.isNotificationsAuthorized = status == .authorized
+    self.isNotificationsNotDetermined = status == .notDetermined
+    if self.areAllPermissionAuthorized {
+      self.delegate?.didAuthorizeAllPermissions()
+    }
+    
+    // Update the content
+    self.reloadContent()
+    
+    // Stop loading
+    self.notificationsActivityIndicatorView.stopAnimating()
+    self.notificationsActivityIndicatorView.isHidden = true
+    self.notificationsPermissionButton.isUserInteractionEnabled = true
+    self.notificationsPermissionButton.isHidden = false
   }
 }

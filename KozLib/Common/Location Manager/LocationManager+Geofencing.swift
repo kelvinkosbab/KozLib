@@ -27,14 +27,12 @@ extension LocationManager {
     
     // Show an alert if application is active
     if UIApplication.shared.applicationState == .active {
-      guard let message = note(fromRegionIdentifier: region.identifier) else { return }
+      guard let message = self.note(fromRegionIdentifier: region.identifier) else { return }
       UIApplication.shared.keyWindow?.rootViewController?.showAlert(withTitle: "Geofencing", message: message)
     } else {
       // Otherwise present a local notification
-      let notification = UILocalNotification()
-      notification.alertBody = note(fromRegionIdentifier: region.identifier)
-      notification.soundName = "Default"
-      UIApplication.shared.presentLocalNotificationNow(notification)
+      guard let message = self.note(fromRegionIdentifier: region.identifier) else { return }
+      NotificationManager.shared.scheduleLocalNotification(title: "Geofencing", body: message, triggerDate: Date().addingTimeInterval(2))
     }
   }
   
