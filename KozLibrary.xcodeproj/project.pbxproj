@@ -698,7 +698,7 @@
 				B629C221201E74C20083D708 /* Permissions */,
 				B66927F020573C6600EF915C /* Location Manager */,
 				B66927ED2057351F00EF915C /* NotificationManager */,
-				B6811F522043C323008C3CAC /* Network Service */,
+				B6811F522043C323008C3CAC /* Service */,
 				B619F9DD203E94A000764577 /* Presenting Controllers */,
 				B64414F41F7854E100C9781B /* Extensions */,
 				B6350E501F787D15004E6218 /* Protocols */,
@@ -832,7 +832,7 @@
 			path = "Recognizing Images";
 			sourceTree = "<group>";
 		};
-		B6811F522043C323008C3CAC /* Network Service */ = {
+		B6811F522043C323008C3CAC /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				B6811F532043C6B8008C3CAC /* Service.swift */,
@@ -842,7 +842,7 @@
 				B6811F5F2043C829008C3CAC /* AuthenticationState.swift */,
 				B6811F612043C875008C3CAC /* Data+JSON.swift */,
 			);
-			path = "Network Service";
+			path = Service;
 			sourceTree = "<group>";
 		};
 		B68B2E4A1F76BCEC000B7A3F = {

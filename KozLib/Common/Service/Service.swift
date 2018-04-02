@@ -41,7 +41,7 @@ class Service : Hashable, Loggable, ClassNamable {
     return self.endpoint?.hashValue ?? 0
   }
   
-  static func == (lhs: Service, rhs: Service) -> Bool {
+  static func ==(lhs: Service, rhs: Service) -> Bool {
     return lhs.endpoint == rhs.endpoint
   }
   
@@ -123,14 +123,14 @@ class Service : Hashable, Loggable, ClassNamable {
     }
   }
   
-  func handleResponse(urlResponse: HTTPURLResponse?, httpMethod: String, endpoint: String, response: Any?, file: String, line: Int, function: String) -> ServiceResponse {
+  private func handleResponse(urlResponse: HTTPURLResponse?, httpMethod: String, endpoint: String, response: Any?, file: String, line: Int, function: String) -> ServiceResponse {
     let response = ServiceResponse.success(response)
     let endpoint = urlResponse?.url?.path ?? endpoint
     Log.log(response, httpMethod: httpMethod, endpoint: endpoint, file: file, line: line, function: function)
     return response
   }
   
-  func handleResponse(urlResponse: HTTPURLResponse?, error: Error, httpMethod: String, endpoint: String, response: Any?, file: String, line: Int, function: String) -> ServiceResponse {
+  private func handleResponse(urlResponse: HTTPURLResponse?, error: Error, httpMethod: String, endpoint: String, response: Any?, file: String, line: Int, function: String) -> ServiceResponse {
     let response = ServiceResponse.error(error, response)
     let endpoint = urlResponse?.url?.path ?? endpoint
     Log.log(response, httpMethod: httpMethod, endpoint: endpoint, file: file, line: line, function: function)
