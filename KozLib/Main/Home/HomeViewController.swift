@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFCNavigationDelegate, NetworkNavigationDelegate, PermissionsNavigationDelegate {
+class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFCNavigationDelegate, NetworkNavigationDelegate, PermissionsNavigationDelegate, GeofencingNavigationDelegate {
   
   // MARK: - Static Accessors
   
@@ -32,7 +32,7 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
   // MARK: - SectionType
   
   enum SectionType {
-    case misc, network
+    case misc([RowType]), network([RowType])
     
     var title: String? {
       switch self {
@@ -47,9 +47,9 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
   func getSectionType(section: Int) -> SectionType? {
     switch section {
     case 0:
-      return .misc
+      return .misc([ .permissions, .nfc, .arKit, .geofencing ])
     case 1:
-      return .network
+      return .network([ .basicNetwork, .networkExtension ])
     default:
       return nil
     }
@@ -58,7 +58,7 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
   // MARK: - RowType
   
   enum RowType {
-    case permissions, nfc, arKit, basicNetwork, networkExtension
+    case permissions, nfc, arKit, geofencing, basicNetwork, networkExtension
     
     var title: String {
       switch self {
@@ -68,6 +68,8 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
         return "NFC Reader"
       case .arKit:
         return "ARKit Projects"
+      case .geofencing:
+        return "Geofencing"
       case .basicNetwork:
         return "Basic Network Info"
       case .networkExtension:
@@ -83,26 +85,12 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
     }
     
     switch sectionType {
-    case .misc:
-      switch indexPath.row {
-      case 0:
-        return .permissions
-      case 1:
-        return .nfc
-      case 2:
-        return .arKit
-      default:
-        return nil
+    case .misc(let rowTypes), .network(let rowTypes):
+      if indexPath.row < rowTypes.count {
+        let rowType = rowTypes[indexPath.row]
+        return rowType
       }
-    case .network:
-      switch indexPath.row {
-      case 0:
-        return .basicNetwork
-      case 1:
-        return .networkExtension
-      default:
-        return nil
-      }
+      return nil
     }
   }
   
@@ -128,10 +116,8 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
     }
     
     switch sectionType {
-    case .misc:
-      return 3
-    case .network:
-      return 2
+    case .misc(let rowTypes), .network(let rowTypes):
+      return rowTypes.count
     }
   }
   
@@ -160,6 +146,8 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
       self.transitionToPermissions()
     case .arKit:
       self.transitionToARKitItems(presentationMode: .navStack)
+    case .geofencing:
+      self.transitionToGeotification(presentationMode: .navStack)
     case .nfc:
       self.transitionToNFC(presentationMode: .navStack)
     case .basicNetwork:
