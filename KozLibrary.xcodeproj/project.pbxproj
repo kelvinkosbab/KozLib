@@ -372,16 +372,16 @@
 			path = "Top Knob Visual Effect View";
 			sourceTree = "<group>";
 		};
-		B619F9DD203E94A000764577 /* Presenting Controllers */ = {
+		B619F9DD203E94A000764577 /* Controller Presentation */ = {
 			isa = PBXGroup;
 			children = (
 				B619F9E3203E94A000764577 /* PresentableController.swift */,
-				B619F9FB203E94A000764577 /* PresentationMode.swift */,
 				B619F9E2203E94A000764577 /* PresentableControllerOption.swift */,
+				B619F9FB203E94A000764577 /* PresentationMode.swift */,
 				B619F9E4203E94A000764577 /* Custom Controller Presentations */,
 				B619F9DE203E94A000764577 /* Interactive Transitions */,
 			);
-			path = "Presenting Controllers";
+			path = "Controller Presentation";
 			sourceTree = "<group>";
 		};
 		B619F9DE203E94A000764577 /* Interactive Transitions */ = {
@@ -699,7 +699,7 @@
 				B66927F020573C6600EF915C /* Location Manager */,
 				B66927ED2057351F00EF915C /* NotificationManager */,
 				B6811F522043C323008C3CAC /* Service */,
-				B619F9DD203E94A000764577 /* Presenting Controllers */,
+				B619F9DD203E94A000764577 /* Controller Presentation */,
 				B64414F41F7854E100C9781B /* Extensions */,
 				B6350E501F787D15004E6218 /* Protocols */,
 				B6350E421F786FA3004E6218 /* NFC */,
@@ -975,7 +975,6 @@
 				B68B2E511F76BCEC000B7A3F /* Resources */,
 				B6D1312F202CD1A90035736E /* Embed App Extensions */,
 				F7BFA98AA0CE97E6045BD234 /* [CP] Embed Pods Frameworks */,
-				D08D3C2E1B8CEED98AF7792E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -995,7 +994,6 @@
 				B6D13123202CD1A90035736E /* Sources */,
 				B6D13124202CD1A90035736E /* Frameworks */,
 				B6D13125202CD1A90035736E /* Resources */,
-				1F8C9C55B4A21B6243F3FD4A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1089,36 +1087,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1F8C9C55B4A21B6243F3FD4A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KozNetAppProxy/Pods-KozNetAppProxy-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D08D3C2E1B8CEED98AF7792E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KozLibrary/Pods-KozLibrary-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		DAB82ECAC09B9F78F1773C35 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
