@@ -26,10 +26,6 @@ class InteractiveTransition : UIPercentDrivenInteractiveTransition {
   private var shouldFinish: Bool = false
   private var activeGestureRecognizers: [UIPanGestureRecognizer] = []
   
-  private var lastTranslation: CGPoint? = nil
-  private var lastTranslationDate: Date? = nil
-  private var lastVelocity: CGFloat? = nil
-  
   // MARK: - Init
   
   init?(interactiveViews: [UIView], axis: InteractiveTransition.Axis, direction: InteractiveTransition.Direction, gestureType: GestureType = .pan, options: [InteractiveTransition.Option] = [], delegate: InteractiveTransitionDelegate? = nil) {
@@ -73,20 +69,29 @@ class InteractiveTransition : UIPercentDrivenInteractiveTransition {
     let progress = self.calculateProgress(translation: translation, in: view)
     
     // Velocity calculations
-    self.updateVelocityProperties(currentTranslation: translation)
+    let velocity: CGFloat
+    let velocityVector = sender.velocity(in: view)
+    switch self.axis {
+    case .x:
+      velocity = velocityVector.x
+    case .y:
+      velocity = velocityVector.y
+    case .xy:
+      velocity = CGFloat(sqrtf(powf(Float(velocityVector.x), 2) + powf(Float(velocityVector.y), 2)))
+    }
     
     // Handle the gesture state
-    self.handleGestureState(gesture: sender, progress: progress)
+    self.handleGestureState(gesture: sender, progress: progress, velocity: velocity)
   }
   
-  private func handleGestureState(gesture: UIPanGestureRecognizer, progress: CGFloat) {
+  private func handleGestureState(gesture: UIPanGestureRecognizer, progress: CGFloat, velocity: CGFloat) {
     switch gesture.state {
     case .began:
       self.hasStarted = true
       self.delegate?.interactionDidSurpassThreshold(self)
     case .changed:
       self.update(progress)
-      self.shouldFinish = self.calculateShouldFinish(progress: progress, velocity: self.lastVelocity)
+      self.shouldFinish = self.calculateShouldFinish(progress: progress, velocity: velocity)
     case .cancelled:
       self.hasStarted = false
       self.cancel()
@@ -97,42 +102,12 @@ class InteractiveTransition : UIPercentDrivenInteractiveTransition {
     }
   }
   
-  // MARK: - Overrides
-  
-  override func finish() {
-    self.lastTranslation = nil
-    self.lastTranslationDate = nil
-    self.lastVelocity = nil
-    super.finish()
-  }
-  
-  override func cancel() {
-    self.lastTranslation = nil
-    self.lastTranslationDate = nil
-    self.lastVelocity = nil
-    super.cancel()
-  }
-  
   // MARK: - Calculations
   
-  private func updateVelocityProperties(currentTranslation: CGPoint) {
-    let currentDate: Date = Date()
-    if self.lastTranslation == nil && self.lastTranslationDate == nil {
-      self.lastVelocity = nil
-      self.lastTranslation = currentTranslation
-      self.lastTranslationDate = currentDate
-      
-    } else if let lastTranslation = self.lastTranslation, let lastTranslationDate = self.lastTranslationDate, let velocity = self.calculateVelocity(lastTranslation: lastTranslation, lastTranslationDate: lastTranslationDate, currentTranslation: currentTranslation, currentTranslationDate: currentDate), (self.direction == .negative && velocity < 0) || (self.direction == .positive && velocity > 0) {
-      self.lastVelocity = velocity
-      self.lastTranslation = currentTranslation
-      self.lastTranslationDate = currentDate
-    }
-  }
-  
-  private func calculateShouldFinish(progress: CGFloat, velocity: CGFloat?) -> Bool {
+  private func calculateShouldFinish(progress: CGFloat, velocity: CGFloat) -> Bool {
     if progress > self.percentThreshold {
       return true
-    } else if let velocity = velocity, abs(velocity) > self.velocityThreshold {
+    } else if abs(velocity) > self.velocityThreshold {
       return true
     }
     return false
@@ -153,26 +128,6 @@ class InteractiveTransition : UIPercentDrivenInteractiveTransition {
     }
     
     return CGFloat(min(max(Double(movement), 0.0), 1.0))
-  }
-  
-  private func calculateVelocity(lastTranslation: CGPoint, lastTranslationDate: Date, currentTranslation: CGPoint, currentTranslationDate: Date) -> CGFloat? {
-    
-    let duration = currentTranslationDate.timeIntervalSince(lastTranslationDate)
-    guard duration != 0 else {
-      return nil
-    }
-    
-    let xVelocity: Double = Double(currentTranslation.x - lastTranslation.x) / duration
-    let yVelocity: Double = Double(currentTranslation.y - lastTranslation.y) / duration
-    
-    switch self.axis {
-    case .x:
-      return CGFloat(xVelocity)
-    case .y:
-      return CGFloat(yVelocity)
-    case .xy:
-      return sqrt(CGFloat(pow(xVelocity, 2) + pow(yVelocity, 2)))
-    }
   }
 }
 
