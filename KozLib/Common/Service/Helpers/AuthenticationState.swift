@@ -9,5 +9,5 @@
 import Foundation
 
 enum AuthenticationState {
-  case unauthorized, authorized(String,String)
+  case unauthorized, authorized(email: String, password: String)
 }

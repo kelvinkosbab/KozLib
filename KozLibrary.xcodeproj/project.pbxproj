@@ -102,6 +102,8 @@
 		B655143A1F78924A00EEF26F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65514391F78924A00EEF26F /* BaseViewController.swift */; };
 		B655143D1F78928800EEF26F /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B655143C1F78928800EEF26F /* BaseTableViewController.swift */; };
 		B655143F1F7895AE00EEF26F /* UIView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B655143E1F7895AE00EEF26F /* UIView+Util.swift */; };
+		B6617DA220FA61DA00F87102 /* HapticsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6617DA120FA61DA00F87102 /* HapticsGenerator.swift */; };
+		B6617DAA20FBDEFB00F87102 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6617DA920FBDEFB00F87102 /* ServiceError.swift */; };
 		B66780F6201943370014781C /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66780F5201943370014781C /* NetworkExtension.framework */; };
 		B66927E020571F7500EF915C /* Geofencing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B66927DF20571F7500EF915C /* Geofencing.storyboard */; };
 		B66927E220571FCF00EF915C /* GeotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66927E120571FCF00EF915C /* GeotificationsViewController.swift */; };
@@ -273,6 +275,8 @@
 		B65514391F78924A00EEF26F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B655143C1F78928800EEF26F /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		B655143E1F7895AE00EEF26F /* UIView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Util.swift"; sourceTree = "<group>"; };
+		B6617DA120FA61DA00F87102 /* HapticsGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsGenerator.swift; sourceTree = "<group>"; };
+		B6617DA920FBDEFB00F87102 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		B66780F5201943370014781C /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		B66927DF20571F7500EF915C /* Geofencing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Geofencing.storyboard; sourceTree = "<group>"; };
 		B66927E120571FCF00EF915C /* GeotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeotificationsViewController.swift; sourceTree = "<group>"; };
@@ -695,6 +699,7 @@
 		B64414F91F78561A00C9781B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B6617DA020FA61C300F87102 /* Haptics */,
 				B629C221201E74C20083D708 /* Permissions */,
 				B66927F020573C6600EF915C /* Location Manager */,
 				B66927ED2057351F00EF915C /* NotificationManager */,
@@ -754,6 +759,26 @@
 				B644150F1F78597400C9781B /* HomeViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		B6617DA020FA61C300F87102 /* Haptics */ = {
+			isa = PBXGroup;
+			children = (
+				B6617DA120FA61DA00F87102 /* HapticsGenerator.swift */,
+			);
+			path = Haptics;
+			sourceTree = "<group>";
+		};
+		B6617DA820FBDEBC00F87102 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B6811F552043C6ED008C3CAC /* ServiceResponse.swift */,
+				B6617DA920FBDEFB00F87102 /* ServiceError.swift */,
+				B6811F592043C763008C3CAC /* Loggable+Service.swift */,
+				B6811F612043C875008C3CAC /* Data+JSON.swift */,
+				B6811F5F2043C829008C3CAC /* AuthenticationState.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		B66780F4201943370014781C /* Frameworks */ = {
@@ -835,12 +860,9 @@
 		B6811F522043C323008C3CAC /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				B6811F532043C6B8008C3CAC /* Service.swift */,
 				B6811F5D2043C810008C3CAC /* SessionManager.swift */,
-				B6811F552043C6ED008C3CAC /* ServiceResponse.swift */,
-				B6811F592043C763008C3CAC /* Loggable+Service.swift */,
-				B6811F5F2043C829008C3CAC /* AuthenticationState.swift */,
-				B6811F612043C875008C3CAC /* Data+JSON.swift */,
+				B6811F532043C6B8008C3CAC /* Service.swift */,
+				B6617DA820FBDEBC00F87102 /* Helpers */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -1199,6 +1221,7 @@
 				B64415101F78597400C9781B /* HomeViewController.swift in Sources */,
 				B60AD104201A7919003A2E84 /* ConfigurationViewPresentable.swift in Sources */,
 				B63A82C6201E656B00E6C8C6 /* GlassesOverlay.swift in Sources */,
+				B6617DAA20FBDEFB00F87102 /* ServiceError.swift in Sources */,
 				B624C1D51F78B0650027C95D /* ARSCNView+Util.swift in Sources */,
 				B61B8DE01F81709D00118C73 /* BaseTableViewCell.swift in Sources */,
 				B64415121F7859AE00C9781B /* RootViewController.swift in Sources */,
@@ -1240,6 +1263,7 @@
 				B66927E42057201C00EF915C /* AddGeotificationViewController.swift in Sources */,
 				B64414FE1F7856A900C9781B /* UIDevice+Util.swift in Sources */,
 				B61B8DF21F81843800118C73 /* NetworkNavigationDelegate.swift in Sources */,
+				B6617DA220FA61DA00F87102 /* HapticsGenerator.swift in Sources */,
 				B67949F71F81FBC800EEB926 /* PBRMaterial.swift in Sources */,
 				B64415001F7856EA00C9781B /* Date+Util.swift in Sources */,
 				B619FA00203E94A000764577 /* PresentableController.swift in Sources */,

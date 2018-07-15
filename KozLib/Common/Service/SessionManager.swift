@@ -101,58 +101,62 @@ class SessionManager {
     }
   }
   
-  func get(endpoint: String, parameters: [String : Any]?, completion: @escaping (_ response: SessionManagerResponse) -> Void) {
+  func get(endpoint: String, parameters: [String : Any]?, completion: @escaping (_ response: ServiceResponse) -> Void) {
     let dataRequest = self.getDataRequest(endpoint: endpoint, method: .get, parameters: parameters)
     dataRequest?.responseJSON { response in
       let urlResponse = response.response
       switch response.result {
       case .success(let response):
-        completion(.success(response, urlResponse))
+        completion(.success(response))
       case .failure(let error):
+        let serviceError: ServiceError = ServiceError.generate(error: error, statusCode: urlResponse?.statusCode)
         let json = response.data?.json
-        completion(.error(error, json, urlResponse))
+        completion(.error(serviceError, json))
       }
     }
   }
   
-  func put(endpoint: String, parameters: [String : Any]?, completion: @escaping (_ response: SessionManagerResponse) -> Void) {
+  func put(endpoint: String, parameters: [String : Any]?, completion: @escaping (_ response: ServiceResponse) -> Void) {
     let dataRequest = self.getDataRequest(endpoint: endpoint, method: .put, parameters: parameters)
     dataRequest?.responseJSON { response in
       let urlResponse = response.response
       switch response.result {
       case .success(let response):
-        completion(.success(response, urlResponse))
+        completion(.success(response))
       case .failure(let error):
+        let serviceError: ServiceError = ServiceError.generate(error: error, statusCode: urlResponse?.statusCode)
         let json = response.data?.json
-        completion(.error(error, json, urlResponse))
+        completion(.error(serviceError, json))
       }
     }
   }
   
-  func post(endpoint: String, parameters: [String : Any]?, completion: @escaping (_ response: SessionManagerResponse) -> Void) {
+  func post(endpoint: String, parameters: [String : Any]?, completion: @escaping (_ response: ServiceResponse) -> Void) {
     let dataRequest = self.getDataRequest(endpoint: endpoint, method: .post, parameters: parameters)
     dataRequest?.responseJSON { response in
       let urlResponse = response.response
       switch response.result {
       case .success(let response):
-        completion(.success(response, urlResponse))
+        completion(.success(response))
       case .failure(let error):
+        let serviceError: ServiceError = ServiceError.generate(error: error, statusCode: urlResponse?.statusCode)
         let json = response.data?.json
-        completion(.error(error, json, urlResponse))
+        completion(.error(serviceError, json))
       }
     }
   }
   
-  func delete(endpoint: String, parameters: [String : Any]?, completion: @escaping (_ response: SessionManagerResponse) -> Void) {
+  func delete(endpoint: String, parameters: [String : Any]?, completion: @escaping (_ response: ServiceResponse) -> Void) {
     let dataRequest = self.getDataRequest(endpoint: endpoint, method: .delete, parameters: parameters)
     dataRequest?.responseJSON { response in
       let urlResponse = response.response
       switch response.result {
       case .success(let response):
-        completion(.success(response, urlResponse))
+        completion(.success(response))
       case .failure(let error):
+        let serviceError: ServiceError = ServiceError.generate(error: error, statusCode: urlResponse?.statusCode)
         let json = response.data?.json
-        completion(.error(error, json, urlResponse))
+        completion(.error(serviceError, json))
       }
     }
   }
