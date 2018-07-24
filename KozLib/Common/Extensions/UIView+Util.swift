@@ -52,4 +52,13 @@ extension UIView {
     
     containerView.layoutIfNeeded()
   }
+  
+  // MARK: - Rounding Corners
+  
+  func roundIndividualCorners(_ corners: UIRectCorner) {
+    let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: cornersToRound, cornerRadii: CGSize(width: 8, height:  8))
+    let maskLayer = CAShapeLayer()
+    maskLayer.path = path.cgPath
+    self.layer.mask = maskLayer
+  }
 }
