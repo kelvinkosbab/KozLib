@@ -89,9 +89,10 @@ class InteractiveTransition : UIPercentDrivenInteractiveTransition {
     case .began:
       self.hasStarted = true
       self.delegate?.interactionDidSurpassThreshold(self)
-    case .changed:
       self.update(progress)
+    case .changed:
       self.shouldFinish = self.calculateShouldFinish(progress: progress, velocity: velocity)
+      self.update(progress)
     case .cancelled:
       self.hasStarted = false
       self.cancel()
