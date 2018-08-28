@@ -41,9 +41,9 @@ extension HomeViewController {
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    tableView.deselectRow(at: indexPath, animated: true)
     
     guard let rowType = self.dataSource.getRowType(at: indexPath) else {
+      tableView.deselectRow(at: indexPath, animated: true)
       return
     }
     

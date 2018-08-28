@@ -47,6 +47,8 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
   
   func didSelect(rowType: DataSource.RowType) {
     switch rowType {
+      
+    // MISC
     case .permissions:
       self.transitionToPermissions()
     case .arKit:
@@ -55,10 +57,17 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
       self.transitionToGeotification(presentationMode: .navStack)
     case .nfc:
       self.transitionToNFC(presentationMode: .navStack)
+      
+    // Network
     case .basicNetwork:
       self.transitionToNetworkInfo(presentationMode: .navStack)
     case .networkExtension:
       self.transitionToNetworkExtension(presentationMode: .navStack)
+      
+    // 360iDev 2018
+    case .badgeViewLayerAnimations:
+      let viewController = iDev2018_BadgeViewLayerAnimationsViewController.newViewController()
+      viewController.presentIn(self, withMode: .navStack)
     }
   }
 }

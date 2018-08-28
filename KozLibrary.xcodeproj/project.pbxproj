@@ -153,6 +153,8 @@
 		F6EF6D8021352AD300C3BFEE /* DataSourceContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF6D7F21352AD300C3BFEE /* DataSourceContent.swift */; };
 		F6EF6D8221352AE300C3BFEE /* DataSourceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF6D8121352AE300C3BFEE /* DataSourceProvider.swift */; };
 		F6EF6D8421352AEC00C3BFEE /* DetailedDataSourceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF6D8321352AEC00C3BFEE /* DetailedDataSourceProvider.swift */; };
+		F6EF6D8821352F2C00C3BFEE /* iDev2018_BadgeViewLayerAnimationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF6D8721352F2C00C3BFEE /* iDev2018_BadgeViewLayerAnimationsViewController.swift */; };
+		F6EF6D8A2135325B00C3BFEE /* 360iDev2018.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6EF6D892135325B00C3BFEE /* 360iDev2018.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -335,6 +337,8 @@
 		F6EF6D7F21352AD300C3BFEE /* DataSourceContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceContent.swift; sourceTree = "<group>"; };
 		F6EF6D8121352AE300C3BFEE /* DataSourceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceProvider.swift; sourceTree = "<group>"; };
 		F6EF6D8321352AEC00C3BFEE /* DetailedDataSourceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedDataSourceProvider.swift; sourceTree = "<group>"; };
+		F6EF6D8721352F2C00C3BFEE /* iDev2018_BadgeViewLayerAnimationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iDev2018_BadgeViewLayerAnimationsViewController.swift; sourceTree = "<group>"; };
+		F6EF6D892135325B00C3BFEE /* 360iDev2018.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = 360iDev2018.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -702,6 +706,7 @@
 				B624C1CD1F78AC0D0027C95D /* ARKit */,
 				B66927DE20571E2600EF915C /* Geofencing */,
 				B61B8DDA1F81466700118C73 /* Network */,
+				F6EF6D8521352ED800C3BFEE /* 360iDev 2018 */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1007,6 +1012,23 @@
 			path = DataSource;
 			sourceTree = "<group>";
 		};
+		F6EF6D8521352ED800C3BFEE /* 360iDev 2018 */ = {
+			isa = PBXGroup;
+			children = (
+				F6EF6D892135325B00C3BFEE /* 360iDev2018.storyboard */,
+				F6EF6D8621352EE800C3BFEE /* Badge View Layer Animations */,
+			);
+			path = "360iDev 2018";
+			sourceTree = "<group>";
+		};
+		F6EF6D8621352EE800C3BFEE /* Badge View Layer Animations */ = {
+			isa = PBXGroup;
+			children = (
+				F6EF6D8721352F2C00C3BFEE /* iDev2018_BadgeViewLayerAnimationsViewController.swift */,
+			);
+			path = "Badge View Layer Animations";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1113,6 +1135,7 @@
 				B624C1D11F78ACCD0027C95D /* ARKit.storyboard in Resources */,
 				B619F9DC203E93DB00764577 /* TopKnobVisualEffectView.xib in Resources */,
 				B61B8DEE1F81813700118C73 /* StackedTitleDetailTableViewCell.xib in Resources */,
+				F6EF6D8A2135325B00C3BFEE /* 360iDev2018.storyboard in Resources */,
 				B629C233201E78B80083D708 /* TackDragon.storyboard in Resources */,
 				B68B2E641F76BCEC000B7A3F /* LaunchScreen.storyboard in Resources */,
 				B61B8DDC1F816C8300118C73 /* Network.storyboard in Resources */,
@@ -1202,6 +1225,7 @@
 				B60AD10C201A9146003A2E84 /* ARState.swift in Sources */,
 				B629C22B201E77420083D708 /* PermissionsViewController.swift in Sources */,
 				B619FA0F203E94A000764577 /* TopKnobBottomUpPresentationController.swift in Sources */,
+				F6EF6D8821352F2C00C3BFEE /* iDev2018_BadgeViewLayerAnimationsViewController.swift in Sources */,
 				B6480A09201A5B09000BE002 /* ConfiguringViewController.swift in Sources */,
 				B64415061F7857D800C9781B /* String+Util.swift in Sources */,
 				B6811F622043C875008C3CAC /* Data+JSON.swift in Sources */,

@@ -48,6 +48,7 @@ extension HomeViewController {
         sectionTypes.append(.network(rowTypes: [ .basicNetwork, .networkExtension ]))
         
         // 2018 360iDev
+        sectionTypes.append(.iDev2018(rowTypes: [ .badgeViewLayerAnimations ]))
         
         // Return the content
         let content = Content(sectionTypes: sectionTypes)
@@ -60,7 +61,9 @@ extension HomeViewController {
     // MARK: - SectionType
     
     enum SectionType : DataSourceSectionType {
-      case misc(rowTypes: [RowType]), network(rowTypes: [RowType])
+      case misc(rowTypes: [RowType])
+      case network(rowTypes: [RowType])
+      case iDev2018(rowTypes: [RowType])
       
       var title: String? {
         switch self {
@@ -68,12 +71,14 @@ extension HomeViewController {
           return nil
         case .network:
           return "Network"
+        case .iDev2018:
+          return "360iDev 2018"
         }
       }
       
       var rowTypes: [RowType] {
         switch self {
-        case .misc(rowTypes: let rowTypes), .network(rowTypes: let rowTypes):
+        case .misc(rowTypes: let rowTypes), .network(rowTypes: let rowTypes), .iDev2018(rowTypes: let rowTypes):
           return rowTypes
         }
       }
@@ -82,7 +87,9 @@ extension HomeViewController {
     // MARK: - RowType
     
     enum RowType : DataSourceRowType {
-      case permissions, nfc, arKit, geofencing, basicNetwork, networkExtension
+      case permissions, nfc, arKit, geofencing
+      case basicNetwork, networkExtension
+      case badgeViewLayerAnimations
       
       var title: String {
         switch self {
@@ -98,6 +105,8 @@ extension HomeViewController {
           return "Basic Network Info"
         case .networkExtension:
           return "Network Extension"
+        case .badgeViewLayerAnimations:
+          return "Badge View Layer Animations"
         }
       }
     }
