@@ -148,6 +148,11 @@
 		B6F9756520239D1900BE9D9D /* VerticalBoxPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F9756420239D1900BE9D9D /* VerticalBoxPlane.swift */; };
 		B6F9756720239D2200BE9D9D /* HorizontalBoxPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F9756620239D2200BE9D9D /* HorizontalBoxPlane.swift */; };
 		D4E12D99AEB77142AD4EB826 /* Pods_KozNetAppProxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 938C5F92CF5BF4E0190C4216 /* Pods_KozNetAppProxy.framework */; };
+		F6EF6D7B21352A8200C3BFEE /* HomeViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF6D7A21352A8200C3BFEE /* HomeViewController+DataSource.swift */; };
+		F6EF6D7D21352A8D00C3BFEE /* HomeViewController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF6D7C21352A8D00C3BFEE /* HomeViewController+UITableView.swift */; };
+		F6EF6D8021352AD300C3BFEE /* DataSourceContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF6D7F21352AD300C3BFEE /* DataSourceContent.swift */; };
+		F6EF6D8221352AE300C3BFEE /* DataSourceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF6D8121352AE300C3BFEE /* DataSourceProvider.swift */; };
+		F6EF6D8421352AEC00C3BFEE /* DetailedDataSourceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF6D8321352AEC00C3BFEE /* DetailedDataSourceProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -325,6 +330,11 @@
 		B6F9756420239D1900BE9D9D /* VerticalBoxPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalBoxPlane.swift; sourceTree = "<group>"; };
 		B6F9756620239D2200BE9D9D /* HorizontalBoxPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalBoxPlane.swift; sourceTree = "<group>"; };
 		C50D1D707E34FC993690352E /* Pods-KozNetAppProxy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KozNetAppProxy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KozNetAppProxy/Pods-KozNetAppProxy.debug.xcconfig"; sourceTree = "<group>"; };
+		F6EF6D7A21352A8200C3BFEE /* HomeViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+DataSource.swift"; sourceTree = "<group>"; };
+		F6EF6D7C21352A8D00C3BFEE /* HomeViewController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+UITableView.swift"; sourceTree = "<group>"; };
+		F6EF6D7F21352AD300C3BFEE /* DataSourceContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceContent.swift; sourceTree = "<group>"; };
+		F6EF6D8121352AE300C3BFEE /* DataSourceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceProvider.swift; sourceTree = "<group>"; };
+		F6EF6D8321352AEC00C3BFEE /* DetailedDataSourceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedDataSourceProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -699,6 +709,7 @@
 		B64414F91F78561A00C9781B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F6EF6D7E21352AB900C3BFEE /* DataSource */,
 				B6617DA020FA61C300F87102 /* Haptics */,
 				B629C221201E74C20083D708 /* Permissions */,
 				B66927F020573C6600EF915C /* Location Manager */,
@@ -757,6 +768,8 @@
 			isa = PBXGroup;
 			children = (
 				B644150F1F78597400C9781B /* HomeViewController.swift */,
+				F6EF6D7A21352A8200C3BFEE /* HomeViewController+DataSource.swift */,
+				F6EF6D7C21352A8D00C3BFEE /* HomeViewController+UITableView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -984,6 +997,16 @@
 			path = BoxPlane;
 			sourceTree = "<group>";
 		};
+		F6EF6D7E21352AB900C3BFEE /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				F6EF6D7F21352AD300C3BFEE /* DataSourceContent.swift */,
+				F6EF6D8121352AE300C3BFEE /* DataSourceProvider.swift */,
+				F6EF6D8321352AEC00C3BFEE /* DetailedDataSourceProvider.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1190,6 +1213,7 @@
 				B67949F11F81CE1900EEB926 /* ARBlockPhysicsViewController.swift in Sources */,
 				B66927EF2057360400EF915C /* NotificationManager.swift in Sources */,
 				B6D9205620238835008A6361 /* ARWallDetectionViewController.swift in Sources */,
+				F6EF6D8021352AD300C3BFEE /* DataSourceContent.swift in Sources */,
 				B63A82C4201E656200E6C8C6 /* Mask.swift in Sources */,
 				B64414F81F78556200C9781B /* UIApplication+Util.swift in Sources */,
 				B6811F5A2043C763008C3CAC /* Loggable+Service.swift in Sources */,
@@ -1211,6 +1235,7 @@
 				B619FA08203E94A000764577 /* LeftMenuAnimator.swift in Sources */,
 				B619FA0E203E94A000764577 /* BottomUpAnimator.swift in Sources */,
 				B67949F91F81FEF300EEB926 /* Cube.swift in Sources */,
+				F6EF6D8421352AEC00C3BFEE /* DetailedDataSourceProvider.swift in Sources */,
 				B66927E82057208600EF915C /* Geotification+Utilities.swift in Sources */,
 				B6480A06201A579C000BE002 /* HotspotHelper.swift in Sources */,
 				B6350E521F787D1C004E6218 /* ViewControllerFromStoryboardProtocol.swift in Sources */,
@@ -1258,8 +1283,10 @@
 				B619FA10203E94A000764577 /* TopKnobBottomUpAnimator.swift in Sources */,
 				B66927EC2057342E00EF915C /* LocationManager+Geofencing.swift in Sources */,
 				B61B8DFA1F81868200118C73 /* Defaults+MyManagedObjectProtocol.swift in Sources */,
+				F6EF6D7B21352A8200C3BFEE /* HomeViewController+DataSource.swift in Sources */,
 				B6F9756720239D2200BE9D9D /* HorizontalBoxPlane.swift in Sources */,
 				B60AD10A201A9010003A2E84 /* ARFaceTrackingViewController.swift in Sources */,
+				F6EF6D7D21352A8D00C3BFEE /* HomeViewController+UITableView.swift in Sources */,
 				B66927E42057201C00EF915C /* AddGeotificationViewController.swift in Sources */,
 				B64414FE1F7856A900C9781B /* UIDevice+Util.swift in Sources */,
 				B61B8DF21F81843800118C73 /* NetworkNavigationDelegate.swift in Sources */,
@@ -1275,6 +1302,7 @@
 				B61B8DE41F8174EF00118C73 /* ARKitNavigationDelegate.swift in Sources */,
 				B619FA01203E94A000764577 /* PresentableManager.swift in Sources */,
 				B629C228201E76F50083D708 /* SCNNode+Util.swift in Sources */,
+				F6EF6D8221352AE300C3BFEE /* DataSourceProvider.swift in Sources */,
 				B64414FC1F78569600C9781B /* Device.swift in Sources */,
 				B619F9FF203E94A000764577 /* PresentableControllerOption.swift in Sources */,
 				B6350E461F786FBC004E6218 /* NFCMessage.swift in Sources */,
