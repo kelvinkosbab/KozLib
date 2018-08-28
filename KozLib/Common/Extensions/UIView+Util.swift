@@ -55,10 +55,11 @@ extension UIView {
   
   // MARK: - Rounding Corners
   
-  func roundIndividualCorners(_ corners: UIRectCorner) {
-    let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: cornersToRound, cornerRadii: CGSize(width: 8, height:  8))
-    let maskLayer = CAShapeLayer()
-    maskLayer.path = path.cgPath
-    self.layer.mask = maskLayer
+  // Simplified and adapted from https://stackoverflow.com/questions/29618760/create-a-rectangle-with-just-two-rounded-corners-in-swift/35621736#35621736
+  func round(corners: UIRectCorner, radius: CGFloat) {
+    let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+    let mask = CAShapeLayer()
+    mask.path = path.cgPath
+    self.layer.mask = mask
   }
 }
