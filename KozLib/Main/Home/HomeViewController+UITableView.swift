@@ -35,7 +35,7 @@ extension HomeViewController {
       return cell
     }
     
-    let cell = tableView.dequeueReusableCell(withIdentifier: BaseTableViewCell.identifier, for: indexPath) as! BaseTableViewCell
+    let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.name, for: indexPath) as! HomeTableViewCell
     cell.configure(title: rowType.title, accessoryType: .disclosureIndicator)
     return cell
   }
@@ -48,5 +48,17 @@ extension HomeViewController {
     }
     
     self.didSelect(rowType: rowType)
+  }
+}
+
+// MARK: - UITableViewCells
+
+class HomeTableViewCell : UITableViewCell, ClassNamable {
+  
+  @IBOutlet weak var titleLabel: UILabel!
+  
+  func configure(title: String?, accessoryType: UITableViewCellAccessoryType = .none) {
+    self.titleLabel.text = title
+    self.accessoryType = accessoryType
   }
 }

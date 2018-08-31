@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFCNavigationDelegate, NetworkNavigationDelegate, PermissionsNavigationDelegate, GeofencingNavigationDelegate {
+class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFCNavigationDelegate, NetworkNavigationDelegate, PermissionsNavigationDelegate, GeofencingNavigationDelegate, iDev2018NavigationDelegate {
   
   // MARK: - Static Accessors
   
@@ -33,8 +33,6 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
     self.navigationItem.largeTitleDisplayMode = .always
     
     self.configureDefaultBackButton()
-    
-    self.tableView.register(BaseTableViewCell.nib, forCellReuseIdentifier: BaseTableViewCell.identifier)
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -66,8 +64,9 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
       
     // 360iDev 2018
     case .badgeViewLayerAnimations:
-      let viewController = iDev2018_BadgeViewLayerAnimationsViewController.newViewController()
-      viewController.presentIn(self, withMode: .navStack)
+      self.iDev_presentBadgeViewAnimations()
+    case .graphingCustomLayouts:
+      self.iDev_presentCustomLayoutGraphing()
     }
   }
 }

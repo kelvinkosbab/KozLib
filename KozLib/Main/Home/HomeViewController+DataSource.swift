@@ -48,7 +48,7 @@ extension HomeViewController {
         sectionTypes.append(.network(rowTypes: [ .basicNetwork, .networkExtension ]))
         
         // 2018 360iDev
-        sectionTypes.append(.iDev2018(rowTypes: [ .badgeViewLayerAnimations ]))
+        sectionTypes.append(.iDev2018(rowTypes: [ .badgeViewLayerAnimations, .graphingCustomLayouts ]))
         
         // Return the content
         let content = Content(sectionTypes: sectionTypes)
@@ -89,7 +89,7 @@ extension HomeViewController {
     enum RowType : DataSourceRowType {
       case permissions, nfc, arKit, geofencing
       case basicNetwork, networkExtension
-      case badgeViewLayerAnimations
+      case badgeViewLayerAnimations, graphingCustomLayouts
       
       var title: String {
         switch self {
@@ -107,6 +107,8 @@ extension HomeViewController {
           return "Network Extension"
         case .badgeViewLayerAnimations:
           return "Badge View Layer Animations"
+        case .graphingCustomLayouts:
+          return "Graphs with Custom Collection View Layouts"
         }
       }
     }
