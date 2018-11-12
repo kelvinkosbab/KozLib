@@ -84,6 +84,13 @@ class iDev2018_GraphViewController: BaseViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    // Title
+    self.navigationItem.title = "Graphing w/ Custom Layouts"
+    self.navigationItem.largeTitleDisplayMode = .never
+    
+    // Navigation elements
+    self.configureDefaultBackButton()
+    
     cityTemperatureDataSource.configure(with: "Denver", year: 2017)
     updatePickers()
   }
@@ -159,7 +166,11 @@ extension iDev2018_GraphViewController: UICollectionViewDataSource {
 extension iDev2018_GraphViewController: CollectionViewDelegateGraphLayout {
   // MARK: Item
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return CGSize(width: 50, height: 50)
+    if UIDevice.current.isPhone {
+      return TemperatureCollectionViewCell.phoneSize
+    } else {
+      return TemperatureCollectionViewCell.padSize
+    }
   }
   
   // MARK: Labels (Supplementary Views)

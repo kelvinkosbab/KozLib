@@ -56,7 +56,7 @@ class BaseNavigationController : UINavigationController, PresentableController {
       }
     }
     
-    var titleTextAttributes: [NSAttributedStringKey : Any]? {
+    var titleTextAttributes: [NSAttributedString.Key : Any]? {
       switch self {
       case .standard:
         return [ .font: UIFont.systemFont(ofSize: 16), .foregroundColor: UIColor.black ]
@@ -65,7 +65,7 @@ class BaseNavigationController : UINavigationController, PresentableController {
       }
     }
     
-    var largeTitleTextAttributes: [NSAttributedStringKey : Any]? {
+    var largeTitleTextAttributes: [NSAttributedString.Key : Any]? {
       switch self {
       case .standard:
         return [ .foregroundColor: UIColor.black ]

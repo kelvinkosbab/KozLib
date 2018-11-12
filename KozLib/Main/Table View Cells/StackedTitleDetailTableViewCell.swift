@@ -15,7 +15,7 @@ class StackedTitleDetailTableViewCell : UITableViewCell, Nibable {
   @IBOutlet private weak var titleLabel: UILabel!
   @IBOutlet private weak var detailLabel: UILabel!
   
-  func configure(title: String?, detail: String?, accessoryType: UITableViewCellAccessoryType = .none) {
+  func configure(title: String?, detail: String?, accessoryType: UITableViewCell.AccessoryType = .none) {
     self.titleLabel.text = title
     self.detailLabel.text = detail
     self.accessoryType = accessoryType

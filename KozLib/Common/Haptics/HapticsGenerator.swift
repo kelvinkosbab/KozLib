@@ -55,7 +55,7 @@ final class HapticsGenerator {
   enum NotificationHaptic {
     case success, warning, error
     
-    internal var feedbackType: UINotificationFeedbackType {
+    internal var feedbackType: UINotificationFeedbackGenerator.FeedbackType {
       switch self {
       case .success: return .success
       case .warning: return .warning
@@ -67,7 +67,7 @@ final class HapticsGenerator {
   enum ImpactHaptic {
     case light, medium, heavy
     
-    internal var feedbackStyle: UIImpactFeedbackStyle {
+    internal var feedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle {
       switch self {
       case .light: return .light
       case .medium: return .medium

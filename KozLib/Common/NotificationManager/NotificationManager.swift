@@ -99,7 +99,7 @@ class NotificationManager : NSObject, PermissionManagerDelegate {
     content.body = body
     content.categoryIdentifier = "alarm"
     content.userInfo = [ self.identifierUserInfoKey : identifier ]
-    content.sound = UNNotificationSound.default()
+    content.sound = UNNotificationSound.default
     let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: repeats)
     let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
     UNUserNotificationCenter.current().add(request)

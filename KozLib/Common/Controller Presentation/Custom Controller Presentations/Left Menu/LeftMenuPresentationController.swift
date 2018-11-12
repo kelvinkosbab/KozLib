@@ -31,7 +31,7 @@ class LeftMenuPresentationController : CustomPresentationController {
     blurView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissController)))
     
     // Set up visual effect view
-    if !UIAccessibilityIsReduceTransparencyEnabled() {
+    if !UIAccessibility.isReduceTransparencyEnabled {
       let visualEffectView = UIVisualEffectView(effect: nil)
       self.dismissVisualEffectView = visualEffectView
       visualEffectView.frame = blurView.bounds

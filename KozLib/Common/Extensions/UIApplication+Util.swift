@@ -54,7 +54,7 @@ extension UIApplication {
   
   func openSettingsApp(completion: (() -> Void)? = nil) {
     
-    guard let settingsUrl = URL(string: UIApplicationOpenSettingsURLString), self.canOpenURL(settingsUrl) else {
+    guard let settingsUrl = URL(string: UIApplication.openSettingsURLString), self.canOpenURL(settingsUrl) else {
       return
     }
     

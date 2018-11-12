@@ -194,7 +194,7 @@ class PermissionsViewController : BaseViewController {
     
     let settingsAction = UIAlertAction(title: "Settings", style: .default) { _ -> Void in
       
-      guard let settingsUrl = URL(string: UIApplicationOpenSettingsURLString) else {
+      guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
         return
       }
       

@@ -19,8 +19,8 @@ protocol DetailedDataSourceProviderDelegate : class {
   #if os(watchOS)
   func dataSourceDidUpdate(at rowIndex: Int)
   #else
-  func dataSourceDidUpdate(section: Int, with animation: UITableViewRowAnimation)
-  func dataSourceDidUpdate(at indexPaths: [IndexPath], with animation: UITableViewRowAnimation)
+  func dataSourceDidUpdate(section: Int, with animation: UITableView.RowAnimation)
+  func dataSourceDidUpdate(at indexPaths: [IndexPath], with animation: UITableView.RowAnimation)
   #endif
 }
 
@@ -33,7 +33,7 @@ protocol DetailedDataSourceProvider : class {
   func generateContent(completion: @escaping (_ content: Content) -> Void)
   #if os(watchOS)
   #else
-  func updateContent(at indexPaths: [IndexPath], with animation: UITableViewRowAnimation)
+  func updateContent(at indexPaths: [IndexPath], with animation: UITableView.RowAnimation)
   #endif
 }
 
@@ -81,7 +81,7 @@ extension DetailedDataSourceProvider {
   
   // MARK: - iOS / iOS Extension
   
-  func updateContent(section: Int, with animation: UITableViewRowAnimation) {
+  func updateContent(section: Int, with animation: UITableView.RowAnimation) {
     self.generateContent { [weak self] content in
       
       guard let strongSelf = self, let currentContent = strongSelf.currentContent, section < content.sectionTypes.count && section < currentContent.sectionTypes.count else {

@@ -110,8 +110,8 @@ class ARWallDetectionViewController : BaseViewController, ConfigurationViewPrese
     self.arStateDidUpdate(self.state ?? .configuring)
     
     // Notifications
-    NotificationCenter.default.addObserver(self, selector: #selector(self.restartPlaneDetection), name: .UIApplicationDidBecomeActive, object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(self.pauseScene), name: .UIApplicationWillResignActive, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(self.restartPlaneDetection), name: UIApplication.didBecomeActiveNotification, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(self.pauseScene), name: UIApplication.willResignActiveNotification, object: nil)
   }
   
   override func viewDidDisappear(_ animated: Bool) {
@@ -127,8 +127,8 @@ class ARWallDetectionViewController : BaseViewController, ConfigurationViewPrese
     self.arStateDidUpdate(self.state ?? .configuring)
     
     // Remove self from notifications
-    NotificationCenter.default.removeObserver(self, name: .UIApplicationDidBecomeActive, object: nil)
-    NotificationCenter.default.removeObserver(self, name: .UIApplicationWillResignActive, object: nil)
+    NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
+    NotificationCenter.default.removeObserver(self, name: UIApplication.willResignActiveNotification, object: nil)
     NotificationCenter.default.removeObserver(self, name: .locationManagerDidUpdateCurrentLocation, object: nil)
     NotificationCenter.default.removeObserver(self, name: .locationManagerDidUpdateCurrentHeading, object: nil)
   }

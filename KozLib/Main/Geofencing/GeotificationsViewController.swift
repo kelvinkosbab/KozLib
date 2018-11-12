@@ -105,7 +105,7 @@ class GeotificationsViewController: BaseViewController {
   
   // MARK: Map overlay functions
   func addRadiusOverlay(forGeotification geotification: Geotification) {
-    mapView?.add(MKCircle(center: geotification.coordinate, radius: geotification.radius))
+    mapView?.addOverlay(MKCircle(center: geotification.coordinate, radius: geotification.radius))
   }
   
   func removeRadiusOverlay(forGeotification geotification: Geotification) {
@@ -115,7 +115,7 @@ class GeotificationsViewController: BaseViewController {
       guard let circleOverlay = overlay as? MKCircle else { continue }
       let coord = circleOverlay.coordinate
       if coord.latitude == geotification.coordinate.latitude && coord.longitude == geotification.coordinate.longitude && circleOverlay.radius == geotification.radius {
-        mapView?.remove(circleOverlay)
+        mapView?.removeOverlay(circleOverlay)
         break
       }
     }

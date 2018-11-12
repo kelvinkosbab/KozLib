@@ -12,7 +12,7 @@ protocol ConfigurationViewPresentable : class {}
 extension ConfigurationViewPresentable where Self : UIViewController {
   
   var configuringViewController: ConfiguringViewController? {
-    for childViewController in self.childViewControllers {
+    for childViewController in self.children {
       if let configuringViewController = childViewController as? ConfiguringViewController {
         return configuringViewController
       }

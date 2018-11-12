@@ -57,7 +57,7 @@ class HomeTableViewCell : UITableViewCell, ClassNamable {
   
   @IBOutlet weak var titleLabel: UILabel!
   
-  func configure(title: String?, accessoryType: UITableViewCellAccessoryType = .none) {
+  func configure(title: String?, accessoryType: UITableViewCell.AccessoryType = .none) {
     self.titleLabel.text = title
     self.accessoryType = accessoryType
   }

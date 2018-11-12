@@ -35,7 +35,7 @@ class ARRecognizingImagesViewController: BaseViewController, ARSCNViewDelegate, 
   
   /// The view controller that displays the status and "restart experience" UI.
   lazy var statusViewController: ARRecognizingImageStatusViewController = {
-    return childViewControllers.lazy.compactMap({ $0 as? ARRecognizingImageStatusViewController }).first!
+    return children.lazy.compactMap({ $0 as? ARRecognizingImageStatusViewController }).first!
   }()
   
   /// A serial queue for thread safety when modifying the SceneKit node graph.

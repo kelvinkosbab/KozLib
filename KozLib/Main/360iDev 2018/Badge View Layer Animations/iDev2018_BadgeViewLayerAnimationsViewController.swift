@@ -194,8 +194,6 @@ class BadgeButtonView: UIView {
     return mask
   }
   
-  
-  
   enum State {
     case off
     case inProgress
@@ -246,7 +244,7 @@ class BadgeButtonView: UIView {
     animation.fromValue = greenBackground.path
     animation.toValue = path
     animation.duration = Double.animationDuration
-    animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+    animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
     
     greenBackground.add(animation, forKey: "onAnimation")
     greenBackground.path = path
@@ -257,7 +255,7 @@ class BadgeButtonView: UIView {
     animation.fromValue = greenBackground.path
     animation.toValue = UIBezierPath(ovalIn: CGRect(center: buttonLayer.frame.center, size: buttonLayer.bounds.size.rescale(CGFloat.innerCircleRatio))).cgPath
     animation.duration = Double.animationDuration
-    animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+    animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
     
     greenBackground.add(animation, forKey: "offAnimation")
     greenBackground.path = UIBezierPath(ovalIn: CGRect(center: buttonLayer.frame.center, size: buttonLayer.bounds.size.rescale(CGFloat.innerCircleRatio))).cgPath

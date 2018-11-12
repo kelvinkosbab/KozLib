@@ -14,10 +14,10 @@ extension UIViewController {
   
   func add(childViewController: UIViewController, intoContainerView containerView: UIView, relativeLayoutType: UIView.RelativeLayoutType = .view) {
     childViewController.view.translatesAutoresizingMaskIntoConstraints = false
-    self.addChildViewController(childViewController)
+    self.addChild(childViewController)
     childViewController.view.frame = containerView.frame
     childViewController.view.addToContainer(containerView, relativeLayoutType: relativeLayoutType)
-    childViewController.didMove(toParentViewController: self)
+    childViewController.didMove(toParent: self)
     
     // Check if this view is a collection view, if so need to configure it for long-press reordering
     if let collectionViewController = childViewController as? UICollectionViewController {
@@ -28,14 +28,14 @@ extension UIViewController {
   // MARK: - Remove Child View Controller
   
   func remove(childViewController: UIViewController) {
-    childViewController.willMove(toParentViewController: nil)
+    childViewController.willMove(toParent: nil)
     childViewController.view.removeFromSuperview()
-    childViewController.removeFromParentViewController()
+    childViewController.removeFromParent()
   }
   
   // MARK: - Back Buttons
   
-  func configureBackButton(title: String, style: UIBarButtonItemStyle = .plain, target: Any?, action: Selector?) {
+  func configureBackButton(title: String, style: UIBarButtonItem.Style = .plain, target: Any?, action: Selector?) {
     self.navigationItem.backBarButtonItem = UIBarButtonItem(title: title, style: style, target: target, action: action)
   }
   

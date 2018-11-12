@@ -38,7 +38,7 @@ class ARFaceTrackingViewController : BaseViewController, ARSessionDelegate, Dism
   @IBOutlet weak var blurView: UIVisualEffectView!
   
   lazy var statusViewController: ARFaceTrackingStatusViewController = {
-    return childViewControllers.lazy.compactMap({ $0 as? ARFaceTrackingStatusViewController }).first!
+    return children.lazy.compactMap({ $0 as? ARFaceTrackingStatusViewController }).first!
   }()
   
   // MARK: Properties
