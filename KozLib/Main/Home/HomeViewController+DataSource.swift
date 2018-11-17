@@ -25,8 +25,29 @@ extension HomeViewController {
     
     // MARK: - Properties
     
-    internal var currentContent: Content?
     weak var delegate: DataSourceProviderDelegate?
+    
+    internal var currentContent: Content?
+    private lazy var _currentContent: Content = {
+      
+      // Build the content
+      var sectionTypes: [SectionType] = []
+      
+      // MISC
+      sectionTypes.append(.misc(rowTypes: [ .permissions, .nfc, .arKit, .geofencing ]))
+      
+      // Common iOS elements
+      sectionTypes.append(.commonIosElements(rowTypes: [ .weatherScrolling, .pullUpController ]))
+      
+      // 2018 360iDev
+      sectionTypes.append(.iDev2018(rowTypes: [ .badgeViewLayerAnimations, .graphingCustomLayouts ]))
+      
+      // Network
+      sectionTypes.append(.network(rowTypes: [ .basicNetwork, .networkExtension ]))
+      
+      // Return the content
+      return Content(sectionTypes: sectionTypes)
+    }()
     
     // MARK: - Content
     
@@ -38,20 +59,8 @@ extension HomeViewController {
       
       DispatchQueue.global().async {
         
-        // Build the content
-        var sectionTypes: [SectionType] = []
-        
-        // MISC
-        sectionTypes.append(.misc(rowTypes: [ .permissions, .nfc, .arKit, .geofencing ]))
-        
-        // Network
-        sectionTypes.append(.network(rowTypes: [ .basicNetwork, .networkExtension ]))
-        
-        // 2018 360iDev
-        sectionTypes.append(.iDev2018(rowTypes: [ .badgeViewLayerAnimations, .graphingCustomLayouts ]))
-        
         // Return the content
-        let content = Content(sectionTypes: sectionTypes)
+        let content = self._currentContent
         DispatchQueue.main.async {
           completion(content)
         }
@@ -61,12 +70,15 @@ extension HomeViewController {
     // MARK: - SectionType
     
     enum SectionType : DataSourceSectionType {
+      case commonIosElements(rowTypes: [RowType])
       case misc(rowTypes: [RowType])
       case network(rowTypes: [RowType])
       case iDev2018(rowTypes: [RowType])
       
       var title: String? {
         switch self {
+        case .commonIosElements:
+          return "Common iOS Elements"
         case .misc:
           return nil
         case .network:
@@ -78,7 +90,7 @@ extension HomeViewController {
       
       var rowTypes: [RowType] {
         switch self {
-        case .misc(rowTypes: let rowTypes), .network(rowTypes: let rowTypes), .iDev2018(rowTypes: let rowTypes):
+        case .commonIosElements(rowTypes: let rowTypes), .misc(rowTypes: let rowTypes), .network(rowTypes: let rowTypes), .iDev2018(rowTypes: let rowTypes):
           return rowTypes
         }
       }
@@ -88,6 +100,7 @@ extension HomeViewController {
     
     enum RowType : DataSourceRowType {
       case permissions, nfc, arKit, geofencing
+      case weatherScrolling, pullUpController
       case basicNetwork, networkExtension
       case badgeViewLayerAnimations, graphingCustomLayouts
       
@@ -101,10 +114,17 @@ extension HomeViewController {
           return "ARKit Projects"
         case .geofencing:
           return "Geofencing"
+          
+        case .weatherScrolling:
+          return "Weather App Scrolling"
+        case .pullUpController:
+          return "Pull Up Controller (Maps, Stocks, etc)"
+          
         case .basicNetwork:
           return "Basic Network Info"
         case .networkExtension:
           return "Network Extension"
+          
         case .badgeViewLayerAnimations:
           return "Badge View Layer Animations"
         case .graphingCustomLayouts:

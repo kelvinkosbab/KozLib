@@ -7,6 +7,9 @@ target 'KozLibrary' do
 
   # Pods for KozLibrary
   pod 'Alamofire', '~> 4.5'
+  
+  # Pods for Weather
+  pod 'SwiftyJSON', '~> 4.0'
 
 end
 

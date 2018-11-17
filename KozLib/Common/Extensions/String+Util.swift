@@ -54,15 +54,15 @@ extension String {
   // MARK: - Subscript Operations
   
   subscript (i: Int) -> String {
-    return self[Range(i ..< i + 1)]
+    return self[i ..< i + 1]
   }
   
   func substring(from: Int) -> String {
-    return self[Range(min(from, self.count) ..< self.count)]
+    return self[min(from, self.count) ..< self.count]
   }
   
   func substring(to: Int) -> String {
-    return self[Range(0 ..< max(0, to))]
+    return self[0 ..< max(0, to)]
   }
   
   subscript (r: Range<Int>) -> String {

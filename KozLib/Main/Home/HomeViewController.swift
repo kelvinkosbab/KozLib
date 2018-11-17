@@ -56,6 +56,12 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
     case .nfc:
       self.transitionToNFC(presentationMode: .navStack)
       
+    case .weatherScrolling:
+      let viewController = WeatherController()
+      viewController.presentIn(self, withMode: .modal(.formSheet, .coverVertical))
+      
+    case .pullUpController: break
+      
     // Network
     case .basicNetwork:
       self.transitionToNetworkInfo(presentationMode: .navStack)
