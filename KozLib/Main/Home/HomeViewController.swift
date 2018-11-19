@@ -60,7 +60,9 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
       let viewController = WeatherController()
       viewController.presentIn(self, withMode: .modal(.formSheet, .coverVertical))
       
-    case .pullUpController: break
+    case .pullUpController:
+      let viewController = BottomSheetContainerViewController.newViewController()
+      viewController.presentIn(self, withMode: .modal(.formSheet, .coverVertical))
       
     // Network
     case .basicNetwork:

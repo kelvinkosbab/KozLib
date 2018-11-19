@@ -237,6 +237,10 @@
 		F6AD92FB219FDE230074F548 /* NetworkActivityPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD92ED219FDE230074F548 /* NetworkActivityPlugin.swift */; };
 		F6AD92FC219FDE230074F548 /* NetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD92EE219FDE230074F548 /* NetworkLoggerPlugin.swift */; };
 		F6AD92FE219FDFAB0074F548 /* SwiftyJSONBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD92FD219FDFAB0074F548 /* SwiftyJSONBuilder.swift */; };
+		F6AD930321A280940074F548 /* BottomSheetContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD930221A280940074F548 /* BottomSheetContainerViewController.swift */; };
+		F6AD930521A280F20074F548 /* BottomSheet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6AD930421A280F20074F548 /* BottomSheet.storyboard */; };
+		F6AD930721A281810074F548 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD930621A281810074F548 /* BottomSheetViewController.swift */; };
+		F6AD930921A281A90074F548 /* SimpleTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD930821A281A90074F548 /* SimpleTableCell.swift */; };
 		F6EF6D7B21352A8200C3BFEE /* HomeViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF6D7A21352A8200C3BFEE /* HomeViewController+DataSource.swift */; };
 		F6EF6D7D21352A8D00C3BFEE /* HomeViewController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF6D7C21352A8D00C3BFEE /* HomeViewController+UITableView.swift */; };
 		F6EF6D8021352AD300C3BFEE /* DataSourceContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF6D7F21352AD300C3BFEE /* DataSourceContent.swift */; };
@@ -510,6 +514,10 @@
 		F6AD92ED219FDE230074F548 /* NetworkActivityPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkActivityPlugin.swift; sourceTree = "<group>"; };
 		F6AD92EE219FDE230074F548 /* NetworkLoggerPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkLoggerPlugin.swift; sourceTree = "<group>"; };
 		F6AD92FD219FDFAB0074F548 /* SwiftyJSONBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyJSONBuilder.swift; sourceTree = "<group>"; };
+		F6AD930221A280940074F548 /* BottomSheetContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetContainerViewController.swift; sourceTree = "<group>"; };
+		F6AD930421A280F20074F548 /* BottomSheet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BottomSheet.storyboard; sourceTree = "<group>"; };
+		F6AD930621A281810074F548 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
+		F6AD930821A281A90074F548 /* SimpleTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableCell.swift; sourceTree = "<group>"; };
 		F6EF6D7A21352A8200C3BFEE /* HomeViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+DataSource.swift"; sourceTree = "<group>"; };
 		F6EF6D7C21352A8D00C3BFEE /* HomeViewController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+UITableView.swift"; sourceTree = "<group>"; };
 		F6EF6D7F21352AD300C3BFEE /* DataSourceContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceContent.swift; sourceTree = "<group>"; };
@@ -1200,6 +1208,7 @@
 			isa = PBXGroup;
 			children = (
 				F6193A36219919E40043BFFE /* Weather App */,
+				F6AD930121A280800074F548 /* Bottom Sheet */,
 			);
 			path = "Duplicating iOS Elements";
 			sourceTree = "<group>";
@@ -1475,6 +1484,17 @@
 			path = "TRON Library";
 			sourceTree = "<group>";
 		};
+		F6AD930121A280800074F548 /* Bottom Sheet */ = {
+			isa = PBXGroup;
+			children = (
+				F6AD930421A280F20074F548 /* BottomSheet.storyboard */,
+				F6AD930221A280940074F548 /* BottomSheetContainerViewController.swift */,
+				F6AD930621A281810074F548 /* BottomSheetViewController.swift */,
+				F6AD930821A281A90074F548 /* SimpleTableCell.swift */,
+			);
+			path = "Bottom Sheet";
+			sourceTree = "<group>";
+		};
 		F6EF6D7E21352AB900C3BFEE /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
@@ -1621,6 +1641,7 @@
 				B61B8DDC1F816C8300118C73 /* Network.storyboard in Resources */,
 				B68B2E611F76BCEC000B7A3F /* Assets.xcassets in Resources */,
 				B68B2E5C1F76BCEC000B7A3F /* Main.storyboard in Resources */,
+				F6AD930521A280F20074F548 /* BottomSheet.storyboard in Resources */,
 				F6A768F82138BCCA007AF9F7 /* TemperatureCollectionViewCell.xib in Resources */,
 				B66927E020571F7500EF915C /* Geofencing.storyboard in Resources */,
 			);
@@ -1704,6 +1725,7 @@
 				F6A768DD2138BC19007AF9F7 /* CollectionViewDelegateCircleGraphLayout.swift in Sources */,
 				F6A768FB2138BCD4007AF9F7 /* GraphLayoutType.swift in Sources */,
 				B6811F542043C6B8008C3CAC /* Service.swift in Sources */,
+				F6AD930721A281810074F548 /* BottomSheetViewController.swift in Sources */,
 				B61B8DDE1F816C8F00118C73 /* NetworkInfoTableViewController.swift in Sources */,
 				F6A768F52138BCCA007AF9F7 /* HeatMapDecorationView.swift in Sources */,
 				F6A7690D2138BD0B007AF9F7 /* CGFloat+Rounding.swift in Sources */,
@@ -1724,6 +1746,7 @@
 				B61B8DF01F81822E00118C73 /* Nibable.swift in Sources */,
 				B66927E62057205100EF915C /* Geotification.swift in Sources */,
 				B6811F5C2043C7DC008C3CAC /* ClassNamable.swift in Sources */,
+				F6AD930921A281A90074F548 /* SimpleTableCell.swift in Sources */,
 				B619F9FD203E94A000764577 /* InteractiveTransitionOption.swift in Sources */,
 				F6AD92FC219FDE230074F548 /* NetworkLoggerPlugin.swift in Sources */,
 				F6AD9299219F8A910074F548 /* WeatherModel.swift in Sources */,
@@ -1833,6 +1856,7 @@
 				F6AD92EF219FDE230074F548 /* APIStub.swift in Sources */,
 				B6811F502043B7AB008C3CAC /* ARConfigurationSupported.swift in Sources */,
 				B66927EA205720C700EF915C /* GeofencingNavigationDelegate.swift in Sources */,
+				F6AD930321A280940074F548 /* BottomSheetContainerViewController.swift in Sources */,
 				B61B8DD91F81429B00118C73 /* ARKitItemsViewController.swift in Sources */,
 				B629C231201E78680083D708 /* TackDragonARViewController.swift in Sources */,
 				B68B2E6F1F76BED7000B7A3F /* MyDataManager.swift in Sources */,
