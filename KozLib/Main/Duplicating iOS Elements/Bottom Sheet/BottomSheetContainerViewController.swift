@@ -28,7 +28,7 @@ class BottomSheetContainerViewController : BaseViewController {
     
     self.title = "Pull Up Controller"
     self.configureDefaultBackButton()
-//    self.baseNavigationController?.navigationBarStyle = .transparent
+    self.baseNavigationController?.navigationBarStyle = .transparent
     self.navigationItem.largeTitleDisplayMode = .never
     switch self.presentedMode {
     case .navStack:

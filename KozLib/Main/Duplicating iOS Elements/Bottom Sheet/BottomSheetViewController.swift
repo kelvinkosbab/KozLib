@@ -33,7 +33,7 @@ class BottomSheetViewController: UIViewController {
   var lastLevel: SheetLevel = .middle
   
   var initalFrame: CGRect!
-  var middleY: CGFloat = 400 //change this in viewWillAppear to decide if animate to top or bottom
+  var middleY: CGFloat = 400 //change this in viewDidLayoutSubviews to decide if animate to top or bottom
   var bottomY: CGFloat = 600 //no need to change this
   
   // Sheet top Y position
@@ -66,16 +66,22 @@ class BottomSheetViewController: UIViewController {
     self.tableView.panGestureRecognizer.addTarget(self, action: #selector(self.handlePan(_:)))
   }
   
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
+  // MARK: - Safe Area Updates
+  
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
     
-    self.initalFrame = self.bottomSheetDelegate?.bottomSheetInitialBounds ?? UIScreen.main.bounds
-    self.middleY = self.initalFrame.height * 0.6
-    self.bottomY = self.initalFrame.height - self.bottomOffset
-    self.lastY = self.middleY
-    
-    self.bottomSheetDelegate?.updateBottomSheet(frame: self.initalFrame.offsetBy(dx: 0, dy: self.middleY))
+    if self.initalFrame == nil {
+      self.initalFrame = self.bottomSheetDelegate?.bottomSheetInitialBounds ?? UIScreen.main.bounds
+      self.middleY = self.initalFrame.height * 0.6
+      self.bottomY = self.initalFrame.height - self.bottomOffset
+      self.lastY = self.middleY
+      
+      self.bottomSheetDelegate?.updateBottomSheet(frame: self.initalFrame.offsetBy(dx: 0, dy: self.middleY))
+    }
   }
+  
+  // MARK: - UIScrollViewDelegate
   
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
     
