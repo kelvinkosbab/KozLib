@@ -51,7 +51,6 @@ class BottomSheetContainerViewController : BaseViewController {
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let viewController = segue.destination as? BottomSheetViewController {
-      viewController.additionalSafeAreaInsets = self.view.safeAreaInsets
       viewController.bottomSheetDelegate = self
       viewController.parentView = self.container
     }

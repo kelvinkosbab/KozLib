@@ -19,7 +19,8 @@ protocol BottomSheetDelegate {
 
 class BottomSheetViewController: UIViewController {
   
-  @IBOutlet var panView: UIView!
+  @IBOutlet weak var searchBar: UISearchBar!
+  @IBOutlet weak var panView: UIView!
   @IBOutlet weak var tableView: UITableView!
   //    @IBOutlet weak var collectionView: UICollectionView! //header view
   
@@ -64,6 +65,20 @@ class BottomSheetViewController: UIViewController {
     self.panView.addGestureRecognizer(self.pan)
     
     self.tableView.panGestureRecognizer.addTarget(self, action: #selector(self.handlePan(_:)))
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    
+    NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillChange), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    
+    NotificationCenter.default.removeObserver(self)
   }
   
   // MARK: - Safe Area Updates
@@ -181,6 +196,23 @@ class BottomSheetViewController: UIViewController {
         return (y - self.topY) < (self.middleY - y) ? .top : .middle
       }
     }
+  }
+  
+  // MARK: - Keyboard
+  
+  @objc func keyboardWillChange(notification: NSNotification) {
+    
+    guard let userInfo = notification.userInfo, let duration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double, let curve = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt, let curFrame = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue, let targetFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+      return
+    }
+    
+    let deltaY = targetFrame.origin.y - curFrame.origin.y
+  }
+  
+  @objc func keyboardWillShow(notification: NSNotification) {
+  }
+  
+  @objc func keyboardWillHide(notification: NSNotification){
   }
 }
 
