@@ -81,4 +81,29 @@ extension PresentableController where Self : UIViewController {
     }
     currentFlowInitialController.dismissController(completion: completion)
   }
+  
+  // MARK: - Utilities
+  
+  func configureLargeTitleBasedOnPresentedMode() {
+    if #available(iOS 11.0, *) {
+      switch self.presentedMode {
+      case .navStack:
+        self.configureSmallNavigationTitle()
+      default:
+        self.configureLargeNavigationTitle()
+      }
+    }
+  }
+  
+  func configureLargeNavigationTitle() {
+    if #available(iOS 11.0, *) {
+      self.navigationItem.largeTitleDisplayMode = .always
+    }
+  }
+  
+  func configureSmallNavigationTitle() {
+    if #available(iOS 11.0, *) {
+      self.navigationItem.largeTitleDisplayMode = .never
+    }
+  }
 }
