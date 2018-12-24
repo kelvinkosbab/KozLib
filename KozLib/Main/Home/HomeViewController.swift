@@ -67,7 +67,9 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
       let viewController = BottomSheetContainerViewController.newViewController()
       viewController.presentIn(self, withMode: .modal(.formSheet, .coverVertical))
       
-    case .stretchableTableViewHeadser: break
+    case .stretchableTableViewHeadser:
+      let viewController = StretchableTableViewHeaderController.newViewController()
+      viewController.presentIn(self, withMode: .navStack)
       
     // Network
     case .basicNetwork:

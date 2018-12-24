@@ -243,6 +243,8 @@
 		F6AD930921A281A90074F548 /* SimpleTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD930821A281A90074F548 /* SimpleTableCell.swift */; };
 		F6E8171621D089D100FF1265 /* AnimatingTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E8171521D089D100FF1265 /* AnimatingTabBarController.swift */; };
 		F6E8171821D089ED00FF1265 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E8171721D089ED00FF1265 /* BaseTabBarController.swift */; };
+		F6E8171B21D09E0200FF1265 /* StretchableTableViewHeaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E8171A21D09E0200FF1265 /* StretchableTableViewHeaderController.swift */; };
+		F6E8171D21D09E8900FF1265 /* StretchableTableViewHeader.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6E8171C21D09E8900FF1265 /* StretchableTableViewHeader.storyboard */; };
 		F6EF6D7B21352A8200C3BFEE /* HomeViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF6D7A21352A8200C3BFEE /* HomeViewController+DataSource.swift */; };
 		F6EF6D7D21352A8D00C3BFEE /* HomeViewController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF6D7C21352A8D00C3BFEE /* HomeViewController+UITableView.swift */; };
 		F6EF6D8021352AD300C3BFEE /* DataSourceContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF6D7F21352AD300C3BFEE /* DataSourceContent.swift */; };
@@ -522,6 +524,8 @@
 		F6AD930821A281A90074F548 /* SimpleTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableCell.swift; sourceTree = "<group>"; };
 		F6E8171521D089D100FF1265 /* AnimatingTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatingTabBarController.swift; sourceTree = "<group>"; };
 		F6E8171721D089ED00FF1265 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
+		F6E8171A21D09E0200FF1265 /* StretchableTableViewHeaderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchableTableViewHeaderController.swift; sourceTree = "<group>"; };
+		F6E8171C21D09E8900FF1265 /* StretchableTableViewHeader.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StretchableTableViewHeader.storyboard; sourceTree = "<group>"; };
 		F6EF6D7A21352A8200C3BFEE /* HomeViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+DataSource.swift"; sourceTree = "<group>"; };
 		F6EF6D7C21352A8D00C3BFEE /* HomeViewController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+UITableView.swift"; sourceTree = "<group>"; };
 		F6EF6D7F21352AD300C3BFEE /* DataSourceContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceContent.swift; sourceTree = "<group>"; };
@@ -1213,6 +1217,7 @@
 		F6193A37219919F20043BFFE /* Duplicating iOS Elements */ = {
 			isa = PBXGroup;
 			children = (
+				F6E8171921D09DD000FF1265 /* Stretchable Table View Header */,
 				F6193A36219919E40043BFFE /* Weather App */,
 				F6AD930121A280800074F548 /* Bottom Sheet */,
 			);
@@ -1509,6 +1514,15 @@
 			path = "Animating Tab Bar";
 			sourceTree = "<group>";
 		};
+		F6E8171921D09DD000FF1265 /* Stretchable Table View Header */ = {
+			isa = PBXGroup;
+			children = (
+				F6E8171C21D09E8900FF1265 /* StretchableTableViewHeader.storyboard */,
+				F6E8171A21D09E0200FF1265 /* StretchableTableViewHeaderController.swift */,
+			);
+			path = "Stretchable Table View Header";
+			sourceTree = "<group>";
+		};
 		F6EF6D7E21352AB900C3BFEE /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
@@ -1648,6 +1662,7 @@
 				F6A768FE2138BCDB007AF9F7 /* limitedData.json in Resources */,
 				B624C1D11F78ACCD0027C95D /* ARKit.storyboard in Resources */,
 				B619F9DC203E93DB00764577 /* TopKnobVisualEffectView.xib in Resources */,
+				F6E8171D21D09E8900FF1265 /* StretchableTableViewHeader.storyboard in Resources */,
 				B61B8DEE1F81813700118C73 /* StackedTitleDetailTableViewCell.xib in Resources */,
 				F6EF6D8A2135325B00C3BFEE /* 360iDev2018.storyboard in Resources */,
 				B629C233201E78B80083D708 /* TackDragon.storyboard in Resources */,
@@ -1830,6 +1845,7 @@
 				B67756BA1F78BDB100B553F3 /* ARBaseViewController.swift in Sources */,
 				B619FA0D203E94A000764577 /* BottomUpPresentationController.swift in Sources */,
 				F6AD928F219F8A080074F548 /* WeatherDaily.swift in Sources */,
+				F6E8171B21D09E0200FF1265 /* StretchableTableViewHeaderController.swift in Sources */,
 				B6C83B90201A4CAC0008CC55 /* NetworkExtensionViewController.swift in Sources */,
 				B6082E0C2055EC5C0022943F /* UINavigationController+Util.swift in Sources */,
 				B64415041F78573E00C9781B /* UICollectionView+Reordering.swift in Sources */,
