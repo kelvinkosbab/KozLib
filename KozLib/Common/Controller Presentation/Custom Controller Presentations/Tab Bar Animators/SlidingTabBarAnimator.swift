@@ -30,17 +30,18 @@ class SlidingTabBarAnimator : NSObject, UIViewControllerAnimatedTransitioning {
   let direction: Direction
   let fromViewController: UIViewController
   let toViewCongtroller: UIViewController
-  let slideDistance: CGFloat = 30
+  let slideDistance: CGFloat = 25
   
   // MARK: - UIViewControllerAnimatedTransitioning
   
   func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-    return 0.3
+    return 0.2
   }
   
   func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
     
     // Initial state
+    let animationDuration = self.transitionDuration(using: transitionContext)
     let targetFrame = self.fromViewController.view.frame
     self.toViewCongtroller.view.alpha = 0.0
     self.toViewCongtroller.view.frame = {
@@ -55,16 +56,9 @@ class SlidingTabBarAnimator : NSObject, UIViewControllerAnimatedTransitioning {
     // Perform the animation
     let containerView = transitionContext.containerView
     containerView.addSubview(self.toViewCongtroller.view)
-    UIView.animate(withDuration: self.transitionDuration(using: transitionContext), animations: {
+    UIView.animate(withDuration: animationDuration, animations: {
       self.toViewCongtroller.view.frame = targetFrame
       self.toViewCongtroller.view.alpha = 1
-      self.fromViewController.view.alpha = 0
-      switch self.direction {
-      case .rightToLeft:
-        self.fromViewController.view.frame.origin.x -= self.slideDistance
-      case .leftToRight:
-        self.fromViewController.view.frame.origin.x += self.slideDistance
-      }
     }, completion: { _ in
       self.fromViewController.view.removeFromSuperview()
       transitionContext.completeTransition(true)
