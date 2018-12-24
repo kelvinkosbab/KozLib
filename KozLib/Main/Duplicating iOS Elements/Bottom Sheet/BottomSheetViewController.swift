@@ -97,7 +97,14 @@ class BottomSheetViewController: UIViewController {
       self.initalFrame = self.bottomSheetDelegate?.bottomSheetInitialBounds ?? UIScreen.main.bounds
       self.middleY = self.initalFrame.height * 0.5
       self.bottomY = self.initalFrame.height - self.bottomOffset
-      self.lastY = self.middleY
+      switch self.sheetPosition {
+      case .top:
+        self.lastY = self.topY
+      case .middle:
+        self.lastY = self.middleY
+      case .bottom:
+        self.lastY = self.bottomY
+      }
       
       self.notifyUpdate(forSheetPosition: self.sheetPosition)
     }
@@ -143,7 +150,9 @@ class BottomSheetViewController: UIViewController {
       }
       
       if self.tableView.contentOffset.y <= 0 {
-        if !self.applyPanOffset{ self.panOffset = 0 }
+        if !self.applyPanOffset {
+          self.panOffset = 0
+        }
         let maxY = max(self.topY, self.lastY + dy - self.panOffset)
         let y = min(self.bottomY, maxY)
         self.bottomSheetDelegate?.updateBottomSheet(frame: self.initalFrame.offsetBy(dx: 0, dy: y))
