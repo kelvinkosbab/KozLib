@@ -37,7 +37,7 @@ extension HomeViewController {
       sectionTypes.append(.misc(rowTypes: [ .permissions, .nfc, .arKit, .geofencing ]))
       
       // Common iOS elements
-      sectionTypes.append(.commonIosElements(rowTypes: [ .weatherScrolling, .pullUpController ]))
+      sectionTypes.append(.commonIosElements(rowTypes: [ .weatherScrolling, .pullUpController, .stretchableTableViewHeadser ]))
       
       // 2018 360iDev
       sectionTypes.append(.iDev2018(rowTypes: [ .badgeViewLayerAnimations, .graphingCustomLayouts ]))
@@ -102,7 +102,7 @@ extension HomeViewController {
       case permissions, nfc, arKit, geofencing
       case weatherScrolling, pullUpController
       case basicNetwork, networkExtension
-      case badgeViewLayerAnimations, graphingCustomLayouts
+      case badgeViewLayerAnimations, graphingCustomLayouts, stretchableTableViewHeadser
       
       var title: String {
         switch self {
@@ -119,6 +119,8 @@ extension HomeViewController {
           return "Weather App Scrolling"
         case .pullUpController:
           return "Pull Up Controller (Maps, Stocks, etc)"
+        case .stretchableTableViewHeadser:
+          return "Stretchable TableView Header"
           
         case .basicNetwork:
           return "Basic Network Info"

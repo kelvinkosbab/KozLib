@@ -39,7 +39,13 @@ class BottomSheetViewController: UIViewController {
   
   // Sheet top Y position
   var topY: CGFloat {
-    return self.view.safeAreaInsets.top
+    let top = self.view.safeAreaInsets.top
+    if top == 0 {
+      let navigationBarHeight = self.navigationController?.navigationBar.frame.height ?? 0
+      let statusBarHeight = UIApplication.shared.statusBarFrame.height
+      return navigationBarHeight + statusBarHeight
+    }
+    return top
   }
   
   // Sheet height on bottom position
