@@ -22,7 +22,6 @@ class BottomSheetViewController: UIViewController {
   @IBOutlet weak var searchBar: UISearchBar!
   @IBOutlet weak var panView: UIView!
   @IBOutlet weak var tableView: UITableView!
-  //    @IBOutlet weak var collectionView: UICollectionView! //header view
   
   var lastY: CGFloat = 0
   var pan: UIPanGestureRecognizer!
@@ -79,13 +78,13 @@ class BottomSheetViewController: UIViewController {
     
     NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillChange), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
   }
   
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
     
     NotificationCenter.default.removeObserver(self)
+    self.searchBar.resignFirstResponder()
   }
   
   // MARK: - Safe Area Updates
@@ -178,26 +177,30 @@ class BottomSheetViewController: UIViewController {
       self.lastY = self.parentView.frame.minY
       self.sheetPosition = self.getNextSheetPosition(recognizer: recognizer)
       
-      UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.9, options: .curveEaseOut, animations: { [weak self] in
-        
-        guard let strongSelf = self else {
-          return
-        }
-        
-        strongSelf.notifyUpdate(forSheetPosition: strongSelf.sheetPosition)
-        
-      }) { [weak self] _ in
-        
-        guard let strongSelf = self else {
-          return
-        }
-        
-        strongSelf.panView.isUserInteractionEnabled = true
-        strongSelf.lastY = strongSelf.parentView.frame.minY
-        strongSelf.isCompletingAnimation = false
-      }
+      self.animateSheetUpdate()
       
     default: break
+    }
+  }
+  
+  private func animateSheetUpdate() {
+    UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.9, options: .curveEaseOut, animations: { [weak self] in
+      
+      guard let strongSelf = self else {
+        return
+      }
+      
+      strongSelf.notifyUpdate(forSheetPosition: strongSelf.sheetPosition)
+      
+    }) { [weak self] _ in
+      
+      guard let strongSelf = self else {
+        return
+      }
+      
+      strongSelf.panView.isUserInteractionEnabled = true
+      strongSelf.lastY = strongSelf.parentView.frame.minY
+      strongSelf.isCompletingAnimation = false
     }
   }
   
@@ -248,34 +251,16 @@ class BottomSheetViewController: UIViewController {
   
   // MARK: - Keyboard
   
-  @objc func keyboardWillChange(notification: NSNotification) {
-    
-    guard let userInfo = notification.userInfo, let duration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double, let curve = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt, let curFrame = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue, let targetFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
-      return
-    }
-    
-    let deltaY = targetFrame.origin.y - curFrame.origin.y
-  }
-  
   @objc func keyboardWillShow(notification: NSNotification) {
+    self.lastY = self.topY
+    self.sheetPosition = .top
+    self.animateSheetUpdate()
   }
   
-  @objc func keyboardWillHide(notification: NSNotification){
+  @objc func keyboardWillHide(notification: NSNotification) {
+    self.searchBar.resignFirstResponder()
   }
 }
-
-// MARK: - UICollectionViewDelegate, UICollectionViewDataSource
-
-//extension BottomSheetViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return 8
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "topCell", for: indexPath)
-//        return cell
-//    }
-//}
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
 
