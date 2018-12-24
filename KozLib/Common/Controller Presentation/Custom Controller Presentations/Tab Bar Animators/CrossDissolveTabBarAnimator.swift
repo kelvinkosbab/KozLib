@@ -31,15 +31,16 @@ class CrossDissolveTabBarAnimator : NSObject, UIViewControllerAnimatedTransition
   func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
     
     // Perform the animation
+    let animationDuration = self.transitionDuration(using: transitionContext)
     let containerView = transitionContext.containerView
     self.toViewCongtroller.view.alpha = 0
     self.toViewCongtroller.view.frame = self.fromViewController.view.frame
     containerView.addSubview(self.toViewCongtroller.view)
-    UIView.animate(withDuration: self.transitionDuration(using: transitionContext), animations: {
+    UIView.animate(withDuration: animationDuration, delay: 0, options: [ .curveEaseInOut ], animations: {
       self.toViewCongtroller.view.alpha = 1
-    }, completion: { _ in
+    }) { _ in
       self.fromViewController.view.removeFromSuperview()
       transitionContext.completeTransition(true)
-    })
+    }
   }
 }

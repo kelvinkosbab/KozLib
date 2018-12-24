@@ -59,7 +59,6 @@ class AnimatingTabBarController : BaseTabBarController {
 extension AnimatingTabBarController : UITabBarControllerDelegate {
   
   func tabBarController(_ tabBarController: UITabBarController, animationControllerForTransitionFrom fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-    
     switch self.tabAnimationStyle {
     case .crossDissolve:
       return CrossDissolveTabBarAnimator(from: fromVC, to: toVC)
@@ -73,17 +72,4 @@ extension AnimatingTabBarController : UITabBarControllerDelegate {
       return SlidingTabBarAnimator(direction: direction, from: fromVC, to: toVC)
     }
   }
-  
-//  func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-//
-//    guard let fromView = self.selectedViewController?.view, let toView = viewController.view else {
-//      return false // Make sure you want this as false
-//    }
-//
-//    if fromView != toView {
-//      UIView.transition(from: fromView, to: toView, duration: 0.3, options: [ .transitionCrossDissolve ], completion: nil)
-//    }
-//
-//    return true
-//  }
 }

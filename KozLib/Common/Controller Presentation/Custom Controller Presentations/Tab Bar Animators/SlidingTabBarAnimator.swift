@@ -56,12 +56,12 @@ class SlidingTabBarAnimator : NSObject, UIViewControllerAnimatedTransitioning {
     // Perform the animation
     let containerView = transitionContext.containerView
     containerView.addSubview(self.toViewCongtroller.view)
-    UIView.animate(withDuration: animationDuration, animations: {
+    UIView.animate(withDuration: animationDuration, delay: 0, options: [ .curveEaseInOut ], animations: {
       self.toViewCongtroller.view.frame = targetFrame
       self.toViewCongtroller.view.alpha = 1
-    }, completion: { _ in
+    }) { _ in
       self.fromViewController.view.removeFromSuperview()
       transitionContext.completeTransition(true)
-    })
+    }
   }
 }
