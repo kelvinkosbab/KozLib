@@ -17,32 +17,26 @@ class AnimatingTabBarController : BaseTabBarController {
     
     self.delegate = self
     
+    self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.cancelButtonSelected))
+    
     // Configure the children
     let red = UIViewController()
     red.view.backgroundColor = .red
-    red.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.cancelButtonSelected))
-    let redNavigationController = UINavigationController(rootViewController: red)
-    redNavigationController.tabBarItem = UITabBarItem(title: "RED", image: nil, selectedImage: nil)
+    red.tabBarItem = UITabBarItem(title: "RED", image: nil, selectedImage: nil)
     
     let blue = UIViewController()
     blue.view.backgroundColor = .blue
-    blue.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.cancelButtonSelected))
-    let blueNavigationController = UINavigationController(rootViewController: blue)
-    blueNavigationController.tabBarItem = UITabBarItem(title: "BLUE", image: nil, selectedImage: nil)
+    blue.tabBarItem = UITabBarItem(title: "BLUE", image: nil, selectedImage: nil)
     
     let green = UIViewController()
     green.view.backgroundColor = .green
-    green.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.cancelButtonSelected))
-    let greenNavigationController = UINavigationController(rootViewController: green)
-    greenNavigationController.tabBarItem = UITabBarItem(title: "GREEN", image: nil, selectedImage: nil)
+    green.tabBarItem = UITabBarItem(title: "GREEN", image: nil, selectedImage: nil)
     
     let yellow = UIViewController()
     yellow.view.backgroundColor = .yellow
-    yellow.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.cancelButtonSelected))
-    let yellowNavigationController = UINavigationController(rootViewController: yellow)
-    yellowNavigationController.tabBarItem = UITabBarItem(title: "YELLOW", image: nil, selectedImage: nil)
+    yellow.tabBarItem = UITabBarItem(title: "YELLOW", image: nil, selectedImage: nil)
     
-    self.viewControllers = [ redNavigationController, blueNavigationController, greenNavigationController, yellowNavigationController ]
+    self.viewControllers = [ red, blue, green, yellow ]
   }
   
   // MARK: - Actions
