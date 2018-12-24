@@ -31,7 +31,7 @@ class BottomSheetViewController: UIViewController {
   var parentView: UIView!
   
   // Initial position of the sheet
-  var sheetPosition: SheetPosition = .top
+  var sheetPosition: SheetPosition = .middle
   
   var initalFrame: CGRect!
   var middleY: CGFloat = 400 //change this in viewDidLayoutSubviews to decide if animate to top or bottom

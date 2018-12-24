@@ -241,6 +241,8 @@
 		F6AD930521A280F20074F548 /* BottomSheet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6AD930421A280F20074F548 /* BottomSheet.storyboard */; };
 		F6AD930721A281810074F548 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD930621A281810074F548 /* BottomSheetViewController.swift */; };
 		F6AD930921A281A90074F548 /* SimpleTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD930821A281A90074F548 /* SimpleTableCell.swift */; };
+		F6E8171621D089D100FF1265 /* AnimatingTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E8171521D089D100FF1265 /* AnimatingTabBarController.swift */; };
+		F6E8171821D089ED00FF1265 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E8171721D089ED00FF1265 /* BaseTabBarController.swift */; };
 		F6EF6D7B21352A8200C3BFEE /* HomeViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF6D7A21352A8200C3BFEE /* HomeViewController+DataSource.swift */; };
 		F6EF6D7D21352A8D00C3BFEE /* HomeViewController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF6D7C21352A8D00C3BFEE /* HomeViewController+UITableView.swift */; };
 		F6EF6D8021352AD300C3BFEE /* DataSourceContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF6D7F21352AD300C3BFEE /* DataSourceContent.swift */; };
@@ -518,6 +520,8 @@
 		F6AD930421A280F20074F548 /* BottomSheet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BottomSheet.storyboard; sourceTree = "<group>"; };
 		F6AD930621A281810074F548 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		F6AD930821A281A90074F548 /* SimpleTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableCell.swift; sourceTree = "<group>"; };
+		F6E8171521D089D100FF1265 /* AnimatingTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatingTabBarController.swift; sourceTree = "<group>"; };
+		F6E8171721D089ED00FF1265 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		F6EF6D7A21352A8200C3BFEE /* HomeViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+DataSource.swift"; sourceTree = "<group>"; };
 		F6EF6D7C21352A8D00C3BFEE /* HomeViewController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+UITableView.swift"; sourceTree = "<group>"; };
 		F6EF6D7F21352AD300C3BFEE /* DataSourceContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceContent.swift; sourceTree = "<group>"; };
@@ -891,6 +895,7 @@
 				B6350E4B1F787A33004E6218 /* NFC */,
 				B624C1CD1F78AC0D0027C95D /* ARKit */,
 				B66927DE20571E2600EF915C /* Geofencing */,
+				F6E8171421D089B600FF1265 /* Animating Tab Bar */,
 				B61B8DDA1F81466700118C73 /* Network */,
 				F6EF6D8521352ED800C3BFEE /* 360iDev 2018 */,
 				F6193A37219919F20043BFFE /* Duplicating iOS Elements */,
@@ -952,6 +957,7 @@
 				B65514371F7888B900EEF26F /* BaseNavigationController.swift */,
 				B65514391F78924A00EEF26F /* BaseViewController.swift */,
 				B655143C1F78928800EEF26F /* BaseTableViewController.swift */,
+				F6E8171721D089ED00FF1265 /* BaseTabBarController.swift */,
 			);
 			path = "Base Controllers";
 			sourceTree = "<group>";
@@ -1495,6 +1501,14 @@
 			path = "Bottom Sheet";
 			sourceTree = "<group>";
 		};
+		F6E8171421D089B600FF1265 /* Animating Tab Bar */ = {
+			isa = PBXGroup;
+			children = (
+				F6E8171521D089D100FF1265 /* AnimatingTabBarController.swift */,
+			);
+			path = "Animating Tab Bar";
+			sourceTree = "<group>";
+		};
 		F6EF6D7E21352AB900C3BFEE /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
@@ -1746,6 +1760,7 @@
 				B61B8DF01F81822E00118C73 /* Nibable.swift in Sources */,
 				B66927E62057205100EF915C /* Geotification.swift in Sources */,
 				B6811F5C2043C7DC008C3CAC /* ClassNamable.swift in Sources */,
+				F6E8171621D089D100FF1265 /* AnimatingTabBarController.swift in Sources */,
 				F6AD930921A281A90074F548 /* SimpleTableCell.swift in Sources */,
 				B619F9FD203E94A000764577 /* InteractiveTransitionOption.swift in Sources */,
 				F6AD92FC219FDE230074F548 /* NetworkLoggerPlugin.swift in Sources */,
@@ -1824,6 +1839,7 @@
 				B6350E551F787E7E004E6218 /* NFCMessageTableViewController.swift in Sources */,
 				F6A768D72138BBE1007AF9F7 /* GraphCollectionViewLayoutAttributes.swift in Sources */,
 				B619FA0B203E94A000764577 /* RightToLeftAnimator.swift in Sources */,
+				F6E8171821D089ED00FF1265 /* BaseTabBarController.swift in Sources */,
 				F6193A41219DF5AE0043BFFE /* IOSWeatherCollectionViewLayout.swift in Sources */,
 				F6A769062138BCF3007AF9F7 /* CitiesResult.swift in Sources */,
 				F6A769082138BCF3007AF9F7 /* Temperature.swift in Sources */,
