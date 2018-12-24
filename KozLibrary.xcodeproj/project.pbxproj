@@ -241,6 +241,8 @@
 		F6AD930521A280F20074F548 /* BottomSheet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6AD930421A280F20074F548 /* BottomSheet.storyboard */; };
 		F6AD930721A281810074F548 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD930621A281810074F548 /* BottomSheetViewController.swift */; };
 		F6AD930921A281A90074F548 /* SimpleTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD930821A281A90074F548 /* SimpleTableCell.swift */; };
+		F6B14E3821D16A86005E83FB /* SlidingTabBarAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B14E3721D16A86005E83FB /* SlidingTabBarAnimator.swift */; };
+		F6B14E3A21D1706F005E83FB /* CrossDissolveTabBarAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B14E3921D1706F005E83FB /* CrossDissolveTabBarAnimator.swift */; };
 		F6E8171621D089D100FF1265 /* AnimatingTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E8171521D089D100FF1265 /* AnimatingTabBarController.swift */; };
 		F6E8171821D089ED00FF1265 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E8171721D089ED00FF1265 /* BaseTabBarController.swift */; };
 		F6E8171B21D09E0200FF1265 /* StretchableTableViewHeaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E8171A21D09E0200FF1265 /* StretchableTableViewHeaderController.swift */; };
@@ -522,6 +524,8 @@
 		F6AD930421A280F20074F548 /* BottomSheet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BottomSheet.storyboard; sourceTree = "<group>"; };
 		F6AD930621A281810074F548 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		F6AD930821A281A90074F548 /* SimpleTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableCell.swift; sourceTree = "<group>"; };
+		F6B14E3721D16A86005E83FB /* SlidingTabBarAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingTabBarAnimator.swift; sourceTree = "<group>"; };
+		F6B14E3921D1706F005E83FB /* CrossDissolveTabBarAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossDissolveTabBarAnimator.swift; sourceTree = "<group>"; };
 		F6E8171521D089D100FF1265 /* AnimatingTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatingTabBarController.swift; sourceTree = "<group>"; };
 		F6E8171721D089ED00FF1265 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		F6E8171A21D09E0200FF1265 /* StretchableTableViewHeaderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchableTableViewHeaderController.swift; sourceTree = "<group>"; };
@@ -614,6 +618,7 @@
 				B619F9E6203E94A000764577 /* PresentingViewControllerDelegate.swift */,
 				B619F9EA203E94A000764577 /* CustomPresentationController.swift */,
 				B619F9F1203E94A000764577 /* PresentableAnimator.swift */,
+				F6B14E3621D16A6F005E83FB /* Tab Bar Animators */,
 				B619F9E7203E94A000764577 /* Top Down */,
 				B619F9EB203E94A000764577 /* Visual Effect Fade */,
 				B619F9EE203E94A000764577 /* Left Menu */,
@@ -1506,6 +1511,15 @@
 			path = "Bottom Sheet";
 			sourceTree = "<group>";
 		};
+		F6B14E3621D16A6F005E83FB /* Tab Bar Animators */ = {
+			isa = PBXGroup;
+			children = (
+				F6B14E3921D1706F005E83FB /* CrossDissolveTabBarAnimator.swift */,
+				F6B14E3721D16A86005E83FB /* SlidingTabBarAnimator.swift */,
+			);
+			path = "Tab Bar Animators";
+			sourceTree = "<group>";
+		};
 		F6E8171421D089B600FF1265 /* Animating Tab Bar */ = {
 			isa = PBXGroup;
 			children = (
@@ -1818,6 +1832,7 @@
 				B619FA05203E94A000764577 /* CustomPresentationController.swift in Sources */,
 				B6350E4A1F787767004E6218 /* DataMangerProtocol.swift in Sources */,
 				B619FA08203E94A000764577 /* LeftMenuAnimator.swift in Sources */,
+				F6B14E3821D16A86005E83FB /* SlidingTabBarAnimator.swift in Sources */,
 				B619FA0E203E94A000764577 /* BottomUpAnimator.swift in Sources */,
 				F6AD92AA219F8B410074F548 /* DailyCell.swift in Sources */,
 				B67949F91F81FEF300EEB926 /* Cube.swift in Sources */,
@@ -1834,6 +1849,7 @@
 				B6350E4D1F787A41004E6218 /* NFCTableViewController.swift in Sources */,
 				B64415101F78597400C9781B /* HomeViewController.swift in Sources */,
 				B60AD104201A7919003A2E84 /* ConfigurationViewPresentable.swift in Sources */,
+				F6B14E3A21D1706F005E83FB /* CrossDissolveTabBarAnimator.swift in Sources */,
 				B63A82C6201E656B00E6C8C6 /* GlassesOverlay.swift in Sources */,
 				B6617DAA20FBDEFB00F87102 /* ServiceError.swift in Sources */,
 				F6AD92F1219FDE230074F548 /* TRON.swift in Sources */,

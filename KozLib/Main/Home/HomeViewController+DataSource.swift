@@ -34,7 +34,8 @@ extension HomeViewController {
       var sectionTypes: [SectionType] = []
       
       // MISC
-      sectionTypes.append(.misc(rowTypes: [ .permissions, .nfc, .arKit, .geofencing, .animatingTabBarSelections ]))
+      sectionTypes.append(.misc(rowTypes: [ .permissions, .nfc, .arKit, .geofencing ]))
+      sectionTypes.append(.misc(rowTypes: [ .animatingTabBarCrossDissolve, .animatingTabBarSliding ]))
       
       // Common iOS elements
       sectionTypes.append(.commonIosElements(rowTypes: [ .weatherScrolling, .pullUpController, .stretchableTableViewHeadser ]))
@@ -103,7 +104,7 @@ extension HomeViewController {
       case weatherScrolling, pullUpController
       case basicNetwork, networkExtension
       case badgeViewLayerAnimations, graphingCustomLayouts, stretchableTableViewHeadser
-      case animatingTabBarSelections
+      case animatingTabBarCrossDissolve, animatingTabBarSliding
       
       var title: String {
         switch self {
@@ -115,8 +116,10 @@ extension HomeViewController {
           return "ARKit Projects"
         case .geofencing:
           return "Geofencing"
-        case .animatingTabBarSelections:
-          return "Animating Tab Bar Selections"
+        case .animatingTabBarCrossDissolve:
+          return "Cross Dissolve Animated Tab Bar"
+        case .animatingTabBarSliding:
+          return "Sliding Animated Tab Bar"
           
         case .weatherScrolling:
           return "Weather App Scrolling"

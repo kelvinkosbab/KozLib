@@ -55,8 +55,10 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
       self.transitionToGeotification(presentationMode: .navStack)
     case .nfc:
       self.transitionToNFC(presentationMode: .navStack)
-    case .animatingTabBarSelections:
+      
+    case .animatingTabBarCrossDissolve, .animatingTabBarSliding:
       let viewController = AnimatingTabBarController()
+      viewController.tabAnimationStyle = rowType == .animatingTabBarCrossDissolve ? .crossDissolve : .slide
       viewController.presentIn(self, withMode: .modal(.fullScreen, .coverVertical))
       
     case .weatherScrolling:
