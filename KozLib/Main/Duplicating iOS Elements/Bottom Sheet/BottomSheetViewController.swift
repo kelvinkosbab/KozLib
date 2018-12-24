@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum SheetLevel {
+enum SheetPosition {
   case top, bottom, middle
 }
 
@@ -31,11 +31,12 @@ class BottomSheetViewController: UIViewController {
   var parentView: UIView!
   
   // Initial position of the sheet
-  var lastLevel: SheetLevel = .middle
+  var sheetPosition: SheetPosition = .top
   
   var initalFrame: CGRect!
   var middleY: CGFloat = 400 //change this in viewDidLayoutSubviews to decide if animate to top or bottom
   var bottomY: CGFloat = 600 //no need to change this
+  private var isCompletingAnimation: Bool = false
   
   // Sheet top Y position
   var topY: CGFloat {
@@ -94,11 +95,11 @@ class BottomSheetViewController: UIViewController {
     
     if self.initalFrame == nil {
       self.initalFrame = self.bottomSheetDelegate?.bottomSheetInitialBounds ?? UIScreen.main.bounds
-      self.middleY = self.initalFrame.height * 0.6
+      self.middleY = self.initalFrame.height * 0.5
       self.bottomY = self.initalFrame.height - self.bottomOffset
       self.lastY = self.middleY
       
-      self.bottomSheetDelegate?.updateBottomSheet(frame: self.initalFrame.offsetBy(dx: 0, dy: self.middleY))
+      self.notifyUpdate(forSheetPosition: self.sheetPosition)
     }
   }
   
@@ -153,54 +154,86 @@ class BottomSheetViewController: UIViewController {
       }
       
     case .failed, .ended, .cancelled:
+      
+      guard !self.isCompletingAnimation else {
+        return
+      }
+      
+      self.isCompletingAnimation = true
+      
       self.panOffset = 0
       self.panView.isUserInteractionEnabled = false
       
-      self.disableTableScroll = self.lastLevel != .top
+      self.disableTableScroll = self.sheetPosition != .top
       
       self.lastY = self.parentView.frame.minY
-      self.lastLevel = self.nextLevel(recognizer: recognizer)
+      self.sheetPosition = self.getNextSheetPosition(recognizer: recognizer)
       
-      UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.9, options: .curveEaseOut, animations: {
+      UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.9, options: .curveEaseOut, animations: { [weak self] in
         
-        switch self.lastLevel {
-        case .top:
-          self.bottomSheetDelegate?.updateBottomSheet(frame: self.initalFrame.offsetBy(dx: 0, dy: self.topY))
-          self.tableView.contentInset.bottom = 50
-          self.tableView.alpha = 1
-          
-        case .middle:
-          self.bottomSheetDelegate?.updateBottomSheet(frame: self.initalFrame.offsetBy(dx: 0, dy: self.middleY))
-          self.tableView.alpha = 1
-          
-        case .bottom:
-          //                    self.panView.frame = self.initalFrame.offsetBy(dx: 0, dy: self.bottomY)
-          self.bottomSheetDelegate?.updateBottomSheet(frame: self.initalFrame.offsetBy(dx: 0, dy: self.bottomY))
-          self.tableView.alpha = 0
+        guard let strongSelf = self else {
+          return
         }
         
-      }) { (_) in
-        self.panView.isUserInteractionEnabled = true
-        self.lastY = self.parentView.frame.minY
+        strongSelf.notifyUpdate(forSheetPosition: strongSelf.sheetPosition)
+        
+      }) { [weak self] _ in
+        
+        guard let strongSelf = self else {
+          return
+        }
+        
+        strongSelf.panView.isUserInteractionEnabled = true
+        strongSelf.lastY = strongSelf.parentView.frame.minY
+        strongSelf.isCompletingAnimation = false
       }
       
     default: break
     }
   }
   
-  func nextLevel(recognizer: UIPanGestureRecognizer) -> SheetLevel {
+  private func getNextSheetPosition(recognizer: UIPanGestureRecognizer) -> SheetPosition {
     let y = self.lastY
     let yVelocity = recognizer.velocity(in: self.view).y
     if yVelocity < -300 {
-      return y > self.middleY ? .middle : .top
+      let lastSheetPosition = self.sheetPosition
+      switch lastSheetPosition {
+      case .top, .middle:
+        return abs(y - self.middleY) < 70 ? .middle : .top
+      case .bottom:
+        return .middle
+      }
     } else if yVelocity > 300 {
-      return y < (self.middleY + 1) ? .middle : .bottom
+      let lastSheetPosition = self.sheetPosition
+      switch lastSheetPosition {
+      case .top:
+        return abs(y - self.bottomY) < 70 ? .bottom : .middle
+      case .middle, .bottom:
+        return .bottom
+      }
     } else {
       if y > self.middleY {
         return (y - self.middleY) < (self.bottomY - y) ? .middle : .bottom
       } else {
         return (y - self.topY) < (self.middleY - y) ? .top : .middle
       }
+    }
+  }
+  
+  private func notifyUpdate(forSheetPosition sheetPosition: SheetPosition) {
+    switch self.sheetPosition {
+    case .top:
+      self.bottomSheetDelegate?.updateBottomSheet(frame: self.initalFrame.offsetBy(dx: 0, dy: self.topY))
+      self.tableView.contentInset.bottom = 50
+      self.tableView.alpha = 1
+      
+    case .middle:
+      self.bottomSheetDelegate?.updateBottomSheet(frame: self.initalFrame.offsetBy(dx: 0, dy: self.middleY))
+      self.tableView.alpha = 1
+      
+    case .bottom:
+      self.bottomSheetDelegate?.updateBottomSheet(frame: self.initalFrame.offsetBy(dx: 0, dy: self.bottomY))
+      self.tableView.alpha = 0
     }
   }
   
