@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFCNavigationDelegate, NetworkNavigationDelegate, PermissionsNavigationDelegate, GeofencingNavigationDelegate, iDev2018NavigationDelegate {
+class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFCNavigationDelegate, NetworkNavigationDelegate, PermissionsNavigationDelegate, GeofencingNavigationDelegate, iDev2018NavigationDelegate, StretchableHeaderNavigationDelegate {
   
   // MARK: - Static Accessors
   
@@ -70,8 +70,7 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
       viewController.presentIn(self, withMode: .modal(.formSheet, .coverVertical))
       
     case .stretchableTableViewHeadser:
-      let viewController = StretchableTableViewHeaderController.newViewController()
-      viewController.presentIn(self, withMode: .navStack)
+      self.presentStretchableHeader(presentationMode: .navStack)
       
     // Network
     case .basicNetwork:

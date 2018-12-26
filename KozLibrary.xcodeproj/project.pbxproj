@@ -243,10 +243,11 @@
 		F6AD930921A281A90074F548 /* SimpleTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD930821A281A90074F548 /* SimpleTableCell.swift */; };
 		F6B14E3821D16A86005E83FB /* SlidingTabBarAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B14E3721D16A86005E83FB /* SlidingTabBarAnimator.swift */; };
 		F6B14E3A21D1706F005E83FB /* CrossDissolveTabBarAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B14E3921D1706F005E83FB /* CrossDissolveTabBarAnimator.swift */; };
+		F6B14E4421D42090005E83FB /* StretchableHeaderNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B14E4321D42090005E83FB /* StretchableHeaderNavigationDelegate.swift */; };
 		F6E8171621D089D100FF1265 /* AnimatingTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E8171521D089D100FF1265 /* AnimatingTabBarController.swift */; };
 		F6E8171821D089ED00FF1265 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E8171721D089ED00FF1265 /* BaseTabBarController.swift */; };
 		F6E8171B21D09E0200FF1265 /* StretchableTableViewHeaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E8171A21D09E0200FF1265 /* StretchableTableViewHeaderController.swift */; };
-		F6E8171D21D09E8900FF1265 /* StretchableTableViewHeader.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6E8171C21D09E8900FF1265 /* StretchableTableViewHeader.storyboard */; };
+		F6E8171D21D09E8900FF1265 /* StretchableHeader.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6E8171C21D09E8900FF1265 /* StretchableHeader.storyboard */; };
 		F6EF6D7B21352A8200C3BFEE /* HomeViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF6D7A21352A8200C3BFEE /* HomeViewController+DataSource.swift */; };
 		F6EF6D7D21352A8D00C3BFEE /* HomeViewController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF6D7C21352A8D00C3BFEE /* HomeViewController+UITableView.swift */; };
 		F6EF6D8021352AD300C3BFEE /* DataSourceContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF6D7F21352AD300C3BFEE /* DataSourceContent.swift */; };
@@ -526,10 +527,11 @@
 		F6AD930821A281A90074F548 /* SimpleTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableCell.swift; sourceTree = "<group>"; };
 		F6B14E3721D16A86005E83FB /* SlidingTabBarAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingTabBarAnimator.swift; sourceTree = "<group>"; };
 		F6B14E3921D1706F005E83FB /* CrossDissolveTabBarAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossDissolveTabBarAnimator.swift; sourceTree = "<group>"; };
+		F6B14E4321D42090005E83FB /* StretchableHeaderNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchableHeaderNavigationDelegate.swift; sourceTree = "<group>"; };
 		F6E8171521D089D100FF1265 /* AnimatingTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatingTabBarController.swift; sourceTree = "<group>"; };
 		F6E8171721D089ED00FF1265 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		F6E8171A21D09E0200FF1265 /* StretchableTableViewHeaderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchableTableViewHeaderController.swift; sourceTree = "<group>"; };
-		F6E8171C21D09E8900FF1265 /* StretchableTableViewHeader.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StretchableTableViewHeader.storyboard; sourceTree = "<group>"; };
+		F6E8171C21D09E8900FF1265 /* StretchableHeader.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StretchableHeader.storyboard; sourceTree = "<group>"; };
 		F6EF6D7A21352A8200C3BFEE /* HomeViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+DataSource.swift"; sourceTree = "<group>"; };
 		F6EF6D7C21352A8D00C3BFEE /* HomeViewController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+UITableView.swift"; sourceTree = "<group>"; };
 		F6EF6D7F21352AD300C3BFEE /* DataSourceContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceContent.swift; sourceTree = "<group>"; };
@@ -1222,7 +1224,7 @@
 		F6193A37219919F20043BFFE /* Duplicating iOS Elements */ = {
 			isa = PBXGroup;
 			children = (
-				F6E8171921D09DD000FF1265 /* Stretchable Table View Header */,
+				F6E8171921D09DD000FF1265 /* Stretchable Header */,
 				F6193A36219919E40043BFFE /* Weather App */,
 				F6AD930121A280800074F548 /* Bottom Sheet */,
 			);
@@ -1528,13 +1530,14 @@
 			path = "Animating Tab Bar";
 			sourceTree = "<group>";
 		};
-		F6E8171921D09DD000FF1265 /* Stretchable Table View Header */ = {
+		F6E8171921D09DD000FF1265 /* Stretchable Header */ = {
 			isa = PBXGroup;
 			children = (
-				F6E8171C21D09E8900FF1265 /* StretchableTableViewHeader.storyboard */,
+				F6B14E4321D42090005E83FB /* StretchableHeaderNavigationDelegate.swift */,
+				F6E8171C21D09E8900FF1265 /* StretchableHeader.storyboard */,
 				F6E8171A21D09E0200FF1265 /* StretchableTableViewHeaderController.swift */,
 			);
-			path = "Stretchable Table View Header";
+			path = "Stretchable Header";
 			sourceTree = "<group>";
 		};
 		F6EF6D7E21352AB900C3BFEE /* DataSource */ = {
@@ -1676,7 +1679,7 @@
 				F6A768FE2138BCDB007AF9F7 /* limitedData.json in Resources */,
 				B624C1D11F78ACCD0027C95D /* ARKit.storyboard in Resources */,
 				B619F9DC203E93DB00764577 /* TopKnobVisualEffectView.xib in Resources */,
-				F6E8171D21D09E8900FF1265 /* StretchableTableViewHeader.storyboard in Resources */,
+				F6E8171D21D09E8900FF1265 /* StretchableHeader.storyboard in Resources */,
 				B61B8DEE1F81813700118C73 /* StackedTitleDetailTableViewCell.xib in Resources */,
 				F6EF6D8A2135325B00C3BFEE /* 360iDev2018.storyboard in Resources */,
 				B629C233201E78B80083D708 /* TackDragon.storyboard in Resources */,
@@ -1937,6 +1940,7 @@
 				F6AD92C8219F8FB00074F548 /* DatasourceController.swift in Sources */,
 				B61B8DF21F81843800118C73 /* NetworkNavigationDelegate.swift in Sources */,
 				B6617DA220FA61DA00F87102 /* HapticsGenerator.swift in Sources */,
+				F6B14E4421D42090005E83FB /* StretchableHeaderNavigationDelegate.swift in Sources */,
 				F6AD92D7219F8FEC0074F548 /* CustomClasses.swift in Sources */,
 				B67949F71F81FBC800EEB926 /* PBRMaterial.swift in Sources */,
 				B64415001F7856EA00C9781B /* Date+Util.swift in Sources */,
