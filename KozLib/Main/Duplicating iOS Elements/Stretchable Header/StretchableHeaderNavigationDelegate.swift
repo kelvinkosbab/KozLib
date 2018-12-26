@@ -12,6 +12,7 @@ protocol StretchableHeaderNavigationDelegate : class {}
 extension StretchableHeaderNavigationDelegate where Self : UIViewController {
   
   func presentStretchableHeader(presentationMode: PresentationMode) {
-    let viewController = StretchableHeaderController.newViewController()
+    let viewController = StretchableHeaderController.newViewController()    
+    viewController.presentIn(self, withMode: presentationMode)
   }
 }
