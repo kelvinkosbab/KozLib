@@ -156,6 +156,7 @@
 		F6193A47219DF64D0043BFFE /* HourlyDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6193A46219DF64D0043BFFE /* HourlyDatasource.swift */; };
 		F6193A49219DF6520043BFFE /* DailyWeatherDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6193A48219DF6520043BFFE /* DailyWeatherDatasource.swift */; };
 		F6193A4B219DF65E0043BFFE /* ExtendedInfoDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6193A4A219DF65E0043BFFE /* ExtendedInfoDatasource.swift */; };
+		F68C871C21F6CF9100CED205 /* UIBarButtonItem+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68C871B21F6CF9100CED205 /* UIBarButtonItem+Styles.swift */; };
 		F6A768D72138BBE1007AF9F7 /* GraphCollectionViewLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A768D62138BBE1007AF9F7 /* GraphCollectionViewLayoutAttributes.swift */; };
 		F6A768DD2138BC19007AF9F7 /* CollectionViewDelegateCircleGraphLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A768DA2138BC19007AF9F7 /* CollectionViewDelegateCircleGraphLayout.swift */; };
 		F6A768DE2138BC19007AF9F7 /* CollectionViewDelegateGraphLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A768DB2138BC19007AF9F7 /* CollectionViewDelegateGraphLayout.swift */; };
@@ -440,6 +441,7 @@
 		F6193A46219DF64D0043BFFE /* HourlyDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyDatasource.swift; sourceTree = "<group>"; };
 		F6193A48219DF6520043BFFE /* DailyWeatherDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherDatasource.swift; sourceTree = "<group>"; };
 		F6193A4A219DF65E0043BFFE /* ExtendedInfoDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedInfoDatasource.swift; sourceTree = "<group>"; };
+		F68C871B21F6CF9100CED205 /* UIBarButtonItem+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Styles.swift"; sourceTree = "<group>"; };
 		F6A768D62138BBE1007AF9F7 /* GraphCollectionViewLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphCollectionViewLayoutAttributes.swift; sourceTree = "<group>"; };
 		F6A768DA2138BC19007AF9F7 /* CollectionViewDelegateCircleGraphLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewDelegateCircleGraphLayout.swift; sourceTree = "<group>"; };
 		F6A768DB2138BC19007AF9F7 /* CollectionViewDelegateGraphLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewDelegateGraphLayout.swift; sourceTree = "<group>"; };
@@ -879,6 +881,7 @@
 				B64414FF1F7856EA00C9781B /* Date+Util.swift */,
 				B6F436661FD27CC1008C9C6B /* Locale+Util.swift */,
 				B624C1D71F78B2260027C95D /* Utilities.swift */,
+				F68C871B21F6CF9100CED205 /* UIBarButtonItem+Styles.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -902,6 +905,9 @@
 				B64415111F7859AE00C9781B /* RootViewController.swift */,
 				B6480A07201A5AF3000BE002 /* Configuring View */,
 				B65514401F78A0B200EEF26F /* Home */,
+				F6E8171921D09DD000FF1265 /* Stretchable Header */,
+				F6193A36219919E40043BFFE /* Weather App */,
+				F6AD930121A280800074F548 /* Bottom Sheet */,
 				B629C229201E772A0083D708 /* Permissions */,
 				B6350E4B1F787A33004E6218 /* NFC */,
 				B624C1CD1F78AC0D0027C95D /* ARKit */,
@@ -909,7 +915,6 @@
 				F6E8171421D089B600FF1265 /* Animating Tab Bar */,
 				B61B8DDA1F81466700118C73 /* Network */,
 				F6EF6D8521352ED800C3BFEE /* 360iDev 2018 */,
-				F6193A37219919F20043BFFE /* Duplicating iOS Elements */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1219,16 +1224,6 @@
 				F6AD92DF219FDDF20074F548 /* Weather Embedded LIbraries */,
 			);
 			path = "Weather App";
-			sourceTree = "<group>";
-		};
-		F6193A37219919F20043BFFE /* Duplicating iOS Elements */ = {
-			isa = PBXGroup;
-			children = (
-				F6E8171921D09DD000FF1265 /* Stretchable Header */,
-				F6193A36219919E40043BFFE /* Weather App */,
-				F6AD930121A280800074F548 /* Bottom Sheet */,
-			);
-			path = "Duplicating iOS Elements";
 			sourceTree = "<group>";
 		};
 		F6193A38219DF4A90043BFFE /* Service */ = {
@@ -1874,6 +1869,7 @@
 				B6350E551F787E7E004E6218 /* NFCMessageTableViewController.swift in Sources */,
 				F6A768D72138BBE1007AF9F7 /* GraphCollectionViewLayoutAttributes.swift in Sources */,
 				B619FA0B203E94A000764577 /* RightToLeftAnimator.swift in Sources */,
+				F68C871C21F6CF9100CED205 /* UIBarButtonItem+Styles.swift in Sources */,
 				F6E8171821D089ED00FF1265 /* BaseTabBarController.swift in Sources */,
 				F6193A41219DF5AE0043BFFE /* IOSWeatherCollectionViewLayout.swift in Sources */,
 				F6A769062138BCF3007AF9F7 /* CitiesResult.swift in Sources */,

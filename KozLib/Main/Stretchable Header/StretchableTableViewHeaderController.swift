@@ -34,9 +34,16 @@ class StretchableHeaderController : BaseViewController {
     super.viewDidLoad()
     
     // Configure navigation bar
-    self.title = "Stretchable Header"
+    self.title = nil
     self.configureDefaultBackButton()
-    self.configureLargeTitleBasedOnPresentedMode()
+    self.configureSmallNavigationTitle()
+    
+    switch self.presentedMode {
+    case .navStack: break
+    default:
+      self.baseNavigationController?.navigationBarStyle = .transparent
+      self.navigationItem.rightBarButtonItem = UIBarButtonItem(text: "Done", style: .done(.white), target: self, action: #selector(self.doneButtonSelected))
+    }
   }
   
   override func viewDidLayoutSubviews() {
@@ -46,7 +53,13 @@ class StretchableHeaderController : BaseViewController {
     self.scrollView.scrollIndicatorInsets = self.view.safeAreaInsets
     
     // But we want the actual content inset to just respect the bottom safe inset
-    scrollView.contentInset = UIEdgeInsets(top: self.view.safeAreaInsets.top, left: 0, bottom: self.view.safeAreaInsets.bottom, right: 0)
+    self.scrollView.contentInset = UIEdgeInsets(top: self.view.safeAreaInsets.top, left: 0, bottom: self.view.safeAreaInsets.bottom, right: 0)
+  }
+  
+  // MARK: - Actions
+  
+  @objc func doneButtonSelected() {
+    self.dismissController()
   }
   
   // MARK: - UIScrollViewDelegate
@@ -55,11 +68,11 @@ class StretchableHeaderController : BaseViewController {
   
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
     // We keep the previous status bar hidden state so that we’re not triggering an implicit animation block for every frame in which the scroll view scrolls
-    if previousStatusBarHidden != shouldHideStatusBar {
+    if self.previousStatusBarHidden != self.shouldHideStatusBar {
       UIView.animate(withDuration: 0.2, animations: {
         self.setNeedsStatusBarAppearanceUpdate()
       })
-      previousStatusBarHidden = shouldHideStatusBar
+      self.previousStatusBarHidden = self.shouldHideStatusBar
     }
   }
   

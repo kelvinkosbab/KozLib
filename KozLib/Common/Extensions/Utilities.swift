@@ -6,7 +6,6 @@
 //  Copyright © 2017 Kozinga. All rights reserved.
 //
 
-import Foundation
 import ARKit
 
 // - MARK: UIImage extensions

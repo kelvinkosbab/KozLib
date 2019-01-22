@@ -33,15 +33,17 @@ extension HomeViewController {
       // Build the content
       var sectionTypes: [SectionType] = []
       
-      // MISC
-      sectionTypes.append(.misc(rowTypes: [ .permissions, .nfc, .arKit, .geofencing ]))
-      sectionTypes.append(.misc(rowTypes: [ .animatingTabBarCrossDissolve, .animatingTabBarSliding ]))
-      
       // Common iOS elements
       sectionTypes.append(.commonIosElements(rowTypes: [ .weatherScrolling, .pullUpController, .stretchableTableViewHeadser ]))
       
       // 2018 360iDev
       sectionTypes.append(.iDev2018(rowTypes: [ .badgeViewLayerAnimations, .graphingCustomLayouts ]))
+      
+      // Tab bar
+      sectionTypes.append(.tabBarAnimations(rowTypes: [ .animatingTabBarCrossDissolve, .animatingTabBarSliding ]))
+      
+      // MISC
+      sectionTypes.append(.misc(rowTypes: [ .permissions, .nfc, .arKit, .geofencing ]))
       
       // Network
       sectionTypes.append(.network(rowTypes: [ .basicNetwork, .networkExtension ]))
@@ -72,6 +74,7 @@ extension HomeViewController {
     
     enum SectionType : DataSourceSectionType {
       case commonIosElements(rowTypes: [RowType])
+      case tabBarAnimations(rowTypes: [RowType])
       case misc(rowTypes: [RowType])
       case network(rowTypes: [RowType])
       case iDev2018(rowTypes: [RowType])
@@ -79,7 +82,9 @@ extension HomeViewController {
       var title: String? {
         switch self {
         case .commonIosElements:
-          return "Common iOS Elements"
+          return nil
+        case .tabBarAnimations:
+          return "Tab Bar Animations"
         case .misc:
           return nil
         case .network:
@@ -91,7 +96,11 @@ extension HomeViewController {
       
       var rowTypes: [RowType] {
         switch self {
-        case .commonIosElements(rowTypes: let rowTypes), .misc(rowTypes: let rowTypes), .network(rowTypes: let rowTypes), .iDev2018(rowTypes: let rowTypes):
+        case .commonIosElements(rowTypes: let rowTypes),
+             .tabBarAnimations(rowTypes: let rowTypes),
+             .misc(rowTypes: let rowTypes),
+             .network(rowTypes: let rowTypes),
+             .iDev2018(rowTypes: let rowTypes):
           return rowTypes
         }
       }

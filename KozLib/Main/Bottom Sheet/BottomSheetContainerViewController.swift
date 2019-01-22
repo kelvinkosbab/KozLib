@@ -26,15 +26,17 @@ class BottomSheetContainerViewController : BaseViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.title = "Pull Up Controller"
+    self.title = nil
     self.configureDefaultBackButton()
+    self.configureSmallNavigationTitle()
+    
     self.baseNavigationController?.navigationBarStyle = .transparent
-    self.navigationItem.largeTitleDisplayMode = .never
+    
     switch self.presentedMode {
     case .navStack:
       self.navigationItem.leftBarButtonItem = nil
     default:
-      self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.backButtonSelected))
+      self.navigationItem.rightBarButtonItem = UIBarButtonItem(text: "Done", style: .done(.blue), target: self, action: #selector(self.backButtonSelected))
     }
     
     self.container.layer.cornerRadius = 15

@@ -48,12 +48,12 @@ class WeatherController : DatasourceController, PresentableController {
       self.configureDefaultBackButton()
       self.navigationItem.leftBarButtonItem = nil
     default:
-      self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.cancelButtonSelected))
+      self.navigationItem.rightBarButtonItem = UIBarButtonItem(text: "Done", style: .done(.white), target: self, action: #selector(self.cancelButtonSelected))
     }
     
-    setupErrorMessageLabel()
-    setupCollectionView()
-    fetchWeather()
+    self.setupErrorMessageLabel()
+    self.setupCollectionView()
+    self.fetchWeather()
   }
   
   @objc func cancelButtonSelected() {

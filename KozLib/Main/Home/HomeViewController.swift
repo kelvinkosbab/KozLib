@@ -46,6 +46,17 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
   func didSelect(rowType: DataSource.RowType) {
     switch rowType {
       
+    case .weatherScrolling:
+      let viewController = WeatherController()
+      viewController.presentIn(self, withMode: .modal(.formSheet, .coverVertical))
+      
+    case .pullUpController:
+      let viewController = BottomSheetContainerViewController.newViewController()
+      viewController.presentIn(self, withMode: .modal(.formSheet, .coverVertical))
+      
+    case .stretchableTableViewHeadser:
+      self.presentStretchableHeader(presentationMode: .modal(.formSheet, .coverVertical))
+      
     // MISC
     case .permissions:
       self.transitionToPermissions()
@@ -60,17 +71,6 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
       let viewController = AnimatingTabBarController()
       viewController.tabAnimationStyle = rowType == .animatingTabBarCrossDissolve ? .crossDissolve : .slide
       viewController.presentIn(self, withMode: .modal(.fullScreen, .coverVertical))
-      
-    case .weatherScrolling:
-      let viewController = WeatherController()
-      viewController.presentIn(self, withMode: .modal(.formSheet, .coverVertical))
-      
-    case .pullUpController:
-      let viewController = BottomSheetContainerViewController.newViewController()
-      viewController.presentIn(self, withMode: .modal(.formSheet, .coverVertical))
-      
-    case .stretchableTableViewHeadser:
-      self.presentStretchableHeader(presentationMode: .navStack)
       
     // Network
     case .basicNetwork:
