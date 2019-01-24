@@ -1,6 +1,0 @@
-framework module Pods_KozLibrary {
-  umbrella header "Pods-KozLibrary-umbrella.h"
-
-  export *
-  module * { export * }
-}
