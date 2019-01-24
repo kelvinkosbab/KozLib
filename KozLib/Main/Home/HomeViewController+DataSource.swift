@@ -34,10 +34,14 @@ extension HomeViewController {
       var sectionTypes: [SectionType] = []
       
       // Common iOS elements
-      sectionTypes.append(.commonIosElements(rowTypes: [ .weatherScrolling, .pullUpController, .stretchableTableViewHeadser ]))
-      
-      // 2018 360iDev
-      sectionTypes.append(.iDev2018(rowTypes: [ .badgeViewLayerAnimations, .graphingCustomLayouts ]))
+      var generalRowTypes: [RowType] = []
+      generalRowTypes.append(.pullUpController)
+      generalRowTypes.append(.stretchableTableViewHeader)
+      generalRowTypes.append(.appleMusicNowPlayingTransition)
+      generalRowTypes.append(.badgeViewLayerAnimations)
+      generalRowTypes.append(.graphingCustomLayouts)
+      generalRowTypes.append(.weatherScrolling)
+      sectionTypes.append(.misc(rowTypes: generalRowTypes))
       
       // Tab bar
       sectionTypes.append(.tabBarAnimations(rowTypes: [ .animatingTabBarCrossDissolve, .animatingTabBarSliding ]))
@@ -73,20 +77,17 @@ extension HomeViewController {
     // MARK: - SectionType
     
     enum SectionType : DataSourceSectionType {
-      case commonIosElements(rowTypes: [RowType])
-      case tabBarAnimations(rowTypes: [RowType])
       case misc(rowTypes: [RowType])
+      case tabBarAnimations(rowTypes: [RowType])
       case network(rowTypes: [RowType])
       case iDev2018(rowTypes: [RowType])
       
       var title: String? {
         switch self {
-        case .commonIosElements:
+        case .misc:
           return nil
         case .tabBarAnimations:
           return "Tab Bar Animations"
-        case .misc:
-          return nil
         case .network:
           return "Network"
         case .iDev2018:
@@ -96,9 +97,8 @@ extension HomeViewController {
       
       var rowTypes: [RowType] {
         switch self {
-        case .commonIosElements(rowTypes: let rowTypes),
+        case .misc(rowTypes: let rowTypes),
              .tabBarAnimations(rowTypes: let rowTypes),
-             .misc(rowTypes: let rowTypes),
              .network(rowTypes: let rowTypes),
              .iDev2018(rowTypes: let rowTypes):
           return rowTypes
@@ -109,14 +109,32 @@ extension HomeViewController {
     // MARK: - RowType
     
     enum RowType : DataSourceRowType {
+      case pullUpController
+      case stretchableTableViewHeader
+      case appleMusicNowPlayingTransition
+      case badgeViewLayerAnimations
+      case graphingCustomLayouts
+      case weatherScrolling
+      
       case permissions, nfc, arKit, geofencing
-      case weatherScrolling, pullUpController
       case basicNetwork, networkExtension
-      case badgeViewLayerAnimations, graphingCustomLayouts, stretchableTableViewHeadser
       case animatingTabBarCrossDissolve, animatingTabBarSliding
       
       var title: String {
         switch self {
+        case .pullUpController:
+          return "Pull Up Controller (Maps, Stocks, etc)"
+        case .stretchableTableViewHeader:
+          return "Stretchable TableView Header"
+        case .appleMusicNowPlayingTransition:
+          return "Apple Music Now Playing Transition"
+        case .badgeViewLayerAnimations:
+          return "Badge View Layer Animations"
+        case .graphingCustomLayouts:
+          return "Graphs with Custom Collection View Layouts"
+        case .weatherScrolling:
+          return "Weather App Scrolling"
+          
         case .permissions:
           return "Permissions"
         case .nfc:
@@ -130,22 +148,10 @@ extension HomeViewController {
         case .animatingTabBarSliding:
           return "Sliding Animated Tab Bar"
           
-        case .weatherScrolling:
-          return "Weather App Scrolling"
-        case .pullUpController:
-          return "Pull Up Controller (Maps, Stocks, etc)"
-        case .stretchableTableViewHeadser:
-          return "Stretchable TableView Header"
-          
         case .basicNetwork:
           return "Basic Network Info"
         case .networkExtension:
           return "Network Extension"
-          
-        case .badgeViewLayerAnimations:
-          return "Badge View Layer Animations"
-        case .graphingCustomLayouts:
-          return "Graphs with Custom Collection View Layouts"
         }
       }
     }

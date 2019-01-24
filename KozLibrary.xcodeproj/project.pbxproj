@@ -728,6 +728,7 @@
 		B624C1CD1F78AC0D0027C95D /* ARKit */ = {
 			isa = PBXGroup;
 			children = (
+				B6480A07201A5AF3000BE002 /* AR Configuring View */,
 				B624C1D01F78ACCD0027C95D /* ARKit.storyboard */,
 				B61B8DE31F8174EF00118C73 /* ARKitNavigationDelegate.swift */,
 				B61B8DD81F81429B00118C73 /* ARKitItemsViewController.swift */,
@@ -903,14 +904,14 @@
 				B655143B1F78927500EEF26F /* Base Controllers */,
 				B68B2E5A1F76BCEC000B7A3F /* Main.storyboard */,
 				B64415111F7859AE00C9781B /* RootViewController.swift */,
-				B6480A07201A5AF3000BE002 /* Configuring View */,
 				B65514401F78A0B200EEF26F /* Home */,
 				F6E8171921D09DD000FF1265 /* Stretchable Header */,
 				F6193A36219919E40043BFFE /* Weather App */,
 				F6AD930121A280800074F548 /* Bottom Sheet */,
+				F68C871D21F9718A00CED205 /* Apple Music Now Playing */,
 				B629C229201E772A0083D708 /* Permissions */,
-				B6350E4B1F787A33004E6218 /* NFC */,
 				B624C1CD1F78AC0D0027C95D /* ARKit */,
+				B6350E4B1F787A33004E6218 /* NFC */,
 				B66927DE20571E2600EF915C /* Geofencing */,
 				F6E8171421D089B600FF1265 /* Animating Tab Bar */,
 				B61B8DDA1F81466700118C73 /* Network */,
@@ -957,14 +958,14 @@
 			path = "Network Extension";
 			sourceTree = "<group>";
 		};
-		B6480A07201A5AF3000BE002 /* Configuring View */ = {
+		B6480A07201A5AF3000BE002 /* AR Configuring View */ = {
 			isa = PBXGroup;
 			children = (
 				B6480A0A201A5D07000BE002 /* ConfiguringView.storyboard */,
 				B60AD103201A7919003A2E84 /* ConfigurationViewPresentable.swift */,
 				B6480A08201A5B09000BE002 /* ConfiguringViewController.swift */,
 			);
-			path = "Configuring View";
+			path = "AR Configuring View";
 			sourceTree = "<group>";
 		};
 		B655143B1F78927500EEF26F /* Base Controllers */ = {
@@ -1310,6 +1311,13 @@
 				F6AD929A219F8ABE0074F548 /* DataFormattingProtocols.swift */,
 			);
 			path = ModelProtocol;
+			sourceTree = "<group>";
+		};
+		F68C871D21F9718A00CED205 /* Apple Music Now Playing */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Apple Music Now Playing";
 			sourceTree = "<group>";
 		};
 		F6A768D52138BBBE007AF9F7 /* Graphing with Custom Layouts */ = {

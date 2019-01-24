@@ -1,1 +1,6 @@
-KozLibrary.xcworkspace/xcuserdata/*.xcuserdatad/UserInterfaceState.xcuserstate
+.DS_Store
+Podfile.lock
+Pods/*
+Pods
+TallyBok.xcworkspace/xcuserdata/kelvinkosbab.xcuserdatad/UserInterfaceState.xcuserstate
+TallyBok.xcworkspace/xcuserdata/*

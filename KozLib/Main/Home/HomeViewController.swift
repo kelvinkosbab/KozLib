@@ -46,18 +46,47 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
   func didSelect(rowType: DataSource.RowType) {
     switch rowType {
       
-    case .weatherScrolling:
-      let viewController = WeatherController()
-      viewController.presentIn(self, withMode: .modal(.formSheet, .coverVertical))
+    // General
       
     case .pullUpController:
       let viewController = BottomSheetContainerViewController.newViewController()
       viewController.presentIn(self, withMode: .modal(.formSheet, .coverVertical))
       
-    case .stretchableTableViewHeadser:
+    case .stretchableTableViewHeader:
       self.presentStretchableHeader(presentationMode: .modal(.formSheet, .coverVertical))
       
+    case .appleMusicNowPlayingTransition: break
+      
+    case .badgeViewLayerAnimations:
+      self.iDev_presentBadgeViewAnimations()
+      
+    case .graphingCustomLayouts:
+      self.iDev_presentCustomLayoutGraphing()
+      
+    case .weatherScrolling:
+      let viewController = WeatherController()
+      viewController.presentIn(self, withMode: .modal(.formSheet, .coverVertical))
+      
+    // Tab bar animations
+      
+    case .animatingTabBarCrossDissolve:
+      let viewController: AnimatingTabBarController = {
+        let viewController = AnimatingTabBarController()
+        viewController.tabAnimationStyle = .crossDissolve
+        return viewController
+      }()
+      viewController.presentIn(self, withMode: .modal(.fullScreen, .coverVertical))
+      
+    case .animatingTabBarSliding:
+      let viewController: AnimatingTabBarController = {
+        let viewController = AnimatingTabBarController()
+        viewController.tabAnimationStyle = .slide
+        return viewController
+      }()
+      viewController.presentIn(self, withMode: .modal(.fullScreen, .coverVertical))
+      
     // MISC
+      
     case .permissions:
       self.transitionToPermissions()
     case .arKit:
@@ -67,22 +96,12 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
     case .nfc:
       self.transitionToNFC(presentationMode: .navStack)
       
-    case .animatingTabBarCrossDissolve, .animatingTabBarSliding:
-      let viewController = AnimatingTabBarController()
-      viewController.tabAnimationStyle = rowType == .animatingTabBarCrossDissolve ? .crossDissolve : .slide
-      viewController.presentIn(self, withMode: .modal(.fullScreen, .coverVertical))
-      
     // Network
+      
     case .basicNetwork:
       self.transitionToNetworkInfo(presentationMode: .navStack)
     case .networkExtension:
       self.transitionToNetworkExtension(presentationMode: .navStack)
-      
-    // 360iDev 2018
-    case .badgeViewLayerAnimations:
-      self.iDev_presentBadgeViewAnimations()
-    case .graphingCustomLayouts:
-      self.iDev_presentCustomLayoutGraphing()
     }
   }
 }
