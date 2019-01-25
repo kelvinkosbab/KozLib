@@ -47,6 +47,8 @@ class TackDragonARViewController : UIViewController {
       return .normal
     case .notAvailable:
       return .notAvailable
+    default:
+      return .normal
     }
   }
   
@@ -250,6 +252,8 @@ extension TackDragonARViewController : ARSCNViewDelegate {
       Log.extendedLog("Camera did change tracking state: normal")
     case .notAvailable:
       Log.extendedLog("Camera did change tracking state: not available")
+    default:
+      Log.extendedLog("Camera did change tracking state: normal")
     }
   }
 }

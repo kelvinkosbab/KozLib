@@ -35,6 +35,8 @@ class CameraPermissionManager : NSObject, PermissionManagerDelegate {
       return .denied
     case .notDetermined:
       return .notDetermined
+    default:
+      return .notDetermined
     }
   }
   

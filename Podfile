@@ -4,9 +4,10 @@ platform :ios, '11.0'
 target 'KozLibrary' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-
+  
   # Pods for KozLibrary
   pod 'Alamofire', '~> 4.5'
+  pod 'DeviceKit'
   
   # Pods for Weather
   pod 'SwiftyJSON', '~> 4.0'

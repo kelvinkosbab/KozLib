@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.43"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Apple Music Now Playing Base View Controller-->
+        <scene sceneID="KaK-BZ-YNc">
+            <objects>
+                <tableViewController storyboardIdentifier="AppleMusicNowPlayingBaseViewController" id="4HZ-Jt-P2x" customClass="AppleMusicNowPlayingBaseViewController" customModule="KozLibrary" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="cXl-3D-P8M">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AppleMusicLibraryCell" rowHeight="101" id="QR8-vI-4zL" customClass="AppleMusicLibraryCell" customModule="KozLibrary" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="101"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QR8-vI-4zL" id="exd-XX-Rli">
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="100.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g5u-Zh-uUM">
+                                            <rect key="frame" x="16" y="31.5" width="41.5" height="41.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="g5u-Zh-uUM" secondAttribute="height" multiplier="1:1" id="Ztz-Ge-JPX"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlE-3v-2S7">
+                                            <rect key="frame" x="77.5" y="31.5" width="238.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzi-fy-qwY">
+                                            <rect key="frame" x="77.5" y="52" width="238.5" height="21"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="wlE-3v-2S7" firstAttribute="leading" secondItem="g5u-Zh-uUM" secondAttribute="trailing" constant="20" id="7M4-sk-rva"/>
+                                        <constraint firstItem="wlE-3v-2S7" firstAttribute="width" secondItem="exd-XX-Rli" secondAttribute="width" multiplier="0.7" id="AHE-6g-AaC"/>
+                                        <constraint firstItem="rzi-fy-qwY" firstAttribute="leading" secondItem="wlE-3v-2S7" secondAttribute="leading" id="DBo-5I-ddA"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="rzi-fy-qwY" secondAttribute="bottom" constant="20" id="JaP-3u-22v"/>
+                                        <constraint firstItem="rzi-fy-qwY" firstAttribute="trailing" secondItem="wlE-3v-2S7" secondAttribute="trailing" id="LvZ-MZ-u45"/>
+                                        <constraint firstItem="rzi-fy-qwY" firstAttribute="top" secondItem="exd-XX-Rli" secondAttribute="centerY" id="OWm-4s-zRS"/>
+                                        <constraint firstItem="wlE-3v-2S7" firstAttribute="bottom" secondItem="exd-XX-Rli" secondAttribute="centerY" id="bRM-vW-jJU"/>
+                                        <constraint firstItem="g5u-Zh-uUM" firstAttribute="leading" secondItem="exd-XX-Rli" secondAttribute="leadingMargin" id="dxZ-Md-zJV"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="g5u-Zh-uUM" secondAttribute="bottom" constant="20" id="ekU-NR-qph"/>
+                                        <constraint firstItem="g5u-Zh-uUM" firstAttribute="top" secondItem="exd-XX-Rli" secondAttribute="topMargin" constant="20" id="vo4-fB-fU6"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="wlE-3v-2S7" secondAttribute="trailing" constant="5" id="xP4-jD-JmT"/>
+                                        <constraint firstItem="wlE-3v-2S7" firstAttribute="top" secondItem="exd-XX-Rli" secondAttribute="topMargin" constant="20" id="zw2-1M-t4K"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="albumArtImageView" destination="g5u-Zh-uUM" id="f1n-BX-cob"/>
+                                    <outlet property="artistAlbumLabel" destination="rzi-fy-qwY" id="xL7-M3-UjI"/>
+                                    <outlet property="songNameLabel" destination="wlE-3v-2S7" id="9mX-46-8gJ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="4HZ-Jt-P2x" id="s1A-9q-Rat"/>
+                            <outlet property="delegate" destination="4HZ-Jt-P2x" id="dC2-6Z-VIL"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="db0-Zj-4LC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="152.80000000000001" y="171.36431784107947"/>
+        </scene>
+    </scenes>
+</document>

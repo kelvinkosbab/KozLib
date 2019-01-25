@@ -85,7 +85,6 @@
 		B63A82C8201E657300E6C8C6 /* RobotHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A82C7201E657300E6C8C6 /* RobotHead.swift */; };
 		B63A82CA201E65CC00E6C8C6 /* VirtualContentUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A82C9201E65CC00E6C8C6 /* VirtualContentUpdater.swift */; };
 		B64414F81F78556200C9781B /* UIApplication+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64414F71F78556200C9781B /* UIApplication+Util.swift */; };
-		B64414FC1F78569600C9781B /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64414FB1F78569600C9781B /* Device.swift */; };
 		B64414FE1F7856A900C9781B /* UIDevice+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64414FD1F7856A900C9781B /* UIDevice+Util.swift */; };
 		B64415001F7856EA00C9781B /* Date+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64414FF1F7856EA00C9781B /* Date+Util.swift */; };
 		B64415021F78572400C9781B /* UITabBarController+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64415011F78572400C9781B /* UITabBarController+Util.swift */; };
@@ -157,6 +156,10 @@
 		F6193A49219DF6520043BFFE /* DailyWeatherDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6193A48219DF6520043BFFE /* DailyWeatherDatasource.swift */; };
 		F6193A4B219DF65E0043BFFE /* ExtendedInfoDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6193A4A219DF65E0043BFFE /* ExtendedInfoDatasource.swift */; };
 		F68C871C21F6CF9100CED205 /* UIBarButtonItem+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68C871B21F6CF9100CED205 /* UIBarButtonItem+Styles.swift */; };
+		F68C871F21F9A6FA00CED205 /* AppleMusicNowPlaying.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F68C871E21F9A6FA00CED205 /* AppleMusicNowPlaying.storyboard */; };
+		F68C872121F9A71600CED205 /* AppleMusicNowPlayingBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68C872021F9A71600CED205 /* AppleMusicNowPlayingBaseViewController.swift */; };
+		F68C872321F9A86600CED205 /* AppleMusicSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68C872221F9A86600CED205 /* AppleMusicSong.swift */; };
+		F68C872521F9AAE500CED205 /* AppleMusicLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68C872421F9AAE500CED205 /* AppleMusicLibrary.swift */; };
 		F6A768D72138BBE1007AF9F7 /* GraphCollectionViewLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A768D62138BBE1007AF9F7 /* GraphCollectionViewLayoutAttributes.swift */; };
 		F6A768DD2138BC19007AF9F7 /* CollectionViewDelegateCircleGraphLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A768DA2138BC19007AF9F7 /* CollectionViewDelegateCircleGraphLayout.swift */; };
 		F6A768DE2138BC19007AF9F7 /* CollectionViewDelegateGraphLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A768DB2138BC19007AF9F7 /* CollectionViewDelegateGraphLayout.swift */; };
@@ -366,7 +369,6 @@
 		B63A82C7201E657300E6C8C6 /* RobotHead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotHead.swift; sourceTree = "<group>"; };
 		B63A82C9201E65CC00E6C8C6 /* VirtualContentUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualContentUpdater.swift; sourceTree = "<group>"; };
 		B64414F71F78556200C9781B /* UIApplication+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Util.swift"; sourceTree = "<group>"; };
-		B64414FB1F78569600C9781B /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		B64414FD1F7856A900C9781B /* UIDevice+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Util.swift"; sourceTree = "<group>"; };
 		B64414FF1F7856EA00C9781B /* Date+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Util.swift"; sourceTree = "<group>"; };
 		B64415011F78572400C9781B /* UITabBarController+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController+Util.swift"; sourceTree = "<group>"; };
@@ -442,6 +444,10 @@
 		F6193A48219DF6520043BFFE /* DailyWeatherDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherDatasource.swift; sourceTree = "<group>"; };
 		F6193A4A219DF65E0043BFFE /* ExtendedInfoDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedInfoDatasource.swift; sourceTree = "<group>"; };
 		F68C871B21F6CF9100CED205 /* UIBarButtonItem+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Styles.swift"; sourceTree = "<group>"; };
+		F68C871E21F9A6FA00CED205 /* AppleMusicNowPlaying.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AppleMusicNowPlaying.storyboard; sourceTree = "<group>"; };
+		F68C872021F9A71600CED205 /* AppleMusicNowPlayingBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicNowPlayingBaseViewController.swift; sourceTree = "<group>"; };
+		F68C872221F9A86600CED205 /* AppleMusicSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicSong.swift; sourceTree = "<group>"; };
+		F68C872421F9AAE500CED205 /* AppleMusicLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicLibrary.swift; sourceTree = "<group>"; };
 		F6A768D62138BBE1007AF9F7 /* GraphCollectionViewLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphCollectionViewLayoutAttributes.swift; sourceTree = "<group>"; };
 		F6A768DA2138BC19007AF9F7 /* CollectionViewDelegateCircleGraphLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewDelegateCircleGraphLayout.swift; sourceTree = "<group>"; };
 		F6A768DB2138BC19007AF9F7 /* CollectionViewDelegateGraphLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewDelegateGraphLayout.swift; sourceTree = "<group>"; };
@@ -937,17 +943,8 @@
 				B61B8DE81F817D5300118C73 /* Network */,
 				B6480A04201A578C000BE002 /* Network Extension */,
 				B619F9D7203E93A200764577 /* Custom Views */,
-				B64414FA1F78568000C9781B /* Useful 3rd Party Libraries */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		B64414FA1F78568000C9781B /* Useful 3rd Party Libraries */ = {
-			isa = PBXGroup;
-			children = (
-				B64414FB1F78569600C9781B /* Device.swift */,
-			);
-			path = "Useful 3rd Party Libraries";
 			sourceTree = "<group>";
 		};
 		B6480A04201A578C000BE002 /* Network Extension */ = {
@@ -1316,6 +1313,10 @@
 		F68C871D21F9718A00CED205 /* Apple Music Now Playing */ = {
 			isa = PBXGroup;
 			children = (
+				F68C872221F9A86600CED205 /* AppleMusicSong.swift */,
+				F68C872421F9AAE500CED205 /* AppleMusicLibrary.swift */,
+				F68C871E21F9A6FA00CED205 /* AppleMusicNowPlaying.storyboard */,
+				F68C872021F9A71600CED205 /* AppleMusicNowPlayingBaseViewController.swift */,
 			);
 			path = "Apple Music Now Playing";
 			sourceTree = "<group>";
@@ -1626,7 +1627,7 @@
 				TargetAttributes = {
 					B68B2E521F76BCEC000B7A3F = {
 						CreatedOnToolsVersion = 9.0;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -1642,7 +1643,7 @@
 					};
 					B6D13126202CD1A90035736E = {
 						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -1685,6 +1686,7 @@
 				F6E8171D21D09E8900FF1265 /* StretchableHeader.storyboard in Resources */,
 				B61B8DEE1F81813700118C73 /* StackedTitleDetailTableViewCell.xib in Resources */,
 				F6EF6D8A2135325B00C3BFEE /* 360iDev2018.storyboard in Resources */,
+				F68C871F21F9A6FA00CED205 /* AppleMusicNowPlaying.storyboard in Resources */,
 				B629C233201E78B80083D708 /* TackDragon.storyboard in Resources */,
 				B68B2E641F76BCEC000B7A3F /* LaunchScreen.storyboard in Resources */,
 				B61B8DDC1F816C8300118C73 /* Network.storyboard in Resources */,
@@ -1750,11 +1752,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-KozLibrary/Pods-KozLibrary-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DeviceKit/DeviceKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeviceKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1785,6 +1789,7 @@
 				B60AD10C201A9146003A2E84 /* ARState.swift in Sources */,
 				F6AD92C7219F8FB00074F548 /* UIView+Anchors.swift in Sources */,
 				B629C22B201E77420083D708 /* PermissionsViewController.swift in Sources */,
+				F68C872521F9AAE500CED205 /* AppleMusicLibrary.swift in Sources */,
 				B619FA0F203E94A000764577 /* TopKnobBottomUpPresentationController.swift in Sources */,
 				F6EF6D8821352F2C00C3BFEE /* iDev2018_BadgeViewLayerAnimationsViewController.swift in Sources */,
 				F6193A3F219DF5A70043BFFE /* WeatherController.swift in Sources */,
@@ -1922,6 +1927,7 @@
 				F6AD92FA219FDE230074F548 /* APIRequest.swift in Sources */,
 				F6AD92F2219FDE230074F548 /* HeaderBuilder.swift in Sources */,
 				B6F436671FD27CC1008C9C6B /* Locale+Util.swift in Sources */,
+				F68C872321F9A86600CED205 /* AppleMusicSong.swift in Sources */,
 				B624C1CF1F78AC8F0027C95D /* ARPlaneMappingViewController.swift in Sources */,
 				F6A768EF2138BCC1007AF9F7 /* CityTemperatureDataSource.swift in Sources */,
 				F6AD9295219F8A3F0074F548 /* ExtendedInfoViewModel.swift in Sources */,
@@ -1968,7 +1974,6 @@
 				F6A768E52138BC2C007AF9F7 /* CollectionViewCircleGraphLayout.swift in Sources */,
 				B629C228201E76F50083D708 /* SCNNode+Util.swift in Sources */,
 				F6EF6D8221352AE300C3BFEE /* DataSourceProvider.swift in Sources */,
-				B64414FC1F78569600C9781B /* Device.swift in Sources */,
 				B619F9FF203E94A000764577 /* PresentableControllerOption.swift in Sources */,
 				F6193A3D219DF4D00043BFFE /* WeatherService.swift in Sources */,
 				B6350E461F786FBC004E6218 /* NFCMessage.swift in Sources */,
@@ -1990,6 +1995,7 @@
 				F6AD92A4219F8B240074F548 /* WeatherSecondHeader.swift in Sources */,
 				B619FA0C203E94A000764577 /* RightToLeftPresenationController.swift in Sources */,
 				B629C22F201E785F0083D708 /* TackDragonMainViewController.swift in Sources */,
+				F68C872121F9A71600CED205 /* AppleMusicNowPlayingBaseViewController.swift in Sources */,
 				B64415021F78572400C9781B /* UITabBarController+Util.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2157,7 +2163,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kozinga.KozLib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -2176,7 +2182,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kozinga.KozLib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -2195,7 +2201,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kozinga.KozLib.KozNetAppProxy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -2214,7 +2220,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kozinga.KozLib.KozNetAppProxy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

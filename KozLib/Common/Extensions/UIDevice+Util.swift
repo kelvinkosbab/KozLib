@@ -6,7 +6,8 @@
 //  Copyright © 2017 Kozinga. All rights reserved.
 //
 
-import UIKit
+import Foundation
+import DeviceKit
 
 extension UIDevice {
   
@@ -40,15 +41,6 @@ extension UIDevice {
   
   var isSimulator: Bool {
     return self.device.isSimulator
-  }
-  
-  var iPhoneX: Bool {
-    switch self.device {
-    case .iPhoneX, .simulator(.iPhoneX):
-      return true
-    default:
-      return false
-    }
   }
   
   var modelName: String {

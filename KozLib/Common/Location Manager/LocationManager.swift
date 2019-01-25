@@ -71,7 +71,7 @@ class LocationManager : NSObject, CLLocationManagerDelegate, PermissionManagerDe
       return .authorized
     case .denied, .restricted:
       return .denied
-    case .notDetermined:
+    default:
       return .notDetermined
     }
   }
@@ -111,7 +111,7 @@ class LocationManager : NSObject, CLLocationManagerDelegate, PermissionManagerDe
     switch self.clAuthorizationStatus {
     case .authorizedAlways, .authorizedWhenInUse:
       return true
-    case .denied, .restricted, .notDetermined:
+    default:
       return false
     }
   }
@@ -120,7 +120,7 @@ class LocationManager : NSObject, CLLocationManagerDelegate, PermissionManagerDe
     switch self.clAuthorizationStatus {
     case .authorizedAlways, .authorizedWhenInUse, .notDetermined:
       return false
-    case .denied, .restricted:
+    default:
       return true
     }
   }
@@ -133,12 +133,10 @@ class LocationManager : NSObject, CLLocationManagerDelegate, PermissionManagerDe
   
   func requestAuthorization() {
     switch CLLocationManager.authorizationStatus() {
-    case .authorizedAlways, .authorizedWhenInUse:
-      return
-    case .denied, .restricted:
-      return
     case .notDetermined:
       self.locationManager.requestAlwaysAuthorization()
+    default:
+      return
     }
   }
   

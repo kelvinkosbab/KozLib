@@ -69,6 +69,8 @@ class ARWallDetectionViewController : BaseViewController, ConfigurationViewPrese
         self.state = .normal
       case .notAvailable:
         self.state = .notAvailable
+      default:
+        self.state = .normal
       }
     }
   }
@@ -233,6 +235,8 @@ extension ARWallDetectionViewController : ARSCNViewDelegate {
       Log.extendedLog("Camera did change tracking state: normal")
     case .notAvailable:
       Log.extendedLog("Camera did change tracking state: not available")
+    default:
+      Log.extendedLog("Unhandled Tracking State")
     }
   }
   

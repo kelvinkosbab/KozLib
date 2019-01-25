@@ -39,7 +39,7 @@ extension LocationManager {
   func note(fromRegionIdentifier identifier: String) -> String? {
     let savedItems = UserDefaults.standard.array(forKey: PreferencesKeys.savedItems) as? [NSData]
     let geotifications = savedItems?.map { NSKeyedUnarchiver.unarchiveObject(with: $0 as Data) as? Geotification }
-    let index = geotifications?.index { $0?.identifier == identifier }
+    let index = geotifications?.firstIndex { $0?.identifier == identifier }
     return index != nil ? geotifications?[index!]?.note : nil
   }
 }

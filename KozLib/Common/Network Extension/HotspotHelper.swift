@@ -68,7 +68,7 @@ class HotspotHelper {
         let response = command.createResponse(.success)
         response.deliver()
         
-      case .logoff, .maintain, .presentUI, .none: break
+      default: break
       }
       
       // Completion

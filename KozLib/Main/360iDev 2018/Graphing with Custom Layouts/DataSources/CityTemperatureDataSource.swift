@@ -43,7 +43,7 @@ class CityTemperatureDataSource {
     
     var hasNextCity: Bool {
         guard let currentCity = city,
-            let index = baseData.index(of: currentCity) else {
+            let index = baseData.firstIndex(of: currentCity) else {
                 return false
         }
         
@@ -53,7 +53,7 @@ class CityTemperatureDataSource {
     
     var hasPreviousCity: Bool {
         guard let currentCity = city,
-            let index = baseData.index(of: currentCity) else {
+            let index = baseData.firstIndex(of: currentCity) else {
                 return false
         }
         
@@ -63,7 +63,7 @@ class CityTemperatureDataSource {
     
     func nextCity() -> Bool {
         guard let currentCity = city,
-            let index = baseData.index(of: currentCity) else {
+            let index = baseData.firstIndex(of: currentCity) else {
                 return false
         }
         
@@ -81,7 +81,7 @@ class CityTemperatureDataSource {
     
     func previousCity() -> Bool {
         guard let currentCity = city,
-            let index = baseData.index(of: currentCity) else {
+            let index = baseData.firstIndex(of: currentCity) else {
                 return false
         }
         
@@ -100,7 +100,7 @@ class CityTemperatureDataSource {
     var hasNextYear: Bool {
         guard let currentCity = city else { return false }
         let years = currentCity.orderedYears()
-        guard let index = years.index(of: selectedYear) else { return false }
+        guard let index = years.firstIndex(of: selectedYear) else { return false }
         
         let nextYearIndex = index + 1
         return nextYearIndex < years.count
@@ -109,7 +109,7 @@ class CityTemperatureDataSource {
     var hasPreviousYear: Bool {
         guard let currentCity = city else { return false }
         let years = currentCity.orderedYears()
-        guard let index = years.index(of: selectedYear) else { return false }
+        guard let index = years.firstIndex(of: selectedYear) else { return false }
         
         let previousYearIndex = index - 1
         return previousYearIndex >= 0
@@ -118,7 +118,7 @@ class CityTemperatureDataSource {
     func nextYear() -> Bool {
         guard let currentCity = city else { return false }
         let years = currentCity.orderedYears()
-        guard let index = years.index(of: selectedYear) else { return false }
+        guard let index = years.firstIndex(of: selectedYear) else { return false }
         
         let nextYearIndex = index + 1
         if nextYearIndex < years.count {
@@ -134,7 +134,7 @@ class CityTemperatureDataSource {
     func previousYear() -> Bool {
         guard let currentCity = city else { return false }
         let years = currentCity.orderedYears()
-        guard let index = years.index(of: selectedYear) else { return false }
+        guard let index = years.firstIndex(of: selectedYear) else { return false }
         
         let previousYearIndex = index - 1
         if previousYearIndex >= 0 {

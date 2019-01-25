@@ -37,7 +37,7 @@ public extension APIStub {
      - parameter fileName: Name of the file to build response from
      - parameter bundle: bundle to look for file.
      */
-    public func buildModel(fromFileNamed fileName: String, inBundle bundle: Bundle = Bundle.main) {
+    func buildModel(fromFileNamed fileName: String, inBundle bundle: Bundle = Bundle.main) {
         if let filePath = bundle.path(forResource: fileName as String, ofType: nil)
         {
             successData = try? Data(contentsOf: URL(fileURLWithPath: filePath))

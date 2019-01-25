@@ -60,7 +60,7 @@ extension PresentableController where Self : UIViewController {
     switch self.presentedMode {
     case .navStack:
       
-      guard let navigationController = self.navigationController, let index = navigationController.viewControllers.index(of: self), index > 0 else {
+      guard let navigationController = self.navigationController, let index = navigationController.viewControllers.firstIndex(of: self), index > 0 else {
         self.presentingViewController?.dismiss(animated: true, completion: completion)
         return
       }

@@ -90,7 +90,7 @@ class GeotificationsViewController: BaseViewController {
   }
   
   func remove(geotification: Geotification) {
-    if let indexInArray = geotifications.index(of: geotification) {
+    if let indexInArray = geotifications.firstIndex(of: geotification) {
       geotifications.remove(at: indexInArray)
     }
     mapView.removeAnnotation(geotification)

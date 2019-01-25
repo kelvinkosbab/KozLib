@@ -106,7 +106,7 @@ public final class PseudoConnection: NSObject {
 
 public extension UIBezierPath {
   
-  public static var badgePath: UIBezierPath {
+  static var badgePath: UIBezierPath {
     let path = UIBezierPath()
     path.move(to: CGPoint(x: 199.91, y: 41.87))
     path.addCurve(to: CGPoint(x: 194.36, y: 35.26), controlPoint1: CGPoint(x: 199.83, y: 38.56), controlPoint2: CGPoint(x: 197.55, y: 35.71))
