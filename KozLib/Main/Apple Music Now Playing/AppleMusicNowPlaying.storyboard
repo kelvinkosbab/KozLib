@@ -6,13 +6,43 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.43"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Apple Music Now Playing Base View Controller-->
+        <!--Apple Music Now Playing Container View Controller-->
+        <scene sceneID="RJA-Pt-eDD">
+            <objects>
+                <viewController storyboardIdentifier="AppleMusicNowPlayingContainerViewController" id="JgJ-FV-azh" customClass="AppleMusicNowPlayingContainerViewController" customModule="KozLibrary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gPK-yF-Lwx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x9z-gD-Sn4">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="x9z-gD-Sn4" firstAttribute="top" secondItem="utR-B2-JGB" secondAttribute="top" id="7nH-8I-HdX"/>
+                            <constraint firstItem="utR-B2-JGB" firstAttribute="trailing" secondItem="x9z-gD-Sn4" secondAttribute="trailing" id="9fy-eY-Bhb"/>
+                            <constraint firstItem="x9z-gD-Sn4" firstAttribute="leading" secondItem="utR-B2-JGB" secondAttribute="leading" id="A4a-xX-TRi"/>
+                            <constraint firstAttribute="bottom" secondItem="x9z-gD-Sn4" secondAttribute="bottom" id="h9O-b9-YFp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="utR-B2-JGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="songListContainer" destination="x9z-gD-Sn4" id="sGh-nQ-6Eg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OTI-zd-4Ef" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-574" y="171"/>
+        </scene>
+        <!--Apple Music Now Playing Song List View Controller-->
         <scene sceneID="KaK-BZ-YNc">
             <objects>
-                <tableViewController storyboardIdentifier="AppleMusicNowPlayingBaseViewController" id="4HZ-Jt-P2x" customClass="AppleMusicNowPlayingBaseViewController" customModule="KozLibrary" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="AppleMusicNowPlayingSongListViewController" id="4HZ-Jt-P2x" customClass="AppleMusicNowPlayingSongListViewController" customModule="KozLibrary" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="cXl-3D-P8M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

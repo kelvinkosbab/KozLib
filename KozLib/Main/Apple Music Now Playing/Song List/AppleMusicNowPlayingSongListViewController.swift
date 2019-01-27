@@ -1,5 +1,5 @@
 //
-//  AppleMusicNowPlayingBaseViewController.swift
+//  AppleMusicNowPlayingSongListViewController.swift
 //  KozLibrary
 //
 //  Created by Kelvin Kosbab on 1/23/19.
@@ -8,12 +8,22 @@
 
 import UIKit
 
-class AppleMusicNowPlayingBaseViewController : BaseTableViewController, DataSourceProvider {
+protocol AppleMusicNowPlayingSelectSongDelegate : class {
+  func didSelect(song: AppleMusicSong)
+}
+
+class AppleMusicNowPlayingSongListViewController : BaseTableViewController, DataSourceProvider {
   
   // MARK: - Static Accessors
   
-  static func newViewController() -> AppleMusicNowPlayingBaseViewController {
+  private static func newViewController() -> AppleMusicNowPlayingSongListViewController {
     return self.newViewController(fromStoryboardWithName: "AppleMusicNowPlaying")
+  }
+  
+  static func newViewController(delegate: AppleMusicNowPlayingSelectSongDelegate) -> AppleMusicNowPlayingSongListViewController {
+    let viewController = self.newViewController()
+    viewController.delegate = delegate
+    return viewController
   }
   
   // MARK: - Properties
@@ -21,9 +31,11 @@ class AppleMusicNowPlayingBaseViewController : BaseTableViewController, DataSour
   let musicLibary = AppleMusicLibrary()
   var currentContent: Content?
   var cachedCoverImages: [UUID : ImageDownloadState] = [:]
+  weak var delegate: AppleMusicNowPlayingSelectSongDelegate?
   
   enum ImageDownloadState {
     case unattempted
+    case noImage
     case downloaded(image: UIImage)
     case failed
   }
@@ -78,25 +90,25 @@ class AppleMusicNowPlayingBaseViewController : BaseTableViewController, DataSour
   }
   
   func fetchAlbumArtwork(song: AppleMusicSong, at indexPath: IndexPath) {
-    DispatchQueue.global(qos: .background).async {
-      
-      guard let url = song.coverArtURL, let imageData = try? Data(contentsOf: url), let image = UIImage(data: imageData) else {
-        DispatchQueue.main.async { [weak self] in
-          self?.cachedCoverImages[song.id] = .failed
-          self?.generateContent { [weak self] content in
-            self?.currentContent = content
-            self?.tableView.reloadRows(at: [ indexPath ], with: .none)
-          }
-        }
-        return
+    
+    guard let url = song.coverArtURL else {
+      self.cachedCoverImages[song.id] = .noImage
+      self.generateContent { [weak self] content in
+        self?.currentContent = content
+        self?.tableView.reloadRows(at: [ indexPath ], with: .none)
       }
-      
-      DispatchQueue.main.async { [weak self] in
+      return
+    }
+    
+    UIImage.download(url: url) { [weak self] image in
+      if let image = image {
         self?.cachedCoverImages[song.id] = .downloaded(image: image)
-        self?.generateContent { [weak self] content in
-          self?.currentContent = content
-          self?.tableView.reloadRows(at: [ indexPath ], with: .none)
-        }
+      } else {
+        self?.cachedCoverImages[song.id] = .failed
+      }
+      self?.generateContent { [weak self] content in
+        self?.currentContent = content
+        self?.tableView.reloadRows(at: [ indexPath ], with: .none)
       }
     }
   }
@@ -120,7 +132,7 @@ class AppleMusicNowPlayingBaseViewController : BaseTableViewController, DataSour
     
     self.title = "Music Library"
     self.configureDefaultBackButton()
-    self.configureLargeTitleBasedOnPresentedMode()
+    self.configureLargeNavigationTitle()
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -149,7 +161,7 @@ class AppleMusicNowPlayingBaseViewController : BaseTableViewController, DataSour
     case .item(song: let song, imageDownloadState: let imageDownloadState, at: _):
       let cell = tableView.dequeueReusableCell(withIdentifier: AppleMusicLibraryCell.name, for: indexPath) as! AppleMusicLibraryCell
       switch imageDownloadState {
-      case .unattempted:
+      case .unattempted, .noImage:
         cell.albumArtImageView.backgroundColor = .lightGray
       case .failed:
         cell.albumArtImageView.backgroundColor = .red
@@ -169,19 +181,10 @@ class AppleMusicNowPlayingBaseViewController : BaseTableViewController, DataSour
     guard let rowType = self.getRowType(at: indexPath) else {
       return
     }
+    
+    switch rowType {
+    case .item(song: let song, imageDownloadState: _, at: _):
+      self.delegate?.didSelect(song: song)
+    }
   }
-}
-
-class AppleMusicLibraryCell : UITableViewCell, ClassNamable {
-  @IBOutlet weak var albumArtImageView: UIImageView!
-  @IBOutlet weak var songNameLabel: UILabel!
-  @IBOutlet weak var artistAlbumLabel: UILabel!
-}
-
-class AppleMusicNowPlayingMiniPlayerViewController : BaseViewController {
-  
-}
-
-class AppleMusicNowPlayingControlViewController : BaseViewController {
-  
 }

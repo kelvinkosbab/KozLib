@@ -56,7 +56,7 @@ class HomeViewController : BaseTableViewController, ARKitNavigationDelegate, NFC
       self.presentStretchableHeader(presentationMode: .modal(.formSheet, .coverVertical))
       
     case .appleMusicNowPlayingTransition:
-      let viewController = AppleMusicNowPlayingBaseViewController.newViewController()
+      let viewController = AppleMusicNowPlayingContainerViewController.newViewController()
       viewController.presentIn(self, withMode: .navStack)
       
     case .badgeViewLayerAnimations:
