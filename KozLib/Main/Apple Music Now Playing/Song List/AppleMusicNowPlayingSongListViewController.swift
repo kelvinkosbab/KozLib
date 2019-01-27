@@ -30,6 +30,7 @@ class AppleMusicNowPlayingSongListViewController : BaseTableViewController, Data
   
   let musicLibary = AppleMusicLibrary()
   var currentContent: Content?
+  internal let currentContentDispatchQueue = DispatchQueue(label: "KosLibrary.AppleMusicNowPlayingSongListViewController.currentContentDispatchQueue")
   var cachedCoverImages: [UUID : ImageDownloadState] = [:]
   weak var delegate: AppleMusicNowPlayingSelectSongDelegate?
   
@@ -84,8 +85,12 @@ class AppleMusicNowPlayingSongListViewController : BaseTableViewController, Data
   
   func updateContent() {
     self.generateContent { [weak self] content in
-      self?.currentContent = content
-      self?.tableView?.reloadData()
+      self?.currentContentDispatchQueue.sync { [weak self] in
+        self?.currentContent = content
+        DispatchQueue.main.async { [weak self] in
+          self?.tableView?.reloadData()
+        }
+      }
     }
   }
   
@@ -94,8 +99,12 @@ class AppleMusicNowPlayingSongListViewController : BaseTableViewController, Data
     guard let url = song.coverArtURL else {
       self.cachedCoverImages[song.id] = .noImage
       self.generateContent { [weak self] content in
-        self?.currentContent = content
-        self?.tableView.reloadRows(at: [ indexPath ], with: .none)
+        self?.currentContentDispatchQueue.sync { [weak self] in
+          self?.currentContent = content
+          DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadRows(at: [ indexPath ], with: .none)
+          }
+        }
       }
       return
     }
@@ -107,8 +116,12 @@ class AppleMusicNowPlayingSongListViewController : BaseTableViewController, Data
         self?.cachedCoverImages[song.id] = .failed
       }
       self?.generateContent { [weak self] content in
-        self?.currentContent = content
-        self?.tableView.reloadRows(at: [ indexPath ], with: .none)
+        self?.currentContentDispatchQueue.sync { [weak self] in
+          self?.currentContent = content
+          DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadRows(at: [ indexPath ], with: .none)
+          }
+        }
       }
     }
   }

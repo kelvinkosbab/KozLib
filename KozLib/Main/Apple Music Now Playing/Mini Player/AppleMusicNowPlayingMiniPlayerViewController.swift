@@ -41,6 +41,18 @@ class AppleMusicNowPlayingMiniPlayerViewController : BaseViewController {
   var coverArtImage: UIImage?
   weak var delegate: AppleMusicNowPlayingMiniPlayerDelegate?
   
+  internal lazy var playImage: UIImage? = {
+    return UIImage(named: "icPlay")?.withRenderingMode(.alwaysTemplate)
+  }()
+  
+  internal lazy var pauseImage: UIImage? = {
+    return UIImage(named: "icPause")?.withRenderingMode(.alwaysTemplate)
+  }()
+  
+  internal lazy var skipImage: UIImage? = {
+    return UIImage(named: "icSkip")?.withRenderingMode(.alwaysTemplate)
+  }()
+  
   // MARK: - Lifecycle
   
   override func viewDidLoad() {
@@ -60,8 +72,11 @@ class AppleMusicNowPlayingMiniPlayerViewController : BaseViewController {
   private func configureViews() {
     self.view.backgroundColor = .clear
     self.songNameLabel.text = nil
-    self.playPauseButton.setImage(UIImage(named: "icPlay"), for: .normal)
-    self.skipButton.setImage(UIImage(named: "icSkip"), for: .normal)
+    
+    self.playPauseButton.setImage(self.playImage, for: .normal)
+    self.playPauseButton.tintColor = .black
+    self.skipButton.setImage(self.skipImage, for: .normal)
+    self.skipButton.tintColor = .black
   }
   
   // MARK: - Updating Content
