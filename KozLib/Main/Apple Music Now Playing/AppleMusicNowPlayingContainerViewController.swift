@@ -147,5 +147,11 @@ extension AppleMusicNowPlayingContainerViewController : AppleMusicNowPlayingSele
 
 extension AppleMusicNowPlayingContainerViewController : AppleMusicNowPlayingMiniPlayerDelegate {
   
-  func miniPlayerDidSelect(song: AppleMusicSong, coverArtImage: UIImage?) {}
+  func miniPlayerDidSelect(song: AppleMusicSong, coverArtImage: UIImage?) {
+    self.presentAppleMusicLargePlayer(song: song, coverArtImage: coverArtImage)
+  }
+  
+  private func presentAppleMusicLargePlayer(song: AppleMusicSong, coverArtImage: UIImage?) {
+    
+  }
 }
