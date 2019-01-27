@@ -64,7 +64,9 @@ extension AppleMusicNowPlayingContainerViewController {
       return
     }
     
-    let miniPlayerBackgroundView = UIVisualEffectView(effect: UIBlurEffect(style: .regular))
+    let effect = UIBlurEffect(style: .regular)
+    
+    let miniPlayerBackgroundView = UIVisualEffectView(effect: self.tabBarController == nil ? effect : nil)
     miniPlayerBackgroundView.translatesAutoresizingMaskIntoConstraints = false
     self.view.addSubview(miniPlayerBackgroundView)
     self.miniPlayerContainer = miniPlayerBackgroundView
@@ -75,10 +77,10 @@ extension AppleMusicNowPlayingContainerViewController {
       self.view.bottomAnchor.constraint(equalTo: miniPlayerBackgroundView.bottomAnchor, constant: 0)
       ])
     
-    let miniPlayerContainerView = UIView()
+    let miniPlayerContainerView = UIVisualEffectView(effect: self.tabBarController == nil ? nil : effect)
     miniPlayerContainerView.translatesAutoresizingMaskIntoConstraints = false
     miniPlayerBackgroundView.contentView.addSubview(miniPlayerContainerView)
-    miniPlayerContainerView.backgroundColor = .clear
+    miniPlayerContainerView.contentView.backgroundColor = .clear
 
     NSLayoutConstraint.activate([
       miniPlayerContainerView.heightAnchor.constraint(equalToConstant: 60),
@@ -91,12 +93,12 @@ extension AppleMusicNowPlayingContainerViewController {
     // Configure the mini player view controller
     let viewController = AppleMusicNowPlayingMiniPlayerViewController.newViewController(song: song, coverArtImage: coverArtImage, delegate: self)
     self.miniPlayerViewController = viewController
-    self.add(childViewController: viewController, intoContainerView: miniPlayerContainerView)
+    self.add(childViewController: viewController, intoContainerView: miniPlayerContainerView.contentView)
     
     // Animate show the content
     miniPlayerBackgroundView.frame = CGRect(x: 0, y: self.view.bounds.height, width: self.view.bounds.width, height: 60)
     miniPlayerContainerView.frame = CGRect(x: 0, y: 0, width: miniPlayerBackgroundView.frame.width, height: miniPlayerBackgroundView.frame.height)
-    UIView.animate(withDuration: 0.2, animations: { [weak self] in
+    UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.9, options: .curveEaseOut, animations: { [weak self] in
       self?.view.layoutIfNeeded()
     }) { _ in
       completion()
@@ -148,10 +150,16 @@ extension AppleMusicNowPlayingContainerViewController : AppleMusicNowPlayingSele
 extension AppleMusicNowPlayingContainerViewController : AppleMusicNowPlayingMiniPlayerDelegate {
   
   func miniPlayerDidSelect(song: AppleMusicSong, coverArtImage: UIImage?) {
+    
+    // Haptic
+    HapticsGenerator().generate(.impact(.medium))
+    
+    // Preset large player
     self.presentAppleMusicLargePlayer(song: song, coverArtImage: coverArtImage)
   }
   
   private func presentAppleMusicLargePlayer(song: AppleMusicSong, coverArtImage: UIImage?) {
-    
+    let viewController = AppleMusicNowPlayingControlViewController.newViewController(song: song, coverArtImage: coverArtImage)
+    viewController.presentIn(self, withMode: .modal(.overFullScreen, .coverVertical))
   }
 }

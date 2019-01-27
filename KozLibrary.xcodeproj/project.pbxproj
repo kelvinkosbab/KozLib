@@ -1327,8 +1327,8 @@
 			isa = PBXGroup;
 			children = (
 				F68C871E21F9A6FA00CED205 /* AppleMusicNowPlaying.storyboard */,
-				F6C662CE21FD3A65003FD7F6 /* AppleMusicNowPlayingContainerViewController.swift */,
 				F6C662DA21FD8451003FD7F6 /* AppleMusicButton.swift */,
+				F6C662DC21FE64E5003FD7F6 /* Container */,
 				F6C662D921FD3E6B003FD7F6 /* Music Library */,
 				F6C662D821FD3E5A003FD7F6 /* Song List */,
 				F6C662D621FD3E4A003FD7F6 /* Mini Player */,
@@ -1574,6 +1574,14 @@
 				F68C872421F9AAE500CED205 /* AppleMusicLibrary.swift */,
 			);
 			path = "Music Library";
+			sourceTree = "<group>";
+		};
+		F6C662DC21FE64E5003FD7F6 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				F6C662CE21FD3A65003FD7F6 /* AppleMusicNowPlayingContainerViewController.swift */,
+			);
+			path = Container;
 			sourceTree = "<group>";
 		};
 		F6E8171421D089B600FF1265 /* Animating Tab Bar */ = {

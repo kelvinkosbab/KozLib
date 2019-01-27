@@ -48,8 +48,12 @@ class AppleMusicNowPlayingSongListViewController : BaseTableViewController, Data
   }
   
   func generateContent(completion: @escaping (_ content: Content) -> Void) {
+    
+    // Required properties
     let songs = self.musicLibary.songs
     let cachedCoverImages = self.cachedCoverImages
+    let currentContentDispatchQueue = self.currentContentDispatchQueue
+    
     DispatchQueue.global().async {
       
       // Build the content
@@ -77,20 +81,18 @@ class AppleMusicNowPlayingSongListViewController : BaseTableViewController, Data
       
       // Return the content
       let content = Content(sectionTypes: [ SectionType(rowTypes: rowTypes) ])
-      DispatchQueue.main.async {
-        completion(content)
+      currentContentDispatchQueue.sync { [weak self] in
+        self?.currentContent = content
+        DispatchQueue.main.async {
+          completion(content)
+        }
       }
     }
   }
   
   func updateContent() {
     self.generateContent { [weak self] content in
-      self?.currentContentDispatchQueue.sync { [weak self] in
-        self?.currentContent = content
-        DispatchQueue.main.async { [weak self] in
-          self?.tableView?.reloadData()
-        }
-      }
+      self?.tableView?.reloadData()
     }
   }
   
@@ -99,12 +101,7 @@ class AppleMusicNowPlayingSongListViewController : BaseTableViewController, Data
     guard let url = song.coverArtURL else {
       self.cachedCoverImages[song.id] = .noImage
       self.generateContent { [weak self] content in
-        self?.currentContentDispatchQueue.sync { [weak self] in
-          self?.currentContent = content
-          DispatchQueue.main.async { [weak self] in
-            self?.tableView.reloadRows(at: [ indexPath ], with: .none)
-          }
-        }
+        self?.tableView.reloadRows(at: [ indexPath ], with: .none)
       }
       return
     }
@@ -116,12 +113,7 @@ class AppleMusicNowPlayingSongListViewController : BaseTableViewController, Data
         self?.cachedCoverImages[song.id] = .failed
       }
       self?.generateContent { [weak self] content in
-        self?.currentContentDispatchQueue.sync { [weak self] in
-          self?.currentContent = content
-          DispatchQueue.main.async { [weak self] in
-            self?.tableView.reloadRows(at: [ indexPath ], with: .none)
-          }
-        }
+        self?.tableView.reloadRows(at: [ indexPath ], with: .none)
       }
     }
   }
