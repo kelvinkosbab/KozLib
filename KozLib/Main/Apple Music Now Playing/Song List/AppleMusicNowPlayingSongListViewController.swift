@@ -138,6 +138,8 @@ class AppleMusicNowPlayingSongListViewController : BaseTableViewController, Data
     self.title = "Music Library"
     self.configureDefaultBackButton()
     self.configureLargeNavigationTitle()
+    
+    self.tableView.contentInset = UIEdgeInsets(top: self.tableView.contentInset.top, left: self.tableView.contentInset.left, bottom: self.tableView.contentInset.bottom + 60, right: self.tableView.contentInset.right)
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -145,8 +147,11 @@ class AppleMusicNowPlayingSongListViewController : BaseTableViewController, Data
     
     self.updateContent()
   }
-  
-  // MARK: - UITableView
+}
+
+// MARK: - UITableView
+
+extension AppleMusicNowPlayingSongListViewController {
   
   override func numberOfSections(in tableView: UITableView) -> Int {
     return self.numberOfSections

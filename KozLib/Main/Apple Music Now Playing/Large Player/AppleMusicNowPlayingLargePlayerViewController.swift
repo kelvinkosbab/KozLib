@@ -1,5 +1,5 @@
 //
-//  AppleMusicNowPlayingControlViewController.swift
+//  AppleMusicNowPlayingLargePlayerViewController.swift
 //  KozLibrary
 //
 //  Created by Kelvin Kosbab on 1/26/19.
@@ -8,15 +8,15 @@
 
 import UIKit
 
-class AppleMusicNowPlayingControlViewController : BaseTableViewController, DataSourceProvider {
+class AppleMusicNowPlayingLargePlayerViewController : BaseTableViewController, DataSourceProvider {
   
   // MARK: - Static Accessors
   
-  private static func newViewController() -> AppleMusicNowPlayingControlViewController {
+  private static func newViewController() -> AppleMusicNowPlayingLargePlayerViewController {
     return self.newViewController(fromStoryboardWithName: "AppleMusicNowPlaying")
   }
   
-  static func newViewController(song: AppleMusicSong, coverArtImage: UIImage?) -> AppleMusicNowPlayingControlViewController {
+  static func newViewController(song: AppleMusicSong, coverArtImage: UIImage?) -> AppleMusicNowPlayingLargePlayerViewController {
     let viewController = self.newViewController()
     viewController.song = song
     viewController.coverArtImage = coverArtImage
@@ -138,7 +138,7 @@ class AppleMusicNowPlayingControlViewController : BaseTableViewController, DataS
 
 // MARK: - Actions
 
-extension AppleMusicNowPlayingControlViewController {
+extension AppleMusicNowPlayingLargePlayerViewController {
   
   @objc
   func doneButtonSelected() {
@@ -148,7 +148,7 @@ extension AppleMusicNowPlayingControlViewController {
 
 // MARK: - UITableView
 
-extension AppleMusicNowPlayingControlViewController {
+extension AppleMusicNowPlayingLargePlayerViewController {
   
   override func numberOfSections(in tableView: UITableView) -> Int {
     return self.numberOfSections
@@ -195,6 +195,11 @@ extension AppleMusicNowPlayingControlViewController {
     }
     
     switch rowType {
+    case .coverArt(let image):
+      let cell = tableView.dequeueReusableCell(withIdentifier: AppleMusicNowPlayingLargePlayerCoverArtCell.name, for: indexPath) as! AppleMusicNowPlayingLargePlayerCoverArtCell
+      cell.configure(coverArtImage: image, rowHeight: self.tableView(tableView, heightForRowAt: indexPath))
+      return cell
+      
     case .scrollSpacer:
       let cell = UITableViewCell()
       cell.contentView.backgroundColor = .cyan

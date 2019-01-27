@@ -10,6 +10,8 @@ import UIKit
 
 class AppleMusicLibraryCell : UITableViewCell, ClassNamable {
   @IBOutlet weak var albumArtImageView: UIImageView!
+  @IBOutlet weak var albumArtImageViewWidthConstraint: NSLayoutConstraint!
+  @IBOutlet weak var albumArtImageViewHeightConstraint: NSLayoutConstraint!
   @IBOutlet weak var songNameLabel: UILabel!
   @IBOutlet weak var artistAlbumLabel: UILabel!
 }

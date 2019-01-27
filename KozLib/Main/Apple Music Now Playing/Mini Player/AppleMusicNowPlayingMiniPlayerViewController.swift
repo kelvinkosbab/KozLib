@@ -20,9 +20,10 @@ class AppleMusicNowPlayingMiniPlayerViewController : BaseViewController {
     return self.newViewController(fromStoryboardWithName: "AppleMusicNowPlaying")
   }
   
-  static func newViewController(song: AppleMusicSong, coverArtImage: UIImage?, delegate: AppleMusicNowPlayingMiniPlayerDelegate) -> AppleMusicNowPlayingMiniPlayerViewController {
+  static func newViewController(song: AppleMusicSong, coverArtImage: UIImage?, containerHeight: CGFloat, delegate: AppleMusicNowPlayingMiniPlayerDelegate) -> AppleMusicNowPlayingMiniPlayerViewController {
     let viewController = self.newViewController()
     viewController.delegate = delegate
+    viewController.containerHeight = containerHeight
     viewController.update(song: song, coverArtImage: coverArtImage)
     return viewController
   }
@@ -31,6 +32,8 @@ class AppleMusicNowPlayingMiniPlayerViewController : BaseViewController {
   
   @IBOutlet weak var songButton: UIButton!
   @IBOutlet weak var coverArtImageView: UIImageView!
+  @IBOutlet weak var coverArtImageViewWidthConstraint: NSLayoutConstraint!
+  @IBOutlet weak var coverArtImageViewHeightConstraint: NSLayoutConstraint!
   @IBOutlet weak var songNameLabel: UILabel!
   @IBOutlet weak var playPauseButton: AppleMusicButton!
   @IBOutlet weak var skipButton: AppleMusicButton!
@@ -39,6 +42,7 @@ class AppleMusicNowPlayingMiniPlayerViewController : BaseViewController {
   
   var song: AppleMusicSong?
   var coverArtImage: UIImage?
+  var containerHeight: CGFloat = 100
   weak var delegate: AppleMusicNowPlayingMiniPlayerDelegate?
   
   internal lazy var playImage: UIImage? = {
@@ -72,6 +76,8 @@ class AppleMusicNowPlayingMiniPlayerViewController : BaseViewController {
   private func configureViews() {
     self.view.backgroundColor = .clear
     self.songNameLabel.text = nil
+    self.coverArtImageViewWidthConstraint.constant = self.containerHeight - 16
+    self.coverArtImageViewHeightConstraint.constant = self.containerHeight - 16
     
     self.playPauseButton.setImage(self.playImage, for: .normal)
     self.playPauseButton.tintColor = .black
