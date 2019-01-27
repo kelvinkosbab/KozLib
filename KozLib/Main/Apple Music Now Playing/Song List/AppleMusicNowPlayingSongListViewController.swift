@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AppleMusicNowPlayingSelectSongDelegate : class {
-  func didSelect(song: AppleMusicSong)
+  func didSelect(song: AppleMusicSong, coverArtImage: UIImage?)
 }
 
 class AppleMusicNowPlayingSongListViewController : BaseTableViewController, DataSourceProvider {
@@ -183,8 +183,13 @@ class AppleMusicNowPlayingSongListViewController : BaseTableViewController, Data
     }
     
     switch rowType {
-    case .item(song: let song, imageDownloadState: _, at: _):
-      self.delegate?.didSelect(song: song)
+    case .item(song: let song, imageDownloadState: let imageDownloadState, at: _):
+      switch imageDownloadState {
+        case .downloaded(image: let image):
+        self.delegate?.didSelect(song: song, coverArtImage: image)
+      default:
+        self.delegate?.didSelect(song: song, coverArtImage: nil)
+      }
     }
   }
 }

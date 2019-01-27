@@ -55,7 +55,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="341" height="100.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g5u-Zh-uUM">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g5u-Zh-uUM">
                                             <rect key="frame" x="16" y="31.5" width="41.5" height="41.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="g5u-Zh-uUM" secondAttribute="height" multiplier="1:1" id="Ztz-Ge-JPX"/>
@@ -105,6 +105,85 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="db0-Zj-4LC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="152.80000000000001" y="171.36431784107947"/>
+        </scene>
+        <!--Apple Music Now Playing Mini Player View Controller-->
+        <scene sceneID="hDn-jy-gEP">
+            <objects>
+                <viewController storyboardIdentifier="AppleMusicNowPlayingMiniPlayerViewController" id="wK0-t3-Xeb" customClass="AppleMusicNowPlayingMiniPlayerViewController" customModule="KozLibrary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h1b-0q-DQt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jqg-ih-Fd1">
+                                <rect key="frame" x="16" y="8" width="84" height="84"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jqg-ih-Fd1" secondAttribute="height" multiplier="1:1" id="BLd-ki-Jqq"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saw-In-0e1">
+                                <rect key="frame" x="116" y="39.5" width="169" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPI-JY-iWe" customClass="AppleMusicButton" customModule="KozLibrary" customModuleProvider="target">
+                                <rect key="frame" x="293" y="37.5" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="Ext-mC-wdw"/>
+                                    <constraint firstAttribute="width" constant="25" id="gxS-Ta-kPO"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="playPauseButtonPressed" destination="wK0-t3-Xeb" eventType="touchUpInside" id="ZD0-nk-Jca"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rZQ-hX-Sa6" customClass="AppleMusicButton" customModule="KozLibrary" customModuleProvider="target">
+                                <rect key="frame" x="334" y="37.5" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="YOB-SD-h3A"/>
+                                    <constraint firstAttribute="width" constant="25" id="xBi-HR-UfM"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="skipButtonPressed" destination="wK0-t3-Xeb" eventType="touchUpInside" id="RWa-D0-8oA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lua-Hn-XzI">
+                                <rect key="frame" x="16" y="8" width="269" height="84"/>
+                                <connections>
+                                    <action selector="songButtonPressed" destination="wK0-t3-Xeb" eventType="touchUpInside" id="dh3-gk-aLs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="saw-In-0e1" firstAttribute="trailing" secondItem="lua-Hn-XzI" secondAttribute="trailing" id="1Vd-KL-uvb"/>
+                            <constraint firstItem="lua-Hn-XzI" firstAttribute="bottom" secondItem="jqg-ih-Fd1" secondAttribute="bottom" id="2hJ-FS-HPW"/>
+                            <constraint firstItem="aPI-JY-iWe" firstAttribute="centerY" secondItem="h1b-0q-DQt" secondAttribute="centerY" id="3xf-1t-W4S"/>
+                            <constraint firstItem="rZQ-hX-Sa6" firstAttribute="leading" secondItem="aPI-JY-iWe" secondAttribute="trailing" constant="16" id="4ha-aq-31a"/>
+                            <constraint firstItem="rZQ-hX-Sa6" firstAttribute="centerY" secondItem="h1b-0q-DQt" secondAttribute="centerY" id="E5F-K1-c5f"/>
+                            <constraint firstItem="saw-In-0e1" firstAttribute="leading" secondItem="jqg-ih-Fd1" secondAttribute="trailing" constant="16" id="Gf2-T7-3Hw"/>
+                            <constraint firstItem="bSo-fO-nRm" firstAttribute="bottom" secondItem="jqg-ih-Fd1" secondAttribute="bottom" constant="8" id="GnA-AA-TIT"/>
+                            <constraint firstItem="bSo-fO-nRm" firstAttribute="trailing" secondItem="rZQ-hX-Sa6" secondAttribute="trailing" constant="16" id="HfU-f3-dbd"/>
+                            <constraint firstItem="lua-Hn-XzI" firstAttribute="leading" secondItem="jqg-ih-Fd1" secondAttribute="leading" id="MId-ba-ALU"/>
+                            <constraint firstItem="jqg-ih-Fd1" firstAttribute="leading" secondItem="bSo-fO-nRm" secondAttribute="leading" constant="16" id="Seo-B3-0Nb"/>
+                            <constraint firstItem="saw-In-0e1" firstAttribute="centerY" secondItem="h1b-0q-DQt" secondAttribute="centerY" id="c89-Yh-rgJ"/>
+                            <constraint firstItem="aPI-JY-iWe" firstAttribute="leading" secondItem="saw-In-0e1" secondAttribute="trailing" constant="8" id="qlw-M1-DbF"/>
+                            <constraint firstItem="lua-Hn-XzI" firstAttribute="top" secondItem="jqg-ih-Fd1" secondAttribute="top" id="sqo-ao-Grr"/>
+                            <constraint firstItem="jqg-ih-Fd1" firstAttribute="top" secondItem="bSo-fO-nRm" secondAttribute="top" constant="8" id="wbF-b9-Qa5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bSo-fO-nRm"/>
+                    </view>
+                    <size key="freeformSize" width="375" height="100"/>
+                    <connections>
+                        <outlet property="coverArtImageView" destination="jqg-ih-Fd1" id="Oqz-bp-jJY"/>
+                        <outlet property="playPauseButton" destination="aPI-JY-iWe" id="Ifz-Hj-O6l"/>
+                        <outlet property="skipButton" destination="rZQ-hX-Sa6" id="dcH-1i-TOQ"/>
+                        <outlet property="songButton" destination="lua-Hn-XzI" id="v1w-04-b53"/>
+                        <outlet property="songNameLabel" destination="saw-In-0e1" id="fH6-9k-Euz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="guJ-LW-jPe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="868" y="170.91454272863569"/>
         </scene>
     </scenes>
 </document>
