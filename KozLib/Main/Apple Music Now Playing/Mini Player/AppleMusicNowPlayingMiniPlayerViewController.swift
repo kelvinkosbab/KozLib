@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AppleMusicNowPlayingMiniPlayerDelegate: class {
-  func miniPlayerDidSelect(song: AppleMusicSong, coverArtImage: UIImage?)
+  func miniPlayerDidSelect(song: AppleMusicSong)
 }
 
 class AppleMusicNowPlayingMiniPlayerViewController : BaseViewController {
@@ -20,11 +20,11 @@ class AppleMusicNowPlayingMiniPlayerViewController : BaseViewController {
     return self.newViewController(fromStoryboardWithName: "AppleMusicNowPlaying")
   }
   
-  static func newViewController(song: AppleMusicSong, coverArtImage: UIImage?, containerHeight: CGFloat, delegate: AppleMusicNowPlayingMiniPlayerDelegate) -> AppleMusicNowPlayingMiniPlayerViewController {
+  static func newViewController(song: AppleMusicSong, containerHeight: CGFloat, delegate: AppleMusicNowPlayingMiniPlayerDelegate) -> AppleMusicNowPlayingMiniPlayerViewController {
     let viewController = self.newViewController()
     viewController.delegate = delegate
     viewController.containerHeight = containerHeight
-    viewController.update(song: song, coverArtImage: coverArtImage)
+    viewController.update(song: song)
     return viewController
   }
   
@@ -41,7 +41,6 @@ class AppleMusicNowPlayingMiniPlayerViewController : BaseViewController {
   // MARK: - Properties
   
   var song: AppleMusicSong?
-  var coverArtImage: UIImage?
   var containerHeight: CGFloat = 100
   weak var delegate: AppleMusicNowPlayingMiniPlayerDelegate?
   
@@ -54,7 +53,7 @@ class AppleMusicNowPlayingMiniPlayerViewController : BaseViewController {
   }()
   
   internal lazy var skipImage: UIImage? = {
-    return UIImage(named: "icSkip")?.withRenderingMode(.alwaysTemplate)
+    return UIImage(named: "icSkipForward")?.withRenderingMode(.alwaysTemplate)
   }()
   
   // MARK: - Lifecycle
@@ -87,9 +86,8 @@ class AppleMusicNowPlayingMiniPlayerViewController : BaseViewController {
   
   // MARK: - Updating Content
   
-  func update(song: AppleMusicSong, coverArtImage: UIImage?) {
+  func update(song: AppleMusicSong) {
     self.song = song
-    self.coverArtImage = coverArtImage
     
     guard self.isViewLoaded else {
       return
@@ -105,9 +103,9 @@ class AppleMusicNowPlayingMiniPlayerViewController : BaseViewController {
       return
     }
     
-    if let coverArtImage = self.coverArtImage {
+    if let imageName = song.imageName, let image = UIImage(named: imageName) {
       self.coverArtImageView.backgroundColor = .clear
-      self.coverArtImageView.image = coverArtImage
+      self.coverArtImageView.image = image
     } else {
       self.coverArtImageView.backgroundColor = .lightGray
       self.coverArtImageView.image = nil
@@ -122,11 +120,11 @@ extension AppleMusicNowPlayingMiniPlayerViewController {
   
   @IBAction func songButtonPressed() {
     
-    guard let song = self.song, let coverArtImage = self.coverArtImage else {
+    guard let song = self.song else {
       return
     }
     
-    self.delegate?.miniPlayerDidSelect(song: song, coverArtImage: coverArtImage)
+    self.delegate?.miniPlayerDidSelect(song: song)
   }
   
   @IBAction func playPauseButtonPressed() {

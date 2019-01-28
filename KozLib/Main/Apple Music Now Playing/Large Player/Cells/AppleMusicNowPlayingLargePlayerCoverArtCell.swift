@@ -28,8 +28,8 @@ class AppleMusicNowPlayingLargePlayerCoverArtCell : UITableViewCell, ClassNamabl
     }()
     
     let maxImageSize = rowHeight - (margin * 2)
-    self.coverArtImageViewContainerWidth.constant = maxImageSize * aspectRatio
-    self.coverArtImageViewContainerHeight.constant = maxImageSize / aspectRatio
+    self.coverArtImageViewContainerWidth.constant = aspectRatio > 1 ? maxImageSize : maxImageSize * aspectRatio
+    self.coverArtImageViewContainerHeight.constant = aspectRatio < 1 ? maxImageSize : maxImageSize / aspectRatio
     self.contentView.layoutIfNeeded()
     
     self.coverArtImageView.clipsToBounds = true

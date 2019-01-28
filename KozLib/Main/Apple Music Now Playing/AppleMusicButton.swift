@@ -9,3 +9,14 @@
 import UIKit
 
 class AppleMusicButton : UIButton {}
+
+class AppleMusicRoundedButton : UIButton {
+  
+  override func layoutSubviews() {
+    super.layoutSubviews()
+    
+    self.layer.cornerRadius = 8
+    self.layer.masksToBounds = true
+    self.clipsToBounds = true
+  }
+}

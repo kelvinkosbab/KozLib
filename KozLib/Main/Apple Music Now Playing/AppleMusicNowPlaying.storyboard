@@ -236,6 +236,268 @@
                                     <outlet property="coverArtImageViewContainerWidth" destination="NVS-09-pEm" id="51C-wa-6t0"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AppleMusicNowPlayingLargePlayerProgressCell" id="HAf-B8-N6p" customClass="AppleMusicNowPlayingLargePlayerProgressCell" customModule="KozLibrary" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="166" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HAf-B8-N6p" id="WIu-X5-3Ut">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OnS-iz-bKa">
+                                            <rect key="frame" x="32" y="21" width="311" height="2"/>
+                                        </progressView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="OnS-iz-bKa" firstAttribute="centerY" secondItem="WIu-X5-3Ut" secondAttribute="centerY" id="4YH-Zx-HY3"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="OnS-iz-bKa" secondAttribute="trailing" constant="16" id="M0W-ih-5sV"/>
+                                        <constraint firstItem="OnS-iz-bKa" firstAttribute="leading" secondItem="WIu-X5-3Ut" secondAttribute="leadingMargin" constant="16" id="hZ9-vm-zzX"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="progressBar" destination="OnS-iz-bKa" id="HaR-Dg-Ql0"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AppleMusicNowPlayingLargePlayerSongInfoCell" rowHeight="88" id="y19-ni-7OO" customClass="AppleMusicNowPlayingLargePlayerSongInfoCell" customModule="KozLibrary" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="210" width="375" height="88"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="y19-ni-7OO" id="iCS-Ua-uCb">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dGB-Qe-uSJ">
+                                            <rect key="frame" x="16" y="11" width="343" height="66"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="klX-se-NAd">
+                                                    <rect key="frame" x="150" y="0.0" width="43.5" height="33"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qhn-zH-zJx">
+                                                    <rect key="frame" x="150.5" y="33" width="42" height="33"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="dGB-Qe-uSJ" secondAttribute="trailing" id="5ig-bN-Min"/>
+                                        <constraint firstItem="dGB-Qe-uSJ" firstAttribute="top" secondItem="iCS-Ua-uCb" secondAttribute="topMargin" id="6SI-fn-rGD"/>
+                                        <constraint firstItem="dGB-Qe-uSJ" firstAttribute="leading" secondItem="iCS-Ua-uCb" secondAttribute="leadingMargin" id="de3-l2-lZa"/>
+                                        <constraint firstItem="dGB-Qe-uSJ" firstAttribute="bottom" secondItem="iCS-Ua-uCb" secondAttribute="bottomMargin" id="pj9-B3-Dsw"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="songInfoLabel" destination="Qhn-zH-zJx" id="6YX-yk-kfW"/>
+                                    <outlet property="songNameLabel" destination="klX-se-NAd" id="g88-rz-CVO"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AppleMusicNowPlayingLargePlayerControlCell" rowHeight="61" id="uOx-xj-edE" customClass="AppleMusicNowPlayingLargePlayerControlCell" customModule="KozLibrary" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="298" width="375" height="61"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uOx-xj-edE" id="q22-xz-AZp">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="M8N-fi-GpT">
+                                            <rect key="frame" x="16" y="11" width="343" height="39"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3iW-xm-pKm">
+                                                    <rect key="frame" x="0.0" y="0.0" width="114.5" height="39"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUs-tX-6rh">
+                                                            <rect key="frame" x="44.5" y="7" width="25" height="25"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="25" id="FUz-bQ-5h4"/>
+                                                                <constraint firstAttribute="height" constant="25" id="KQT-UQ-0OI"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <action selector="previousButtonPressed" destination="uOx-xj-edE" eventType="touchUpInside" id="5bN-Iq-UQy"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="TUs-tX-6rh" firstAttribute="centerY" secondItem="3iW-xm-pKm" secondAttribute="centerY" id="A0L-Zl-yfc"/>
+                                                        <constraint firstItem="TUs-tX-6rh" firstAttribute="centerX" secondItem="3iW-xm-pKm" secondAttribute="centerX" id="vC0-pg-KfV"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0pL-TK-ysp">
+                                                    <rect key="frame" x="114.5" y="0.0" width="114" height="39"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvO-fq-8TK">
+                                                            <rect key="frame" x="44.5" y="7" width="25" height="25"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="25" id="jU4-9S-DcT"/>
+                                                                <constraint firstAttribute="height" constant="25" id="pZy-Ag-Fn7"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <action selector="playPauseButtonPressed" destination="uOx-xj-edE" eventType="touchUpInside" id="n90-8l-epZ"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="YvO-fq-8TK" firstAttribute="centerX" secondItem="0pL-TK-ysp" secondAttribute="centerX" id="DNJ-uo-cVW"/>
+                                                        <constraint firstItem="YvO-fq-8TK" firstAttribute="centerY" secondItem="0pL-TK-ysp" secondAttribute="centerY" id="upO-Pn-7O2"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bLp-uF-bjk">
+                                                    <rect key="frame" x="228.5" y="0.0" width="114.5" height="39"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkg-zA-gTo">
+                                                            <rect key="frame" x="45" y="7" width="25" height="25"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="25" id="M4A-Zj-v9l"/>
+                                                                <constraint firstAttribute="width" constant="25" id="UV4-2j-X7e"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <action selector="forwardButtonPressed" destination="uOx-xj-edE" eventType="touchUpInside" id="W5L-9d-ud2"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="vkg-zA-gTo" firstAttribute="centerY" secondItem="bLp-uF-bjk" secondAttribute="centerY" id="QfG-zD-lpE"/>
+                                                        <constraint firstItem="vkg-zA-gTo" firstAttribute="centerX" secondItem="bLp-uF-bjk" secondAttribute="centerX" id="XgR-ze-Lk0"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="M8N-fi-GpT" secondAttribute="trailing" id="6g4-gQ-QFe"/>
+                                        <constraint firstItem="M8N-fi-GpT" firstAttribute="bottom" secondItem="q22-xz-AZp" secondAttribute="bottomMargin" id="Os8-7N-Erb"/>
+                                        <constraint firstItem="M8N-fi-GpT" firstAttribute="leading" secondItem="q22-xz-AZp" secondAttribute="leadingMargin" id="WJ3-Cm-GpK"/>
+                                        <constraint firstItem="M8N-fi-GpT" firstAttribute="top" secondItem="q22-xz-AZp" secondAttribute="topMargin" id="zs9-sa-mTK"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="forwardButton" destination="vkg-zA-gTo" id="ljK-Ub-dgC"/>
+                                    <outlet property="playPauseButton" destination="YvO-fq-8TK" id="N9d-Ry-IYy"/>
+                                    <outlet property="previousButton" destination="TUs-tX-6rh" id="oPL-do-aie"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AppleMusicNowPlayingLargePlayerVolumeCell" id="cvu-cd-3PM" customClass="AppleMusicNowPlayingLargePlayerVolumeCell" customModule="KozLibrary" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="359" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cvu-cd-3PM" id="TMc-Fs-cFT">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="zUd-fU-Duo">
+                                            <rect key="frame" x="30" y="7" width="315" height="31"/>
+                                        </slider>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="zUd-fU-Duo" firstAttribute="centerY" secondItem="TMc-Fs-cFT" secondAttribute="centerY" id="151-XV-Atz"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="zUd-fU-Duo" secondAttribute="trailing" constant="16" id="Zco-8D-NKX"/>
+                                        <constraint firstItem="zUd-fU-Duo" firstAttribute="leading" secondItem="TMc-Fs-cFT" secondAttribute="leadingMargin" constant="16" id="gc3-3P-7vb"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="slider" destination="zUd-fU-Duo" id="FiQ-K3-QQD"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AppleMusicNowPlayingLargePlayerActionsCell" rowHeight="73" id="jqR-6j-xOT" customClass="AppleMusicNowPlayingLargePlayerActionsCell" customModule="KozLibrary" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="403" width="375" height="73"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jqR-6j-xOT" id="lhX-la-YWb">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="73"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfT-ot-hKS">
+                                            <rect key="frame" x="32" y="25.5" width="22" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="22" id="DPz-pw-owM"/>
+                                                <constraint firstAttribute="height" constant="22" id="GRU-Mb-Tnz"/>
+                                            </constraints>
+                                            <connections>
+                                                <action selector="plusButtonPressed" destination="jqR-6j-xOT" eventType="touchUpInside" id="8Eq-au-P2B"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ltn-g7-gS5">
+                                            <rect key="frame" x="176.5" y="25.5" width="22" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="WLa-Ug-CH4"/>
+                                                <constraint firstAttribute="width" constant="22" id="q4h-Lt-CVK"/>
+                                            </constraints>
+                                            <connections>
+                                                <action selector="airplayButtonPressed" destination="jqR-6j-xOT" eventType="touchUpInside" id="qep-AO-fNL"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vcc-kC-cRj">
+                                            <rect key="frame" x="321" y="25.5" width="22" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="HsJ-h1-Gfp"/>
+                                                <constraint firstAttribute="width" constant="22" id="NmI-j1-0Qf"/>
+                                            </constraints>
+                                            <connections>
+                                                <action selector="moreButtonPressed" destination="jqR-6j-xOT" eventType="touchUpInside" id="wo6-S4-KKe"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Ltn-g7-gS5" firstAttribute="centerX" secondItem="lhX-la-YWb" secondAttribute="centerX" id="6mh-ff-Fj5"/>
+                                        <constraint firstItem="Ltn-g7-gS5" firstAttribute="centerY" secondItem="lhX-la-YWb" secondAttribute="centerY" id="BDP-ea-diQ"/>
+                                        <constraint firstItem="Vcc-kC-cRj" firstAttribute="centerY" secondItem="lhX-la-YWb" secondAttribute="centerY" id="a8z-Ze-YUl"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Vcc-kC-cRj" secondAttribute="trailing" constant="16" id="iTm-m8-A63"/>
+                                        <constraint firstItem="mfT-ot-hKS" firstAttribute="centerY" secondItem="lhX-la-YWb" secondAttribute="centerY" id="ovY-J3-Uli"/>
+                                        <constraint firstItem="mfT-ot-hKS" firstAttribute="leading" secondItem="lhX-la-YWb" secondAttribute="leadingMargin" constant="16" id="vHo-wL-JFf"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="airplayButton" destination="Ltn-g7-gS5" id="DGM-eg-bhK"/>
+                                    <outlet property="moreButton" destination="Vcc-kC-cRj" id="Pf0-bP-noC"/>
+                                    <outlet property="plusButton" destination="mfT-ot-hKS" id="jFK-5n-6oi"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AppleMusicNowPlayingLargePlayerShuffleRepeatCell" id="DiN-Re-BDr" customClass="AppleMusicNowPlayingLargePlayerShuffleRepeatCell" customModule="KozLibrary" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="476" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DiN-Re-BDr" id="vs8-8t-q2c">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDg-of-7cO" customClass="AppleMusicRoundedButton" customModule="KozLibrary" customModuleProvider="target">
+                                            <rect key="frame" x="32" y="2" width="147.5" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="58T-O4-UgX"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <state key="normal" title="Button"/>
+                                            <connections>
+                                                <action selector="shuffleButtonPressed" destination="DiN-Re-BDr" eventType="touchUpInside" id="Gel-K2-Kmh"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEk-HF-yEo" customClass="AppleMusicRoundedButton" customModule="KozLibrary" customModuleProvider="target">
+                                            <rect key="frame" x="195.5" y="2" width="147.5" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="pBZ-1j-UAw"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <state key="normal" title="Button"/>
+                                            <connections>
+                                                <action selector="repeatButtonPressed" destination="DiN-Re-BDr" eventType="touchUpInside" id="IYo-J8-Bne"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="KDg-of-7cO" firstAttribute="leading" secondItem="vs8-8t-q2c" secondAttribute="leadingMargin" constant="16" id="J2f-In-DVi"/>
+                                        <constraint firstItem="KDg-of-7cO" firstAttribute="centerY" secondItem="vs8-8t-q2c" secondAttribute="centerY" id="NMw-FU-HJu"/>
+                                        <constraint firstItem="IEk-HF-yEo" firstAttribute="width" secondItem="KDg-of-7cO" secondAttribute="width" id="Ogv-Kd-9Tp"/>
+                                        <constraint firstItem="IEk-HF-yEo" firstAttribute="centerY" secondItem="vs8-8t-q2c" secondAttribute="centerY" id="aUo-kc-gDp"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="IEk-HF-yEo" secondAttribute="trailing" constant="16" id="cFT-Sb-8ju"/>
+                                        <constraint firstItem="IEk-HF-yEo" firstAttribute="leading" secondItem="KDg-of-7cO" secondAttribute="trailing" constant="16" id="x4x-Zs-SKj"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="repeatButton" destination="IEk-HF-yEo" id="0mD-Qe-N6o"/>
+                                    <outlet property="shuffleButton" destination="KDg-of-7cO" id="WJD-dz-c01"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <sections/>
                         <connections>

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AppleMusicNowPlayingSelectSongDelegate : class {
-  func didSelect(song: AppleMusicSong, coverArtImage: UIImage?)
+  func didSelect(song: AppleMusicSong)
 }
 
 class AppleMusicNowPlayingSongListViewController : BaseTableViewController, DataSourceProvider {
@@ -31,15 +31,7 @@ class AppleMusicNowPlayingSongListViewController : BaseTableViewController, Data
   let musicLibary = AppleMusicLibrary()
   var currentContent: Content?
   internal let currentContentDispatchQueue = DispatchQueue(label: "KosLibrary.AppleMusicNowPlayingSongListViewController.currentContentDispatchQueue")
-  var cachedCoverImages: [UUID : ImageDownloadState] = [:]
   weak var delegate: AppleMusicNowPlayingSelectSongDelegate?
-  
-  enum ImageDownloadState {
-    case unattempted
-    case noImage
-    case downloaded(image: UIImage)
-    case failed
-  }
   
   // MARK: - Content
   
@@ -51,33 +43,12 @@ class AppleMusicNowPlayingSongListViewController : BaseTableViewController, Data
     
     // Required properties
     let songs = self.musicLibary.songs
-    let cachedCoverImages = self.cachedCoverImages
     let currentContentDispatchQueue = self.currentContentDispatchQueue
     
     DispatchQueue.global().async {
       
       // Build the content
-      var lastIndexPath: IndexPath?
-      let rowTypes: [RowType] = songs.map { song -> RowType in
-        let indexPath: IndexPath = {
-          if let indexPath = lastIndexPath {
-            let newIndexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section)
-            lastIndexPath = newIndexPath
-            return newIndexPath
-          } else {
-            let newIndexPath = IndexPath(row: 0, section: 0)
-            lastIndexPath = newIndexPath
-            return newIndexPath
-          }
-        }()
-        let imageDownloadState = cachedCoverImages[song.id] ?? .unattempted
-        switch imageDownloadState {
-        case .unattempted:
-          self.fetchAlbumArtwork(song: song, at: indexPath)
-        default: break
-        }
-        return .item(song: song, imageDownloadState: imageDownloadState, at: indexPath)
-      }
+      let rowTypes: [RowType] = songs.map { song -> RowType in return .item(song: song) }
       
       // Return the content
       let content = Content(sectionTypes: [ SectionType(rowTypes: rowTypes) ])
@@ -96,28 +67,6 @@ class AppleMusicNowPlayingSongListViewController : BaseTableViewController, Data
     }
   }
   
-  func fetchAlbumArtwork(song: AppleMusicSong, at indexPath: IndexPath) {
-    
-    guard let url = song.coverArtURL else {
-      self.cachedCoverImages[song.id] = .noImage
-      self.generateContent { [weak self] content in
-        self?.tableView.reloadRows(at: [ indexPath ], with: .none)
-      }
-      return
-    }
-    
-    UIImage.download(url: url) { [weak self] image in
-      if let image = image {
-        self?.cachedCoverImages[song.id] = .downloaded(image: image)
-      } else {
-        self?.cachedCoverImages[song.id] = .failed
-      }
-      self?.generateContent { [weak self] content in
-        self?.tableView.reloadRows(at: [ indexPath ], with: .none)
-      }
-    }
-  }
-  
   // MARK: - SectionType
   
   struct SectionType : DataSourceSectionType {
@@ -127,7 +76,7 @@ class AppleMusicNowPlayingSongListViewController : BaseTableViewController, Data
   // MARK: - RowType
   
   enum RowType : DataSourceRowType {
-    case item(song: AppleMusicSong, imageDownloadState: ImageDownloadState, at: IndexPath)
+    case item(song: AppleMusicSong)
   }
   
   // MARK: - Lifecycle
@@ -168,19 +117,17 @@ extension AppleMusicNowPlayingSongListViewController {
     }
     
     switch rowType {
-    case .item(song: let song, imageDownloadState: let imageDownloadState, at: _):
+    case .item(song: let song):
       let cell = tableView.dequeueReusableCell(withIdentifier: AppleMusicLibraryCell.name, for: indexPath) as! AppleMusicLibraryCell
-      switch imageDownloadState {
-      case .unattempted, .noImage:
-        cell.albumArtImageView.backgroundColor = .lightGray
-      case .failed:
-        cell.albumArtImageView.backgroundColor = .red
-      case .downloaded(image: let image):
+      if let imageName = song.imageName, let image = UIImage(named: imageName) {
         cell.albumArtImageView.backgroundColor = .clear
         cell.albumArtImageView.image = image
+      } else {
+        cell.albumArtImageView.backgroundColor = .lightGray
+        cell.albumArtImageView.image = nil
       }
       cell.songNameLabel.text = song.title
-      cell.artistAlbumLabel.text = song.artist
+      cell.artistAlbumLabel.text = "\(song.artist) - Album"
       return cell
     }
   }
@@ -193,13 +140,8 @@ extension AppleMusicNowPlayingSongListViewController {
     }
     
     switch rowType {
-    case .item(song: let song, imageDownloadState: let imageDownloadState, at: _):
-      switch imageDownloadState {
-        case .downloaded(image: let image):
-        self.delegate?.didSelect(song: song, coverArtImage: image)
-      default:
-        self.delegate?.didSelect(song: song, coverArtImage: nil)
-      }
+    case .item(song: let song):
+      self.delegate?.didSelect(song: song)
     }
   }
 }

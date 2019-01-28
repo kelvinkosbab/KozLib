@@ -14,16 +14,14 @@ struct AppleMusicSong {
   let title: String
   let duration: TimeInterval
   let artist: String
-  let mediaURL: URL?
-  let coverArtURL: URL?
+  let imageName: String?
   
-  init(title: String, duration: TimeInterval, artist: String, mediaURL: URL? = nil, coverArtURL: URL?) {
+  init(title: String, duration: TimeInterval, artist: String, imageName: String?) {
     self.id = UUID()
     self.title = title
     self.duration = duration
     self.artist = artist
-    self.mediaURL = mediaURL
-    self.coverArtURL = coverArtURL
+    self.imageName = imageName
   }
 }
 

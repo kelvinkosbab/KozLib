@@ -56,11 +56,11 @@ class AppleMusicNowPlayingContainerViewController : BaseViewController {
 
 extension AppleMusicNowPlayingContainerViewController {
   
-  func showMiniPlayer(song: AppleMusicSong, coverArtImage: UIImage?, completion: @escaping () -> Void) {
+  func showMiniPlayer(song: AppleMusicSong, completion: @escaping () -> Void) {
     
     guard self.isMiniPlayerHidden else {
       DispatchQueue.main.async { [weak self] in
-        self?.miniPlayerViewController?.update(song: song, coverArtImage: coverArtImage)
+        self?.miniPlayerViewController?.update(song: song)
         completion()
       }
       return
@@ -94,7 +94,7 @@ extension AppleMusicNowPlayingContainerViewController {
       ])
     
     // Configure the mini player view controller
-    let viewController = AppleMusicNowPlayingMiniPlayerViewController.newViewController(song: song, coverArtImage: coverArtImage, containerHeight: containerHeight, delegate: self)
+    let viewController = AppleMusicNowPlayingMiniPlayerViewController.newViewController(song: song, containerHeight: containerHeight, delegate: self)
     self.miniPlayerViewController = viewController
     self.add(childViewController: viewController, intoContainerView: miniPlayerContainerView.contentView)
     
@@ -135,7 +135,7 @@ extension AppleMusicNowPlayingContainerViewController {
 
 extension AppleMusicNowPlayingContainerViewController : AppleMusicNowPlayingSelectSongDelegate {
   
-  func didSelect(song: AppleMusicSong, coverArtImage: UIImage?) {
+  func didSelect(song: AppleMusicSong) {
     
     // Set the current song
     self.currentSong = song
@@ -144,7 +144,7 @@ extension AppleMusicNowPlayingContainerViewController : AppleMusicNowPlayingSele
     HapticsGenerator().generate(.impact(.light))
     
     // Mini player
-    self.showMiniPlayer(song: song, coverArtImage: coverArtImage) {}
+    self.showMiniPlayer(song: song) {}
   }
 }
 
@@ -152,17 +152,17 @@ extension AppleMusicNowPlayingContainerViewController : AppleMusicNowPlayingSele
 
 extension AppleMusicNowPlayingContainerViewController : AppleMusicNowPlayingMiniPlayerDelegate {
   
-  func miniPlayerDidSelect(song: AppleMusicSong, coverArtImage: UIImage?) {
+  func miniPlayerDidSelect(song: AppleMusicSong) {
     
     // Haptic
     HapticsGenerator().generate(.impact(.medium))
     
     // Preset large player
-    self.presentAppleMusicLargePlayer(song: song, coverArtImage: coverArtImage)
+    self.presentAppleMusicLargePlayer(song: song)
   }
   
-  private func presentAppleMusicLargePlayer(song: AppleMusicSong, coverArtImage: UIImage?) {
-    let viewController = AppleMusicNowPlayingLargePlayerViewController.newViewController(song: song, coverArtImage: coverArtImage)
+  private func presentAppleMusicLargePlayer(song: AppleMusicSong) {
+    let viewController = AppleMusicNowPlayingLargePlayerViewController.newViewController(song: song)
     viewController.presentIn(self, withMode: .modal(.overFullScreen, .coverVertical))
   }
 }

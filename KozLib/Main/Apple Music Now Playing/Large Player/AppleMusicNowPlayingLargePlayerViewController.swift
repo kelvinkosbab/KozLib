@@ -16,10 +16,9 @@ class AppleMusicNowPlayingLargePlayerViewController : BaseTableViewController, D
     return self.newViewController(fromStoryboardWithName: "AppleMusicNowPlaying")
   }
   
-  static func newViewController(song: AppleMusicSong, coverArtImage: UIImage?) -> AppleMusicNowPlayingLargePlayerViewController {
+  static func newViewController(song: AppleMusicSong) -> AppleMusicNowPlayingLargePlayerViewController {
     let viewController = self.newViewController()
     viewController.song = song
-    viewController.coverArtImage = coverArtImage
     return viewController
   }
   
@@ -35,7 +34,6 @@ class AppleMusicNowPlayingLargePlayerViewController : BaseTableViewController, D
   // MARK: - Properties
   
   var song: AppleMusicSong!
-  var coverArtImage: UIImage?
   weak var delegate: AppleMusicNowPlayingMiniPlayerDelegate?
   
   // MARK: - Lifecycle
@@ -80,7 +78,6 @@ class AppleMusicNowPlayingLargePlayerViewController : BaseTableViewController, D
     
     // Required properties
     let song = self.song!
-    let coverArtImage = self.coverArtImage
     let currentContentDispatchQueue = self.currentContentDispatchQueue
     
     DispatchQueue.global().async {
@@ -88,7 +85,11 @@ class AppleMusicNowPlayingLargePlayerViewController : BaseTableViewController, D
       // Build the content
       var rowTypes: [RowType] = []
       
-      rowTypes.append(.coverArt(coverArtImage))
+      if let imageName = song.imageName, let image = UIImage(named: imageName) {
+        rowTypes.append(.coverArt(image))
+      } else {
+        rowTypes.append(.coverArt(nil))
+      }
       rowTypes.append(.songProgressBar(Progress(totalUnitCount: 1000)))
       rowTypes.append(.songInformation(song: song))
       rowTypes.append(.songControls)
@@ -164,20 +165,23 @@ extension AppleMusicNowPlayingLargePlayerViewController {
       return .leastNormalMagnitude
     }
     
-    let safeAreaHeight = self.view.safeAreaLayoutGuide.layoutFrame.height
+    let safeAreaFrame = self.view.safeAreaLayoutGuide.layoutFrame
+    let coverArtHeight = safeAreaFrame.width - 16
+    let safeAreaHeightMinusImage = safeAreaFrame.height - coverArtHeight
     switch rowType {
     case .coverArt:
-      return 0.4 * safeAreaHeight
+      return coverArtHeight
+      
     case .songProgressBar:
-      return 0.1 * safeAreaHeight
+      return 0.1 * safeAreaHeightMinusImage
     case .songInformation:
-      return 0.15 * safeAreaHeight
+      return 0.3 * safeAreaHeightMinusImage
     case .songControls:
-      return 0.15 * safeAreaHeight
+      return 0.3 * safeAreaHeightMinusImage
     case .volume:
-      return 0.1 * safeAreaHeight
+      return 0.15 * safeAreaHeightMinusImage
     case .songActions:
-      return 0.1 * safeAreaHeight
+      return 0.15 * safeAreaHeightMinusImage
       
     case .scrollSpacer:
       let bottomSafeAreaInset = self.view.safeAreaInsets.bottom
@@ -200,19 +204,60 @@ extension AppleMusicNowPlayingLargePlayerViewController {
       cell.configure(coverArtImage: image, rowHeight: self.tableView(tableView, heightForRowAt: indexPath))
       return cell
       
+    case .songProgressBar(let progress):
+      let cell = tableView.dequeueReusableCell(withIdentifier: AppleMusicNowPlayingLargePlayerProgressCell.name, for: indexPath) as! AppleMusicNowPlayingLargePlayerProgressCell
+      cell.progressBar.progress = Float(progress.fractionCompleted)
+      return cell
+      
+    case .songInformation(song: let song):
+      let cell = tableView.dequeueReusableCell(withIdentifier: AppleMusicNowPlayingLargePlayerSongInfoCell.name, for: indexPath) as! AppleMusicNowPlayingLargePlayerSongInfoCell
+      cell.songNameLabel.text = song.title
+      cell.songInfoLabel.text = "\(song.artist) - Album"
+      return cell
+      
+    case .songControls:
+      let cell = tableView.dequeueReusableCell(withIdentifier: AppleMusicNowPlayingLargePlayerControlCell.name, for: indexPath) as! AppleMusicNowPlayingLargePlayerControlCell
+      let skipBackwardImage = UIImage(named: "icSkipBackward")?.withRenderingMode(.alwaysTemplate)
+      cell.previousButton.setImage(skipBackwardImage, for: .normal)
+      cell.previousButton.tintColor = .black
+      let playImage = UIImage(named: "icPlay")?.withRenderingMode(.alwaysTemplate)
+      cell.playPauseButton.setImage(playImage, for: .normal)
+      cell.playPauseButton.tintColor = .black
+      let skipForwardImage = UIImage(named: "icSkipForward")?.withRenderingMode(.alwaysTemplate)
+      cell.forwardButton.setImage(skipForwardImage, for: .normal)
+      cell.forwardButton.tintColor = .black
+      return cell
+      
+    case .volume:
+      let cell = tableView.dequeueReusableCell(withIdentifier: AppleMusicNowPlayingLargePlayerVolumeCell.name, for: indexPath) as! AppleMusicNowPlayingLargePlayerVolumeCell
+      return cell
+      
+    case .songActions:
+      let cell = tableView.dequeueReusableCell(withIdentifier: AppleMusicNowPlayingLargePlayerActionsCell.name, for: indexPath) as! AppleMusicNowPlayingLargePlayerActionsCell
+      let plusButton = UIImage(named: "icPlus")?.withRenderingMode(.alwaysTemplate)
+      cell.plusButton.setImage(plusButton, for: .normal)
+      cell.plusButton.tintColor = .red
+      let airplayImage = UIImage(named: "icAirplay")?.withRenderingMode(.alwaysTemplate)
+      cell.airplayButton.setImage(airplayImage, for: .normal)
+      cell.airplayButton.tintColor = .red
+      let moreImage = UIImage(named: "icMore")?.withRenderingMode(.alwaysTemplate)
+      cell.moreButton.setImage(moreImage, for: .normal)
+      cell.moreButton.tintColor = .red
+      return cell
+      
     case .scrollSpacer:
       let cell = UITableViewCell()
-      cell.contentView.backgroundColor = .cyan
+      cell.contentView.backgroundColor = tableView.backgroundColor
       return cell
       
     case .shuffleRepeat:
-      let cell = UITableViewCell()
-      cell.contentView.backgroundColor = .red
-      return cell
-      
-    default:
-      let cell = UITableViewCell()
-      cell.contentView.backgroundColor = indexPath.row % 2 == 0 ? .lightGray : .darkGray
+      let cell = tableView.dequeueReusableCell(withIdentifier: AppleMusicNowPlayingLargePlayerShuffleRepeatCell.name, for: indexPath) as! AppleMusicNowPlayingLargePlayerShuffleRepeatCell
+      cell.shuffleButton.setTitle("Shuffle", for: .normal)
+      cell.shuffleButton.setTitleColor(.red, for: .normal)
+      cell.shuffleButton.backgroundColor = UIColor(hex: "F2F2F2")
+      cell.repeatButton.setTitle("Repeat", for: .normal)
+      cell.repeatButton.setTitleColor(.red, for: .normal)
+      cell.repeatButton.backgroundColor = UIColor(hex: "F2F2F2")
       return cell
     }
   }
