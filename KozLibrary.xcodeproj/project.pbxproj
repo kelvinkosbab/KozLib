@@ -147,6 +147,7 @@
 		B6F9756520239D1900BE9D9D /* VerticalBoxPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F9756420239D1900BE9D9D /* VerticalBoxPlane.swift */; };
 		B6F9756720239D2200BE9D9D /* HorizontalBoxPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F9756620239D2200BE9D9D /* HorizontalBoxPlane.swift */; };
 		D4E12D99AEB77142AD4EB826 /* Pods_KozNetAppProxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 938C5F92CF5BF4E0190C4216 /* Pods_KozNetAppProxy.framework */; };
+		F60ECE222201AEB400E81EBF /* AppleMusicRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60ECE212201AEB400E81EBF /* AppleMusicRoundedButton.swift */; };
 		F6193A3D219DF4D00043BFFE /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6193A3C219DF4D00043BFFE /* WeatherService.swift */; };
 		F6193A3F219DF5A70043BFFE /* WeatherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6193A3E219DF5A70043BFFE /* WeatherController.swift */; };
 		F6193A41219DF5AE0043BFFE /* IOSWeatherCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6193A40219DF5AE0043BFFE /* IOSWeatherCollectionViewLayout.swift */; };
@@ -448,6 +449,7 @@
 		B6F9756420239D1900BE9D9D /* VerticalBoxPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalBoxPlane.swift; sourceTree = "<group>"; };
 		B6F9756620239D2200BE9D9D /* HorizontalBoxPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalBoxPlane.swift; sourceTree = "<group>"; };
 		C50D1D707E34FC993690352E /* Pods-KozNetAppProxy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KozNetAppProxy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KozNetAppProxy/Pods-KozNetAppProxy.debug.xcconfig"; sourceTree = "<group>"; };
+		F60ECE212201AEB400E81EBF /* AppleMusicRoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicRoundedButton.swift; sourceTree = "<group>"; };
 		F6193A3C219DF4D00043BFFE /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		F6193A3E219DF5A70043BFFE /* WeatherController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherController.swift; sourceTree = "<group>"; };
 		F6193A40219DF5AE0043BFFE /* IOSWeatherCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSWeatherCollectionViewLayout.swift; sourceTree = "<group>"; };
@@ -949,6 +951,8 @@
 				F6E8171421D089B600FF1265 /* Animating Tab Bar */,
 				B61B8DDA1F81466700118C73 /* Network */,
 				F6EF6D8521352ED800C3BFEE /* 360iDev 2018 */,
+				F6EF6D8621352EE800C3BFEE /* Badge View Layer Animations */,
+				F6A768D52138BBBE007AF9F7 /* Graphing with Custom Layouts */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1236,6 +1240,15 @@
 			path = BoxPlane;
 			sourceTree = "<group>";
 		};
+		F60ECE202201AEA700E81EBF /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				F6C662DA21FD8451003FD7F6 /* AppleMusicButton.swift */,
+				F60ECE212201AEB400E81EBF /* AppleMusicRoundedButton.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
 		F6193A36219919E40043BFFE /* Weather App */ = {
 			isa = PBXGroup;
 			children = (
@@ -1341,7 +1354,7 @@
 			isa = PBXGroup;
 			children = (
 				F68C871E21F9A6FA00CED205 /* AppleMusicNowPlaying.storyboard */,
-				F6C662DA21FD8451003FD7F6 /* AppleMusicButton.swift */,
+				F60ECE202201AEA700E81EBF /* Button */,
 				F6C662DC21FE64E5003FD7F6 /* Container */,
 				F6C662D921FD3E6B003FD7F6 /* Music Library */,
 				F6C662D821FD3E5A003FD7F6 /* Song List */,
@@ -1646,8 +1659,6 @@
 			children = (
 				F6A769102138BE41007AF9F7 /* iDev2018NavigationDelegate.swift */,
 				F6EF6D892135325B00C3BFEE /* 360iDev2018.storyboard */,
-				F6EF6D8621352EE800C3BFEE /* Badge View Layer Animations */,
-				F6A768D52138BBBE007AF9F7 /* Graphing with Custom Layouts */,
 			);
 			path = "360iDev 2018";
 			sourceTree = "<group>";
@@ -1932,6 +1943,7 @@
 				B619FA05203E94A000764577 /* CustomPresentationController.swift in Sources */,
 				B6350E4A1F787767004E6218 /* DataMangerProtocol.swift in Sources */,
 				B619FA08203E94A000764577 /* LeftMenuAnimator.swift in Sources */,
+				F60ECE222201AEB400E81EBF /* AppleMusicRoundedButton.swift in Sources */,
 				F6B14E3821D16A86005E83FB /* SlidingTabBarAnimator.swift in Sources */,
 				F6C662CD21FCF9D6003FD7F6 /* UIImage+Util.swift in Sources */,
 				B619FA0E203E94A000764577 /* BottomUpAnimator.swift in Sources */,
