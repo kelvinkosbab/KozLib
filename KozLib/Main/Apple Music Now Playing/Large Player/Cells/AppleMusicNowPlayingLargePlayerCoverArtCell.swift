@@ -18,7 +18,6 @@ class AppleMusicNowPlayingLargePlayerCoverArtCell : UITableViewCell, ClassNamabl
   func configure(coverArtImage: UIImage?, rowHeight: CGFloat) {
     self.coverArtImageView.image = coverArtImage
     
-    let margin: CGFloat = 8
     let aspectRatio: CGFloat = {
       if let coverArtImage = coverArtImage {
         return coverArtImage.size.width / coverArtImage.size.height
@@ -27,6 +26,7 @@ class AppleMusicNowPlayingLargePlayerCoverArtCell : UITableViewCell, ClassNamabl
       }
     }()
     
+    let margin: CGFloat = 16
     let maxImageSize = rowHeight - (margin * 2)
     self.coverArtImageViewContainerWidth.constant = aspectRatio > 1 ? maxImageSize : maxImageSize * aspectRatio
     self.coverArtImageViewContainerHeight.constant = aspectRatio < 1 ? maxImageSize : maxImageSize / aspectRatio

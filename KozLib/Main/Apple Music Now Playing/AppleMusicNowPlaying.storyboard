@@ -129,7 +129,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPI-JY-iWe" customClass="AppleMusicButton" customModule="KozLibrary" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPI-JY-iWe" customClass="AppleMusicButton" customModule="KozLibrary" customModuleProvider="target">
                                 <rect key="frame" x="293" y="37.5" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="Ext-mC-wdw"/>
@@ -139,7 +139,7 @@
                                     <action selector="playPauseButtonPressed" destination="wK0-t3-Xeb" eventType="touchUpInside" id="ZD0-nk-Jca"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rZQ-hX-Sa6" customClass="AppleMusicButton" customModule="KozLibrary" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rZQ-hX-Sa6" customClass="AppleMusicButton" customModule="KozLibrary" customModuleProvider="target">
                                 <rect key="frame" x="334" y="37.5" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="YOB-SD-h3A"/>
@@ -307,7 +307,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3iW-xm-pKm">
                                                     <rect key="frame" x="0.0" y="0.0" width="114.5" height="39"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUs-tX-6rh">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUs-tX-6rh" customClass="AppleMusicButton" customModule="KozLibrary" customModuleProvider="target">
                                                             <rect key="frame" x="44.5" y="7" width="25" height="25"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="25" id="FUz-bQ-5h4"/>
@@ -327,7 +327,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0pL-TK-ysp">
                                                     <rect key="frame" x="114.5" y="0.0" width="114" height="39"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvO-fq-8TK">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvO-fq-8TK" customClass="AppleMusicButton" customModule="KozLibrary" customModuleProvider="target">
                                                             <rect key="frame" x="44.5" y="7" width="25" height="25"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="25" id="jU4-9S-DcT"/>
@@ -347,7 +347,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bLp-uF-bjk">
                                                     <rect key="frame" x="228.5" y="0.0" width="114.5" height="39"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkg-zA-gTo">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkg-zA-gTo" customClass="AppleMusicButton" customModule="KozLibrary" customModuleProvider="target">
                                                             <rect key="frame" x="45" y="7" width="25" height="25"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="25" id="M4A-Zj-v9l"/>
