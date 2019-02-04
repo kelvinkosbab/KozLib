@@ -9,7 +9,9 @@
 import UIKit
 
 enum PresentableControllerOption {
-  case withoutNavigationController, presentingViewControllerDelegate(PresentingViewControllerDelegate), presentedViewControllerDelegate(PresentedViewControllerDelegate)
+  case withoutNavigationController
+  case presentingViewControllerDelegate(PresentingViewControllerDelegate)
+  case presentedViewControllerDelegate(PresentedViewControllerDelegate)
 }
 
 extension Sequence where Iterator.Element == PresentableControllerOption {

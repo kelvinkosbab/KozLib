@@ -13,7 +13,7 @@ class AppleMusicNowPlayingLargePlayerCoverArtCell : UITableViewCell, ClassNamabl
   @IBOutlet private weak var coverArtImageViewContainer: UIView!
   @IBOutlet private weak var coverArtImageViewContainerWidth: NSLayoutConstraint!
   @IBOutlet private weak var coverArtImageViewContainerHeight: NSLayoutConstraint!
-  @IBOutlet private weak var coverArtImageView: UIImageView!
+  @IBOutlet weak var coverArtImageView: UIImageView!
   
   func configure(coverArtImage: UIImage?, rowHeight: CGFloat) {
     self.coverArtImageView.image = coverArtImage

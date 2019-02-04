@@ -62,4 +62,14 @@ extension UIView {
     mask.path = path.cgPath
     self.layer.mask = mask
   }
+  
+  // MARK: - Screenshot
+  
+  var screenshot: UIImage? {
+    UIGraphicsBeginImageContextWithOptions(self.bounds.size, true, 0.0)
+    self.drawHierarchy(in: self.bounds, afterScreenUpdates: true)
+    let image = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    return image
+  }
 }

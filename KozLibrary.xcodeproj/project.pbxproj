@@ -156,6 +156,10 @@
 		F6193A47219DF64D0043BFFE /* HourlyDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6193A46219DF64D0043BFFE /* HourlyDatasource.swift */; };
 		F6193A49219DF6520043BFFE /* DailyWeatherDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6193A48219DF6520043BFFE /* DailyWeatherDatasource.swift */; };
 		F6193A4B219DF65E0043BFFE /* ExtendedInfoDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6193A4A219DF65E0043BFFE /* ExtendedInfoDatasource.swift */; };
+		F64251D42206417E001468F3 /* AppleMusicAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64251D32206417E001468F3 /* AppleMusicAnimator.swift */; };
+		F64251D622064187001468F3 /* AppleMusicPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64251D522064187001468F3 /* AppleMusicPresentationController.swift */; };
+		F64251DA22082A27001468F3 /* AppleMusicLargePlayerSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64251D922082A27001468F3 /* AppleMusicLargePlayerSourceProtocol.swift */; };
+		F64251DC2208A0B9001468F3 /* AppleMusicNowPlayingLargePlayerContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64251DB2208A0B9001468F3 /* AppleMusicNowPlayingLargePlayerContainerViewController.swift */; };
 		F68C871C21F6CF9100CED205 /* UIBarButtonItem+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68C871B21F6CF9100CED205 /* UIBarButtonItem+Styles.swift */; };
 		F68C871F21F9A6FA00CED205 /* AppleMusicNowPlaying.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F68C871E21F9A6FA00CED205 /* AppleMusicNowPlaying.storyboard */; };
 		F68C872121F9A71600CED205 /* AppleMusicNowPlayingSongListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68C872021F9A71600CED205 /* AppleMusicNowPlayingSongListViewController.swift */; };
@@ -458,6 +462,10 @@
 		F6193A46219DF64D0043BFFE /* HourlyDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyDatasource.swift; sourceTree = "<group>"; };
 		F6193A48219DF6520043BFFE /* DailyWeatherDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherDatasource.swift; sourceTree = "<group>"; };
 		F6193A4A219DF65E0043BFFE /* ExtendedInfoDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedInfoDatasource.swift; sourceTree = "<group>"; };
+		F64251D32206417E001468F3 /* AppleMusicAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicAnimator.swift; sourceTree = "<group>"; };
+		F64251D522064187001468F3 /* AppleMusicPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicPresentationController.swift; sourceTree = "<group>"; };
+		F64251D922082A27001468F3 /* AppleMusicLargePlayerSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicLargePlayerSourceProtocol.swift; sourceTree = "<group>"; };
+		F64251DB2208A0B9001468F3 /* AppleMusicNowPlayingLargePlayerContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicNowPlayingLargePlayerContainerViewController.swift; sourceTree = "<group>"; };
 		F68C871B21F6CF9100CED205 /* UIBarButtonItem+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Styles.swift"; sourceTree = "<group>"; };
 		F68C871E21F9A6FA00CED205 /* AppleMusicNowPlaying.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AppleMusicNowPlaying.storyboard; sourceTree = "<group>"; };
 		F68C872021F9A71600CED205 /* AppleMusicNowPlayingSongListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicNowPlayingSongListViewController.swift; sourceTree = "<group>"; };
@@ -663,6 +671,7 @@
 				B619F9F2203E94A000764577 /* Right to Left */,
 				B619F9F5203E94A000764577 /* Bottom Up */,
 				B619F9F8203E94A000764577 /* Top Knob Bottom Up */,
+				F64251D222063E6F001468F3 /* Apple Music */,
 			);
 			path = "Custom Controller Presentations";
 			sourceTree = "<group>";
@@ -706,8 +715,8 @@
 		B619F9F5203E94A000764577 /* Bottom Up */ = {
 			isa = PBXGroup;
 			children = (
-				B619F9F6203E94A000764577 /* BottomUpPresentationController.swift */,
 				B619F9F7203E94A000764577 /* BottomUpAnimator.swift */,
+				B619F9F6203E94A000764577 /* BottomUpPresentationController.swift */,
 			);
 			path = "Bottom Up";
 			sourceTree = "<group>";
@@ -960,6 +969,8 @@
 		B64414F91F78561A00C9781B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B64414F41F7854E100C9781B /* Extensions */,
+				B6350E501F787D15004E6218 /* Protocols */,
 				F6EF6D7E21352AB900C3BFEE /* DataSource */,
 				B6617DA020FA61C300F87102 /* Haptics */,
 				B629C221201E74C20083D708 /* Permissions */,
@@ -967,8 +978,6 @@
 				B66927ED2057351F00EF915C /* NotificationManager */,
 				B6811F522043C323008C3CAC /* Service */,
 				B619F9DD203E94A000764577 /* Controller Presentation */,
-				B64414F41F7854E100C9781B /* Extensions */,
-				B6350E501F787D15004E6218 /* Protocols */,
 				B6350E421F786FA3004E6218 /* NFC */,
 				B67756BB1F78BFE300B553F3 /* ARKit and SceneKit */,
 				B61B8DE81F817D5300118C73 /* Network */,
@@ -1350,10 +1359,20 @@
 			path = ModelProtocol;
 			sourceTree = "<group>";
 		};
+		F64251D222063E6F001468F3 /* Apple Music */ = {
+			isa = PBXGroup;
+			children = (
+				F64251D32206417E001468F3 /* AppleMusicAnimator.swift */,
+				F64251D522064187001468F3 /* AppleMusicPresentationController.swift */,
+			);
+			path = "Apple Music";
+			sourceTree = "<group>";
+		};
 		F68C871D21F9718A00CED205 /* Apple Music Now Playing */ = {
 			isa = PBXGroup;
 			children = (
 				F68C871E21F9A6FA00CED205 /* AppleMusicNowPlaying.storyboard */,
+				F64251D922082A27001468F3 /* AppleMusicLargePlayerSourceProtocol.swift */,
 				F60ECE202201AEA700E81EBF /* Button */,
 				F6C662DC21FE64E5003FD7F6 /* Container */,
 				F6C662D921FD3E6B003FD7F6 /* Music Library */,
@@ -1580,6 +1599,7 @@
 		F6C662D721FD3E50003FD7F6 /* Large Player */ = {
 			isa = PBXGroup;
 			children = (
+				F64251DB2208A0B9001468F3 /* AppleMusicNowPlayingLargePlayerContainerViewController.swift */,
 				F6C662D421FD3E2C003FD7F6 /* AppleMusicNowPlayingLargePlayerViewController.swift */,
 				F6C662DD21FE6CAD003FD7F6 /* Cells */,
 			);
@@ -1939,6 +1959,7 @@
 				F6AD92F3219FDE230074F548 /* Serialization.swift in Sources */,
 				B6811F4C2043B279008C3CAC /* ARRecognizingImagesViewController.swift in Sources */,
 				F6AD928B219F89C30074F548 /* WeatherOverview.swift in Sources */,
+				F64251D622064187001468F3 /* AppleMusicPresentationController.swift in Sources */,
 				B63A82C8201E657300E6C8C6 /* RobotHead.swift in Sources */,
 				B619FA05203E94A000764577 /* CustomPresentationController.swift in Sources */,
 				B6350E4A1F787767004E6218 /* DataMangerProtocol.swift in Sources */,
@@ -1962,6 +1983,7 @@
 				B6350E4D1F787A41004E6218 /* NFCTableViewController.swift in Sources */,
 				B64415101F78597400C9781B /* HomeViewController.swift in Sources */,
 				B60AD104201A7919003A2E84 /* ConfigurationViewPresentable.swift in Sources */,
+				F64251DC2208A0B9001468F3 /* AppleMusicNowPlayingLargePlayerContainerViewController.swift in Sources */,
 				F6B14E3A21D1706F005E83FB /* CrossDissolveTabBarAnimator.swift in Sources */,
 				B63A82C6201E656B00E6C8C6 /* GlassesOverlay.swift in Sources */,
 				B6617DAA20FBDEFB00F87102 /* ServiceError.swift in Sources */,
@@ -2019,6 +2041,7 @@
 				B619F9FE203E94A000764577 /* InteractiveTransition+Subclasses.swift in Sources */,
 				B629C235201E79D10083D708 /* PermissionsNavigationDelegate.swift in Sources */,
 				F6AD9291219F8A0D0074F548 /* WeatherDailyViewModel.swift in Sources */,
+				F64251D42206417E001468F3 /* AppleMusicAnimator.swift in Sources */,
 				F6AD92F9219FDE230074F548 /* BaseRequest.swift in Sources */,
 				F6AD92EF219FDE230074F548 /* APIStub.swift in Sources */,
 				B6811F502043B7AB008C3CAC /* ARConfigurationSupported.swift in Sources */,
@@ -2071,6 +2094,7 @@
 				F6AD92FB219FDE230074F548 /* NetworkActivityPlugin.swift in Sources */,
 				F6A768E42138BC2C007AF9F7 /* CollectionViewGraphLayout.swift in Sources */,
 				B619FA00203E94A000764577 /* PresentableController.swift in Sources */,
+				F64251DA22082A27001468F3 /* AppleMusicLargePlayerSourceProtocol.swift in Sources */,
 				F6193A47219DF64D0043BFFE /* HourlyDatasource.swift in Sources */,
 				F6AD92C5219F8FB00074F548 /* DefaultCells.swift in Sources */,
 				F6AD92A6219F8B310074F548 /* VerticalWeatherCell.swift in Sources */,

@@ -194,7 +194,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="AppleMusicNowPlayingLargePlayerViewController" id="1iM-Ft-Mos" customClass="AppleMusicNowPlayingLargePlayerViewController" customModule="KozLibrary" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LBL-c3-WBz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -509,6 +509,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vZm-ga-gfI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1589.5999999999999" y="170.46476761619192"/>
+        </scene>
+        <!--Apple Music Now Playing Large Player Container View Controller-->
+        <scene sceneID="AEw-XF-OFF">
+            <objects>
+                <viewController storyboardIdentifier="AppleMusicNowPlayingLargePlayerContainerViewController" id="1xa-LO-2id" customClass="AppleMusicNowPlayingLargePlayerContainerViewController" customModule="KozLibrary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vm9-BE-3el">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HmZ-P5-t2j">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <connections>
+                                    <segue destination="1iM-Ft-Mos" kind="embed" id="RRQ-eD-5Mb"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="URq-Jh-vbM" firstAttribute="trailing" secondItem="HmZ-P5-t2j" secondAttribute="trailing" id="6fK-2Q-3tW"/>
+                            <constraint firstAttribute="bottom" secondItem="HmZ-P5-t2j" secondAttribute="bottom" id="Dgk-mO-g3C"/>
+                            <constraint firstItem="HmZ-P5-t2j" firstAttribute="leading" secondItem="URq-Jh-vbM" secondAttribute="leading" id="J3Z-2n-iYK"/>
+                            <constraint firstItem="HmZ-P5-t2j" firstAttribute="top" secondItem="URq-Jh-vbM" secondAttribute="top" id="cAz-e1-EzC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="URq-Jh-vbM"/>
+                    </view>
+                    <connections>
+                        <outlet property="largePlayerContainer" destination="HmZ-P5-t2j" id="W1N-NY-msI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZFv-yJ-ihp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2318" y="171"/>
         </scene>
     </scenes>
 </document>

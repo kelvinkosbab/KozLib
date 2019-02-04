@@ -135,3 +135,16 @@ extension AppleMusicNowPlayingMiniPlayerViewController {
     
   }
 }
+
+// MARK: - MaxiPlayerSourceProtocol
+
+extension AppleMusicNowPlayingMiniPlayerViewController : AppleMusicLargePlayerSourceProtocol {
+  
+  var originatingFrameInWindow: CGRect {
+    return self.view.convert(self.view.frame, to: nil)
+  }
+  
+  var originatingCoverImageView: UIImageView? {
+    return self.coverArtImageView
+  }
+}

@@ -23,14 +23,19 @@ class LeftMenuAnimator : NSObject, PresentableAnimator {
   
   func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
     
-    guard let toViewController = transitionContext.viewController(forKey: .to), let fromViewController = transitionContext.viewController(forKey: .from) else {
-      return
+    guard let toViewController = transitionContext.viewController(forKey: .to),
+      let fromViewController = transitionContext.viewController(forKey: .from) else {
+        return
     }
     
     let isPresenting = toViewController.presentedViewController != fromViewController
     _ = isPresenting ? fromViewController : toViewController
     let presentedViewController = isPresenting ? toViewController : fromViewController
     let containerView = transitionContext.containerView
+    
+    guard let presentedViewControllerView = presentedViewController.view else {
+      return
+    }
     
     // Calculate preferred width
     let presentedWidth = max(min(containerView.bounds.width - 40, 360), 280)
@@ -41,12 +46,12 @@ class LeftMenuAnimator : NSObject, PresentableAnimator {
       containerView.addSubview(presentedViewController.view)
       
       // Apply constraints
-      let width = NSLayoutConstraint(item: presentedViewController.view, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: presentedWidth)
+      let width = NSLayoutConstraint(item: presentedViewControllerView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: presentedWidth)
       presentedViewController.view.translatesAutoresizingMaskIntoConstraints = false
       presentedViewController.view.addConstraint(width)
       
-      let top = NSLayoutConstraint(item: presentedViewController.view, attribute: .top, relatedBy: .equal, toItem: containerView, attribute: .top, multiplier: 1, constant: 0)
-      let bottom = NSLayoutConstraint(item: presentedViewController.view, attribute: .bottom, relatedBy: .equal, toItem: containerView, attribute: .bottom, multiplier: 1, constant: 0)
+      let top = NSLayoutConstraint(item: presentedViewControllerView, attribute: .top, relatedBy: .equal, toItem: containerView, attribute: .top, multiplier: 1, constant: 0)
+      let bottom = NSLayoutConstraint(item: presentedViewControllerView, attribute: .bottom, relatedBy: .equal, toItem: containerView, attribute: .bottom, multiplier: 1, constant: 0)
       containerView.addConstraints([ top, bottom ])
       
       // Currently presenting

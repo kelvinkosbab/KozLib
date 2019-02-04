@@ -33,14 +33,34 @@ class CrossDissolveTabBarAnimator : NSObject, UIViewControllerAnimatedTransition
     // Perform the animation
     let animationDuration = self.transitionDuration(using: transitionContext)
     let containerView = transitionContext.containerView
-    self.toViewCongtroller.view.alpha = 0
-    self.toViewCongtroller.view.frame = self.fromViewController.view.frame
-    containerView.addSubview(self.toViewCongtroller.view)
-    UIView.animate(withDuration: animationDuration, delay: 0, options: [ .curveEaseInOut ], animations: {
-      self.toViewCongtroller.view.alpha = 1
+    self.toViewCongtroller.view.addToContainer(containerView)
+    self.toViewCongtroller.view.isHidden = true
+    
+    let animateView: UIView = {
+      let view = UIView()
+      view.backgroundColor = self.toViewCongtroller.view.backgroundColor
+      view.alpha = 0
+      view.addToContainer(containerView)
+      return view
+    }()
+    
+    UIView.animate(withDuration: animationDuration / 2, delay: 0, options: [ .curveEaseInOut ], animations: {
+      animateView.alpha = 1
     }) { _ in
+      
+      // Remove the existing tab view
       self.fromViewController.view.removeFromSuperview()
-      transitionContext.completeTransition(true)
+      
+      // Un-hide the to view
+      self.toViewCongtroller.view.isHidden = false
+      
+      // Animate
+      UIView.animate(withDuration: animationDuration / 2, delay: 0, options: [ .curveEaseInOut ], animations: {
+        animateView.alpha = 0
+      }) { _ in
+        animateView.removeFromSuperview()
+        transitionContext.completeTransition(true)
+      }
     }
   }
 }

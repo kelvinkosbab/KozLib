@@ -15,34 +15,37 @@ class AppleMusicButton : UIButton {
   override init(frame: CGRect) {
     super.init(frame: frame)
     
-    self.configureLayers()
+    self.configure()
   }
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     
-    self.configureLayers()
+    self.configure()
   }
   
-  private func configureLayers() {
+  private func configure() {
     self.clipsToBounds = false
     self.backgroundColor = .clear
     
     self.buttonLayer.frame = self.bounds
     self.buttonLayer.addSublayer(self.circleLayer)
-    
     self.layer.insertSublayer(self.buttonLayer, at: 0)
+  }
+  
+  override func layoutSubviews() {
+    super.layoutSubviews()
+    
+    // Adjust the image insets if necessary
+    let inset = min(self.bounds.width, self.bounds.height) * 0.85
+    if self.imageEdgeInsets.top != inset {
+      self.imageEdgeInsets = UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
+    }
   }
   
   // MARK: - Configurable Properties
   
   var onPressTransform: CGAffineTransform = CGAffineTransform(scaleX: 0.85, y: 0.85)
-  
-  var onPressBoundsMultiplier: CGFloat = 2 {
-    didSet {
-      self.circleLayer.path = self.circleLayerPath
-    }
-  }
   
   var circleLayerColor: UIColor? = .gray {
     didSet {
@@ -85,8 +88,8 @@ class AppleMusicButton : UIButton {
     
     var toOpacity: Float {
       switch self {
-      case .normal: return 0
-      case .pressed: return 0.2
+      case .normal: return AnimationState.pressed.fromOpacity
+      case .pressed: return AnimationState.normal.fromOpacity
       }
     }
     

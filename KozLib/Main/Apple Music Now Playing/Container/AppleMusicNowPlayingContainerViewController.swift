@@ -162,7 +162,7 @@ extension AppleMusicNowPlayingContainerViewController : AppleMusicNowPlayingMini
   }
   
   private func presentAppleMusicLargePlayer(song: AppleMusicSong) {
-    let viewController = AppleMusicNowPlayingLargePlayerViewController.newViewController(song: song)
-    viewController.presentIn(self, withMode: .modal(.overFullScreen, .coverVertical))
+    let container = AppleMusicNowPlayingLargePlayerContainerViewController.newViewController(song: song)
+    container.presentIn(self, withMode: .custom(.appleMusic(sourceView: nil, destinationView: nil)), options: [ .withoutNavigationController ])
   }
 }

@@ -24,7 +24,13 @@ enum PresentationMode {
 }
 
 enum CustomPresentationMode {
-  case topDown, bottomUp, topKnobBottomUp, visualEffectFade, rightToLeft, leftMenu
+  case topDown
+  case bottomUp
+  case topKnobBottomUp
+  case visualEffectFade
+  case rightToLeft
+  case leftMenu
+  case appleMusic(sourceView: AppleMusicLargePlayerSourceProtocol?, destinationView: AppleMusicLargePlayerSourceProtocol?)
   
   var presentationAnimator: PresentableAnimator {
     return self.dissmissAnimator
@@ -44,6 +50,8 @@ enum CustomPresentationMode {
       return RightToLeftAnimator()
     case .leftMenu:
       return LeftMenuAnimator()
+    case .appleMusic:
+      return AppleMusicAnimator()
     }
   }
   
@@ -61,6 +69,11 @@ enum CustomPresentationMode {
       return RightToLeftPresentationController(presentedViewController: presented, presenting: presenting)
     case .leftMenu:
       return LeftMenuPresentationController(presentedViewController: presented, presenting: presenting)
+    case .appleMusic(sourceView: let sourceView, destinationView: let destinationView):
+      let presentationController = AppleMusicPresentationController(presentedViewController: presented, presenting: presenting)
+      presentationController.sourceView = sourceView
+      presentationController.destinationView = destinationView
+      return presentationController
     }
   }
 }

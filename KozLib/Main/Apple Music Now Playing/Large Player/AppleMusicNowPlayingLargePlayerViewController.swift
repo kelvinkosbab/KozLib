@@ -24,7 +24,7 @@ class AppleMusicNowPlayingLargePlayerViewController : BaseTableViewController, D
   
   // MARK: - Outlet Properties
   
-  @IBOutlet weak var coverArtImageView: UIImageView!
+  weak var coverArtImageView: UIImageView?
   
   // MARK: - Properties
   
@@ -33,8 +33,7 @@ class AppleMusicNowPlayingLargePlayerViewController : BaseTableViewController, D
   
   // MARK: - Properties
   
-  var song: AppleMusicSong!
-  weak var delegate: AppleMusicNowPlayingMiniPlayerDelegate?
+  var song: AppleMusicSong?
   
   // MARK: - Lifecycle
   
@@ -49,8 +48,6 @@ class AppleMusicNowPlayingLargePlayerViewController : BaseTableViewController, D
     default:
       self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.doneButtonSelected))
     }
-    
-    self.updateContent()
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -63,8 +60,8 @@ class AppleMusicNowPlayingLargePlayerViewController : BaseTableViewController, D
   
   override var preferredStatusBarStyle: UIStatusBarStyle {
     switch self.presentedMode {
-    default:
-      return .default
+    case .custom(.appleMusic): return .lightContent
+    default: return .default
     }
   }
   
@@ -77,7 +74,7 @@ class AppleMusicNowPlayingLargePlayerViewController : BaseTableViewController, D
   func generateContent(completion: @escaping (_ content: Content) -> Void) {
     
     // Required properties
-    let song = self.song!
+    let song = self.song
     let currentContentDispatchQueue = self.currentContentDispatchQueue
     
     DispatchQueue.global().async {
@@ -85,7 +82,7 @@ class AppleMusicNowPlayingLargePlayerViewController : BaseTableViewController, D
       // Build the content
       var rowTypes: [RowType] = []
       
-      if let imageName = song.imageName, let image = UIImage(named: imageName) {
+      if let imageName = song?.imageName, let image = UIImage(named: imageName) {
         rowTypes.append(.coverArt(image))
       } else {
         rowTypes.append(.coverArt(nil))
@@ -128,7 +125,7 @@ class AppleMusicNowPlayingLargePlayerViewController : BaseTableViewController, D
   enum RowType : DataSourceRowType {
     case coverArt(UIImage?)
     case songProgressBar(Progress)
-    case songInformation(song: AppleMusicSong)
+    case songInformation(song: AppleMusicSong?)
     case songControls
     case volume
     case songActions
@@ -202,6 +199,7 @@ extension AppleMusicNowPlayingLargePlayerViewController {
     case .coverArt(let image):
       let cell = tableView.dequeueReusableCell(withIdentifier: AppleMusicNowPlayingLargePlayerCoverArtCell.name, for: indexPath) as! AppleMusicNowPlayingLargePlayerCoverArtCell
       cell.configure(coverArtImage: image, rowHeight: self.tableView(tableView, heightForRowAt: indexPath))
+      self.coverArtImageView = cell.coverArtImageView
       return cell
       
     case .songProgressBar(let progress):
@@ -211,8 +209,13 @@ extension AppleMusicNowPlayingLargePlayerViewController {
       
     case .songInformation(song: let song):
       let cell = tableView.dequeueReusableCell(withIdentifier: AppleMusicNowPlayingLargePlayerSongInfoCell.name, for: indexPath) as! AppleMusicNowPlayingLargePlayerSongInfoCell
-      cell.songNameLabel.text = song.title
-      cell.songInfoLabel.text = "\(song.artist) - Album"
+      if let song = song {
+        cell.songNameLabel.text = song.title
+        cell.songInfoLabel.text = "\(song.artist) - Album"
+      } else {
+        cell.songNameLabel.text = nil
+        cell.songInfoLabel.text = nil
+      }
       return cell
       
     case .songControls:
@@ -260,5 +263,18 @@ extension AppleMusicNowPlayingLargePlayerViewController {
       cell.repeatButton.backgroundColor = UIColor(hex: "F2F2F2")
       return cell
     }
+  }
+}
+
+// MARK: - MaxiPlayerSourceProtocol
+
+extension AppleMusicNowPlayingLargePlayerViewController : AppleMusicLargePlayerSourceProtocol {
+  
+  var originatingFrameInWindow: CGRect {
+    return self.view.convert(self.view.frame, to: nil)
+  }
+  
+  var originatingCoverImageView: UIImageView? {
+    return self.coverArtImageView
   }
 }

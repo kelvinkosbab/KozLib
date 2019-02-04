@@ -10,7 +10,7 @@ import UIKit
 
 extension UITabBarController {
   
-  @objc func showTabBar(animated: Bool = true, animating: (() -> Void)? = nil, completion: (() -> Void)? = nil) {
+  func showTabBar(animated: Bool = true, animating: (() -> Void)? = nil, completion: (() -> Void)? = nil) {
     let tabBarFrame = self.tabBar.frame
     let heightOffset = tabBarFrame.size.height
     UIView.animate(withDuration: animated ? 0.3 : 0, animations: {
@@ -23,7 +23,7 @@ extension UITabBarController {
     })
   }
   
-  @objc func hideTabBar(animated: Bool = true, animating: (() -> Void)? = nil, completion: (() -> Void)? = nil) {
+  func hideTabBar(animated: Bool = true, animating: (() -> Void)? = nil, completion: (() -> Void)? = nil) {
     self.tabBar.isUserInteractionEnabled = false
     let tabBarFrame = self.tabBar.frame
     let heightOffset = tabBarFrame.size.height
