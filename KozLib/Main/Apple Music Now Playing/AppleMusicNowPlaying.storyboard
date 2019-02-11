@@ -198,8 +198,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AppleMusicNowPlayingArrowCell" id="3VU-cv-rfi" customClass="AppleMusicNowPlayingArrowCell" customModule="KozLibrary" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3VU-cv-rfi" id="Mug-SK-sv8">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ADS-h0-tYy">
+                                            <rect key="frame" x="172.5" y="15.5" width="30" height="13"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="13" id="S4h-Bi-qI1"/>
+                                                <constraint firstAttribute="width" constant="30" id="dEm-ba-21Q"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ADS-h0-tYy" firstAttribute="centerY" secondItem="Mug-SK-sv8" secondAttribute="centerY" id="eAC-0K-C68"/>
+                                        <constraint firstItem="ADS-h0-tYy" firstAttribute="centerX" secondItem="Mug-SK-sv8" secondAttribute="centerX" id="r1I-DV-Xyl"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="arrowImageView" destination="ADS-h0-tYy" id="Jm5-CL-lfE"/>
+                                </connections>
+                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AppleMusicNowPlayingLargePlayerCoverArtCell" rowHeight="138" id="OC5-L4-aby" customClass="AppleMusicNowPlayingLargePlayerCoverArtCell" customModule="KozLibrary" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="138"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="138"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OC5-L4-aby" id="TR3-Ji-1La">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="138"/>
@@ -237,7 +261,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AppleMusicNowPlayingLargePlayerProgressCell" id="HAf-B8-N6p" customClass="AppleMusicNowPlayingLargePlayerProgressCell" customModule="KozLibrary" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="166" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="210" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HAf-B8-N6p" id="WIu-X5-3Ut">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -258,7 +282,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AppleMusicNowPlayingLargePlayerSongInfoCell" rowHeight="88" id="y19-ni-7OO" customClass="AppleMusicNowPlayingLargePlayerSongInfoCell" customModule="KozLibrary" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="210" width="375" height="88"/>
+                                <rect key="frame" x="0.0" y="254" width="375" height="88"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="y19-ni-7OO" id="iCS-Ua-uCb">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
@@ -295,7 +319,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AppleMusicNowPlayingLargePlayerControlCell" rowHeight="61" id="uOx-xj-edE" customClass="AppleMusicNowPlayingLargePlayerControlCell" customModule="KozLibrary" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="298" width="375" height="61"/>
+                                <rect key="frame" x="0.0" y="342" width="375" height="61"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uOx-xj-edE" id="q22-xz-AZp">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
@@ -381,7 +405,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AppleMusicNowPlayingLargePlayerVolumeCell" id="cvu-cd-3PM" customClass="AppleMusicNowPlayingLargePlayerVolumeCell" customModule="KozLibrary" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="359" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="403" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cvu-cd-3PM" id="TMc-Fs-cFT">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -402,7 +426,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AppleMusicNowPlayingLargePlayerActionsCell" rowHeight="73" id="jqR-6j-xOT" customClass="AppleMusicNowPlayingLargePlayerActionsCell" customModule="KozLibrary" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="403" width="375" height="73"/>
+                                <rect key="frame" x="0.0" y="447" width="375" height="73"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jqR-6j-xOT" id="lhX-la-YWb">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="73"/>
@@ -455,7 +479,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AppleMusicNowPlayingLargePlayerShuffleRepeatCell" id="DiN-Re-BDr" customClass="AppleMusicNowPlayingLargePlayerShuffleRepeatCell" customModule="KozLibrary" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="476" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="520" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DiN-Re-BDr" id="vs8-8t-q2c">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

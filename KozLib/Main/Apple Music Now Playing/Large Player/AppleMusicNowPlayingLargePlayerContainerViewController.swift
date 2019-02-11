@@ -43,10 +43,20 @@ class AppleMusicNowPlayingLargePlayerContainerViewController : BaseViewControlle
     }
   }
   
+  // MARK: - Status Bar
+  
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    switch self.presentedMode {
+    case .custom(.appleMusic): return .lightContent
+    default: return .default
+    }
+  }
+  
   // MARK: - Actions
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let viewController = segue.destination as? AppleMusicNowPlayingLargePlayerViewController {
+      viewController.presentedMode = self.presentedMode
       viewController.song = self.song
     }
   }

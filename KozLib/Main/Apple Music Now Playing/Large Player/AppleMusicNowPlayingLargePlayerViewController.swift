@@ -76,12 +76,18 @@ class AppleMusicNowPlayingLargePlayerViewController : BaseTableViewController, D
     // Required properties
     let song = self.song
     let currentContentDispatchQueue = self.currentContentDispatchQueue
+    let presentedMode = self.presentedMode
     
     DispatchQueue.global().async {
       
       // Build the content
       var rowTypes: [RowType] = []
       
+      switch presentedMode {
+      case .custom(.appleMusic):
+        rowTypes.append(.appleMusicPresentedArrow)
+      default: break
+      }
       if let imageName = song?.imageName, let image = UIImage(named: imageName) {
         rowTypes.append(.coverArt(image))
       } else {
@@ -123,6 +129,7 @@ class AppleMusicNowPlayingLargePlayerViewController : BaseTableViewController, D
   // MARK: - RowType
   
   enum RowType : DataSourceRowType {
+    case appleMusicPresentedArrow
     case coverArt(UIImage?)
     case songProgressBar(Progress)
     case songInformation(song: AppleMusicSong?)
@@ -166,6 +173,8 @@ extension AppleMusicNowPlayingLargePlayerViewController {
     let coverArtHeight = safeAreaFrame.width - 16
     let safeAreaHeightMinusImage = safeAreaFrame.height - coverArtHeight
     switch rowType {
+    case .appleMusicPresentedArrow:
+      return 0.05 * safeAreaHeightMinusImage
     case .coverArt:
       return coverArtHeight
       
@@ -174,7 +183,7 @@ extension AppleMusicNowPlayingLargePlayerViewController {
     case .songInformation:
       return 0.3 * safeAreaHeightMinusImage
     case .songControls:
-      return 0.3 * safeAreaHeightMinusImage
+      return 0.25 * safeAreaHeightMinusImage
     case .volume:
       return 0.15 * safeAreaHeightMinusImage
     case .songActions:
@@ -196,6 +205,13 @@ extension AppleMusicNowPlayingLargePlayerViewController {
     }
     
     switch rowType {
+    case .appleMusicPresentedArrow:
+      let cell = tableView.dequeueReusableCell(withIdentifier: AppleMusicNowPlayingArrowCell.name, for: indexPath) as! AppleMusicNowPlayingArrowCell
+      let image = UIImage(named: "icChevronUp")?.withRenderingMode(.alwaysTemplate)
+      cell.arrowImageView.image = image
+      cell.arrowImageView.tintColor = .darkGray
+      return cell
+      
     case .coverArt(let image):
       let cell = tableView.dequeueReusableCell(withIdentifier: AppleMusicNowPlayingLargePlayerCoverArtCell.name, for: indexPath) as! AppleMusicNowPlayingLargePlayerCoverArtCell
       cell.configure(coverArtImage: image, rowHeight: self.tableView(tableView, heightForRowAt: indexPath))

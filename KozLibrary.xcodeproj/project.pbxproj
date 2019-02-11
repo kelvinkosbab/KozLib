@@ -160,6 +160,7 @@
 		F64251D622064187001468F3 /* AppleMusicPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64251D522064187001468F3 /* AppleMusicPresentationController.swift */; };
 		F64251DA22082A27001468F3 /* AppleMusicLargePlayerSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64251D922082A27001468F3 /* AppleMusicLargePlayerSourceProtocol.swift */; };
 		F64251DC2208A0B9001468F3 /* AppleMusicNowPlayingLargePlayerContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64251DB2208A0B9001468F3 /* AppleMusicNowPlayingLargePlayerContainerViewController.swift */; };
+		F64251DE2208A2FF001468F3 /* AppleMusicNowPlayingArrowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64251DD2208A2FF001468F3 /* AppleMusicNowPlayingArrowCell.swift */; };
 		F68C871C21F6CF9100CED205 /* UIBarButtonItem+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68C871B21F6CF9100CED205 /* UIBarButtonItem+Styles.swift */; };
 		F68C871F21F9A6FA00CED205 /* AppleMusicNowPlaying.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F68C871E21F9A6FA00CED205 /* AppleMusicNowPlaying.storyboard */; };
 		F68C872121F9A71600CED205 /* AppleMusicNowPlayingSongListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68C872021F9A71600CED205 /* AppleMusicNowPlayingSongListViewController.swift */; };
@@ -253,6 +254,7 @@
 		F6B14E3821D16A86005E83FB /* SlidingTabBarAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B14E3721D16A86005E83FB /* SlidingTabBarAnimator.swift */; };
 		F6B14E3A21D1706F005E83FB /* CrossDissolveTabBarAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B14E3921D1706F005E83FB /* CrossDissolveTabBarAnimator.swift */; };
 		F6B14E4421D42090005E83FB /* StretchableHeaderNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B14E4321D42090005E83FB /* StretchableHeaderNavigationDelegate.swift */; };
+		F6B48BB022115ED700247AA3 /* AnimatedPressButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B48BAF22115ED700247AA3 /* AnimatedPressButton.swift */; };
 		F6C662CD21FCF9D6003FD7F6 /* UIImage+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C662CC21FCF9D6003FD7F6 /* UIImage+Util.swift */; };
 		F6C662CF21FD3A65003FD7F6 /* AppleMusicNowPlayingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C662CE21FD3A65003FD7F6 /* AppleMusicNowPlayingContainerViewController.swift */; };
 		F6C662D121FD3E05003FD7F6 /* AppleMusicLibraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C662D021FD3E05003FD7F6 /* AppleMusicLibraryCell.swift */; };
@@ -466,6 +468,7 @@
 		F64251D522064187001468F3 /* AppleMusicPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicPresentationController.swift; sourceTree = "<group>"; };
 		F64251D922082A27001468F3 /* AppleMusicLargePlayerSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicLargePlayerSourceProtocol.swift; sourceTree = "<group>"; };
 		F64251DB2208A0B9001468F3 /* AppleMusicNowPlayingLargePlayerContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicNowPlayingLargePlayerContainerViewController.swift; sourceTree = "<group>"; };
+		F64251DD2208A2FF001468F3 /* AppleMusicNowPlayingArrowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicNowPlayingArrowCell.swift; sourceTree = "<group>"; };
 		F68C871B21F6CF9100CED205 /* UIBarButtonItem+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Styles.swift"; sourceTree = "<group>"; };
 		F68C871E21F9A6FA00CED205 /* AppleMusicNowPlaying.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AppleMusicNowPlaying.storyboard; sourceTree = "<group>"; };
 		F68C872021F9A71600CED205 /* AppleMusicNowPlayingSongListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicNowPlayingSongListViewController.swift; sourceTree = "<group>"; };
@@ -559,6 +562,7 @@
 		F6B14E3721D16A86005E83FB /* SlidingTabBarAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingTabBarAnimator.swift; sourceTree = "<group>"; };
 		F6B14E3921D1706F005E83FB /* CrossDissolveTabBarAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossDissolveTabBarAnimator.swift; sourceTree = "<group>"; };
 		F6B14E4321D42090005E83FB /* StretchableHeaderNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchableHeaderNavigationDelegate.swift; sourceTree = "<group>"; };
+		F6B48BAF22115ED700247AA3 /* AnimatedPressButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedPressButton.swift; sourceTree = "<group>"; };
 		F6C662CC21FCF9D6003FD7F6 /* UIImage+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Util.swift"; sourceTree = "<group>"; };
 		F6C662CE21FD3A65003FD7F6 /* AppleMusicNowPlayingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicNowPlayingContainerViewController.swift; sourceTree = "<group>"; };
 		F6C662D021FD3E05003FD7F6 /* AppleMusicLibraryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicLibraryCell.swift; sourceTree = "<group>"; };
@@ -620,6 +624,7 @@
 		B619F9D7203E93A200764577 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				F6B48BAF22115ED700247AA3 /* AnimatedPressButton.swift */,
 				B619F9D8203E93DB00764577 /* Top Knob Visual Effect View */,
 			);
 			path = "Custom Views";
@@ -1642,6 +1647,7 @@
 				F6C662E621FE82DE003FD7F6 /* AppleMusicNowPlayingLargePlayerVolumeCell.swift */,
 				F6C662E821FE8B4D003FD7F6 /* AppleMusicNowPlayingLargePlayerActionsCell.swift */,
 				F6C662EA21FE9437003FD7F6 /* AppleMusicNowPlayingLargePlayerShuffleRepeatCell.swift */,
+				F64251DD2208A2FF001468F3 /* AppleMusicNowPlayingArrowCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -2075,6 +2081,7 @@
 				F6AD92F0219FDE230074F548 /* APIError.swift in Sources */,
 				F6A769072138BCF3007AF9F7 /* MonthlyTemp.swift in Sources */,
 				F6AD92F6219FDE230074F548 /* DownloadAPIRequest.swift in Sources */,
+				F6B48BB022115ED700247AA3 /* AnimatedPressButton.swift in Sources */,
 				F6EF6D7D21352A8D00C3BFEE /* HomeViewController+UITableView.swift in Sources */,
 				B66927E42057201C00EF915C /* AddGeotificationViewController.swift in Sources */,
 				B64414FE1F7856A900C9781B /* UIDevice+Util.swift in Sources */,
@@ -2112,6 +2119,7 @@
 				B619F9FF203E94A000764577 /* PresentableControllerOption.swift in Sources */,
 				F6193A3D219DF4D00043BFFE /* WeatherService.swift in Sources */,
 				B6350E461F786FBC004E6218 /* NFCMessage.swift in Sources */,
+				F64251DE2208A2FF001468F3 /* AppleMusicNowPlayingArrowCell.swift in Sources */,
 				B6811F4E2043B2BF008C3CAC /* ARRecognizingImageStatusViewController.swift in Sources */,
 				F6AD92C0219F8FB00074F548 /* LBTATextView.swift in Sources */,
 				B6350E441F786FB4004E6218 /* NFCReader.swift in Sources */,
